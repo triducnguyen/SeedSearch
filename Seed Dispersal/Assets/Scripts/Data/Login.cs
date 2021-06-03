@@ -30,6 +30,21 @@ namespace SeedSearch
             loginType = LoginType.Teacher;
             Debug.Log(loginType);
         }
+
+        public void OnLogin()
+        {
+            switch (loginType)
+            {
+                case LoginType.Student:
+
+                    break;
+                case LoginType.Teacher:
+
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
 }
