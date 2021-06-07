@@ -21,7 +21,10 @@ namespace SeedSearch
             {
                 instance = GetComponent<T>();
                 if (isPersistent)
+                {
                     DontDestroyOnLoad(gameObject);
+    
+                }
             }
             else
                 Destroy(gameObject);

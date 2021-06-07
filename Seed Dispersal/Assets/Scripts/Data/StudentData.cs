@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "StudentData", menuName ="StudentData/Data")]
-public class StudentData : ScriptableObject
+[System.Serializable]
+public class StudentData
 {
     [SerializeField] private string userName;
     [SerializeField] private string password;
