@@ -6,13 +6,9 @@ namespace SeedSearch
 {
     public class UIMenu : MonoBehaviour
     {
+        public static UIMenu Instance;
         // Start is called before the first frame update
         public List<GameObject> menus;
-        void Start()
-        {
-
-        }
-
         public void ChangeMenu(GameObject menu)
         {
             foreach (GameObject obj in menus)

@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPersistent: 1
+  studentProfile: {fileID: 11400000, guid: c3ee9fe7cb287a049a64c617beb020d2, type: 2}
+  teacherProfile: {fileID: 11400000, guid: 8e367b394290a3340b43044ecf106031, type: 2}

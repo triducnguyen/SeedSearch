@@ -14,17 +14,21 @@ namespace SeedSearch
         private string StudentPath;
         private string TeacherPath;
         // Start is called before the first frame update
-        void Start()
+        private void Awake()
         {
-
+            base.Awake();
+            studentProfile = new StudentData();
+            teacherProfile = new TeacherData();
         }
 
-        void UpdateStudentDataPath() => StudentPath = string.Format("{0}/{1}/{2}.data", Application.persistentDataPath, "student", studentProfile.UserName);
-        void UpdateTeacherDataPath() => TeacherPath = string.Format("{0}/{1}/{2}/{3}.data", Application.persistentDataPath, "teacher", teacherProfile.UserName,teacherProfile.PassWord);
+        void UpdateStudentDataPath(string studentName) => StudentPath = string.Format("{0}/{1}/{2}.data", Application.persistentDataPath, "student", studentName);
+        void UpdateTeacherDataPath(string teacherName,string password) => TeacherPath = string.Format("{0}/{1}{2}{3}.data", Application.persistentDataPath, "teacher", teacherName,password);
+
 
         //Create and save Student data
         public void SaveStudentFile(StudentData student)
         {
+            UpdateStudentDataPath(student.UserName);
             //Override the same file if the file exist
             if (File.Exists(StudentPath))
                 File.Delete(StudentPath);
@@ -38,19 +42,25 @@ namespace SeedSearch
         //Create and save Teacher data
         public void SaveTeacherFile(TeacherData teacher)
         {
+            UpdateTeacherDataPath(teacher.UserName, teacher.PassWord);
             //Override the same file if the file exist
             if (File.Exists(TeacherPath))
+            {
+                Debug.Log("no pat");
                 File.Delete(TeacherPath);
+            }
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(TeacherPath, FileMode.Create);
-
-            formatter.Serialize(stream, teacher);
+            TeacherData data = new TeacherData();
+            data = teacher;
+            formatter.Serialize(stream, data);
             stream.Close();
         }
 
         public StudentData LoadStudentData(StudentData student)
         {
-            string path = string.Format("{0}/{1}/{2}.data", Application.persistentDataPath, "student", student.UserName);
+            UpdateStudentDataPath(student.UserName);
+            string path = StudentPath;
             if (File.Exists(path))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
@@ -69,7 +79,8 @@ namespace SeedSearch
 
         public TeacherData LoadTeacherData(TeacherData teacher)
         {
-            string path = string.Format("{0}/{1}/{2}/{3}.data", Application.persistentDataPath, "teacher", teacher.UserName,teacher.PassWord);
+            UpdateTeacherDataPath(teacher.UserName, teacher.PassWord);
+            string path = TeacherPath;
             if (File.Exists(path))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
@@ -84,6 +95,24 @@ namespace SeedSearch
                 Debug.LogError("Save teacher file not found in " + path);
                 return null;
             }
+        }
+
+        public bool ExistData(TeacherData data)
+        {
+            UpdateTeacherDataPath(data.UserName, data.PassWord);
+            if (File.Exists(TeacherPath))
+                return true;
+
+            return false;
+        }
+
+        public bool ExistData(StudentData data)
+        {
+            UpdateStudentDataPath(data.UserName);
+            if (File.Exists(StudentPath))
+                return true;
+
+            return false;
         }
     }
 }
