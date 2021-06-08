@@ -10,7 +10,7 @@ namespace SeedSearch
     { 
 
         [SerializeField] private LoginType loginType;
-        [SerializeField] private StudentData currentStudentProfile;
+        [SerializeField] private StudentData currentStudent;
         [SerializeField] private TeacherData currentTeacher;
         public LoginType LoginType { get => loginType;}
 
@@ -19,9 +19,12 @@ namespace SeedSearch
         public GameObject teacherLogin;
         public GameObject studentLogin;
 
-        [Header("Login Input")]
+        [Header("Teacher Login Input")]
         public TMP_InputField userName;
         public TMP_InputField password;
+
+        [Header("Student Login Input")]
+        public TMP_InputField userName2;
 
         [Header("Profile")]
         public GameObject profile;
@@ -60,17 +63,25 @@ namespace SeedSearch
             switch (loginType)
             {
                 case LoginType.Student:
-                    return;
+                    if(userName2.text != "")
+                    {
+                        currentStudent.UserName = userName2.text;
+                        if (SaveManager.Instance.ExistData(currentStudent))
+                        {
+                            SaveManager.Instance.studentProfile = SaveManager.Instance.LoadStudentData(currentStudent);
+                        }
+                    }
                     break;
                 case LoginType.Teacher:
                     if(userName.text != "" && password.text != "")
                     {
                         currentTeacher.UserName = userName.text;
                         currentTeacher.PassWord = password.text;
-                        if (SaveManager.Instance.LoadTeacherData(currentTeacher) != null)
+                        if (SaveManager.Instance.ExistData(currentTeacher))
                         {
-                            SaveManager.Instance.teacherProfile = currentTeacher;
-                            UIMenu.Instance.ChangeMenu(profile);
+                            SaveManager.Instance.teacherProfile = SaveManager.Instance.LoadTeacherData(currentTeacher);
+                            gameObject.SetActive(false);
+                            profile.SetActive(true);
                         }
                         else
                         {

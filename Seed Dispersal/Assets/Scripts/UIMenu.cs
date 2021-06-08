@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace SeedSearch
 {
@@ -13,7 +14,13 @@ namespace SeedSearch
         {
             foreach (GameObject obj in menus)
                 obj.SetActive(false);
+
             menu.SetActive(true);
+        }
+
+        public void GoToScene(string scene)
+        {
+            SceneManager.LoadScene(scene);
         }
     }
 }
