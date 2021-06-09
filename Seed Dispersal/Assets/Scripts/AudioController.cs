@@ -269,19 +269,4 @@ public class AudioController : PlacementController
         yield return new WaitForSeconds(4f);
         restartButton.SetActive(true);
     }
-
-    //John Add
-    public void startHintTimer(string currentSection){
-        section = currentSection;
-        StartCoroutine(Hinttimer());
-    }
-    private string section;
-    public float wait;
-    public GameObject hintObject;
-    public Text hint;
-    IEnumerator Hinttimer(){
-        yield return new WaitForSeconds(wait);
-        hintObject.SetActive(true);
-        hint.text = section;
-    }
 }
