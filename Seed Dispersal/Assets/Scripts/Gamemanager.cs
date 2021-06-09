@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class Gamemanager : MonoBehaviour
 {
-    private float[] alltimes;
+    private List<float> times;
     public float timescalar;
+    private float starttime;
+    private float endtime;
+    private float overalltime;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +25,13 @@ public class Gamemanager : MonoBehaviour
     //John Add
     public void startHintTimer(string currentSection){
         section = currentSection;
+        starttime = Time.deltaTime;
         StartCoroutine(Hinttimer());
+    }
+    public void endtimer(){
+        endtime = Time.deltaTime;
+        overalltime = endtime - starttime;
+        times.Add(overalltime);
     }
     private string section;
     public float wait;
