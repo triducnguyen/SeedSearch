@@ -17,11 +17,9 @@ namespace SeedSearch
         private void Awake()
         {
             base.Awake();
-            studentProfile = new StudentData();
-            teacherProfile = new TeacherData();
         }
 
-        void UpdateStudentDataPath(string studentName) => StudentPath = string.Format("{0}/{1}/{2}.data", Application.persistentDataPath, "student", studentName);
+        void UpdateStudentDataPath(string studentName) => StudentPath = string.Format("{0}/{1}/{2}.student", Application.persistentDataPath, "student", studentName);
         void UpdateTeacherDataPath(string teacherName,string password) => TeacherPath = string.Format("{0}/{1}{2}{3}.data", Application.persistentDataPath, "teacher", teacherName,password);
 
 
@@ -46,7 +44,6 @@ namespace SeedSearch
             //Override the same file if the file exist
             if (File.Exists(TeacherPath))
             {
-                Debug.Log("no pat");
                 File.Delete(TeacherPath);
             }
             BinaryFormatter formatter = new BinaryFormatter();
@@ -67,7 +64,7 @@ namespace SeedSearch
                 FileStream stream = new FileStream(path, FileMode.Open);
 
                 StudentData data = formatter.Deserialize(stream) as StudentData;
-
+                stream.Close();
                 return data;
             }
             else
@@ -87,7 +84,7 @@ namespace SeedSearch
                 FileStream stream = new FileStream(path, FileMode.Open);
 
                 TeacherData data = formatter.Deserialize(stream) as TeacherData;
-
+                stream.Close();
                 return data;
             }
             else
