@@ -13,8 +13,7 @@ namespace SeedSearch
 
         [Header("Edit Name")]
         public TMP_InputField editNameField;
-        public Button editButton;
-
+        public GameObject editDone;
         [SerializeField] private TeacherData teacherProfile;
         // Start is called before the first frame update
 
@@ -31,6 +30,20 @@ namespace SeedSearch
                 Name.text = teacherProfile.UserName;
             else
                 Name.text = teacherProfile.Name;
+        }
+
+        public void OnEdit()
+        {
+            editNameField.gameObject.SetActive(true);
+            editDone.SetActive(true);
+        }
+
+        public void OnDone()
+        {
+            editNameField.gameObject.SetActive(false);
+            editDone.SetActive(false);
+            Name.text = editNameField.text;
+            SaveManager.Instance.teacherProfile.Name = editNameField.text;
         }
 
     }
