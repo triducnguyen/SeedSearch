@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 namespace SeedSearch
 {
@@ -69,6 +70,11 @@ namespace SeedSearch
                         if (SaveManager.Instance.ExistData(currentStudent))
                         {
                             SaveManager.Instance.studentProfile = SaveManager.Instance.LoadStudentData(currentStudent);
+                            SceneManager.LoadScene("StoreInput");
+                        }
+                        else
+                        {
+                            Debug.Log("Non-student exist");
                         }
                     }
                     break;
