@@ -19,7 +19,7 @@ namespace SeedSearch
             base.Awake();
         }
 
-        void UpdateStudentDataPath(string studentName) => StudentPath = string.Format("{0}/{1}/{2}.student", Application.persistentDataPath, "student", studentName);
+        void UpdateStudentDataPath(string studentName) => StudentPath = string.Format("{0}/{1}{2}.student", Application.persistentDataPath, "student", studentName);
         void UpdateTeacherDataPath(string teacherName,string password) => TeacherPath = string.Format("{0}/{1}{2}{3}.data", Application.persistentDataPath, "teacher", teacherName,password);
 
 
@@ -54,6 +54,7 @@ namespace SeedSearch
             stream.Close();
         }
 
+        //Get studentFile by Student data (username)
         public StudentData LoadStudentData(StudentData student)
         {
             UpdateStudentDataPath(student.UserName);
@@ -74,6 +75,26 @@ namespace SeedSearch
             }
         }
 
+        //Get studentFile by path
+        public StudentData LoadStudentData(string path)
+        {
+            if (File.Exists(path))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                FileStream stream = new FileStream(path, FileMode.Open);
+
+                StudentData data = formatter.Deserialize(stream) as StudentData;
+                stream.Close();
+                return data;
+            }
+            else
+            {
+                Debug.LogError("Save student file not found in " + path);
+                return null;
+            }
+        }
+
+
         public TeacherData LoadTeacherData(TeacherData teacher)
         {
             UpdateTeacherDataPath(teacher.UserName, teacher.PassWord);
@@ -92,6 +113,17 @@ namespace SeedSearch
                 Debug.LogError("Save teacher file not found in " + path);
                 return null;
             }
+        }
+
+        public List<StudentData> GetStudents()
+        {
+            string[] paths = Directory.GetFiles(Application.persistentDataPath, "*.student");
+            List<StudentData> studentList = new List<StudentData>();
+            foreach(string path in paths)
+            {
+                studentList.Add(LoadStudentData(path));
+            }
+            return studentList;
         }
 
         public bool ExistData(TeacherData data)
