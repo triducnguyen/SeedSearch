@@ -1888,6 +1888,9 @@ MonoBehaviour:
   cm6: {fileID: 0}
   restartButton: {fileID: 0}
   badger: {fileID: 0}
+  wait: 0
+  hintObject: {fileID: 0}
+  hint: {fileID: 0}
 --- !u!114 &74529918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21789,6 +21792,9 @@ MonoBehaviour:
   cm6: {fileID: 667610332}
   restartButton: {fileID: 1737855707}
   badger: {fileID: 101542199}
+  wait: 0
+  hintObject: {fileID: 0}
+  hint: {fileID: 0}
 --- !u!1001 &1559769889
 PrefabInstance:
   m_ObjectHideFlags: 0
