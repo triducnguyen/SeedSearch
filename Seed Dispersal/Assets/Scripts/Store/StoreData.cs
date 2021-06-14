@@ -46,6 +46,7 @@ namespace SeedSearch
                     displayTexts[0].text = SaveManager.Instance.studentProfile.FirstPrompt;
                     displayTexts[1].text = SaveManager.Instance.studentProfile.SecondPrompt;
                     displayTexts[2].text = SaveManager.Instance.studentProfile.ThirdPrompt;
+                    SaveManager.Instance.SaveStudentFile(SaveManager.Instance.studentProfile);
                     break;
             }
             currentPrompt++;
