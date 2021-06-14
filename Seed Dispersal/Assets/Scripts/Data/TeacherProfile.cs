@@ -22,6 +22,7 @@ namespace SeedSearch
 
         void OnEnable()
         {
+            SaveManager.Instance.teacherProfile.StudentList = SaveManager.Instance.GetStudents();
             teacherProfile = SaveManager.Instance.teacherProfile;
             Initialize();
         }
