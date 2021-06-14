@@ -44,7 +44,7 @@ public class PlaceOnPlane : MonoBehaviour
             
             if(raycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinPolygon)){
                 var hitPose = s_Hits[0].pose;
-                Islandheight = Vector3.Distance(hitPose.position, this.transform.position) * heightscalar;
+                Islandheight = (this.transform.position.y - hitPose.position.y) * heightscalar;
                 Island.SetActive(true);
                 Island.transform.position = hitPose.position + new Vector3(0,Islandheight,0);
                 Islandspawn = true;
