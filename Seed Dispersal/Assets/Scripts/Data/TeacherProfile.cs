@@ -14,6 +14,9 @@ namespace SeedSearch
         public GameObject StudentSlot;
         public GameObject Student;
 
+        [Header("StudentProfile")]
+        public GameObject studentProfile;
+
         [Header("Edit Name")]
         public TMP_InputField editNameField;
         public GameObject editDone;
@@ -51,9 +54,28 @@ namespace SeedSearch
             List<StudentData> studentList = SaveManager.Instance.GetStudents();
             for(int i = 0; i < studentList.Count; i++)
             {
-                Student.transform.GetChild(0).GetComponent<Text>().text = studentList[i].FirstName + " " + studentList[i].LastName;
-                Instantiate(Student.transform, StudentSlot.transform);
+                GameObject newStudent = Instantiate(Student);
+                StudentProfile studentScript = newStudent.AddComponent<StudentProfile>();
+                studentScript.student = studentList[i];
+                studentScript.firstPrompt = studentProfile.GetComponent<StudentProfile>().firstPrompt;
+                studentScript.secondPrompt = studentProfile.GetComponent<StudentProfile>().secondPrompt;
+                studentScript.thirdPrompt = studentProfile.GetComponent<StudentProfile>().thirdPrompt;
+
+                studentScript.firstPrompt.text = studentList[i].FirstPrompt;
+                studentScript.secondPrompt.text = studentList[i].SecondPrompt;
+                studentScript.thirdPrompt.text = studentList[i].ThirdPrompt;
+
+                newStudent.transform.GetChild(0).GetComponent<Text>().text = studentList[i].FirstName + " " + studentList[i].LastName;
+                newStudent.transform.SetParent(StudentSlot.transform);
+                newStudent.GetComponent<Button>().onClick.AddListener(OpenStudentProfile);
+
             }
+        }
+
+        public void OpenStudentProfile()
+        {
+            Debug.Log("hit");
+            studentProfile.SetActive(true);
         }
 
         public void OnLogout()
