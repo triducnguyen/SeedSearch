@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637589479592247915
-    m_Hash: 3078315487
+      ticks: 637592820424459685
+    m_Hash: 3390096321
   m_LockFileStatus:
     m_FilePath: D:/work/devteam/SEED/SeedSearch/Seed Dispersal/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637589479898836671
-    m_Hash: 4099371791
+      ticks: 637592820424489579
+    m_Hash: 1938378657
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
