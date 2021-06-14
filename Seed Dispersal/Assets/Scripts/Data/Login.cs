@@ -25,7 +25,8 @@ namespace SeedSearch
         public TMP_InputField password;
 
         [Header("Student Login Input")]
-        public TMP_InputField userName2;
+        public TMP_InputField firstName;
+        public TMP_InputField lastName;
 
         [Header("Profile")]
         public GameObject profile;
@@ -64,9 +65,10 @@ namespace SeedSearch
             switch (loginType)
             {
                 case LoginType.Student:
-                    if(userName2.text != "")
+                    if(firstName.text != "" && lastName.text != "")
                     {
-                        currentStudent.UserName = userName2.text;
+                        currentStudent.FirstName = firstName.text;
+                        currentStudent.LastName = lastName.text;
                         if (SaveManager.Instance.ExistData(currentStudent))
                         {
                             SaveManager.Instance.studentProfile = SaveManager.Instance.LoadStudentData(currentStudent);
