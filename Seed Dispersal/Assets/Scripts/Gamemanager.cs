@@ -14,7 +14,7 @@ public class Gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SaveManager.Instance.LoadStudentData(newStudent);
+        //SaveManager.Instance.LoadStudentData(newStudent);
     }
 
     // Update is called once per frame
@@ -49,7 +49,7 @@ public class Gamemanager : MonoBehaviour
         while(times.Count > timerstorecount){
             times.Remove(times[0]);
         }
-        SaveManager.Instance.SaveStudentFile(newStudent);
+        //SaveManager.Instance.SaveStudentFile(newStudent);
            
     }
 }
