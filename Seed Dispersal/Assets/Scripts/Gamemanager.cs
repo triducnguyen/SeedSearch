@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Gamemanager : MonoBehaviour
 {
+    public StudentData studentProfile;
     private List<float> times;
     public float timescalar;
     private float starttime;
@@ -13,7 +14,7 @@ public class Gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SaveManager.Instance.LoadStudentData(newStudent);
     }
 
     // Update is called once per frame
@@ -41,5 +42,14 @@ public class Gamemanager : MonoBehaviour
         yield return new WaitForSeconds(wait);
         hintObject.SetActive(true);
         hint.text = section;
+    }
+    [SerializeField]
+    private float timerstorecount;
+    public void savetimes(){
+        while(times.Count > timerstorecount){
+            times.Remove(times[0]);
+        }
+        SaveManager.Instance.SaveStudentFile(newStudent);
+           
     }
 }

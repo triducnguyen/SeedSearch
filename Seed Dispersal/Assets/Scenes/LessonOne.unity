@@ -26023,6 +26023,7 @@ MonoBehaviour:
   wait: 1
   hintObject: {fileID: 1661448437}
   hint: {fileID: 1998530410}
+  timerstorecount: 10
 --- !u!4 &1906313915
 Transform:
   m_ObjectHideFlags: 0
@@ -26891,7 +26892,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150.5, y: -138.7}
+  m_AnchoredPosition: {x: 176.7, y: -138.7}
   m_SizeDelta: {x: 610.9, y: 162.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2029175925
