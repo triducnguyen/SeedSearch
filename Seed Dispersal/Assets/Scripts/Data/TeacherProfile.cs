@@ -51,7 +51,7 @@ namespace SeedSearch
             List<StudentData> studentList = SaveManager.Instance.GetStudents();
             for(int i = 0; i < studentList.Count; i++)
             {
-                Student.transform.GetChild(0).GetComponent<Text>().text = studentList[i].UserName;
+                Student.transform.GetChild(0).GetComponent<Text>().text = studentList[i].FirstName + " " + studentList[i].LastName;
                 Instantiate(Student.transform, StudentSlot.transform);
             }
         }

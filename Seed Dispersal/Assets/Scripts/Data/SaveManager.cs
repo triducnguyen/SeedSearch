@@ -19,14 +19,14 @@ namespace SeedSearch
             base.Awake();
         }
 
-        void UpdateStudentDataPath(string studentName) => StudentPath = string.Format("{0}/{1}{2}.student", Application.persistentDataPath, "student", studentName);
+        void UpdateStudentDataPath(string firstName,string lastName) => StudentPath = string.Format("{0}/{1}{2}{3}.student", Application.persistentDataPath, "student", firstName,lastName);
         void UpdateTeacherDataPath(string teacherName,string password) => TeacherPath = string.Format("{0}/{1}{2}{3}.data", Application.persistentDataPath, "teacher", teacherName,password);
 
 
         //Create and save Student data
         public void SaveStudentFile(StudentData student)
         {
-            UpdateStudentDataPath(student.UserName);
+            UpdateStudentDataPath(student.FirstName , student.LastName);
             //Override the same file if the file exist
             if (File.Exists(StudentPath))
                 File.Delete(StudentPath);
@@ -57,7 +57,7 @@ namespace SeedSearch
         //Get studentFile by Student data (username)
         public StudentData LoadStudentData(StudentData student)
         {
-            UpdateStudentDataPath(student.UserName);
+            UpdateStudentDataPath(student.FirstName, student.LastName);
             string path = StudentPath;
             if (File.Exists(path))
             {
@@ -137,7 +137,7 @@ namespace SeedSearch
 
         public bool ExistData(StudentData data)
         {
-            UpdateStudentDataPath(data.UserName);
+            UpdateStudentDataPath(data.FirstName, data.LastName);
             if (File.Exists(StudentPath))
                 return true;
 
