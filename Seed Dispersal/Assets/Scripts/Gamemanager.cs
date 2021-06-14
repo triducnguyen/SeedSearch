@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class Gamemanager : MonoBehaviour
 {
     public StudentData studentProfile;
-    private List<float> times;
-    private List<float> sortedtimes;
+    [SerializeField] private List<float> times;
+    [SerializeField] private List<float> sortedtimes;
    
     public float timescalar;
     private float starttime;
@@ -24,8 +24,7 @@ public class Gamemanager : MonoBehaviour
     void Start()
     {
         //SaveManager.Instance.LoadStudentData(newStudent);
-        List<float> times = new List<float>();
-        List<float> sortedtimes = new List<float>();
+        
     }
 
     // Update is called once per frame
@@ -46,7 +45,6 @@ public class Gamemanager : MonoBehaviour
     public void endtimer(){
         endtime = Time.deltaTime;
         overalltime = endtime - starttime;
-        //times.Add(overalltime);
         times.Add(overalltime);
         Debug.Log("end time: " + endtime + " And overall time: " + overalltime);
     }
@@ -64,7 +62,9 @@ public class Gamemanager : MonoBehaviour
     private float timerstorecount;
     private bool inloop = false;
     public void savetimes(){
-        sortedtimes = times;
+        //sortedtimes = times;
+        List<float> sortedtimes = times.ToList();
+        //List<float> sortedtimes = new List<float>(times);
         sortedtimes.Sort();
         if(sortedtimes.Count % 2 == 0){
             median = sortedtimes[sortedtimes.Count/2];
@@ -72,20 +72,26 @@ public class Gamemanager : MonoBehaviour
             median = sortedtimes[sortedtimes.Count/2 + 1];
         }
         if(times.Count > timerstorecount / 4){
-            /*inloop = true;
-            while (inloop){
+            inloop = true;
+            //while (inloop){
                 for(int i = 0; i < times.Count; i++){
-                    if(i >= times.Count){ inloop = false;}
-                    if(times[i] > median * 1.5 || times[i] < median * 0.5){
-                        times.RemoveAt(i);
-                        break;
-                    }
+                    if(times.Count > i){
+                        if(times[i] > median * 1.5 || times[i] < median * 0.5){
+                            times.RemoveAt(i);
+                            Debug.Log("removing value " + times[i]);
+                            i--;
+                        }
+                    } else{Debug.Log("EROR");}
+                    //if(i >= times.Count){ inloop = false;}
+                    Debug.Log(i);
                 }
+            //}
+            
+            
+            /*while(times.Count > timerstorecount){
+                times.RemoveAt(0);
             }*/
             
-            while(times.Count > timerstorecount){
-                times.RemoveAt(0);
-            }
         }
 
 
@@ -106,9 +112,11 @@ public class Gamemanager : MonoBehaviour
         Debug.Log("average time" + avg);  
         Debug.Log("Median time" + median);  
     }
-    private float median;
+    [SerializeField] private float median;
     public void loadtimes(){
-        times = DUMMY; 
+        //times = DUMMY;
+        List<float> times = DUMMY.ToList();
+        //List<float> times = new List<float>(DUMMY); 
 
         //comment above
         Debug.Log("init Times");
