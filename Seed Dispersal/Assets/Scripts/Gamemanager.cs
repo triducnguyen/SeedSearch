@@ -27,7 +27,7 @@ public class Gamemanager : MonoBehaviour
     void Start()
     {
         //SaveManager.Instance.LoadStudentData(newStudent);
-        
+        hintObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -62,6 +62,7 @@ public class Gamemanager : MonoBehaviour
     public Text hint;
     IEnumerator Hinttimer(){
         yield return new WaitForSeconds(wait);
+        Debug.Log("Hint now appearing" + wait);
         hintObject.SetActive(true);
         hint.text = section;
     }
