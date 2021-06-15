@@ -670,7 +670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placedPrefab: {fileID: 0}
   instructions: {fileID: 0}
-  arCamera: {fileID: 0}
+  arCamera: {fileID: 1006089786}
   aRRaycastManager: {fileID: 0}
   onTouchHold: 0
   onMapTouch: 0
@@ -26870,13 +26870,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e569f34a6a72bba4dbfcd2530d3a4e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  studentProfile:
-    userName: 
-    password: 
-    times: 
-    firstPrompt: 
-    secondPrompt: 
-    thirdPrompt: 
+  times: []
+  sortedtimes: []
   timescalar: 2
   fillscreenwithcoloranimator: {fileID: 418415357}
   DUMMY:
@@ -26898,6 +26893,7 @@ MonoBehaviour:
   hintObject: {fileID: 1661448437}
   hint: {fileID: 1998530410}
   timerstorecount: 10
+  median: 0
 --- !u!4 &1906313915
 Transform:
   m_ObjectHideFlags: 0

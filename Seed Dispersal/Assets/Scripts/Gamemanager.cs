@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Gamemanager : MonoBehaviour
 {
-    public StudentData studentProfile;
+    [System.NonSerialized] public StudentData studentProfile;
     [SerializeField] private List<float> times;
     [SerializeField] private List<float> sortedtimes;
    
@@ -16,7 +16,7 @@ public class Gamemanager : MonoBehaviour
     private float overalltime;
 
     public Animator fillscreenwithcoloranimator;
-
+    
     [Header("TimerTesting")]
     public List<float> DUMMY; 
 
@@ -60,12 +60,13 @@ public class Gamemanager : MonoBehaviour
     }
     [SerializeField]
     private float timerstorecount;
-    private bool Reloop = false;
+    private bool inloop = false;
     public void savetimes(){
-        //sortedtimes = times;
-        //List<float> sortedtimes = times.ToList();
-        List<float> sortedtimes = times;
-        //List<float> sortedtimes = new List<float>(times);
+        Debug.Log("saving");
+        float[] passarray = new float[times.Count];
+        times.CopyTo(passarray);
+        sortedtimes = passarray.ToList();
+
         sortedtimes.Sort();
         if(sortedtimes.Count % 2 == 0){
             median = sortedtimes[sortedtimes.Count/2];
@@ -73,22 +74,43 @@ public class Gamemanager : MonoBehaviour
             median = sortedtimes[sortedtimes.Count/2 + 1];
         }
         if(times.Count > timerstorecount / 4){
-            Reloop = true;
-            Debug.Log("starting for loop");
-            //while (Reloop){
+            inloop = true;
+            while (inloop){
+                //Debug.Log("starting for loop");
+                /*int i = 0;
+                while(i < times.Count){
+                    if(i >= times.Count){
+                        inloop = false;
+                        break;
+                    }
+                    //if(times.Count > i){
+                        if(times[i] > median * 1.5 || times[i] < median * 0.5){                            
+                            //Debug.Log("removing value " + times[i]);
+                            times.RemoveAt(i);
+                            //i--;
+                            break;
+                        }
+                    //} else{Debug.Log("ERROR");}
+                    Debug.Log(i + " out of " + times.Count);
+
+                    i++;
+                }*/
                 for(int i = 0; i < times.Count; i++){
-                    if(times.Count > i){
+                    if(i >= times.Count){
+                        inloop = false;
+                        break;
+                    }
+                    //if(times.Count > i){
                         if(times[i] > median * 1.5 || times[i] < median * 0.5){
                             times.RemoveAt(i);
-                            Debug.Log("removing value " + times[i]);
-                            Reloop = true;
-                            i--;
+                            //Debug.Log("removing value " + times[i]);
+                            //i--;
+                            break;
                         }
-                    } else{Debug.Log("EROR");}
-                    //if(i >= times.Count){ inloop = false;}
-                    Debug.Log(i);
+                    //} else{Debug.Log("ERROR");}
+                    Debug.Log(i + " out of " + times.Count);
                 }
-            //}
+            }
             
             
             /*while(times.Count > timerstorecount){
@@ -102,10 +124,12 @@ public class Gamemanager : MonoBehaviour
     }
     [SerializeField] private float median;
     public void loadtimes(){
-        //times = DUMMY;
-        //List<float> times = DUMMY.ToList();
-        List<float> times = DUMMY;
-        //List<float> times = new List<float>(DUMMY); 
+        Debug.Log("Loading");
+        
+        float[] passarray = new float[DUMMY.Count];
+        DUMMY.CopyTo(passarray);
+        times = passarray.ToList();
+        
 
         //comment above
         
