@@ -13,17 +13,6 @@ namespace SeedSearch
         public TMP_InputField confirmPassWord;
         public Button createAccountButton;
         public GameObject Login;
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
 
         public void OnCreateAccount()
         {
