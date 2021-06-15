@@ -26888,6 +26888,11 @@ MonoBehaviour:
   - 200
   - 540
   - 1000
+  - 200
+  - 200
+  - 200
+  - 200
+  - 200
   wait: 1
   avg: 0
   hintObject: {fileID: 1661448437}

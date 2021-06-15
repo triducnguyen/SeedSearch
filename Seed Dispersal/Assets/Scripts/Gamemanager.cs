@@ -74,48 +74,17 @@ public class Gamemanager : MonoBehaviour
             median = sortedtimes[sortedtimes.Count/2 + 1];
         }
         if(times.Count > timerstorecount / 4){
-            inloop = true;
-            while (inloop){
-                //Debug.Log("starting for loop");
-                /*int i = 0;
-                while(i < times.Count){
-                    if(i >= times.Count){
-                        inloop = false;
-                        break;
-                    }
-                    //if(times.Count > i){
-                        if(times[i] > median * 1.5 || times[i] < median * 0.5){                            
-                            //Debug.Log("removing value " + times[i]);
-                            times.RemoveAt(i);
-                            //i--;
-                            break;
-                        }
-                    //} else{Debug.Log("ERROR");}
-                    Debug.Log(i + " out of " + times.Count);
-
-                    i++;
-                }*/
-                for(int i = 0; i < times.Count; i++){
-                    if(i >= times.Count){
-                        inloop = false;
-                        break;
-                    }
-                    //if(times.Count > i){
-                        if(times[i] > median * 1.5 || times[i] < median * 0.5){
-                            times.RemoveAt(i);
-                            //Debug.Log("removing value " + times[i]);
-                            //i--;
-                            break;
-                        }
-                    //} else{Debug.Log("ERROR");}
-                    Debug.Log(i + " out of " + times.Count);
+            
+            for(int i = 0; i < sortedtimes.Count; i++){
+                if(sortedtimes[i] > median * 1.5 || sortedtimes[i] < median * 0.5){
+                    times.Remove(sortedtimes[i]);
+                    Debug.Log("removing value " + sortedtimes[i]);
                 }
             }
-            
-            
-            /*while(times.Count > timerstorecount){
+
+            while(times.Count > timerstorecount){
                 times.RemoveAt(0);
-            }*/
+            }
             
         }
 
