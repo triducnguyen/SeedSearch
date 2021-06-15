@@ -97,6 +97,8 @@ namespace SeedSearch
             SaveManager.Instance.teacherProfile.Name = editNameField.text;
         }
 
+
+
     }
 }
 
