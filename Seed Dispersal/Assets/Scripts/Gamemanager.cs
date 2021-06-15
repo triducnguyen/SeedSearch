@@ -16,6 +16,9 @@ public class Gamemanager : MonoBehaviour
     private float overalltime;
 
     public Animator fillscreenwithcoloranimator;
+
+    private float clock = 0;
+    public float overtime;
     
     [Header("TimerTesting")]
     public List<float> DUMMY; 
@@ -30,7 +33,8 @@ public class Gamemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(endtime - starttime > 10*60){
+        clock += Time.deltaTime;
+        if(clock - starttime > overtime * 60){
             fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", true);
         }
     }
@@ -38,12 +42,15 @@ public class Gamemanager : MonoBehaviour
     //John Add
     public void startHintTimer(string currentSection){
         section = currentSection;
-        starttime = Time.deltaTime;
+        clock = 0;
+        //starttime = Time.deltaTime;
+        starttime = clock;
         StartCoroutine(Hinttimer());
         Debug.Log("start time: " + starttime);
     }
     public void endtimer(){
-        endtime = Time.deltaTime;
+        //endtime = Time.deltaTime;
+        endtime = clock;
         overalltime = endtime - starttime;
         times.Add(overalltime);
         Debug.Log("end time: " + endtime + " And overall time: " + overalltime);

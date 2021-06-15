@@ -26874,6 +26874,7 @@ MonoBehaviour:
   sortedtimes: []
   timescalar: 2
   fillscreenwithcoloranimator: {fileID: 418415357}
+  overtime: 10
   DUMMY:
   - 150
   - 225
@@ -26888,10 +26889,10 @@ MonoBehaviour:
   - 200
   - 540
   - 1000
-  - 200
-  - 200
-  - 200
-  - 200
+  - 250
+  - 150
+  - 175
+  - 225
   - 200
   wait: 1
   avg: 0
