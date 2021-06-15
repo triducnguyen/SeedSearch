@@ -11,6 +11,7 @@ public class StudentData
     [SerializeField] private string firstPrompt;
     [SerializeField] private string secondPrompt;
     [SerializeField] private string thirdPrompt;
+    [SerializeField] private string answer1;
 
     public string Times { get => times; set => times = value; }
     public string FirstName { get => firstName; set => firstName = value; }
@@ -18,4 +19,5 @@ public class StudentData
     public string FirstPrompt { get => firstPrompt; set => firstPrompt = value; }
     public string SecondPrompt { get => secondPrompt; set => secondPrompt = value; }
     public string ThirdPrompt { get => thirdPrompt; set => thirdPrompt = value; }
+    public string Answer1 { get => answer1; set => answer1 = value; }
 }
