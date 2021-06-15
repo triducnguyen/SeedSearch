@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
  using System.Linq;
 
+namespace SeedSearch{
 public class Gamemanager : MonoBehaviour
 {
-    [System.NonSerialized] public StudentData studentProfile;
+    [System.NonSerialized] public StudentData currentStudent;
     [SerializeField] private List<float> times;
+    [SerializeField] private List<float> alltimes;
     [SerializeField] private List<float> sortedtimes;
    
     public float timescalar;
@@ -23,10 +25,13 @@ public class Gamemanager : MonoBehaviour
     [Header("TimerTesting")]
     public List<float> DUMMY; 
 
-    // Start is called before the first frame update
+    void Awake(){
+        loadtimes();
+    }
     void Start()
     {
-        //SaveManager.Instance.LoadStudentData(newStudent);
+        //currentStudent = SaveManager.Instance.studentProfile;
+        
         hintObject.SetActive(false);
     }
 
@@ -46,13 +51,14 @@ public class Gamemanager : MonoBehaviour
         //starttime = Time.deltaTime;
         starttime = clock;
         StartCoroutine(Hinttimer());
-        Debug.Log("start time: " + starttime);
+        Debug.Log("start time at: " + starttime);
     }
     public void endtimer(){
         //endtime = Time.deltaTime;
         endtime = clock;
         overalltime = endtime - starttime;
         times.Add(overalltime);
+        alltimes.Add(overalltime);
         Debug.Log("end time: " + endtime + " And overall time: " + overalltime);
     }
     private string section;
@@ -96,21 +102,34 @@ public class Gamemanager : MonoBehaviour
             
         }
 
-
-        //SaveManager.Instance.SaveStudentFile(newStudent); 
+        currentStudent.Times =  times;
+        currentStudent.Times = alltimes;
+        SaveManager.Instance.SaveStudentFile(currentStudent); 
     }
     [SerializeField] private float median;
     public void loadtimes(){
         Debug.Log("Loading");
-        
-        float[] passarray = new float[DUMMY.Count];
+        //SaveManager.Instance.LoadStudentData(currentStudent);
+        currentStudent = SaveManager.Instance.LoadStudentData(SaveManager.Instance.studentProfile);
+        times = currentStudent.Times;
+        alltimes = currentStudent.OverallTimes;
+
+        if(times == null){
+            times.Add(1);
+            alltimes.Add(1);
+        }
+
+        /*float[] passarray = new float[DUMMY.Count];
         DUMMY.CopyTo(passarray);
         times = passarray.ToList();
-        
-
-        //comment above
+        float[] passarray2 = new float[DUMMY.Count];
+        DUMMY.CopyTo(passarray2);
+        alltimes = passarray2.ToList();*/
         
         avg = times.Average();
         wait = avg * 2;
+
+        
     }
+}
 }
