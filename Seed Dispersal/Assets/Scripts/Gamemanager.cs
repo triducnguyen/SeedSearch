@@ -8,9 +8,10 @@ namespace SeedSearch{
 public class Gamemanager : MonoBehaviour
 {
     [System.NonSerialized] public StudentData currentStudent;
-    [SerializeField] private List<float> times;
-    [SerializeField] private List<float> alltimes;
+    [SerializeField] private List<float> times = new List<float>(1);
+    [SerializeField] private List<float> alltimes = new List<float>(1);
     [SerializeField] private List<float> sortedtimes;
+    [SerializeField] private List<float> MT;
    
     public float timescalar;
     private float starttime;
@@ -24,6 +25,7 @@ public class Gamemanager : MonoBehaviour
     
     [Header("TimerTesting")]
     public List<float> DUMMY; 
+    public Text info;
 
     void Awake(){
         loadtimes();
@@ -31,7 +33,7 @@ public class Gamemanager : MonoBehaviour
     void Start()
     {
         //currentStudent = SaveManager.Instance.studentProfile;
-        
+        //loadtimes();
         hintObject.SetActive(false);
     }
 
@@ -60,6 +62,8 @@ public class Gamemanager : MonoBehaviour
         times.Add(overalltime);
         alltimes.Add(overalltime);
         Debug.Log("end time: " + endtime + " And overall time: " + overalltime);
+        hintObject.SetActive(false);
+        fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", false);
     }
     private string section;
     public float wait;
@@ -87,7 +91,7 @@ public class Gamemanager : MonoBehaviour
         }else{
             median = sortedtimes[sortedtimes.Count/2 + 1];
         }
-        if(times.Count > timerstorecount / 4){
+        if(times.Count > timerstorecount / 2){
             
             for(int i = 0; i < sortedtimes.Count; i++){
                 if(sortedtimes[i] > median * 1.5 || sortedtimes[i] < median * 0.5){
@@ -101,9 +105,14 @@ public class Gamemanager : MonoBehaviour
             }
             
         }
+        times.Remove(0);
+        alltimes.Remove(0);
 
+        avg = times.Average();
+        wait = avg * 2;
+        
         currentStudent.Times =  times;
-        currentStudent.Times = alltimes;
+        currentStudent.OverallTimes = alltimes;
         SaveManager.Instance.SaveStudentFile(currentStudent); 
     }
     [SerializeField] private float median;
@@ -111,25 +120,38 @@ public class Gamemanager : MonoBehaviour
         Debug.Log("Loading");
         //SaveManager.Instance.LoadStudentData(currentStudent);
         currentStudent = SaveManager.Instance.LoadStudentData(SaveManager.Instance.studentProfile);
-        times = currentStudent.Times;
-        alltimes = currentStudent.OverallTimes;
-
-        if(times == null){
-            times.Add(1);
-            alltimes.Add(1);
+        if(currentStudent.Times != null){
+            times = currentStudent.Times;
+            alltimes = currentStudent.OverallTimes;
+        } else{
+            times.Add(1f);
+            alltimes.Add(1f);
         }
 
-        /*float[] passarray = new float[DUMMY.Count];
-        DUMMY.CopyTo(passarray);
-        times = passarray.ToList();
-        float[] passarray2 = new float[DUMMY.Count];
-        DUMMY.CopyTo(passarray2);
-        alltimes = passarray2.ToList();*/
+    
         
         avg = times.Average();
         wait = avg * 2;
 
         
+    }
+
+    public void cleartimes(){
+        /*float[] passarray = new float[times.Count];
+        MT.CopyTo(passarray);
+        times = passarray.ToList();
+        alltimes = passarray.ToList();*/
+        while(times.Count > 0){
+                times.RemoveAt(0);
+        }while(alltimes.Count > 0){
+                alltimes.RemoveAt(0);
+        }
+        times.Add(1f);
+        alltimes.Add(1f);
+        currentStudent.Times =  times;
+        currentStudent.OverallTimes = alltimes;
+        SaveManager.Instance.SaveStudentFile(currentStudent); 
+        loadtimes();
     }
 }
 }
