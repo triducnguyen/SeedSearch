@@ -45,7 +45,9 @@ namespace SeedSearch
                     SaveManager.Instance.studentProfile.ThirdPrompt = prompts[currentPrompt].GetComponent<TMP_InputField>().text;
                     displayTexts[0].text = SaveManager.Instance.studentProfile.FirstPrompt;
                     displayTexts[1].text = SaveManager.Instance.studentProfile.SecondPrompt;
-                    displayTexts[2].text = SaveManager.Instance.studentProfile.ThirdPrompt;
+                    displayTexts[2].text = SaveManager.Instance.studentProfile.ThirdPrompt;               
+                    break;
+                case 3:
                     SaveManager.Instance.SaveStudentFile(SaveManager.Instance.studentProfile);
                     break;
             }
