@@ -19,6 +19,8 @@ public class PlaceOnPlane : MonoBehaviour
 
     static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
 
+    public GameObject beginbutton;
+
     private void Awake(){
         raycastManager = GetComponent<ARRaycastManager>();
         Island.SetActive(false);
@@ -37,7 +39,7 @@ public class PlaceOnPlane : MonoBehaviour
     }
 
     private void Update(){
-        if(Islandspawn == false){
+        if(Islandspawn == false && beginbutton.activeInHierarchy == false){
             if(!TryGetTouchPosition(out Vector2 touchPosition)){
                 return;
             }

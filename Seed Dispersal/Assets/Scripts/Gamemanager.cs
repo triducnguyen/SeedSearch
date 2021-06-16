@@ -4,11 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
  using System.Linq;
 
+namespace SeedSearch{
 public class Gamemanager : MonoBehaviour
 {
-    public StudentData studentProfile;
-    [SerializeField] private List<float> times;
+    [System.NonSerialized] public StudentData currentStudent;
+    [SerializeField] private List<float> times = new List<float>(1);
+    [SerializeField] private List<float> alltimes = new List<float>(1);
     [SerializeField] private List<float> sortedtimes;
+    [SerializeField] private List<float> MT;
    
     public float timescalar;
     private float starttime;
@@ -17,20 +20,28 @@ public class Gamemanager : MonoBehaviour
 
     public Animator fillscreenwithcoloranimator;
 
+    private float clock = 0;
+    public float overtime;
+    
     [Header("TimerTesting")]
     public List<float> DUMMY; 
+    public Text info;
 
-    // Start is called before the first frame update
+    void Awake(){
+        loadtimes();
+    }
     void Start()
     {
-        //SaveManager.Instance.LoadStudentData(newStudent);
-        
+        //currentStudent = SaveManager.Instance.studentProfile;
+        //loadtimes();
+        hintObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(endtime - starttime > 10*60){
+        clock += Time.deltaTime;
+        if(clock - starttime > overtime * 60){
             fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", true);
         }
     }
@@ -38,15 +49,21 @@ public class Gamemanager : MonoBehaviour
     //John Add
     public void startHintTimer(string currentSection){
         section = currentSection;
-        starttime = Time.deltaTime;
+        clock = 0;
+        //starttime = Time.deltaTime;
+        starttime = clock;
         StartCoroutine(Hinttimer());
-        Debug.Log("start time: " + starttime);
+        Debug.Log("start time at: " + starttime);
     }
     public void endtimer(){
-        endtime = Time.deltaTime;
+        //endtime = Time.deltaTime;
+        endtime = clock;
         overalltime = endtime - starttime;
         times.Add(overalltime);
+        alltimes.Add(overalltime);
         Debug.Log("end time: " + endtime + " And overall time: " + overalltime);
+        hintObject.SetActive(false);
+        fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", false);
     }
     private string section;
     public float wait;
@@ -55,61 +72,86 @@ public class Gamemanager : MonoBehaviour
     public Text hint;
     IEnumerator Hinttimer(){
         yield return new WaitForSeconds(wait);
+        Debug.Log("Hint now appearing" + wait);
         hintObject.SetActive(true);
         hint.text = section;
     }
     [SerializeField]
     private float timerstorecount;
-    private bool Reloop = false;
+    private bool inloop = false;
     public void savetimes(){
-        //sortedtimes = times;
-        //List<float> sortedtimes = times.ToList();
-        List<float> sortedtimes = times;
-        //List<float> sortedtimes = new List<float>(times);
+        Debug.Log("saving");
+        float[] passarray = new float[times.Count];
+        times.CopyTo(passarray);
+        sortedtimes = passarray.ToList();
+
         sortedtimes.Sort();
         if(sortedtimes.Count % 2 == 0){
             median = sortedtimes[sortedtimes.Count/2];
         }else{
             median = sortedtimes[sortedtimes.Count/2 + 1];
         }
-        if(times.Count > timerstorecount / 4){
-            Reloop = true;
-            Debug.Log("starting for loop");
-            //while (Reloop){
-                for(int i = 0; i < times.Count; i++){
-                    if(times.Count > i){
-                        if(times[i] > median * 1.5 || times[i] < median * 0.5){
-                            times.RemoveAt(i);
-                            Debug.Log("removing value " + times[i]);
-                            Reloop = true;
-                            i--;
-                        }
-                    } else{Debug.Log("EROR");}
-                    //if(i >= times.Count){ inloop = false;}
-                    Debug.Log(i);
+        if(times.Count > timerstorecount / 2){
+            
+            for(int i = 0; i < sortedtimes.Count; i++){
+                if(sortedtimes[i] > median * 1.5 || sortedtimes[i] < median * 0.5){
+                    times.Remove(sortedtimes[i]);
+                    Debug.Log("removing value " + sortedtimes[i]);
                 }
-            //}
-            
-            
-            /*while(times.Count > timerstorecount){
+            }
+
+            while(times.Count > timerstorecount){
                 times.RemoveAt(0);
-            }*/
+            }
             
         }
+        times.Remove(0);
+        alltimes.Remove(0);
 
-
-        //SaveManager.Instance.SaveStudentFile(newStudent); 
+        avg = times.Average();
+        wait = avg * 2;
+        
+        currentStudent.Times =  times;
+        currentStudent.OverallTimes = alltimes;
+        SaveManager.Instance.SaveStudentFile(currentStudent); 
     }
     [SerializeField] private float median;
     public void loadtimes(){
-        //times = DUMMY;
-        //List<float> times = DUMMY.ToList();
-        List<float> times = DUMMY;
-        //List<float> times = new List<float>(DUMMY); 
+        Debug.Log("Loading");
+        //SaveManager.Instance.LoadStudentData(currentStudent);
+        currentStudent = SaveManager.Instance.LoadStudentData(SaveManager.Instance.studentProfile);
+        if(currentStudent.Times != null){
+            times = currentStudent.Times;
+            alltimes = currentStudent.OverallTimes;
+        } else{
+            times.Add(1f);
+            alltimes.Add(1f);
+        }
 
-        //comment above
+    
         
         avg = times.Average();
         wait = avg * 2;
+
+        
     }
+
+    public void cleartimes(){
+        /*float[] passarray = new float[times.Count];
+        MT.CopyTo(passarray);
+        times = passarray.ToList();
+        alltimes = passarray.ToList();*/
+        while(times.Count > 0){
+                times.RemoveAt(0);
+        }while(alltimes.Count > 0){
+                alltimes.RemoveAt(0);
+        }
+        times.Add(1f);
+        alltimes.Add(1f);
+        currentStudent.Times =  times;
+        currentStudent.OverallTimes = alltimes;
+        SaveManager.Instance.SaveStudentFile(currentStudent); 
+        loadtimes();
+    }
+}
 }
