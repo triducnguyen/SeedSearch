@@ -32,18 +32,18 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
-/*.userprefs
-/*.csproj
-/*.pidb
+SeedDispersal/*.userprefs
+SeedDispersal/*.csproj
+SeedDispersal/*.pidb
 *.pidb.meta
-/*.suo
-/*.sln*
-/*.user
-/*.unityproj
-/*.booproj
+SeedDispersal/*.suo
+SeedDispersal/*.sln*
+SeedDispersal/*.user
+SeedDispersal/*.unityproj
+SeedDispersal/*.booproj
 .consulo/
-/*.tmp
-/*.svd
+SeedDispersal/*.tmp
+SeedDispersal/*.svd
 
 # Unity3D generated meta files
 *.pidb.meta
