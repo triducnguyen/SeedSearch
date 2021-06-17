@@ -36,18 +36,19 @@ namespace SeedSearch
             switch (currentPrompt)
             {
                 case 0:        
-                    SaveManager.Instance.studentProfile.FirstPrompt = prompts[currentPrompt].GetComponent<TMP_InputField>().text;
+                    SaveManager.Instance.SaveStudentFile(SaveManager.Instance.studentProfile);
                     break;
                 case 1:
-                    SaveManager.Instance.studentProfile.SecondPrompt = prompts[currentPrompt].GetComponent<TMP_InputField>().text;
+                    SaveManager.Instance.studentProfile.FirstPrompt = prompts[currentPrompt].GetComponent<TMP_InputField>().text;
                     break;
                 case 2:
+                    SaveManager.Instance.studentProfile.SecondPrompt = prompts[currentPrompt].GetComponent<TMP_InputField>().text;
+                    break;
+                case 3:
                     SaveManager.Instance.studentProfile.ThirdPrompt = prompts[currentPrompt].GetComponent<TMP_InputField>().text;
                     displayTexts[0].text = SaveManager.Instance.studentProfile.FirstPrompt;
                     displayTexts[1].text = SaveManager.Instance.studentProfile.SecondPrompt;
-                    displayTexts[2].text = SaveManager.Instance.studentProfile.ThirdPrompt;               
-                    break;
-                case 3:
+                    displayTexts[2].text = SaveManager.Instance.studentProfile.ThirdPrompt;
                     SaveManager.Instance.SaveStudentFile(SaveManager.Instance.studentProfile);
                     break;
             }

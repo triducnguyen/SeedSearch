@@ -55,27 +55,18 @@ namespace SeedSearch
             for(int i = 0; i < studentList.Count; i++)
             {
                 GameObject newStudent = Instantiate(Student);
-                StudentProfile studentScript = newStudent.AddComponent<StudentProfile>();
-                studentScript.student = studentList[i];
-                studentScript.firstPrompt = studentProfile.GetComponent<StudentProfile>().firstPrompt;
-                studentScript.secondPrompt = studentProfile.GetComponent<StudentProfile>().secondPrompt;
-                studentScript.thirdPrompt = studentProfile.GetComponent<StudentProfile>().thirdPrompt;
-
-                studentScript.firstPrompt.text = studentList[i].FirstPrompt;
-                studentScript.secondPrompt.text = studentList[i].SecondPrompt;
-                studentScript.thirdPrompt.text = studentList[i].ThirdPrompt;
-
+                StudentData data = studentList[i]; 
+                newStudent.GetComponent<Button>().onClick.AddListener(() => OpenStudentProfile(data));
                 newStudent.transform.GetChild(0).GetComponent<Text>().text = studentList[i].FirstName + " " + studentList[i].LastName;
                 newStudent.transform.SetParent(StudentSlot.transform);
-                newStudent.GetComponent<Button>().onClick.AddListener(OpenStudentProfile);
 
             }
         }
 
-        public void OpenStudentProfile()
+        public void OpenStudentProfile(StudentData data)
         {
-            Debug.Log("hit");
             studentProfile.SetActive(true);
+            studentProfile.GetComponent<StudentProfile>().student = data;
         }
 
         public void OnLogout()
