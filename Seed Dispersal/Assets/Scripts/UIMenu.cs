@@ -10,6 +10,7 @@ namespace SeedSearch
         public static UIMenu Instance;
         // Start is called before the first frame update
         public List<GameObject> menus;
+
         public void ChangeMenu(GameObject menu)
         {
             foreach (GameObject obj in menus)
