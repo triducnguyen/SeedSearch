@@ -72,7 +72,8 @@ namespace SeedSearch
                         if (SaveManager.Instance.ExistData(currentStudent))
                         {
                             SaveManager.Instance.studentProfile = SaveManager.Instance.LoadStudentData(currentStudent);
-                            SceneManager.LoadScene("StoreInput");
+                            //SceneManager.LoadScene("StoreInput");
+                            SceneManager.LoadScene("LessonOne");
                         }
                         else
                         {

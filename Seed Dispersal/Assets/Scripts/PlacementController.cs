@@ -92,7 +92,7 @@ public class PlacementController : MonoBehaviour
 
         if(Input.touchCount > 0)
         {
-            Debug.Log(Input.touchCount);
+            //Debug.Log(Input.touchCount);
             Touch touch = Input.GetTouch(0);
             touchPosition = touch.position;
 

@@ -5,7 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class StudentData
 {
-    [SerializeField] private string times;
+    [SerializeField] private List<float> times;
+    [SerializeField] private List<float> overalltimes;
     [SerializeField] private string firstName;
     [SerializeField] private string lastName;
     [SerializeField] private string firstPrompt;
@@ -13,7 +14,8 @@ public class StudentData
     [SerializeField] private string thirdPrompt;
     [SerializeField] private string answer1;
 
-    public string Times { get => times; set => times = value; }
+    public List<float> OverallTimes { get => overalltimes; set => overalltimes = value; }
+    public List<float> Times { get => times; set => times = value; }
     public string FirstName { get => firstName; set => firstName = value; }
     public string LastName { get => lastName; set => lastName = value; }
     public string FirstPrompt { get => firstPrompt; set => firstPrompt = value; }
