@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 namespace SeedSearch
 {
@@ -35,7 +36,7 @@ namespace SeedSearch
         {
             switch (currentPrompt)
             {
-                case 0:        
+                case 0:
                     SaveManager.Instance.SaveStudentFile(SaveManager.Instance.studentProfile);
                     break;
                 case 1:
@@ -55,6 +56,12 @@ namespace SeedSearch
             currentPrompt++;
             ActivePrompt(currentPrompt);
 
+        }
+
+
+        public void Quit()
+        {
+            SceneManager.LoadScene("UI");
         }
     }
 }
