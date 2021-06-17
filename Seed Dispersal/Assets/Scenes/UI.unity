@@ -4247,7 +4247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   student:
-    times: 
+    times: []
+    overalltimes: []
     firstName: 
     lastName: 
     firstPrompt: 
@@ -8162,7 +8163,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loginType: 0
   currentStudent:
-    times: 
+    times: []
+    overalltimes: []
     firstName: 
     lastName: 
     firstPrompt: 
