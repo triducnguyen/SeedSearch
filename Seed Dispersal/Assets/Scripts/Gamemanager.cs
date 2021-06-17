@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
  using System.Linq;
+ 
+using UnityEngine.SceneManagement;
 
 namespace SeedSearch{
 public class Gamemanager : MonoBehaviour
@@ -64,6 +66,7 @@ public class Gamemanager : MonoBehaviour
         Debug.Log("end time: " + endtime + " And overall time: " + overalltime);
         hintObject.SetActive(false);
         fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", false);
+        savetimes();
     }
     private string section;
     public float wait;
@@ -152,6 +155,9 @@ public class Gamemanager : MonoBehaviour
         currentStudent.OverallTimes = alltimes;
         SaveManager.Instance.SaveStudentFile(currentStudent); 
         loadtimes();
+    }
+    public void gotoquestions(){
+        SceneManager.LoadScene("StoreInput");
     }
 }
 }
