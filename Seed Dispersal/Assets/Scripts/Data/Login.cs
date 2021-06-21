@@ -74,6 +74,8 @@ namespace SeedSearch
                             SaveManager.Instance.studentProfile = SaveManager.Instance.LoadStudentData(currentStudent);
                             SceneManager.LoadScene("StoreInput");
                             //SceneManager.LoadScene("LessonOne");
+                            firstName.text = "";
+                            lastName.text = "";
                         }
                         else
                         {
@@ -91,6 +93,8 @@ namespace SeedSearch
                             SaveManager.Instance.teacherProfile = SaveManager.Instance.LoadTeacherData(currentTeacher);
                             gameObject.SetActive(false);
                             profile.SetActive(true);
+                            userName.text = "";
+                            password.text = "";
                         }
                         else
                         {
