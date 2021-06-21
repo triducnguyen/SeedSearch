@@ -7,9 +7,7 @@ namespace SeedSearch
 
     public enum AnswerType
     {
-        A,
-        B,
-        C,
-        D
+        Correct,
+        Incorrect
     }
 }

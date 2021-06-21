@@ -11,7 +11,7 @@ namespace SeedSearch
         public TMP_Text firstPrompt;
         public TMP_Text secondPrompt;
         public TMP_Text thirdPrompt;
-        public TMP_Text answer1;
+        public TMP_Text answer;
         // Start is called before the first frame update
         private void Start()
         {
@@ -28,7 +28,7 @@ namespace SeedSearch
             firstPrompt.text = student.FirstPrompt;
             secondPrompt.text = student.SecondPrompt;
             thirdPrompt.text = student.ThirdPrompt;
-            answer1.text = student.Answer1;
+            answer.text = "Attemps: " + student.Answers.Count;
         }
     }
 }

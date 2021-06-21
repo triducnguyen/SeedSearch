@@ -12,7 +12,7 @@ public class StudentData
     [SerializeField] private string firstPrompt;
     [SerializeField] private string secondPrompt;
     [SerializeField] private string thirdPrompt;
-    [SerializeField] private string answer1;
+    [SerializeField] private List<string> answers = new List<string>();
 
     public List<float> OverallTimes { get => overalltimes; set => overalltimes = value; }
     public List<float> Times { get => times; set => times = value; }
@@ -21,5 +21,5 @@ public class StudentData
     public string FirstPrompt { get => firstPrompt; set => firstPrompt = value; }
     public string SecondPrompt { get => secondPrompt; set => secondPrompt = value; }
     public string ThirdPrompt { get => thirdPrompt; set => thirdPrompt = value; }
-    public string Answer1 { get => answer1; set => answer1 = value; }
+    public List<string> Answers { get => answers; set => answers = value; }
 }
