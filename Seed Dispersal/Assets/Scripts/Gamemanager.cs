@@ -62,6 +62,8 @@ public class Gamemanager : MonoBehaviour
     }
 
     //John Add
+    
+    //Start Here
     public void startHintTimer(string currentSection){
         section = currentSection;
         clock = 0;
@@ -71,6 +73,8 @@ public class Gamemanager : MonoBehaviour
         Debug.Log("start time at: " + starttime);
         usercontinue = "below5";
     }
+
+    //End Here
     public void endtimer(){
         //endtime = Time.deltaTime;
         endtime = clock;
