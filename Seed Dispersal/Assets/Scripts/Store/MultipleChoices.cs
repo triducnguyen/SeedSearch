@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 namespace SeedSearch
 {
@@ -9,55 +10,64 @@ namespace SeedSearch
     {
         [SerializeField] private AnswerType answerType;
 
-        public TMP_Text answerA;
-        public TMP_Text answerB;
-        public TMP_Text answerC;
-        public TMP_Text answerD;
+        public TMP_Text notification;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
+        public void SelectCorrect(GameObject answer) {
+            answerType = AnswerType.Correct;
+            TMP_Text answerBox = answer.GetComponent<TMP_Text>();
+            Debug.Log(answerBox.text);
+            SaveAnswer(answerBox.text);
         }
-
-        public void SelectA() {
-            answerType = AnswerType.A;
-            SaveAnswer();
-        }
-        public void SelectB()
+        public void SelectIncorrect(GameObject answer)
         {
-            answerType = AnswerType.B;
-            SaveAnswer();
-        }
-        public void SelectC()
-        {
-            answerType = AnswerType.C;
-            SaveAnswer();
-        }
-        public void SelectD()
-        {
-            answerType = AnswerType.D;
-            SaveAnswer();
+            answerType = AnswerType.Incorrect;
+            TMP_Text answerBox = answer.GetComponent<TMP_Text>();
+            Debug.Log(answerBox.text);
+            SaveAnswer(answerBox.text);
         }
 
-        public void SaveAnswer()
+
+        public void SaveAnswer(string answer)
         {
             switch (answerType)
             {
-                case AnswerType.A:
-                    SaveManager.Instance.studentProfile.Answer1 = answerA.text;
+                case AnswerType.Correct:
+                    if(SaveManager.Instance.studentProfile.Answers == null)
+                    {
+                        SaveManager.Instance.studentProfile.Answers = new List<string>();
+                        SaveManager.Instance.studentProfile.Answers.Add(answer);
+                    } else
+                    SaveManager.Instance.studentProfile.Answers.Add(answer);
+                    StartCoroutine(Notification());
                     break;
-                case AnswerType.B:
-                    SaveManager.Instance.studentProfile.Answer1 = answerB.text;
-                    break;
-                case AnswerType.C:
-                    SaveManager.Instance.studentProfile.Answer1 = answerC.text;
-                    break;
-                case AnswerType.D:
-                    SaveManager.Instance.studentProfile.Answer1 = answerD.text;
+                case AnswerType.Incorrect:
+                    if (SaveManager.Instance.studentProfile.Answers == null)
+                    {
+                        SaveManager.Instance.studentProfile.Answers = new List<string>();
+                        SaveManager.Instance.studentProfile.Answers.Add(answer);
+                    } else
+                    SaveManager.Instance.studentProfile.Answers.Add(answer);
+                    StartCoroutine(Notification());
                     break;
             }
         }
-
+        
+        public IEnumerator Notification()
+        {
+            notification.gameObject.SetActive(true);
+            switch (answerType)
+            {
+                case AnswerType.Correct:
+                    notification.color = Color.green;
+                    notification.text = "You got correct";
+                    break;
+                case AnswerType.Incorrect:
+                    notification.color = Color.red;
+                    notification.text = "Please try again";
+                    break;
+            }
+                    yield return new WaitForSeconds(5);
+                    notification.gameObject.SetActive(false);
+        }
     }
 }
