@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MapMovement : PlacementController
+public class MapMovement : MonoBehaviour
 {
     bool mapDown = true;
     public bool[] setOn = new bool[5];
