@@ -22,6 +22,7 @@ public class Gamemanager : MonoBehaviour
 
     public Animator fillscreenwithcoloranimator;
     public GameObject fillscreencolor;
+    public GameObject stillther;
 
     private float clock = 0;
     public float overtime;
@@ -34,7 +35,7 @@ public class Gamemanager : MonoBehaviour
     public InputField lastnameI;
     private string firstname;
     private string lastname;
-    private bool usercontinue;
+    private string usercontinue;
 
     void Awake(){
         loadtimes();
@@ -45,15 +46,18 @@ public class Gamemanager : MonoBehaviour
         //loadtimes();
         hintObject.SetActive(false);
         fillscreencolor.SetActive(false);
+        stillther.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         clock += Time.deltaTime;
-        if(clock - starttime > overtime * 60 && usercontinue == false){
+        if(clock - starttime > overtime * 60 && usercontinue == "after5"){
             fillscreencolor.SetActive(true);
             fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", true);
+        } else if(clock - starttime > (overtime * 60)/2 && usercontinue == "below5"){
+            stillther.SetActive(true);
         }
     }
 
@@ -65,7 +69,7 @@ public class Gamemanager : MonoBehaviour
         starttime = clock;
         StartCoroutine(Hinttimer());
         Debug.Log("start time at: " + starttime);
-        usercontinue = false;
+        usercontinue = "below5";
     }
     public void endtimer(){
         //endtime = Time.deltaTime;
@@ -174,8 +178,15 @@ public class Gamemanager : MonoBehaviour
         /*if(firstnameI.text == firstname && lastnameI.text == lastname){
             hintObject.SetActive(false);
         }*/
-        usercontinue = true;
-        fillscreencolor.SetActive(false);
+        if(usercontinue == "below5"){
+            usercontinue = "after5";            
+            stillther.SetActive(false);
+        }else if(usercontinue == "after5"){
+            usercontinue = "after10";
+            fillscreencolor.SetActive(false);
+        }else{
+            Debug.Log("error with relog");
+        }
     }
 }
 }

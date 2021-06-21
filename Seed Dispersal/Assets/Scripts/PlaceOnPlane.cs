@@ -25,11 +25,12 @@ public class PlaceOnPlane : MonoBehaviour
 
     private void Awake(){
         raycastManager = GetComponent<ARRaycastManager>();
-        //Island.SetActive(false);
+        Island.SetActive(false);
     }
     void Start(){
         
         aRPlaneManager = GetComponent<ARPlaneManager>();
+        beginbutton.SetActive(false);
     }
     bool TryGetTouchPosition(out Vector2 touchPosition){
         if(Input.touchCount > 0){
@@ -41,25 +42,22 @@ public class PlaceOnPlane : MonoBehaviour
     }
 
     private void Update(){
-        if(begin){
-            if(Islandspawn == false && beginbutton.activeInHierarchy == false){
-                if(!TryGetTouchPosition(out Vector2 touchPosition)){
-                    return;
-                }
-                
-                if(raycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinPolygon)){
-                    var hitPose = s_Hits[0].pose;
-                    Islandheight = (this.transform.position.y - hitPose.position.y) * heightscalar;
-                    //Island.SetActive(true);
-                    Island.transform.position = hitPose.position + new Vector3(0,Islandheight,0);
-                    Islandspawn = true;
-
-                    toggleplanedetection();
-                }
+        if(Islandspawn == false && beginbutton.activeInHierarchy == false){
+            if(!TryGetTouchPosition(out Vector2 touchPosition)){
+                return;
             }
-        }else if(beginbutton.activeInHierarchy == false){
-            begin = true;
+            
+            if(raycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinPolygon)){
+                var hitPose = s_Hits[0].pose;
+                Islandheight = (this.transform.position.y - hitPose.position.y) * heightscalar;
+                Island.SetActive(true);
+                Island.transform.position = hitPose.position + new Vector3(0,Islandheight,0);
+                Islandspawn = true;
+                beginbutton.SetActive(true);
+                toggleplanedetection();
+            }
         }
+        
 
     }
 
