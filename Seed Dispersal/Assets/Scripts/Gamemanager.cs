@@ -21,6 +21,7 @@ public class Gamemanager : MonoBehaviour
     private float overalltime;
 
     public Animator fillscreenwithcoloranimator;
+    public GameObject fillscreencolor;
 
     private float clock = 0;
     public float overtime;
@@ -28,6 +29,12 @@ public class Gamemanager : MonoBehaviour
     [Header("TimerTesting")]
     public List<float> DUMMY; 
     public Text info;
+
+    public InputField firstnameI;
+    public InputField lastnameI;
+    private string firstname;
+    private string lastname;
+    private bool usercontinue;
 
     void Awake(){
         loadtimes();
@@ -37,13 +44,15 @@ public class Gamemanager : MonoBehaviour
         //currentStudent = SaveManager.Instance.studentProfile;
         //loadtimes();
         hintObject.SetActive(false);
+        fillscreencolor.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         clock += Time.deltaTime;
-        if(clock - starttime > overtime * 60){
+        if(clock - starttime > overtime * 60 && usercontinue == false){
+            fillscreencolor.SetActive(true);
             fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", true);
         }
     }
@@ -56,6 +65,7 @@ public class Gamemanager : MonoBehaviour
         starttime = clock;
         StartCoroutine(Hinttimer());
         Debug.Log("start time at: " + starttime);
+        usercontinue = false;
     }
     public void endtimer(){
         //endtime = Time.deltaTime;
@@ -158,6 +168,14 @@ public class Gamemanager : MonoBehaviour
     }
     public void gotoquestions(){
         SceneManager.LoadScene("StoreInput");
+    }
+
+    public void Relog(){
+        /*if(firstnameI.text == firstname && lastnameI.text == lastname){
+            hintObject.SetActive(false);
+        }*/
+        usercontinue = true;
+        fillscreencolor.SetActive(false);
     }
 }
 }
