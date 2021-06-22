@@ -29063,9 +29063,9 @@ MonoBehaviour:
   MT:
   - 1
   timescalar: 2
-  fillscreenwithcoloranimator: {fileID: 0}
-  fillscreencolor: {fileID: 0}
-  stillther: {fileID: 0}
+  fillscreenwithcoloranimator: {fileID: 736317266}
+  fillscreencolor: {fileID: 736317264}
+  stillther: {fileID: 595929705}
   overtime: 10
   DUMMY:
   - 30
@@ -29087,8 +29087,8 @@ MonoBehaviour:
   - 29
   - 30
   info: {fileID: 2055247272}
-  firstnameI: {fileID: 0}
-  lastnameI: {fileID: 0}
+  firstnameI: {fileID: 44305596}
+  lastnameI: {fileID: 1028244027}
   wait: 1
   avg: 0
   hintObject: {fileID: 1661448437}

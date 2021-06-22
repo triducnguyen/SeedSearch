@@ -14,10 +14,6 @@ namespace SeedSearch
         private string StudentPath;
         private string TeacherPath;
         // Start is called before the first frame update
-        private void Awake()
-        {
-            base.Awake();
-        }
 
         void UpdateStudentDataPath(string firstName,string lastName) => StudentPath = string.Format("{0}/{1}{2}{3}.student", Application.persistentDataPath, "student", firstName,lastName);
         void UpdateTeacherDataPath(string teacherName,string password) => TeacherPath = string.Format("{0}/{1}{2}{3}.data", Application.persistentDataPath, "teacher", teacherName,password);
