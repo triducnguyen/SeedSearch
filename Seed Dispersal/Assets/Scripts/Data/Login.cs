@@ -73,7 +73,8 @@ namespace SeedSearch
                         {
                             SaveManager.Instance.studentProfile = SaveManager.Instance.LoadStudentData(currentStudent);
                             //SceneManager.LoadScene("StoreInput");
-                            SceneManager.LoadScene("LessonOne");
+                            //SceneManager.LoadScene("LessonOne");
+                            SceneManager.LoadScene("Lesson");
                             firstName.text = "";
                             lastName.text = "";
                         }
