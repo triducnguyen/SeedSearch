@@ -29,12 +29,12 @@ public class MapMovement : MonoBehaviour
     }
     public void VocabController1()
     {
-        vocabUp.SetActive(false);
-        vocabDown.SetActive(true);
+        vocabUp.SetActive(true);
+        vocabDown.SetActive(false);
     }
     public void VocabController2()
     {
-        vocabUp.SetActive(true);
-        vocabDown.SetActive(false);
+        vocabUp.SetActive(false);
+        vocabDown.SetActive(true);
     }
 }

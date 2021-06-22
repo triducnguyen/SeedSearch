@@ -42,7 +42,9 @@ namespace SeedSearch{
         [Header("SceneName")]
         public string currentScene;
 
-
+        [Header("Vocabularies")]
+        public List<Vocabulary> firstMapVocabulariesData;
+        public List<Vocabulary> secondMapVocabulariesData;
         private void Start()
         {
             currentScene = SceneManager.GetActiveScene().name;
