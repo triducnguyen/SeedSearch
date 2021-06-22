@@ -5,53 +5,36 @@ using UnityEngine.UI;
 
 public class MapMovement : MonoBehaviour
 {
-    bool mapDown = true;
-    public bool[] setOn = new bool[5];
-    bool test = false;
-    public Button mapSpriteUp;
-    public Button mapSpriteDown;
-    bool vocabDown = true;
-    public Button vocabSpriteDown;
-    public Button vocabSpriteUp;
+    public GameObject mapUp;
+    public GameObject vocabUp;
+    public GameObject mapDown;
+    public GameObject vocabDown;
 
     void Start()
     {
-        //mapSpriteUp.gameObject.SetActive(false);
-        //vocabSpriteUp.gameObject.SetActive(false);
+        mapUp.SetActive(false);
+        vocabUp.SetActive(false);
     }
 
-    public void MapController()
+    public void MapController1()
     {
-        if(mapDown == true && vocabDown == true)
-        {
-            mapSpriteDown.gameObject.SetActive(false);
-            mapSpriteUp.gameObject.SetActive(true);
-            // if(test == true)
-            // {
-            //     step1.gameObject.SetActive(true);
-            // }
-            mapDown = false;
-        }
-        else if(mapDown == false)
-        {
-            mapSpriteDown.gameObject.SetActive(true);
-            mapSpriteUp.gameObject.SetActive(false);
-            mapDown = true;
-        }
+        mapUp.SetActive(true);
+        mapDown.SetActive(false);
     }
-    public void VocabController()
+
+    public void MapController2()
     {
-        if(vocabDown == true && mapDown == true)
-        {
-            vocabSpriteDown.gameObject.SetActive(false);
-            vocabSpriteUp.gameObject.SetActive(true);
-            vocabDown = false;
-        }
-        else if(vocabDown == false)
-        {
-            vocabSpriteDown.gameObject.SetActive(true);
-            vocabSpriteUp.gameObject.SetActive(false);
-            vocabDown = true;
-        }
+        mapUp.SetActive(false);
+        mapDown.SetActive(true);
+    }
+    public void VocabController1()
+    {
+        vocabUp.SetActive(false);
+        vocabDown.SetActive(true);
+    }
+    public void VocabController2()
+    {
+        vocabUp.SetActive(true);
+        vocabDown.SetActive(false);
     }
 }

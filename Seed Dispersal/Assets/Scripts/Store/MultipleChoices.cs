@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 namespace SeedSearch
 {
     public class MultipleChoices : MonoBehaviour
@@ -12,6 +12,19 @@ namespace SeedSearch
 
         public TMP_Text notification;
 
+        private void Awake()
+        {
+            Gamemanager.Instance.currentScene = SceneManager.GetActiveScene().name;
+            
+        }
+        private void OnEnable()
+        {
+            Gamemanager.Instance.currentStudent = SaveManager.Instance.studentProfile;
+            Gamemanager.Instance.LoadTimes();
+            Gamemanager.Instance.StartHintTimer("you hinted");
+            StartCoroutine(Hint());
+
+        }
         public void SelectCorrect(GameObject answer) {
             answerType = AnswerType.Correct;
             TMP_Text answerBox = answer.GetComponent<TMP_Text>();
@@ -37,7 +50,8 @@ namespace SeedSearch
                         SaveManager.Instance.studentProfile.Answers = new List<string>();
                         SaveManager.Instance.studentProfile.Answers.Add(answer);
                     } else
-                    SaveManager.Instance.studentProfile.Answers.Add(answer);
+                        SaveManager.Instance.studentProfile.Answers.Add(answer);
+                    Gamemanager.Instance.SaveTimes();
                     StartCoroutine(Notification());
                     break;
                 case AnswerType.Incorrect:
@@ -68,6 +82,25 @@ namespace SeedSearch
             }
                     yield return new WaitForSeconds(5);
                     notification.gameObject.SetActive(false);
+        }
+
+        public IEnumerator Hint()
+        {
+            yield return new WaitForSeconds(Gamemanager.Instance.wait);
+            Instantiate(Gamemanager.Instance.hintSuggest, this.gameObject.transform);
+        }
+
+        public void HintButton()
+        {
+            GameObject hintPopup = GameObject.Find("HintPopup(Clone)");
+            if(hintPopup != null)
+            {
+                Destroy(hintPopup);
+            } else
+            {
+                Instantiate(Gamemanager.Instance.hintObject, this.gameObject.transform);
+            }
+            Debug.Log("hinted");
         }
     }
 }

@@ -29186,8 +29186,8 @@ MonoBehaviour:
   - 29
   - 30
   info: {fileID: 2055247272}
-  firstnameI: {fileID: 0}
-  lastnameI: {fileID: 0}
+  firstnameI: {fileID: 44305596}
+  lastnameI: {fileID: 1028244027}
   wait: 1
   avg: 0
   hintObject: {fileID: 1661448437}
