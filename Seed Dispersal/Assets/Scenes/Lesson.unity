@@ -190,6 +190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (62)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &25539554 stripped
@@ -528,6 +532,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (68)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &33620866 stripped
@@ -601,6 +609,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -710,7 +722,7 @@ Transform:
   - {fileID: 1722900828}
   - {fileID: 1596639318}
   m_Father: {fileID: 250965887}
-  m_RootOrder: 11
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &52024486
 AudioSource:
@@ -875,6 +887,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &60725324 stripped
@@ -948,6 +964,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (69)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -1069,7 +1089,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f03e2320a9b5452468a7574616c5e7f3, type: 2}
     - target: {fileID: -8679921383154817045, guid: 6d97de7a2fad4ad449b15b826b7e03ac, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d97de7a2fad4ad449b15b826b7e03ac, type: 3}
       propertyPath: m_LocalScale.x
@@ -1216,6 +1236,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -2114,6 +2138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &144413537 stripped
@@ -2365,6 +2393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &154786578 stripped
@@ -2439,6 +2471,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &159324483 stripped
@@ -2512,6 +2548,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -2797,6 +2837,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (71)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &173345782 stripped
@@ -2870,6 +2914,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -2945,6 +2993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (58)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &173727974 stripped
@@ -2961,7 +3013,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b55693ff4d4dae14bb17b7f2f3964dbb, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b55693ff4d4dae14bb17b7f2f3964dbb, type: 3}
       propertyPath: m_LocalScale.x
@@ -3680,6 +3732,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &239335240 stripped
@@ -3849,6 +3905,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (68)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &243917611 stripped
@@ -3885,6 +3945,7 @@ Transform:
   m_Children:
   - {fileID: 1138258758}
   - {fileID: 705507995}
+  - {fileID: 52024485}
   - {fileID: 873181809}
   - {fileID: 453047735}
   - {fileID: 1315927972}
@@ -3894,7 +3955,6 @@ Transform:
   - {fileID: 81097486}
   - {fileID: 1120429783}
   - {fileID: 193744854}
-  - {fileID: 52024485}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4060,6 +4120,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &254131129 stripped
@@ -4134,6 +4198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (62)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &259488835 stripped
@@ -4207,6 +4275,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -4704,6 +4776,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (75)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &290005118 stripped
@@ -4856,6 +4932,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -5241,9 +5321,10 @@ GameObject:
   m_Component:
   - component: {fileID: 316554508}
   - component: {fileID: 316554509}
+  - component: {fileID: 316554510}
   m_Layer: 0
   m_Name: Flower5
-  m_TagString: Untagged
+  m_TagString: flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5284,6 +5365,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8269666, y: 1.1246775, z: 0.64713204}
   m_Center: {x: -0.5612042, y: -0.9318314, z: 0.5149493}
+--- !u!114 &316554510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316554507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8caf4d48a987d4f8b48e54a897b9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pollen: {fileID: 1299763913}
+  bee: {fileID: 52024480}
 --- !u!1 &324421361
 GameObject:
   m_ObjectHideFlags: 0
@@ -5324,7 +5419,7 @@ Transform:
   - {fileID: 1952601252}
   - {fileID: 1279518800}
   m_Father: {fileID: 250965887}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &325769991
 PrefabInstance:
@@ -5392,6 +5487,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -5467,6 +5566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (81)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &335912862 stripped
@@ -5540,6 +5643,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -5678,6 +5785,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (60)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -5847,6 +5958,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (70)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &359116051 stripped
@@ -6002,6 +6117,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (74)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -6420,6 +6539,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (65)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &404257662 stripped
@@ -6591,6 +6714,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -6812,6 +6939,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &435347119 stripped
@@ -6885,6 +7016,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -6960,6 +7095,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &450360619 stripped
@@ -7000,7 +7139,7 @@ Transform:
   - {fileID: 805656176}
   - {fileID: 670816083}
   m_Father: {fileID: 250965887}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &476300628
 GameObject:
@@ -7781,6 +7920,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &500390101 stripped
@@ -7877,9 +8020,10 @@ GameObject:
   m_Component:
   - component: {fileID: 522163627}
   - component: {fileID: 522163628}
+  - component: {fileID: 522163629}
   m_Layer: 0
   m_Name: Flower1
-  m_TagString: Untagged
+  m_TagString: flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7920,6 +8064,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.165433, y: 2.2035043, z: 1.2605393}
   m_Center: {x: -0.45686433, y: -1.1859392, z: 0.59382653}
+--- !u!114 &522163629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522163626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8caf4d48a987d4f8b48e54a897b9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pollen: {fileID: 1673156621}
+  bee: {fileID: 52024480}
 --- !u!1001 &540246833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7986,6 +8144,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (72)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -8066,6 +8228,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &555478051 stripped
@@ -8139,6 +8305,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -8546,6 +8716,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (69)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &606371099 stripped
@@ -8914,6 +9088,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &622520841 stripped
@@ -9056,6 +9234,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -9267,6 +9449,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (55)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -9854,6 +10040,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &684740227 stripped
@@ -9961,6 +10151,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -10229,6 +10423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &706317593 stripped
@@ -10302,6 +10500,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (64)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -10567,6 +10769,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &728286672 stripped
@@ -10723,6 +10929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &743513248 stripped
@@ -10796,6 +11006,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (74)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -10871,6 +11085,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &750687510 stripped
@@ -10944,6 +11162,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -11115,6 +11337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &778019815 stripped
@@ -11194,6 +11420,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (66)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &792398667 stripped
@@ -11272,6 +11502,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (61)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -11430,6 +11664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (82)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &808769047 stripped
@@ -11503,6 +11741,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -11578,6 +11820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &820842749 stripped
@@ -11651,6 +11897,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -11726,6 +11976,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &836049202 stripped
@@ -11799,6 +12053,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -11874,6 +12132,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &836068603 stripped
@@ -11948,6 +12210,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &853674830 stripped
@@ -12021,6 +12287,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (55)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -12172,7 +12442,7 @@ GameObject:
   - component: {fileID: 873181809}
   m_Layer: 0
   m_Name: Flowers
-  m_TagString: Untagged
+  m_TagString: flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12346,7 +12616,7 @@ Transform:
   - {fileID: 808769047}
   - {fileID: 1654937482}
   m_Father: {fileID: 250965887}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &877114266
 PrefabInstance:
@@ -12414,6 +12684,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -12635,6 +12909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &881821845 stripped
@@ -12708,6 +12986,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (73)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -13157,6 +13439,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (71)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &919121251 stripped
@@ -13421,6 +13707,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &930331437 stripped
@@ -13494,6 +13784,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -13871,6 +14165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &968253609 stripped
@@ -14026,6 +14324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &969218475 stripped
@@ -14099,6 +14401,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -14174,6 +14480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &992046896 stripped
@@ -14247,6 +14557,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -14393,7 +14707,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8a7691f997116094fb6f604eae31774c, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8a7691f997116094fb6f604eae31774c, type: 3}
       propertyPath: m_LocalScale.x
@@ -14629,6 +14943,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1034956306 stripped
@@ -14703,6 +15021,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (75)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1035509639 stripped
@@ -14776,6 +15098,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -14920,6 +15246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1050419189 stripped
@@ -15041,6 +15371,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1060332985 stripped
@@ -15115,6 +15449,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1063794725 stripped
@@ -15188,6 +15526,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -15358,6 +15700,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1068784944 stripped
@@ -15431,6 +15777,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -15506,6 +15856,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1075302167 stripped
@@ -15579,6 +15933,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -15832,6 +16190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1091388699 stripped
@@ -15987,6 +16349,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -16350,7 +16716,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5f662d28496cc184b813d443c69fdaa3, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f662d28496cc184b813d443c69fdaa3, type: 3}
       propertyPath: m_LocalScale.x
@@ -16490,6 +16856,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1120567341 stripped
@@ -16563,6 +16933,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -16931,6 +17305,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1165660590 stripped
@@ -17138,6 +17516,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1177181413 stripped
@@ -17211,6 +17593,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -17355,6 +17741,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1190062671 stripped
@@ -17428,6 +17818,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (72)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -17503,6 +17897,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1191664953 stripped
@@ -17576,6 +17974,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -17784,6 +18186,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1218904187 stripped
@@ -17857,6 +18263,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -17932,6 +18342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1221215267 stripped
@@ -18006,6 +18420,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (63)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1235908606 stripped
@@ -18023,9 +18441,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1238044374}
   - component: {fileID: 1238044375}
+  - component: {fileID: 1238044376}
   m_Layer: 0
   m_Name: Flower4
-  m_TagString: Untagged
+  m_TagString: flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18066,6 +18485,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.78535014, y: 1.4032589, z: 0.8478088}
   m_Center: {x: -0.40378773, y: -1.0626101, z: 0.47423318}
+--- !u!114 &1238044376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238044373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8caf4d48a987d4f8b48e54a897b9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pollen: {fileID: 1929484919}
+  bee: {fileID: 52024480}
 --- !u!1001 &1249623812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18132,6 +18565,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (65)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -18207,6 +18644,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (77)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1256631387 stripped
@@ -18280,6 +18721,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -18436,6 +18881,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!1001 &1280571235
@@ -18504,6 +18953,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -18678,6 +19131,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -18878,9 +19335,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1301028446}
   - component: {fileID: 1301028447}
+  - component: {fileID: 1301028448}
   m_Layer: 0
   m_Name: Flower2
-  m_TagString: Untagged
+  m_TagString: flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18921,6 +19379,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2725204, y: 1.9518176, z: 1.0554407}
   m_Center: {x: -0.50708705, y: -1.123965, z: 0.5557471}
+--- !u!114 &1301028448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301028445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8caf4d48a987d4f8b48e54a897b9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pollen: {fileID: 1017613443}
+  bee: {fileID: 52024480}
 --- !u!1001 &1309225817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18987,6 +19459,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -19061,6 +19537,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (63)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -19149,7 +19629,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 250965887}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 1.031, y: 15.919, z: -0.101}
 --- !u!1001 &1319074245
 PrefabInstance:
@@ -19291,6 +19771,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1327160558 stripped
@@ -19430,6 +19914,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (59)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -19574,6 +20062,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1334638328 stripped
@@ -19647,6 +20139,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -19918,6 +20414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1373654653 stripped
@@ -19992,6 +20492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (80)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1380774287 stripped
@@ -20065,6 +20569,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -20513,6 +21021,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (76)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1431299544 stripped
@@ -20741,6 +21253,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -20998,6 +21514,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1464059502 stripped
@@ -21071,6 +21591,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -21232,6 +21756,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1488832317 stripped
@@ -21305,6 +21833,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -21380,6 +21912,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1521736380 stripped
@@ -21454,6 +21990,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (76)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1522263706 stripped
@@ -21527,6 +22067,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -22362,6 +22906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1573905510 stripped
@@ -22504,6 +23052,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -22787,6 +23339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1599521097 stripped
@@ -22861,6 +23417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!1 &1606510731
@@ -22893,7 +23453,7 @@ Transform:
   - {fileID: 605744446}
   - {fileID: 101542201}
   m_Father: {fileID: 250965887}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1610270391
 PrefabInstance:
@@ -22961,6 +23521,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -23128,6 +23692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1631913035 stripped
@@ -23202,6 +23770,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1631986083 stripped
@@ -23275,6 +23847,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -23363,7 +23939,7 @@ GameObject:
   - component: {fileID: 1654937482}
   m_Layer: 0
   m_Name: SeedFlowers
-  m_TagString: Untagged
+  m_TagString: flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24638,6 +25214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1752364140 stripped
@@ -24711,6 +25291,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -24786,6 +25370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1769630779 stripped
@@ -24859,6 +25447,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -25061,6 +25653,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!1001 &1789716799
@@ -25129,6 +25725,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -25204,6 +25804,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1797831337 stripped
@@ -25277,6 +25881,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -25356,6 +25964,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -25581,6 +26193,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1853426196 stripped
@@ -25654,6 +26270,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (73)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -25729,6 +26349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1895933743 stripped
@@ -25803,6 +26427,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1904554631 stripped
@@ -25820,6 +26448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1906313915}
   - component: {fileID: 1906313914}
+  - component: {fileID: 1906313916}
   m_Layer: 0
   m_Name: Gamemanager
   m_TagString: Untagged
@@ -25910,6 +26539,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1906313916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906313913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26c9ebd3e40506a42a61ebc816de5e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beetarget: {x: 0, y: 0, z: 0}
+  Bee: {fileID: 52024480}
+  beestoppingdistance: 0
+  beespeed: 0.1
+  flowertag: flower
 --- !u!1001 &1913232430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25976,6 +26622,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -26132,6 +26782,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1921632641 stripped
@@ -26240,6 +26894,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1932521134 stripped
@@ -26314,6 +26972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1937572085 stripped
@@ -26387,6 +27049,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (67)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -26534,6 +27200,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (61)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -26695,6 +27365,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &1986387180 stripped
@@ -26768,6 +27442,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -26843,6 +27521,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &1998458846 stripped
@@ -26917,6 +27599,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &2029175926 stripped
@@ -26934,9 +27620,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2032036528}
   - component: {fileID: 2032036529}
+  - component: {fileID: 2032036530}
   m_Layer: 0
   m_Name: Flower3
-  m_TagString: Untagged
+  m_TagString: flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26977,6 +27664,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1662724, y: 1.6573185, z: 0.752693}
   m_Center: {x: -0.5792787, y: -1.4692247, z: 0.8542142}
+--- !u!114 &2032036530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032036527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8caf4d48a987d4f8b48e54a897b9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pollen: {fileID: 685032979}
+  bee: {fileID: 52024480}
 --- !u!1 &2034595445
 GameObject:
   m_ObjectHideFlags: 0
@@ -27433,6 +28134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &2106870317 stripped
@@ -27506,6 +28211,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
       propertyPath: m_Name
       value: Flower1 (67)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -27668,6 +28377,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sunflower (78)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
 --- !u!4 &2124621083 stripped
@@ -27741,6 +28454,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
@@ -27816,6 +28533,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flower1 (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
+      propertyPath: m_TagString
+      value: flower
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
 --- !u!4 &2144764523 stripped
@@ -27889,6 +28610,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
       propertyPath: m_Name
       value: Sunflower (79)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38157c08e75871a489565f0c014b72af, type: 3}
+      propertyPath: m_TagString
+      value: flower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38157c08e75871a489565f0c014b72af, type: 3}
