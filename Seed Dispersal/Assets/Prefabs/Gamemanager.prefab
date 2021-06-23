@@ -58,6 +58,7 @@ MonoBehaviour:
   sortedtimes: []
   MT: []
   timerstorecount: 0
+  median: 0
   timescalar: 0
   fillscreenwithcoloranimator: {fileID: 0}
   fillscreencolor: {fileID: 0}
@@ -69,4 +70,62 @@ MonoBehaviour:
   hintSuggest: {fileID: 633861468192525826, guid: c498de8274a0f734abdb09a91870310b, type: 3}
   hint: {fileID: 0}
   currentScene: 
-  median: 0
+  firstMapVocabulariesData:
+  - name: Pollinator
+    button: {fileID: 4666128701046373181, guid: cc896a277aafa9642ac80e984507d611, type: 3}
+    isUnlocked: 0
+  - name: Pollen
+    button: {fileID: 384245515019365270, guid: b35290603be868e43a1951d516d2df78, type: 3}
+    isUnlocked: 0
+  - name: Pollination
+    button: {fileID: 1042670485956213638, guid: 94f7a232783b6cb47b1ea3d67e7ca5ba, type: 3}
+    isUnlocked: 0
+  - name: Germinate
+    button: {fileID: 658795340917755659, guid: 1f891f7746729084aa427234b34fd2b6, type: 3}
+    isUnlocked: 0
+  - name: LifeCycle
+    button: {fileID: 2641409953354857025, guid: ae64cee40a7d0744489bb5e7129d93fa, type: 3}
+    isUnlocked: 0
+  - name: SeedDispersal
+    button: {fileID: 6352108133457071875, guid: 04350f283697ab64c88d8f870ae16d3e, type: 3}
+    isUnlocked: 0
+  - name: Disperse
+    button: {fileID: 7354415933909132317, guid: 3d7c6f85e8b9a7b44aabe5462b901b9b, type: 3}
+    isUnlocked: 0
+  secondMapVocabulariesData:
+  - name: Seed
+    button: {fileID: 3493913717492363661, guid: 97f76c12e3d954b4eb35cc3c7b135cb2, type: 3}
+    isUnlocked: 0
+  - name: Leaf
+    button: {fileID: 1853549593258857725, guid: f29e7ea66a9f33b458a3dcc4d46314b7, type: 3}
+    isUnlocked: 0
+  - name: Stem
+    button: {fileID: 3922998525687062340, guid: 9bbba92976db30b44a4da0b5f06cbc49, type: 3}
+    isUnlocked: 0
+  - name: Roots
+    button: {fileID: 2181068445961186945, guid: 2cdc6ce87160c614cb04f89058d0faa9, type: 3}
+    isUnlocked: 0
+  - name: Sunlight
+    button: {fileID: 1719806105904211705, guid: 92224a1f0dd2a974296cf421fe911f26, type: 3}
+    isUnlocked: 0
+  VocabulariesData: []
+  isDefinitionOn: 0
+  steps:
+  - name: Step 1
+    description: 
+    isUnlocked: 1
+  - name: Step 2
+    description: 
+    isUnlocked: 0
+  - name: Step 3
+    description: 
+    isUnlocked: 0
+  - name: Step 4
+    description: 
+    isUnlocked: 0
+  - name: Step 5
+    description: 
+    isUnlocked: 0
+  - name: Step 6
+    description: 
+    isUnlocked: 0
