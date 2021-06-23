@@ -53,6 +53,8 @@ namespace SeedSearch{
         private void Start()
         {
             currentScene = SceneManager.GetActiveScene().name;
+            stillther.SetActive(false);
+            fillscreencolor.SetActive(false);
         }
 
 
@@ -61,9 +63,9 @@ namespace SeedSearch{
         {
             if(currentScene != "UI") { 
                 clock += Time.deltaTime;
-                if(clock - starttime > overtime * 60 && usercontinue == "after5"){
-                    //fillscreencolor.SetActive(true);
-                    //fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", true);
+                if(clock - starttime > overtime * 60 && usercontinue == "after5" && clock != 0){
+                    fillscreencolor.SetActive(true);
+                    fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", true && clock != 0);
                 } else if(clock - starttime > (overtime * 60)/2 && usercontinue == "below5"){
                     //stillther.SetActive(true);
                 }

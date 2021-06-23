@@ -22,19 +22,19 @@ public class SeedMovement : MonoBehaviour
         {
             target.position = target2.position;
         }
-        if(transform.position == target2.position)
+        else if(transform.position == target2.position)
         {
             target.position = target3.position;
         }
-        if(transform.position == target3.position)
+        else if(transform.position == target3.position)
         {
             target.position = target4.position;
         }
-        if(transform.position == target4.position)
+        else if(transform.position == target4.position)
         {
             target.position = target5.position;
         }
-        if(transform.position == target5.position)
+        else if(transform.position == target5.position)
         {
             target.position = target6.position;
         }
