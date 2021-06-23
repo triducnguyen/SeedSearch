@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 
 namespace SeedSearch
 {
@@ -9,6 +9,7 @@ namespace SeedSearch
     {
         [SerializeField] private List<Step> steps;
         [SerializeField] private int currentStep;
+        public TMP_Text description;
         private void OnEnable()
         {
             steps = Gamemanager.Instance.steps;
@@ -52,6 +53,11 @@ namespace SeedSearch
             StartCoroutine(narrator(wait));
         }
 
+        public void ShowDescription()
+        {
+            description.text = steps[currentStep].description;
+        }
+
         public IEnumerator narrator(float wait)
         {
             yield return new WaitForSeconds(wait);
@@ -59,6 +65,7 @@ namespace SeedSearch
             steps[currentStep].IsUnlocked = true;
             GameObject inSceneObj = gameObject.transform.Find(steps[currentStep].name).gameObject;
             inSceneObj.SetActive(true);
+            description.text = "";
         }
     }
 }
