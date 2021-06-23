@@ -28,12 +28,15 @@ namespace SeedSearch{
             if(flowerstate == "unpolinated with pollen"){
                 if(Game.haspollen == true){
                     flowerstate = "pollinated no pollen";
+                    pollen.SetActive(false);
                 } else{
                     Game.haspollen = true;
                     flowerstate = "no pollen";
+                    pollen.SetActive(false);
                 }
             } else if(flowerstate == "no pollen" && Game.haspollen == true){
                 flowerstate = "pollinated no pollen";
+                pollen.SetActive(false);
             }
         }
     }

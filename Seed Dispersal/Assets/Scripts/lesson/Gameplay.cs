@@ -35,18 +35,20 @@ public class Gameplay : MonoBehaviour
             return false;
         }
     [Header("Bee")]    
-    [SerializeField] private Vector3 beetarget;
+    private Vector3 beetarget;
     public GameObject Bee;
     public GameObject pollenobj;
     public float beestoppingdistance;
     public float beespeed;
     public string flowertag;
-    private string beestate = "idol";
-    public bool haspollen = false;
+    [System.NonSerialized] private string beestate = "idol";
+    [System.NonSerialized] public bool haspollen = false;
+    [System.NonSerialized] public float noflowerspollenated = 0f;
     private void beepollination(){
         if(Input.GetMouseButtonDown(0)){
-            //var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            var ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            Debug.Log("tap");
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //var ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
