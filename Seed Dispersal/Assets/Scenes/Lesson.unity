@@ -26553,9 +26553,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beetarget: {x: 0, y: 0, z: 0}
   Bee: {fileID: 52024480}
+  pollenobj: {fileID: 1596639314}
   beestoppingdistance: 0
   beespeed: 0.1
   flowertag: flower
+  haspollen: 0
 --- !u!1001 &1913232430
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,9 +5,11 @@ using UnityEngine;
 namespace SeedSearch{
 public class Gameplay : MonoBehaviour
 {
+    private flower Flower;
     private string gamestate;
     void Start()
     {
+        Flower = GameObject.FindObjectOfType<flower>();
         gamestate = "start";
 
         gamestate = "Bee Pollination";
@@ -35,10 +37,12 @@ public class Gameplay : MonoBehaviour
     [Header("Bee")]    
     [SerializeField] private Vector3 beetarget;
     public GameObject Bee;
+    public GameObject pollenobj;
     public float beestoppingdistance;
     public float beespeed;
     public string flowertag;
     private string beestate = "idol";
+    public bool haspollen = false;
     private void beepollination(){
         if(Input.GetMouseButtonDown(0)){
             //var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -59,12 +63,16 @@ public class Gameplay : MonoBehaviour
         if(beestate == "moving" && Vector3.Distance(Bee.transform.position, beetarget) >= beestoppingdistance){
             float beestep = beespeed * Time.deltaTime;
             Bee.transform.LookAt(beetarget);
-            //Bee.transform.position += Vector3.forward * beespeed;
             Bee.transform.position = Vector3.MoveTowards(Bee.transform.position, beetarget, beestep);
             //Debug.Log("Moved");
         } else if (Vector3.Distance(Bee.transform.position, beetarget) < beestoppingdistance){
             beestate = "pollinating";
-            //flower.Instance.pollinate();
+            Flower.pollinate();
+        }
+        if(haspollen == true && pollenobj.activeInHierarchy == false){
+            pollenobj.SetActive(true);
+        } else if(haspollen == false && pollenobj.activeInHierarchy == true){
+            pollenobj.SetActive(false);
         }
     }
 }
