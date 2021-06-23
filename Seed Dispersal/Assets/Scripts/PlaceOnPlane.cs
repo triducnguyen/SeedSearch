@@ -42,7 +42,7 @@ public class PlaceOnPlane : MonoBehaviour
     }
 
     private void Update(){
-        if(Islandspawn == false && beginbutton.activeInHierarchy == false){
+        if(Islandspawn == false && begin){
             if(!TryGetTouchPosition(out Vector2 touchPosition)){
                 return;
             }
@@ -67,5 +67,9 @@ public class PlaceOnPlane : MonoBehaviour
         foreach(ARPlane plane in aRPlaneManager.trackables){
             plane.gameObject.SetActive(aRPlaneManager.enabled);
         }        
+    }
+
+    public void begingame(){
+        begin = true;
     }
 }
