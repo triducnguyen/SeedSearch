@@ -11227,7 +11227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220b3d069b5f7ee44877495b32442910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.25
+  speed: 0.125
   target: {fileID: 2046600615}
   target1: {fileID: 657844061}
   target2: {fileID: 755978960}
@@ -29094,7 +29094,9 @@ MonoBehaviour:
   currentScene: 
   firstMapVocabulariesData: []
   secondMapVocabulariesData: []
+  VocabulariesData: []
   isDefinitionOn: 0
+  steps: []
 --- !u!4 &1906313915
 Transform:
   m_ObjectHideFlags: 0
