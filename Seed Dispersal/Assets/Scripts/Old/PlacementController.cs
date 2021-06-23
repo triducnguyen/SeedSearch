@@ -11,32 +11,30 @@ public class PlacementController : MonoBehaviour
     [SerializeField]
     private GameObject placedPrefab;
 
-    [SerializeField]
-    private GameObject instructions;
+    //[SerializeField]    private GameObject instructions;
 
     [SerializeField]
     public Camera arCamera;
 
-    [SerializeField]
-    private ARRaycastManager aRRaycastManager;
+    //[SerializeField]    private ARRaycastManager aRRaycastManager;
     [SerializeField]
     public RaycastHit hitObject;
     public bool onTouchHold = false;
-    public bool onMapTouch = false;
-    bool mapLowered = true;
-    public GameObject SeedSearchPlane;
-    public GameObject debugDemo;
-    public Button ButtonUp;
+    //public bool onMapTouch = false;
+    //bool mapLowered = true;
+    //public GameObject SeedSearchPlane;
+    //public GameObject debugDemo;
+    //public Button ButtonUp;
     private GameObject placedObject;
-    public GameObject MovementTest;
+    //public GameObject MovementTest;
     public Transform goToTarget, target, target1, target2, target3, target4, target5, target6;
-    public GameObject step1, step2, step3, step4, step5, step6;
+    //public GameObject step1, step2, step3, step4, step5, step6;
     public float speed;
-    public AudioClip testAudio;
-    public bool step1Bool = false;
-    public bool testBool = true;
-    public AudioController audioController;
-    public AudioSource source1;
+    //public AudioClip testAudio;
+    //public bool step1Bool = false;
+    //public bool testBool = true;
+    //public AudioController audioController;
+    //public AudioSource source1;
     public Transform flower1, flower2, flower3, flower4, flower5;
     bool flower1Check = false, flower2Check = false, flower3Check = false, flower4Check = false, flower5Check = false;
     int flowerInt = 0;
@@ -44,7 +42,7 @@ public class PlacementController : MonoBehaviour
     public GameObject pollenObj;
     public Transform flyOverPosition, pollenBegin, pollenEnd;
     bool flowerSectionDone = false;
-    Quaternion beeRotation;
+    //Quaternion beeRotation;
     public GameObject beeParent;
     public GameObject flower1Pollen, flower2Pollen, flower3Pollen, flower4Pollen, flower5Pollen;
     public bool seedBegin = false;
@@ -185,7 +183,7 @@ public class PlacementController : MonoBehaviour
         }
     }
 
-    IEnumerator MoveFunction(Vector3 newPosition)
+    /*IEnumerator MoveFunction(Vector3 newPosition)
     {
         float timeSinceStarted = 0f;
         while (MovementTest.transform.position != newPosition)
@@ -202,6 +200,6 @@ public class PlacementController : MonoBehaviour
             // Otherwise, continue next frame
             yield return null;
         }
-    }
+    }*/
 }
 

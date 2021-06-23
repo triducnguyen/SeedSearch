@@ -62,10 +62,10 @@ namespace SeedSearch{
             if(currentScene != "UI") { 
                 clock += Time.deltaTime;
                 if(clock - starttime > overtime * 60 && usercontinue == "after5"){
-                    //fillscreencolor.SetActive(true);
-                    //fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", true);
+                    fillscreencolor.SetActive(true);
+                    fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", true);
                 } else if(clock - starttime > (overtime * 60)/2 && usercontinue == "below5"){
-                    //stillther.SetActive(true);
+                    stillther.SetActive(true);
                 }
             }
         }
@@ -75,7 +75,6 @@ namespace SeedSearch{
         //Start Here
         public void StartHintTimer(string currentSection){
             clock = 0;
-            //starttime = Time.deltaTime;
             starttime = clock;
             StartCoroutine(Hinttimer());
             Debug.Log("start time at: " + starttime);
@@ -84,14 +83,13 @@ namespace SeedSearch{
 
         //End Here
         public void EndTimer(){
-            //endtime = Time.deltaTime;
             endtime = clock;
             overalltime = endtime - starttime;
             times.Add(overalltime);
             alltimes.Add(overalltime);
             Debug.Log("end time: " + endtime + " And overall time: " + overalltime);
             //hintObject.SetActive(false);
-            //fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", false);
+            fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", false);
             SaveTimes();
         }
 
@@ -160,10 +158,7 @@ namespace SeedSearch{
         }
 
         public void ClearTimes(){
-            /*float[] passarray = new float[times.Count];
-            MT.CopyTo(passarray);
-            times = passarray.ToList();
-            alltimes = passarray.ToList();*/
+            
             while(times.Count > 0){
                     times.RemoveAt(0);
             }while(alltimes.Count > 0){
