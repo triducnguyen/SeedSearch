@@ -45,8 +45,11 @@ namespace SeedSearch{
         [Header("Vocabularies")]
         public List<Vocabulary> firstMapVocabulariesData;
         public List<Vocabulary> secondMapVocabulariesData;
+        public List<Vocabulary> VocabulariesData;
         public bool isDefinitionOn;
 
+        [Header("Maps/Steps")]
+        public List<Step> steps;
         private void Start()
         {
             currentScene = SceneManager.GetActiveScene().name;

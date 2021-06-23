@@ -29,7 +29,8 @@ namespace SeedSearch
         public TMP_InputField lastName;
 
         [Header("Profile")]
-        public GameObject profile;
+        public GameObject teacherProfile;
+        public GameObject playMode;
 
         private void Awake()
         {
@@ -47,6 +48,8 @@ namespace SeedSearch
             loginType = LoginType.Student;
             teacherLogin.SetActive(false);
             studentLogin.SetActive(true);
+            userName.text = "";
+            password.text = "";
             Debug.Log(loginType);
         }
 
@@ -55,6 +58,8 @@ namespace SeedSearch
             loginType = LoginType.Teacher;
             teacherLogin.SetActive(true);
             studentLogin.SetActive(false);
+            firstName.text = "";
+            lastName.text = "";
             Debug.Log(loginType);
         }
         #endregion
@@ -73,8 +78,9 @@ namespace SeedSearch
                         {
                             SaveManager.Instance.studentProfile = SaveManager.Instance.LoadStudentData(currentStudent);
                             //SceneManager.LoadScene("StoreInput");
-                            SceneManager.LoadScene("LessonOne");
-                            //SceneManager.LoadScene("Lesson");
+                            //SceneManager.LoadScene("LessonOne");
+                            gameObject.SetActive(false);
+                            playMode.SetActive(true);
                             firstName.text = "";
                             lastName.text = "";
                         }
@@ -93,7 +99,7 @@ namespace SeedSearch
                         {
                             SaveManager.Instance.teacherProfile = SaveManager.Instance.LoadTeacherData(currentTeacher);
                             gameObject.SetActive(false);
-                            profile.SetActive(true);
+                            teacherProfile.SetActive(true);
                             userName.text = "";
                             password.text = "";
                         }
