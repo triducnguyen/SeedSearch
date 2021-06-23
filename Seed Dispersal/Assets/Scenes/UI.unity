@@ -609,15 +609,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placedPrefab: {fileID: 5769244662658974085, guid: 858b54a83c09b934d9c8d04373f56b70, type: 3}
-  instructions: {fileID: 0}
   arCamera: {fileID: 1006089786}
-  aRRaycastManager: {fileID: 0}
   onTouchHold: 0
-  onMapTouch: 0
-  SeedSearchPlane: {fileID: 0}
-  debugDemo: {fileID: 0}
-  ButtonUp: {fileID: 0}
-  MovementTest: {fileID: 0}
   goToTarget: {fileID: 0}
   target: {fileID: 0}
   target1: {fileID: 0}
@@ -626,18 +619,7 @@ MonoBehaviour:
   target4: {fileID: 0}
   target5: {fileID: 0}
   target6: {fileID: 0}
-  step1: {fileID: 0}
-  step2: {fileID: 0}
-  step3: {fileID: 0}
-  step4: {fileID: 0}
-  step5: {fileID: 0}
-  step6: {fileID: 0}
   speed: 0
-  testAudio: {fileID: 0}
-  step1Bool: 0
-  testBool: 1
-  audioController: {fileID: 0}
-  source1: {fileID: 0}
   flower1: {fileID: 0}
   flower2: {fileID: 0}
   flower3: {fileID: 0}
@@ -5442,6 +5424,7 @@ GameObject:
   - component: {fileID: 1006089789}
   - component: {fileID: 1006089788}
   - component: {fileID: 1006089787}
+  - component: {fileID: 1006089791}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: Untagged

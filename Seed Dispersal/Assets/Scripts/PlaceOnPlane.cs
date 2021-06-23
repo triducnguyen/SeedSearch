@@ -19,9 +19,8 @@ public class PlaceOnPlane : MonoBehaviour
 
     static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
 
-    public GameObject beginbutton;
+    private bool gamestart = false;
 
-    private bool begin = false;
 
     private void Awake(){
         raycastManager = GetComponent<ARRaycastManager>();
@@ -30,7 +29,7 @@ public class PlaceOnPlane : MonoBehaviour
     void Start(){
         
         aRPlaneManager = GetComponent<ARPlaneManager>();
-        beginbutton.SetActive(false);
+        //beginbutton.SetActive(false);
     }
     bool TryGetTouchPosition(out Vector2 touchPosition){
         if(Input.touchCount > 0){
@@ -42,7 +41,7 @@ public class PlaceOnPlane : MonoBehaviour
     }
 
     private void Update(){
-        if(Islandspawn == false && beginbutton.activeInHierarchy == false){
+        if(Islandspawn == false && gamestart){
             if(!TryGetTouchPosition(out Vector2 touchPosition)){
                 return;
             }
@@ -53,7 +52,7 @@ public class PlaceOnPlane : MonoBehaviour
                 Island.SetActive(true);
                 Island.transform.position = hitPose.position + new Vector3(0,Islandheight,0);
                 Islandspawn = true;
-                beginbutton.SetActive(true);
+                
                 toggleplanedetection();
             }
         }
@@ -67,5 +66,9 @@ public class PlaceOnPlane : MonoBehaviour
         foreach(ARPlane plane in aRPlaneManager.trackables){
             plane.gameObject.SetActive(aRPlaneManager.enabled);
         }        
+    }
+
+    public void begingame(){
+        gamestart = true;
     }
 }
