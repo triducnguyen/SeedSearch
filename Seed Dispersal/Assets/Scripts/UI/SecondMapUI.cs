@@ -14,9 +14,17 @@ namespace SeedSearch
             vocabularies = Gamemanager.Instance.secondMapVocabulariesData;
             foreach (Vocabulary obj in vocabularies)
             {
-                if (obj.IsUnlocked)
+                GameObject inSceneObj = gameObject.transform.Find(obj.name).gameObject;
+                if (inSceneObj != null)
                 {
-                    obj.button.SetActive(true);
+                    if (obj.IsUnlocked)
+                    {
+                        inSceneObj.SetActive(true);
+                    }
+                    else
+                    {
+                        inSceneObj.SetActive(false);
+                    }
                 }
             }
 

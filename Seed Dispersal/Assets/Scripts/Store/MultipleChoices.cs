@@ -11,7 +11,7 @@ namespace SeedSearch
         [SerializeField] private AnswerType answerType;
 
         public TMP_Text notification;
-
+        public string hint;
         private void Awake()
         {
             Gamemanager.Instance.currentScene = SceneManager.GetActiveScene().name;
@@ -98,6 +98,7 @@ namespace SeedSearch
                 Destroy(hintPopup);
             } else
             {
+                Gamemanager.Instance.hintObject.transform.GetChild(0).GetComponent<TMP_Text>().text = hint;
                 Instantiate(Gamemanager.Instance.hintObject, this.gameObject.transform);
             }
             Debug.Log("hinted");
