@@ -124,8 +124,7 @@ namespace SeedSearch{
 
                 while(times.Count > timerstorecount){
                     times.RemoveAt(0);
-                }
-            
+                }            
             }
             times.Remove(0);
             alltimes.Remove(0);
@@ -147,14 +146,9 @@ namespace SeedSearch{
             } else{
                 times.Add(1f);
                 alltimes.Add(1f);
-            }
-
-    
-        
+            }       
             avg = times.Average();
-            wait = avg * 2;
-
-        
+            wait = avg * 2;   
         }
 
         public void ClearTimes(){
@@ -170,9 +164,6 @@ namespace SeedSearch{
             currentStudent.OverallTimes = alltimes;
             SaveManager.Instance.SaveStudentFile(currentStudent); 
             LoadTimes();
-        }
-        public void gotoquestions(){
-            SceneManager.LoadScene("StoreInput");
         }
 
         public void Relog(){
