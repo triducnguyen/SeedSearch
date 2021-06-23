@@ -33,6 +33,7 @@ public class AudioController : PlacementController
     public GameObject textBox;
     public GameObject flowerIndicator;
     public GameObject tapToMoveBee;
+    public GameObject secondtaptomovebee;
     public GameObject seed;
     public Transform finalSeedDestination;
     bool sixthSoundPlayed = false;
@@ -128,6 +129,7 @@ public class AudioController : PlacementController
         audioSound.Play();
         startButton.gameObject.SetActive(false);
         firstSoundPlayed = true;
+        secondtaptomovebee.SetActive(true);
         StartCoroutine(Audio1());
     }
     public void NextIdea1Press()
@@ -139,6 +141,7 @@ public class AudioController : PlacementController
         //step2.gameObject.SetActive(true);
         //mapStep2.SetActive(true);
         tapToMoveBee.SetActive(true);
+        secondtaptomovebee.SetActive(false);
         StartCoroutine(Audio3());
     }
     public void DisperseSeeds()
@@ -146,7 +149,7 @@ public class AudioController : PlacementController
         //map4.gameObject.SetActive(true);
         if(seedSoundRun == false)
         {
-            //tapToMoveBee.SetActive(false);
+            tapToMoveBee.SetActive(false);
             //step3.gameObject.SetActive(true);
             //step3Map.SetActive(true);
             audioSound.clip = fifthClip;
