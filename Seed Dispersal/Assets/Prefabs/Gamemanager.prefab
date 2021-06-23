@@ -112,20 +112,20 @@ MonoBehaviour:
   isDefinitionOn: 0
   steps:
   - name: Step 1
-    description: 
+    description: Pollinators move pollen from one flower to another
     isUnlocked: 1
   - name: Step 2
-    description: 
+    description: When a plant receives pollen, it produces seeds.
     isUnlocked: 0
   - name: Step 3
-    description: 
+    description: Seeds drop from the plant
     isUnlocked: 0
   - name: Step 4
-    description: 
+    description: Wind, Insects, Animals
     isUnlocked: 0
   - name: Step 5
-    description: 
+    description: Seed settles and plants a new flower
     isUnlocked: 0
   - name: Step 6
-    description: 
+    description: A new plant is produced and blooms
     isUnlocked: 0
