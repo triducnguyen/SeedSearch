@@ -1120,8 +1120,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placedPrefab: {fileID: 0}
+  instructions: {fileID: 0}
   arCamera: {fileID: 0}
+  aRRaycastManager: {fileID: 0}
   onTouchHold: 0
+  onMapTouch: 0
+  SeedSearchPlane: {fileID: 0}
+  debugDemo: {fileID: 0}
+  ButtonUp: {fileID: 0}
+  MovementTest: {fileID: 0}
   goToTarget: {fileID: 0}
   target: {fileID: 1294522544}
   target1: {fileID: 0}
@@ -1130,7 +1137,18 @@ MonoBehaviour:
   target4: {fileID: 0}
   target5: {fileID: 0}
   target6: {fileID: 0}
+  step1: {fileID: 0}
+  step2: {fileID: 0}
+  step3: {fileID: 0}
+  step4: {fileID: 0}
+  step5: {fileID: 0}
+  step6: {fileID: 0}
   speed: 1
+  testAudio: {fileID: 0}
+  step1Bool: 0
+  testBool: 1
+  audioController: {fileID: 0}
+  source1: {fileID: 0}
   flower1: {fileID: 0}
   flower2: {fileID: 0}
   flower3: {fileID: 0}
@@ -1958,8 +1976,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placedPrefab: {fileID: 0}
+  instructions: {fileID: 0}
   arCamera: {fileID: 0}
+  aRRaycastManager: {fileID: 0}
   onTouchHold: 0
+  onMapTouch: 0
+  SeedSearchPlane: {fileID: 0}
+  debugDemo: {fileID: 0}
+  ButtonUp: {fileID: 0}
+  MovementTest: {fileID: 0}
   goToTarget: {fileID: 0}
   target: {fileID: 0}
   target1: {fileID: 0}
@@ -1968,7 +1993,18 @@ MonoBehaviour:
   target4: {fileID: 0}
   target5: {fileID: 0}
   target6: {fileID: 0}
+  step1: {fileID: 0}
+  step2: {fileID: 0}
+  step3: {fileID: 0}
+  step4: {fileID: 0}
+  step5: {fileID: 0}
+  step6: {fileID: 0}
   speed: 0
+  testAudio: {fileID: 0}
+  step1Bool: 0
+  testBool: 1
+  audioController: {fileID: 0}
+  source1: {fileID: 0}
   flower1: {fileID: 0}
   flower2: {fileID: 0}
   flower3: {fileID: 0}
@@ -2042,8 +2078,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placedPrefab: {fileID: 0}
+  instructions: {fileID: 0}
   arCamera: {fileID: 0}
+  aRRaycastManager: {fileID: 0}
   onTouchHold: 0
+  onMapTouch: 0
+  SeedSearchPlane: {fileID: 0}
+  debugDemo: {fileID: 0}
+  ButtonUp: {fileID: 0}
+  MovementTest: {fileID: 0}
   goToTarget: {fileID: 0}
   target: {fileID: 1294522544}
   target1: {fileID: 0}
@@ -2052,7 +2095,18 @@ MonoBehaviour:
   target4: {fileID: 0}
   target5: {fileID: 0}
   target6: {fileID: 0}
+  step1: {fileID: 0}
+  step2: {fileID: 0}
+  step3: {fileID: 0}
+  step4: {fileID: 0}
+  step5: {fileID: 0}
+  step6: {fileID: 0}
   speed: 1
+  testAudio: {fileID: 0}
+  step1Bool: 0
+  testBool: 1
+  audioController: {fileID: 0}
+  source1: {fileID: 0}
   flower1: {fileID: 0}
   flower2: {fileID: 0}
   flower3: {fileID: 0}
@@ -2609,8 +2663,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placedPrefab: {fileID: 5769244662658974085, guid: 858b54a83c09b934d9c8d04373f56b70, type: 3}
+  instructions: {fileID: 0}
   arCamera: {fileID: 1006089786}
+  aRRaycastManager: {fileID: 0}
   onTouchHold: 0
+  onMapTouch: 0
+  SeedSearchPlane: {fileID: 0}
+  debugDemo: {fileID: 0}
+  ButtonUp: {fileID: 0}
+  MovementTest: {fileID: 0}
   goToTarget: {fileID: 1374329115}
   target: {fileID: 1294522544}
   target1: {fileID: 1294522544}
@@ -2619,7 +2680,18 @@ MonoBehaviour:
   target4: {fileID: 6004446}
   target5: {fileID: 1567582813}
   target6: {fileID: 54541103}
+  step1: {fileID: 0}
+  step2: {fileID: 0}
+  step3: {fileID: 0}
+  step4: {fileID: 0}
+  step5: {fileID: 0}
+  step6: {fileID: 0}
   speed: 1
+  testAudio: {fileID: 0}
+  step1Bool: 0
+  testBool: 1
+  audioController: {fileID: 0}
+  source1: {fileID: 0}
   flower1: {fileID: 522163627}
   flower2: {fileID: 1301028446}
   flower3: {fileID: 2032036528}
@@ -2706,6 +2778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heightscalar: 0.6
   Island: {fileID: 250965886}
+  beginbutton: {fileID: 0}
 --- !u!1 &101375648
 GameObject:
   m_ObjectHideFlags: 0
@@ -3881,11 +3954,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 38157c08e75871a489565f0c014b72af, type: 3}
   m_PrefabInstance: {fileID: 173360590}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &173537228 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b55693ff4d4dae14bb17b7f2f3964dbb, type: 3}
-  m_PrefabInstance: {fileID: 989577205}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &173727973
 PrefabInstance:
@@ -15379,6 +15447,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b55693ff4d4dae14bb17b7f2f3964dbb, type: 3}
+--- !u!4 &989577206 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 989577205}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &991546416
 GameObject:
   m_ObjectHideFlags: 0
@@ -18644,7 +18717,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 173537228}
+  - {fileID: 989577206}
   - {fileID: 1120429783}
   - {fileID: 81097486}
   - {fileID: 324421362}
@@ -24390,8 +24463,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placedPrefab: {fileID: 0}
+  instructions: {fileID: 0}
   arCamera: {fileID: 1006089786}
+  aRRaycastManager: {fileID: 0}
   onTouchHold: 0
+  onMapTouch: 0
+  SeedSearchPlane: {fileID: 0}
+  debugDemo: {fileID: 0}
+  ButtonUp: {fileID: 0}
+  MovementTest: {fileID: 0}
   goToTarget: {fileID: 0}
   target: {fileID: 1294522544}
   target1: {fileID: 0}
@@ -24400,7 +24480,18 @@ MonoBehaviour:
   target4: {fileID: 0}
   target5: {fileID: 0}
   target6: {fileID: 0}
+  step1: {fileID: 0}
+  step2: {fileID: 0}
+  step3: {fileID: 0}
+  step4: {fileID: 0}
+  step5: {fileID: 0}
+  step6: {fileID: 0}
   speed: 0
+  testAudio: {fileID: 0}
+  step1Bool: 0
+  testBool: 1
+  audioController: {fileID: 0}
+  source1: {fileID: 0}
   flower1: {fileID: 0}
   flower2: {fileID: 0}
   flower3: {fileID: 0}
@@ -24534,8 +24625,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placedPrefab: {fileID: 0}
+  instructions: {fileID: 0}
   arCamera: {fileID: 0}
+  aRRaycastManager: {fileID: 0}
   onTouchHold: 0
+  onMapTouch: 0
+  SeedSearchPlane: {fileID: 0}
+  debugDemo: {fileID: 0}
+  ButtonUp: {fileID: 0}
+  MovementTest: {fileID: 0}
   goToTarget: {fileID: 0}
   target: {fileID: 0}
   target1: {fileID: 0}
@@ -24544,7 +24642,18 @@ MonoBehaviour:
   target4: {fileID: 0}
   target5: {fileID: 0}
   target6: {fileID: 0}
+  step1: {fileID: 0}
+  step2: {fileID: 0}
+  step3: {fileID: 0}
+  step4: {fileID: 0}
+  step5: {fileID: 0}
+  step6: {fileID: 0}
   speed: 0
+  testAudio: {fileID: 0}
+  step1Bool: 0
+  testBool: 1
+  audioController: {fileID: 0}
+  source1: {fileID: 0}
   flower1: {fileID: 0}
   flower2: {fileID: 0}
   flower3: {fileID: 0}
@@ -27129,8 +27238,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placedPrefab: {fileID: 0}
+  instructions: {fileID: 0}
   arCamera: {fileID: 0}
+  aRRaycastManager: {fileID: 0}
   onTouchHold: 0
+  onMapTouch: 0
+  SeedSearchPlane: {fileID: 0}
+  debugDemo: {fileID: 0}
+  ButtonUp: {fileID: 0}
+  MovementTest: {fileID: 0}
   goToTarget: {fileID: 0}
   target: {fileID: 1294522544}
   target1: {fileID: 0}
@@ -27139,7 +27255,18 @@ MonoBehaviour:
   target4: {fileID: 0}
   target5: {fileID: 0}
   target6: {fileID: 0}
+  step1: {fileID: 0}
+  step2: {fileID: 0}
+  step3: {fileID: 0}
+  step4: {fileID: 0}
+  step5: {fileID: 0}
+  step6: {fileID: 0}
   speed: 0
+  testAudio: {fileID: 0}
+  step1Bool: 0
+  testBool: 1
+  audioController: {fileID: 0}
+  source1: {fileID: 0}
   flower1: {fileID: 0}
   flower2: {fileID: 0}
   flower3: {fileID: 0}
