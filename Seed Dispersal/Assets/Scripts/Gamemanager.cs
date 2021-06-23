@@ -67,7 +67,7 @@ namespace SeedSearch{
                     fillscreencolor.SetActive(true);
                     fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", true && clock != 0);
                 } else if(clock - starttime > (overtime * 60)/2 && usercontinue == "below5"){
-                    stillther.SetActive(true);
+                    //stillther.SetActive(true);
                 }
             }
         }
@@ -77,6 +77,7 @@ namespace SeedSearch{
         //Start Here
         public void StartHintTimer(string currentSection){
             clock = 0;
+            //starttime = Time.deltaTime;
             starttime = clock;
             StartCoroutine(Hinttimer());
             Debug.Log("start time at: " + starttime);
@@ -85,13 +86,14 @@ namespace SeedSearch{
 
         //End Here
         public void EndTimer(){
+            //endtime = Time.deltaTime;
             endtime = clock;
             overalltime = endtime - starttime;
             times.Add(overalltime);
             alltimes.Add(overalltime);
             Debug.Log("end time: " + endtime + " And overall time: " + overalltime);
             //hintObject.SetActive(false);
-            fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", false);
+            //fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", false);
             SaveTimes();
         }
 
@@ -126,8 +128,7 @@ namespace SeedSearch{
 
                 while(times.Count > timerstorecount){
                     times.RemoveAt(0);
-                }
-            
+                }            
             }
             times.Remove(0);
             alltimes.Remove(0);
@@ -149,18 +150,16 @@ namespace SeedSearch{
             } else{
                 times.Add(1f);
                 alltimes.Add(1f);
-            }
-
-    
-        
+            }       
             avg = times.Average();
-            wait = avg * 2;
-
-        
+            wait = avg * 2;   
         }
 
         public void ClearTimes(){
-            
+            /*float[] passarray = new float[times.Count];
+            MT.CopyTo(passarray);
+            times = passarray.ToList();
+            alltimes = passarray.ToList();*/
             while(times.Count > 0){
                     times.RemoveAt(0);
             }while(alltimes.Count > 0){
@@ -172,9 +171,6 @@ namespace SeedSearch{
             currentStudent.OverallTimes = alltimes;
             SaveManager.Instance.SaveStudentFile(currentStudent); 
             LoadTimes();
-        }
-        public void gotoquestions(){
-            SceneManager.LoadScene("StoreInput");
         }
 
         public void Relog(){
