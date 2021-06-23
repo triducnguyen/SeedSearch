@@ -23,6 +23,7 @@ public class Gameplay : MonoBehaviour
         if(gamestate == "Bee Pollination"){
             beepollination();
         }
+        Debug.Log("1");
     }
     bool TryGetTouchPosition(out Vector2 touchPosition)
         {
