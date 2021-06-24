@@ -2171,6 +2171,7 @@ MonoBehaviour:
   cm6: {fileID: 0}
   restartButton: {fileID: 0}
   badger: {fileID: 0}
+  MapUIprogress: 0
 --- !u!114 &74529918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2752,7 +2753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &97987996
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -3009,7 +3010,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.8537736, g: 1, b: 0.97341335, a: 0.43137255}
+      maxColor: {r: 0.8537736, g: 1, b: 0.97341335, a: 0.64705884}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -3071,7 +3072,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.73
+      scalar: 1.48
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3387,7 +3388,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 129
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -3531,9 +3532,9 @@ ParticleSystem:
     m_TextureBilinearFiltering: 0
     randomDirectionAmount: 0
     sphericalDirectionAmount: 0
-    randomPositionAmount: 0
+    randomPositionAmount: 0.34
     radius:
-      value: 1.03
+      value: 5.93
       mode: 0
       spread: 0
       speed:
@@ -3705,7 +3706,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1.52
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -34296,6 +34297,7 @@ MonoBehaviour:
   cm6: {fileID: 667610332}
   restartButton: {fileID: 1737855707}
   badger: {fileID: 101542199}
+  MapUIprogress: 0
 --- !u!1001 &1559769889
 PrefabInstance:
   m_ObjectHideFlags: 0
