@@ -24,7 +24,7 @@ namespace SeedSearch{
 
         public float Clock { get => clock; }
 
-        public float timescalar;
+        //public float timescalar;
         public Animator fillscreenwithcoloranimator;
         public GameObject fillscreencolor;
         public GameObject stillther;
@@ -37,7 +37,7 @@ namespace SeedSearch{
         [Header("Hint")]
         public GameObject hintObject;
         public GameObject hintSuggest;
-        public Text hint;
+        //public Text hint;
 
         [Header("SceneName")]
         public string currentScene;
@@ -67,7 +67,7 @@ namespace SeedSearch{
                     fillscreencolor.SetActive(true);
                     fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", true && clock != 0);
                 } else if(clock - starttime > (overtime * 60)/2 && usercontinue == "below5"){
-                    //stillther.SetActive(true);
+                    stillther.SetActive(true);
                 }
             }
         }
@@ -77,7 +77,6 @@ namespace SeedSearch{
         //Start Here
         public void StartHintTimer(string currentSection){
             clock = 0;
-            //starttime = Time.deltaTime;
             starttime = clock;
             StartCoroutine(Hinttimer());
             Debug.Log("start time at: " + starttime);
@@ -86,14 +85,13 @@ namespace SeedSearch{
 
         //End Here
         public void EndTimer(){
-            //endtime = Time.deltaTime;
             endtime = clock;
             overalltime = endtime - starttime;
             times.Add(overalltime);
             alltimes.Add(overalltime);
             Debug.Log("end time: " + endtime + " And overall time: " + overalltime);
             //hintObject.SetActive(false);
-            //fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", false);
+            fillscreenwithcoloranimator.SetBool("Fillscreenwithcolor", false);
             SaveTimes();
         }
 
