@@ -15,13 +15,13 @@ public class AudioController : PlacementController
     public AudioClip eighthClip;
     public GameObject soundObject;
     public AudioSource audioSound;
-    bool firstClipStartBool = false;
+    //bool firstClipStartBool = false;
     bool firstSoundPlayed = false;
     bool secondSoundPlayed = false;
     public GameObject startButton;
     public GameObject seedAppear;
     bool fourthClipPlayed = false;
-    bool seedHit = false;
+    //bool seedHit = false;
     bool seedSoundRun = false;
     bool fifthClipPlayed = false;
     public GameObject seedDisperse;
@@ -69,7 +69,8 @@ public class AudioController : PlacementController
         if(!audioSound.isPlaying && secondSoundPlayed == true)
         {
             audioSound.Pause();
-            flowerIndicator.SetActive(true);
+            //flowerIndicator.SetActive(true);
+            tapToMoveBee.SetActive(true);
         }
         if(seedAppear.activeInHierarchy && fourthClipPlayed == false)
         {
@@ -137,7 +138,8 @@ public class AudioController : PlacementController
         audioSound.clip = thirdClip;
         audioSound.Play();
         nextIdea1.gameObject.SetActive(false);
-        flowerIndicator.SetActive(false);
+        //flowerIndicator.SetActive(false);
+        tapToMoveBee.SetActive(false);
         //step2.gameObject.SetActive(true);
         //mapStep2.SetActive(true);
         tapToMoveBee.SetActive(true);
