@@ -7688,7 +7688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heightscalar: 0.6
   Island: {fileID: 250965886}
-  beginbutton: {fileID: 0}
+  beginbutton: {fileID: 1976132389}
 --- !u!1 &101375648
 GameObject:
   m_ObjectHideFlags: 0
@@ -10690,7 +10690,6 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-<<<<<<< Updated upstream
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -10888,17 +10887,6 @@ RectTransform:
   m_SizeDelta: {x: 445.3, y: 428.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &287922445
-=======
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e703eb7b77abf0047b77f3c371c04c8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  steps: []
-  currentStep: 0
-  narrators: []
-  description: {fileID: 2082391859}
---- !u!114 &273394378
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27200,7 +27188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1162201797
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41369,9 +41357,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1558089780}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: BeginButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 98421893}
+        m_TargetAssemblyTypeName: PlaceOnPlane, Assembly-CSharp
+        m_MethodName: begingame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

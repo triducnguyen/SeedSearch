@@ -46,8 +46,8 @@ public class AudioController : PlacementController
 
     void Start()
     {
-        audioSound = soundObject.GetComponent<AudioSource>();
-        audioSound.clip = firstClip;
+        //audioSound = soundObject.GetComponent<AudioSource>();
+        //audioSound.clip = firstClip;
         v1.SetActive(true);
         v2.SetActive(true);
     }
@@ -57,8 +57,8 @@ public class AudioController : PlacementController
         {
             if(!audioSound.isPlaying && secondSoundPlayed == false)
             {
-                audioSound.clip = secondClip;
-                audioSound.Play();
+                //audioSound.clip = secondClip;
+                //audioSound.Play();
                 secondSoundPlayed = true;
                 StartCoroutine(Audio2());
                 v3.SetActive(true);
@@ -69,7 +69,7 @@ public class AudioController : PlacementController
         }
         if(!audioSound.isPlaying && secondSoundPlayed == true)
         {
-            audioSound.Pause();
+            //audioSound.Pause();
             //flowerIndicator.SetActive(true);
             tapToMoveBee.SetActive(false);
             secondtaptomovebee.SetActive(true);
@@ -77,8 +77,8 @@ public class AudioController : PlacementController
         if(seedAppear.activeInHierarchy && fourthClipPlayed == false)
         {
             secondtaptomovebee.SetActive(false);
-            audioSound.clip = fourthClip;
-            audioSound.Play();
+            //audioSound.clip = fourthClip;
+            //audioSound.Play();
             fourthClipPlayed = true;
             v6.gameObject.SetActive(true);
             v7.gameObject.SetActive(true);
@@ -98,8 +98,8 @@ public class AudioController : PlacementController
         }
         if(seed.transform.position == finalSeedDestination.position && sixthSoundPlayed == false)
         {
-            audioSound.clip = sixthClip;
-            audioSound.Play();
+            //audioSound.clip = sixthClip;
+            //audioSound.Play();
             sixthSoundPlayed = true;
             cm5.SetActive(true);
             v8.SetActive(true);
@@ -108,8 +108,8 @@ public class AudioController : PlacementController
         }
         if(sixthSoundPlayed == true && !audioSound.isPlaying && seventhSoundPlayed == false)
         {
-            audioSound.clip = seventhClip;
-            audioSound.Play();
+            //audioSound.clip = seventhClip;
+            //audioSound.Play();
             seventhSoundPlayed = true;
             seed.SetActive(false);
             rose.SetActive(true);
@@ -120,8 +120,8 @@ public class AudioController : PlacementController
         }
         if(seventhSoundPlayed == true && !audioSound.isPlaying && eighthSoundPlayed == false)
         {
-            audioSound.clip = eighthClip;
-            audioSound.Play();
+            //audioSound.clip = eighthClip;
+            //audioSound.Play();
             eighthSoundPlayed = true;
             seed.SetActive(false);
             StartCoroutine(Audio8());
@@ -130,7 +130,7 @@ public class AudioController : PlacementController
 
     public void BeginButtonPress()
     {
-        audioSound.Play();
+        //audioSound.Play();
         startButton.gameObject.SetActive(false);
         firstSoundPlayed = true;
         secondtaptomovebee.SetActive(true);
@@ -138,8 +138,8 @@ public class AudioController : PlacementController
     }
     public void NextIdea1Press()
     {
-        audioSound.clip = thirdClip;
-        audioSound.Play();
+        //audioSound.clip = thirdClip;
+        //audioSound.Play();
         nextIdea1.gameObject.SetActive(false);
         //flowerIndicator.SetActive(false);
         tapToMoveBee.SetActive(false);
@@ -157,9 +157,9 @@ public class AudioController : PlacementController
             tapToMoveBee.SetActive(false);
             //step3.gameObject.SetActive(true);
             //step3Map.SetActive(true);
-            audioSound.clip = fifthClip;
+            //audioSound.clip = fifthClip;
             //map4.gameObject.SetActive(true);
-            audioSound.Play();
+            //audioSound.Play();
             fifthClipPlayed = true;
             seedSoundRun = true;
             seedDisperse.SetActive(false);
