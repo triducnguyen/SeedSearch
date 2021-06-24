@@ -9,6 +9,7 @@ namespace SeedSearch
     {
         [SerializeField] private List<Step> steps;
         [SerializeField] private int currentStep;
+        public List<AudioClip> narrators;
         public TMP_Text description;
         private void OnEnable()
         {
@@ -56,6 +57,13 @@ namespace SeedSearch
         public void ShowDescription()
         {
             description.text = steps[currentStep].description;
+        }
+
+        public void PlayNarrator()
+        {
+            AudioSource audioSource = GetComponent<AudioSource>();
+            audioSource.clip = narrators[currentStep];
+            audioSource.Play();
         }
 
         public IEnumerator narrator(float wait)
