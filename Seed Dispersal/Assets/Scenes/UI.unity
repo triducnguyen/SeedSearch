@@ -2937,12 +2937,44 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 33165054}
     - target: {fileID: 8570487828168110947, guid: e3632535efb83db418f1c78b8c604427, type: 3}
+      propertyPath: MT.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570487828168110947, guid: e3632535efb83db418f1c78b8c604427, type: 3}
       propertyPath: fillscreencolor
       value: 
       objectReference: {fileID: 11231701}
     - target: {fileID: 8570487828168110947, guid: e3632535efb83db418f1c78b8c604427, type: 3}
       propertyPath: timerstorecount
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570487828168110947, guid: e3632535efb83db418f1c78b8c604427, type: 3}
+      propertyPath: MT.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570487828168110947, guid: e3632535efb83db418f1c78b8c604427, type: 3}
+      propertyPath: times.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570487828168110947, guid: e3632535efb83db418f1c78b8c604427, type: 3}
+      propertyPath: alltimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570487828168110947, guid: e3632535efb83db418f1c78b8c604427, type: 3}
+      propertyPath: times.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570487828168110947, guid: e3632535efb83db418f1c78b8c604427, type: 3}
+      propertyPath: alltimes.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570487828168110947, guid: e3632535efb83db418f1c78b8c604427, type: 3}
+      propertyPath: sortedtimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570487828168110947, guid: e3632535efb83db418f1c78b8c604427, type: 3}
+      propertyPath: sortedtimes.Array.data[0]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8570487828168110947, guid: e3632535efb83db418f1c78b8c604427, type: 3}
       propertyPath: fillscreenwithcoloranimator
