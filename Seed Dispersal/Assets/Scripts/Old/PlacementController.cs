@@ -49,9 +49,9 @@ public class PlacementController : MonoBehaviour
     public GameObject flower1Pollen, flower2Pollen, flower3Pollen, flower4Pollen, flower5Pollen;
     public bool seedBegin = false;
 
-    
-
     private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
+
+    private AudioController Conductor;
 
     public GameObject PlacedPrefab
     {
@@ -67,7 +67,7 @@ public class PlacementController : MonoBehaviour
 
     void Start()
     {
-
+        Conductor = GameObject.FindObjectOfType<AudioController>();
     }
     void Awake()
     {
@@ -145,6 +145,7 @@ public class PlacementController : MonoBehaviour
                         //step1.SetActive(true);
                         nextIdea1.gameObject.SetActive(true);
                         flowerSectionDone = true;
+                        Conductor.inset("Pollination 2");
                     }
                     if(hitObject.transform.name.Contains("Check2"))
                     {
