@@ -30,7 +30,7 @@ public class PlaceOnPlane : MonoBehaviour
     void Start(){
         
         aRPlaneManager = GetComponent<ARPlaneManager>();
-        beginbutton.SetActive(false);
+        beginbutton.SetActive(true);
     }
     bool TryGetTouchPosition(out Vector2 touchPosition){
         if(Input.touchCount > 0){
@@ -71,5 +71,6 @@ public class PlaceOnPlane : MonoBehaviour
 
     public void begingame(){
         begin = true;
+        beginbutton.SetActive(false);
     }
 }
