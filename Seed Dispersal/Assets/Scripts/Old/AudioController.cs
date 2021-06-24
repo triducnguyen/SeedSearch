@@ -44,16 +44,20 @@ public class AudioController : PlacementController
     public GameObject restartButton;
     public GameObject badger;
 
+    public int MapUIprogress;
+
     void Start()
     {
         audioSound = soundObject.GetComponent<AudioSource>();
         audioSound.clip = firstClip;
-        v1.SetActive(true);
-        v2.SetActive(true);
+        //v1.SetActive(true);
+        //v2.SetActive(true);
+        tapToMoveBee.SetActive(false);
+        secondtaptomovebee.SetActive(false);
     }
     void Update()
     {
-        if(firstSoundPlayed == true)
+        /*if(firstSoundPlayed == true)
         {
             if(!audioSound.isPlaying && secondSoundPlayed == false)
             {
@@ -61,9 +65,9 @@ public class AudioController : PlacementController
                 audioSound.Play();
                 secondSoundPlayed = true;
                 StartCoroutine(Audio2());
-                v3.SetActive(true);
-                v4.SetActive(true);
-                v5.SetActive(true);
+                //v3.SetActive(true);
+                //v4.SetActive(true);
+                //v5.SetActive(true);
             }
             tapToMoveBee.SetActive(true);
         }
@@ -76,12 +80,13 @@ public class AudioController : PlacementController
         }
         if(seedAppear.activeInHierarchy && fourthClipPlayed == false)
         {
+            tapToMoveBee.SetActive(false);
             secondtaptomovebee.SetActive(false);
             audioSound.clip = fourthClip;
             audioSound.Play();
             fourthClipPlayed = true;
-            v6.gameObject.SetActive(true);
-            v7.gameObject.SetActive(true);
+            //v6.gameObject.SetActive(true);
+            //v7.gameObject.SetActive(true);
             //step3Map.SetActive(true);
             StartCoroutine(Audio4());
         }
@@ -102,8 +107,8 @@ public class AudioController : PlacementController
             audioSound.Play();
             sixthSoundPlayed = true;
             cm5.SetActive(true);
-            v8.SetActive(true);
-            v9.SetActive(true);
+            //v8.SetActive(true);
+            //v9.SetActive(true);
             StartCoroutine(Audio6());
         }
         if(sixthSoundPlayed == true && !audioSound.isPlaying && seventhSoundPlayed == false)
@@ -113,12 +118,87 @@ public class AudioController : PlacementController
             seventhSoundPlayed = true;
             seed.SetActive(false);
             rose.SetActive(true);
-            v10.SetActive(true);
-            v11.SetActive(true);
-            v12.SetActive(true);
+            //v10.SetActive(true);
+            //v11.SetActive(true);
+            //v12.SetActive(true);
             StartCoroutine(Audio7());
         }
         if(seventhSoundPlayed == true && !audioSound.isPlaying && eighthSoundPlayed == false)
+        {
+            audioSound.clip = eighthClip;
+            audioSound.Play();
+            eighthSoundPlayed = true;
+            seed.SetActive(false);
+            StartCoroutine(Audio8());
+        }*/
+
+        if(firstSoundPlayed == true)
+        {
+            if(MapUIprogress == 0 && secondSoundPlayed == false)
+            {
+                audioSound.clip = secondClip;
+                audioSound.Play();
+                secondSoundPlayed = true;
+                StartCoroutine(Audio2());
+                //v3.SetActive(true);
+                //v4.SetActive(true);
+                //v5.SetActive(true);
+            }
+            tapToMoveBee.SetActive(true);
+        }
+        if(MapUIprogress == 1 && secondSoundPlayed == true)
+        {
+            audioSound.Pause();
+            //flowerIndicator.SetActive(true);
+            tapToMoveBee.SetActive(false);
+            secondtaptomovebee.SetActive(true);
+        }
+        if(seedAppear.activeInHierarchy && fourthClipPlayed == false)
+        {
+            tapToMoveBee.SetActive(false);
+            secondtaptomovebee.SetActive(false);
+            audioSound.clip = fourthClip;
+            audioSound.Play();
+            fourthClipPlayed = true;
+            //v6.gameObject.SetActive(true);
+            //v7.gameObject.SetActive(true);
+            //step3Map.SetActive(true);
+            StartCoroutine(Audio4());
+        }
+        if(fourthClipPlayed == true && fifthClipPlayed == false && MapUIprogress == 2 && seedDisperseActiveOnce == false)
+        {
+            seedDisperse.SetActive(true);
+            seedDisperseActiveOnce = true;
+        }
+        if(fifthClipPlayed == true && MapUIprogress == 3 && seedSend == false)
+        {
+            seedWindSend.SetActive(true);
+            badger.SetActive(true);
+            seedSend = true;
+        }
+        if(seed.transform.position == finalSeedDestination.position && sixthSoundPlayed == false)
+        {
+            audioSound.clip = sixthClip;
+            audioSound.Play();
+            sixthSoundPlayed = true;
+            cm5.SetActive(true);
+            //v8.SetActive(true);
+            //v9.SetActive(true);
+            StartCoroutine(Audio6());
+        }
+        if(sixthSoundPlayed == true && MapUIprogress == 4 && seventhSoundPlayed == false)
+        {
+            audioSound.clip = seventhClip;
+            audioSound.Play();
+            seventhSoundPlayed = true;
+            seed.SetActive(false);
+            rose.SetActive(true);
+            //v10.SetActive(true);
+            //v11.SetActive(true);
+            //v12.SetActive(true);
+            StartCoroutine(Audio7());
+        }
+        if(seventhSoundPlayed == true && MapUIprogress == 5 && eighthSoundPlayed == false)
         {
             audioSound.clip = eighthClip;
             audioSound.Play();
@@ -145,7 +225,6 @@ public class AudioController : PlacementController
         audioSound.Play();
         startButton.gameObject.SetActive(false);
         firstSoundPlayed = true;
-        secondtaptomovebee.SetActive(true);
         StartCoroutine(Audio1());
         gamestate = "start";
     }
@@ -155,11 +234,11 @@ public class AudioController : PlacementController
         audioSound.Play();
         nextIdea1.gameObject.SetActive(false);
         //flowerIndicator.SetActive(false);
-        tapToMoveBee.SetActive(false);
+        
         //step2.gameObject.SetActive(true);
         //mapStep2.SetActive(true);
-        tapToMoveBee.SetActive(true);
-        secondtaptomovebee.SetActive(false);
+        
+        
         StartCoroutine(Audio3());
     }
     public void DisperseSeeds()
@@ -167,7 +246,7 @@ public class AudioController : PlacementController
         //map4.gameObject.SetActive(true);
         if(seedSoundRun == false)
         {
-            tapToMoveBee.SetActive(false);
+            
             //step3.gameObject.SetActive(true);
             //step3Map.SetActive(true);
             audioSound.clip = fifthClip;

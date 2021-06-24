@@ -11,8 +11,11 @@ namespace SeedSearch
         [SerializeField] private int currentStep;
         public List<AudioClip> narrators;
         public TMP_Text description;
+
+        private AudioController quad;
         private void OnEnable()
         {
+            quad = GameObject.FindObjectOfType<AudioController>();
             steps = Gamemanager.Instance.steps;
             foreach (Step obj in steps)
             {
@@ -70,6 +73,7 @@ namespace SeedSearch
         {
             yield return new WaitForSeconds(wait);
             currentStep++;
+            quad.MapUIprogress = currentStep;
             steps[currentStep].IsUnlocked = true;
             GameObject inSceneObj = gameObject.transform.Find(steps[currentStep].name).gameObject;
             inSceneObj.SetActive(true);
