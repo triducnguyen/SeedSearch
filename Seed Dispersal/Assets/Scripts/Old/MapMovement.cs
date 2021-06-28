@@ -13,6 +13,8 @@ namespace SeedSearch
         public GameObject mapDown;
         public GameObject vocabDown;
         public GameObject definition;
+        public GameObject suggestion;
+        public GameObject suggestion2;
 
         void Start()
         {
@@ -24,19 +26,26 @@ namespace SeedSearch
         {
             mapUp.SetActive(true);
             mapDown.SetActive(false);
+            if (suggestion.activeSelf)
+            {
+                suggestion.SetActive(false);
+            }
         }
 
         public void MapController2()
         {
-
-                mapUp.SetActive(false);
-                mapDown.SetActive(true);
+            mapUp.SetActive(false);
+            mapDown.SetActive(true);
 
         }
         public void VocabController1()
         {
             vocabUp.SetActive(true);
             vocabDown.SetActive(false);
+            if (suggestion2.activeSelf)
+            {
+                suggestion2.SetActive(false);
+            }
         }
         public void VocabController2()
         {
