@@ -45,6 +45,7 @@ public class AudioController : PlacementController
     public GameObject badger;
 
     public int MapUIprogress;
+    public Text deleteme;
 
     void Start()
     {
@@ -57,6 +58,7 @@ public class AudioController : PlacementController
     }
     void Update()
     {
+        deleteme.text = MapUIprogress.ToString();
         /*if(firstSoundPlayed == true)
         {
             if(!audioSound.isPlaying && secondSoundPlayed == false)
@@ -136,8 +138,8 @@ public class AudioController : PlacementController
         {
             if(MapUIprogress == 0 && secondSoundPlayed == false)
             {
-                audioSound.clip = secondClip;
-                audioSound.Play();
+                //audioSound.clip = secondClip;
+                //audioSound.Play();
                 secondSoundPlayed = true;
                 StartCoroutine(Audio2());
                 //v3.SetActive(true);
@@ -148,17 +150,17 @@ public class AudioController : PlacementController
         }
         if(MapUIprogress == 1 && secondSoundPlayed == true)
         {
-            audioSound.Pause();
+            //audioSound.Pause();
             //flowerIndicator.SetActive(true);
-            tapToMoveBee.SetActive(false);
-            secondtaptomovebee.SetActive(true);
+            //tapToMoveBee.SetActive(false);
+            //secondtaptomovebee.SetActive(true);
         }
         if(seedAppear.activeInHierarchy && fourthClipPlayed == false)
         {
             tapToMoveBee.SetActive(false);
             secondtaptomovebee.SetActive(false);
-            audioSound.clip = fourthClip;
-            audioSound.Play();
+            //audioSound.clip = fourthClip;
+            //audioSound.Play();
             fourthClipPlayed = true;
             //v6.gameObject.SetActive(true);
             //v7.gameObject.SetActive(true);
@@ -178,8 +180,8 @@ public class AudioController : PlacementController
         }
         if(seed.transform.position == finalSeedDestination.position && sixthSoundPlayed == false)
         {
-            audioSound.clip = sixthClip;
-            audioSound.Play();
+            //audioSound.clip = sixthClip;
+            //audioSound.Play();
             sixthSoundPlayed = true;
             cm5.SetActive(true);
             //v8.SetActive(true);
@@ -188,8 +190,8 @@ public class AudioController : PlacementController
         }
         if(sixthSoundPlayed == true && MapUIprogress == 4 && seventhSoundPlayed == false)
         {
-            audioSound.clip = seventhClip;
-            audioSound.Play();
+            //audioSound.clip = seventhClip;
+            //audioSound.Play();
             seventhSoundPlayed = true;
             seed.SetActive(false);
             rose.SetActive(true);
@@ -200,8 +202,8 @@ public class AudioController : PlacementController
         }
         if(seventhSoundPlayed == true && MapUIprogress == 5 && eighthSoundPlayed == false)
         {
-            audioSound.clip = eighthClip;
-            audioSound.Play();
+            //audioSound.clip = eighthClip;
+            //audioSound.Play();
             eighthSoundPlayed = true;
             seed.SetActive(false);
             StartCoroutine(Audio8());
