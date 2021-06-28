@@ -2148,11 +2148,8 @@ MonoBehaviour:
   cm6: {fileID: 0}
   restartButton: {fileID: 0}
   badger: {fileID: 0}
-<<<<<<< Updated upstream
-=======
   MapUIprogress: 0
   deleteme: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!114 &74529918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14290,8 +14287,6 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486847394}
   m_Material: {fileID: 0}
-<<<<<<< Updated upstream
-=======
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -14792,7 +14787,6 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486847394}
   m_Material: {fileID: 0}
->>>>>>> Stashed changes
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -22040,8 +22034,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
   m_PrefabInstance: {fileID: 881821844}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-=======
 --- !u!1001 &883411712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22181,7 +22173,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
->>>>>>> Stashed changes
 --- !u!1001 &890245795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35905,11 +35896,8 @@ MonoBehaviour:
   cm6: {fileID: 667610332}
   restartButton: {fileID: 1737855707}
   badger: {fileID: 101542199}
-<<<<<<< Updated upstream
-=======
   MapUIprogress: 0
   deleteme: {fileID: 433550742}
->>>>>>> Stashed changes
 --- !u!1001 &1559769889
 PrefabInstance:
   m_ObjectHideFlags: 0
