@@ -53,7 +53,7 @@ public class PlaceOnPlane : MonoBehaviour
                 Island.SetActive(true);
                 Island.transform.position = hitPose.position + new Vector3(0,Islandheight,0);
                 Islandspawn = true;
-                beginbutton.SetActive(false);
+                beginbutton.SetActive(true);
                 toggleplanedetection();
             }
         }
