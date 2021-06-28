@@ -9,7 +9,8 @@ namespace SeedSearch
     {
         [SerializeField] private List<Step> steps;
         [SerializeField] private int currentStep;
-        public List<AudioClip> narrators;
+        [SerializeField] private int currentAnimation;
+        public List<GameObject> animations;
         public TMP_Text description;
         private void OnEnable()
         {
@@ -31,6 +32,15 @@ namespace SeedSearch
                 }
             }
         }
+
+        private void OnDisable()
+        {
+            foreach(GameObject obj in animations)
+            {
+                obj.GetComponent<Animator>().SetBool("ZoomIn", true);
+                obj.SetActive(false);
+            }
+        }
         public void UnlockVocab(string vocab)
         {
             foreach(Vocabulary vob in Gamemanager.Instance.firstMapVocabulariesData)
@@ -49,6 +59,11 @@ namespace SeedSearch
             }
         }
 
+        public void CurrentStep(int step)
+        {
+            currentAnimation = step;
+        }
+
         public void Step(float wait)
         {
             StartCoroutine(narrator(wait));
@@ -56,24 +71,32 @@ namespace SeedSearch
 
         public void ShowDescription()
         {
-            description.text = steps[currentStep].description;
+            description.text = steps[currentAnimation].description;
         }
 
-        public void PlayNarrator()
-        {
-            AudioSource audioSource = GetComponent<AudioSource>();
-            audioSource.clip = narrators[currentStep];
-            audioSource.Play();
-        }
 
         public IEnumerator narrator(float wait)
         {
+            Debug.Log(currentAnimation);
+
+            animations[currentAnimation].SetActive(true);
+            Animator anim = animations[currentAnimation].GetComponent<Animator>();
+            anim.SetBool("ZoomOut", true);
+
             yield return new WaitForSeconds(wait);
-            currentStep++;
-            steps[currentStep].IsUnlocked = true;
-            GameObject inSceneObj = gameObject.transform.Find(steps[currentStep].name).gameObject;
-            inSceneObj.SetActive(true);
-            description.text = "";
+
+            anim.SetBool("ZoomIn", true);
+            yield return new WaitForSeconds(2f);
+            animations[currentAnimation].SetActive(false);
+
+            if (currentAnimation == currentStep && currentStep != 5)
+            {
+                currentStep++;
+                steps[currentStep].IsUnlocked = true;
+                GameObject inSceneObj = gameObject.transform.Find(steps[currentStep].name).gameObject;
+                inSceneObj.SetActive(true);
+                description.text = "";
+            }
         }
     }
 }
