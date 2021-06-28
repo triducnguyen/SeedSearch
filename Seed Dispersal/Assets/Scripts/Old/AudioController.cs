@@ -46,14 +46,14 @@ public class AudioController : PlacementController
 
     void Start()
     {
-        audioSound = soundObject.GetComponent<AudioSource>();
-        audioSound.clip = firstClip;
-        v1.SetActive(true);
-        v2.SetActive(true);
+        //audioSound = soundObject.GetComponent<AudioSource>();
+        //audioSound.clip = firstClip;
+       // v1.SetActive(true);
+       // v2.SetActive(true);
     }
     void Update()
     {
-        if(firstSoundPlayed == true)
+        /*if(firstSoundPlayed == true)
         {
             if(!audioSound.isPlaying && secondSoundPlayed == false)
             {
@@ -125,28 +125,25 @@ public class AudioController : PlacementController
             eighthSoundPlayed = true;
             seed.SetActive(false);
             StartCoroutine(Audio8());
-        }
+        }*/
     }
 
     public void BeginButtonPress()
     {
-        audioSound.Play();
-        startButton.gameObject.SetActive(false);
+        //audioSound.Play();
+        //startButton.gameObject.SetActive(true);
         firstSoundPlayed = true;
-        secondtaptomovebee.SetActive(true);
-        StartCoroutine(Audio1());
+        secondtaptomovebee.SetActive(false);
+        //StartCoroutine(Audio1());
     }
     public void NextIdea1Press()
     {
-        audioSound.clip = thirdClip;
-        audioSound.Play();
+        //audioSound.clip = thirdClip;
+        //audioSound.Play();
         nextIdea1.gameObject.SetActive(false);
         //flowerIndicator.SetActive(false);
-        tapToMoveBee.SetActive(false);
         //step2.gameObject.SetActive(true);
         //mapStep2.SetActive(true);
-        tapToMoveBee.SetActive(true);
-        secondtaptomovebee.SetActive(false);
         StartCoroutine(Audio3());
     }
     public void DisperseSeeds()
@@ -154,12 +151,11 @@ public class AudioController : PlacementController
         //map4.gameObject.SetActive(true);
         if(seedSoundRun == false)
         {
-            tapToMoveBee.SetActive(false);
             //step3.gameObject.SetActive(true);
             //step3Map.SetActive(true);
-            audioSound.clip = fifthClip;
+            //audioSound.clip = fifthClip;
             //map4.gameObject.SetActive(true);
-            audioSound.Play();
+            //audioSound.Play();
             fifthClipPlayed = true;
             seedSoundRun = true;
             seedDisperse.SetActive(false);
