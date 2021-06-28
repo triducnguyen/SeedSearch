@@ -92,10 +92,37 @@ namespace SeedSearch
             if (currentAnimation == currentStep && currentStep != 5)
             {
                 currentStep++;
+                gameprogress();
                 steps[currentStep].IsUnlocked = true;
                 GameObject inSceneObj = gameObject.transform.Find(steps[currentStep].name).gameObject;
                 inSceneObj.SetActive(true);
                 description.text = "";
+            }
+        }
+
+        public GameObject tapToMoveBee, secondtaptomovebee, seedDisperse, badger, cm5, seed, rose;
+        void Start(){
+            gameprogress();
+        }
+        private void gameprogress(){
+            if(currentStep == 0){
+                tapToMoveBee.SetActive(true);
+                secondtaptomovebee.SetActive(false);
+            }else if(currentStep == 1){
+                tapToMoveBee.SetActive(false);
+                secondtaptomovebee.SetActive(true);
+            }else if(currentStep == 2){
+                secondtaptomovebee.SetActive(false);
+                seedDisperse.SetActive(true);
+            }else if (currentStep == 3){
+                badger.SetActive(true);
+            }else if (currentStep == 4){
+                seed.SetActive(true);
+                //badger.SetActive(true);
+            }else if (currentStep == 5){
+                //cm5.SetActive(true);
+                seed.SetActive(false);
+                rose.SetActive(true);
             }
         }
     }

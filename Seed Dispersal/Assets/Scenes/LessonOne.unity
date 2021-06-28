@@ -7906,7 +7906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heightscalar: 0.6
   Island: {fileID: 250965886}
-  beginbutton: {fileID: 0}
+  beginbutton: {fileID: 752747366}
 --- !u!1 &101375648
 GameObject:
   m_ObjectHideFlags: 0
@@ -10596,7 +10596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &257352231
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11774,6 +11774,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4e3e209aaebd1ac4cb694b3337e2a0f9, type: 3}
   - {fileID: 8300000, guid: 16fe8c77880c9254fa837f7c4c32812c, type: 3}
   description: {fileID: 274031446}
+  tapToMoveBee: {fileID: 518621250}
+  secondtaptomovebee: {fileID: 776079976}
+  seedDisperse: {fileID: 1091245358}
+  badger: {fileID: 101542199}
+  cm5: {fileID: 1143324833}
+  seed: {fileID: 730038693}
+  rose: {fileID: 910735748}
 --- !u!114 &309382692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19277,9 +19284,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
-        m_MethodName: BeginButtonPress
+      - m_Target: {fileID: 98421893}
+        m_TargetAssemblyTypeName: PlaceOnPlane, Assembly-CSharp
+        m_MethodName: begingame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23885,7 +23892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8a7691f997116094fb6f604eae31774c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a7691f997116094fb6f604eae31774c, type: 3}
@@ -25572,10 +25579,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1558089780}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: DisperseSeeds
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1558089771}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -34800,7 +34819,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 62f700a02c1ca734a9bfcd763dd117ab, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
