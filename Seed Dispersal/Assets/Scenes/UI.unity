@@ -320,7 +320,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 19853738}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 833303555}
+        m_TargetAssemblyTypeName: AdventureMenu, Assembly-CSharp
+        m_MethodName: switchscene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: UI
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &19853738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2299,7 +2311,7 @@ GameObject:
   - component: {fileID: 288826379}
   - component: {fileID: 288826378}
   m_Layer: 5
-  m_Name: uncheck
+  m_Name: uncheck3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3380,7 +3392,7 @@ GameObject:
   - component: {fileID: 511461059}
   - component: {fileID: 511461058}
   m_Layer: 5
-  m_Name: uncheck
+  m_Name: uncheck2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4814,7 +4826,7 @@ GameObject:
   - component: {fileID: 701603652}
   - component: {fileID: 701603651}
   m_Layer: 5
-  m_Name: locked
+  m_Name: locked2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5285,6 +5297,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f519376a70af0f947b6277c5597a36b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelstatus: 010000000000000000000000
+  Check:
+  - {fileID: 1836690352}
+  - {fileID: 1596218805}
+  - {fileID: 848639858}
+  unCheck:
+  - {fileID: 1420984846}
+  - {fileID: 511461056}
+  - {fileID: 288826376}
+  lockmode:
+  - {fileID: 142709389}
+  - {fileID: 701603649}
+  - {fileID: 1880135163}
 --- !u!1 &838690353
 GameObject:
   m_ObjectHideFlags: 0
@@ -5431,7 +5456,7 @@ GameObject:
   - component: {fileID: 848639861}
   - component: {fileID: 848639860}
   m_Layer: 5
-  m_Name: Check
+  m_Name: Check3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6596,7 +6621,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1067890241}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 833303555}
+        m_TargetAssemblyTypeName: AdventureMenu, Assembly-CSharp
+        m_MethodName: switchscene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: UI
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1067890241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10171,7 +10208,7 @@ GameObject:
   - component: {fileID: 1596218808}
   - component: {fileID: 1596218807}
   m_Layer: 5
-  m_Name: Check
+  m_Name: Check2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12038,7 +12075,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1781539663}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 833303555}
+        m_TargetAssemblyTypeName: AdventureMenu, Assembly-CSharp
+        m_MethodName: switchscene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: UI
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1781539663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12868,7 +12917,7 @@ GameObject:
   - component: {fileID: 1880135166}
   - component: {fileID: 1880135165}
   m_Layer: 5
-  m_Name: locked
+  m_Name: locked3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
