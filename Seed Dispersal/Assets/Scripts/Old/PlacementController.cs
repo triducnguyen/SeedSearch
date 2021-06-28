@@ -49,9 +49,6 @@ public class PlacementController : MonoBehaviour
     public GameObject flower1Pollen, flower2Pollen, flower3Pollen, flower4Pollen, flower5Pollen;
     public bool seedBegin = false;
 
-    public GameObject taptomovebee;
-    public GameObject taptomovebee2;
-
     private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
     private AudioController Conductor;
@@ -149,8 +146,6 @@ public class PlacementController : MonoBehaviour
                         nextIdea1.gameObject.SetActive(true);
                         flowerSectionDone = true;
                         Conductor.inset("Pollination 2");
-                        taptomovebee.SetActive(false);
-                        taptomovebee2.SetActive(true);
                     }
                     if(hitObject.transform.name.Contains("Check2"))
                     {
@@ -158,7 +153,6 @@ public class PlacementController : MonoBehaviour
                         target.position = flyOverPosition.position;
                         pollenObj.gameObject.SetActive(true);
                         //step2.SetActive(true);
-                        taptomovebee2.SetActive(false);
                     }
                     if(hitObject.transform.name.Contains("Check4Button"))
                     {
