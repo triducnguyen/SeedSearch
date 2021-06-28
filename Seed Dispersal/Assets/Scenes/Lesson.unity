@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 32409258}
   - component: {fileID: 32409262}
   - component: {fileID: 32409263}
+  - component: {fileID: 32409265}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -461,6 +462,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Camera: {fileID: 0}
+--- !u!82 &32409265
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32409256}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f85ce11400bdb044c87923143b90cffd, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &33620865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9653,6 +9750,7 @@ GameObject:
   - component: {fileID: 739837027}
   - component: {fileID: 739837026}
   - component: {fileID: 739837028}
+  - component: {fileID: 739837029}
   m_Layer: 0
   m_Name: Step 3
   m_TagString: Untagged
@@ -9797,18 +9895,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 115955488}
-        m_TargetAssemblyTypeName: SeedSearch.MapUI, Assembly-CSharp
-        m_MethodName: PlayNarrator
-        m_Mode: 1
+      - m_Target: {fileID: 739837029}
+        m_TargetAssemblyTypeName: SeedSearch.AudioButton, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Bubble3
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &739837029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739837024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef66f97cdc56ceb42883521b6921ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &743513247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13205,6 +13315,7 @@ GameObject:
   - component: {fileID: 992189229}
   - component: {fileID: 992189228}
   - component: {fileID: 992189230}
+  - component: {fileID: 992189231}
   m_Layer: 0
   m_Name: Step 4
   m_TagString: Untagged
@@ -13337,18 +13448,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 115955488}
-        m_TargetAssemblyTypeName: SeedSearch.MapUI, Assembly-CSharp
-        m_MethodName: PlayNarrator
-        m_Mode: 1
+      - m_Target: {fileID: 992189231}
+        m_TargetAssemblyTypeName: SeedSearch.AudioButton, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Bubble4
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &992189231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992189226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef66f97cdc56ceb42883521b6921ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1002908267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18816,6 +18939,7 @@ GameObject:
   - component: {fileID: 1371807047}
   - component: {fileID: 1371807046}
   - component: {fileID: 1371807048}
+  - component: {fileID: 1371807049}
   m_Layer: 0
   m_Name: Step 2
   m_TagString: Untagged
@@ -18960,18 +19084,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 115955488}
-        m_TargetAssemblyTypeName: SeedSearch.MapUI, Assembly-CSharp
-        m_MethodName: PlayNarrator
-        m_Mode: 1
+      - m_Target: {fileID: 1371807049}
+        m_TargetAssemblyTypeName: SeedSearch.AudioButton, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Bubble2
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1371807049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371807044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef66f97cdc56ceb42883521b6921ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1373654652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19397,6 +19533,7 @@ GameObject:
   - component: {fileID: 1387219532}
   - component: {fileID: 1387219531}
   - component: {fileID: 1387219533}
+  - component: {fileID: 1387219534}
   m_Layer: 0
   m_Name: Step 1
   m_TagString: Untagged
@@ -19565,18 +19702,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 115955488}
-        m_TargetAssemblyTypeName: SeedSearch.MapUI, Assembly-CSharp
-        m_MethodName: PlayNarrator
-        m_Mode: 1
+      - m_Target: {fileID: 1387219534}
+        m_TargetAssemblyTypeName: SeedSearch.AudioButton, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Bubble1
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1387219534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387219529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef66f97cdc56ceb42883521b6921ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1418927715 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f8ce2c88b1af3e14dbe1630c5c59a50c, type: 3}
@@ -20791,6 +20940,7 @@ GameObject:
   - component: {fileID: 1547308791}
   - component: {fileID: 1547308790}
   - component: {fileID: 1547308789}
+  - component: {fileID: 1547308792}
   m_Layer: 0
   m_Name: Step 6
   m_TagString: Untagged
@@ -20921,16 +21071,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 115955488}
-        m_TargetAssemblyTypeName: SeedSearch.MapUI, Assembly-CSharp
-        m_MethodName: PlayNarrator
-        m_Mode: 1
+      - m_Target: {fileID: 1547308792}
+        m_TargetAssemblyTypeName: SeedSearch.AudioButton, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Bubble6
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1547308790
@@ -20971,6 +21121,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547308787}
   m_CullTransparentMesh: 1
+--- !u!114 &1547308792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547308787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef66f97cdc56ceb42883521b6921ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1549562180 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3922998525687062339, guid: 9bbba92976db30b44a4da0b5f06cbc49, type: 3}
@@ -22658,6 +22820,7 @@ GameObject:
   - component: {fileID: 1677804974}
   - component: {fileID: 1677804973}
   - component: {fileID: 1677804972}
+  - component: {fileID: 1677804975}
   m_Layer: 0
   m_Name: Step 5
   m_TagString: Untagged
@@ -22788,16 +22951,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 115955488}
-        m_TargetAssemblyTypeName: SeedSearch.MapUI, Assembly-CSharp
-        m_MethodName: PlayNarrator
-        m_Mode: 1
+      - m_Target: {fileID: 1677804975}
+        m_TargetAssemblyTypeName: SeedSearch.AudioButton, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Bubble5
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1677804973
@@ -22838,6 +23001,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677804970}
   m_CullTransparentMesh: 1
+--- !u!114 &1677804975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677804970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef66f97cdc56ceb42883521b6921ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1687491409
 GameObject:
   m_ObjectHideFlags: 0
@@ -26065,63 +26240,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c4610dd47ea4f9448440bc1a10838f4, type: 3}
---- !u!1001 &2059806896
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4615477316742401871, guid: e3632535efb83db418f1c78b8c604427, type: 3}
-      propertyPath: m_Name
-      value: Gamemanager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223607031770616549, guid: e3632535efb83db418f1c78b8c604427, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223607031770616549, guid: e3632535efb83db418f1c78b8c604427, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 892.448
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223607031770616549, guid: e3632535efb83db418f1c78b8c604427, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1071.9554
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223607031770616549, guid: e3632535efb83db418f1c78b8c604427, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -71.09841
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223607031770616549, guid: e3632535efb83db418f1c78b8c604427, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223607031770616549, guid: e3632535efb83db418f1c78b8c604427, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223607031770616549, guid: e3632535efb83db418f1c78b8c604427, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223607031770616549, guid: e3632535efb83db418f1c78b8c604427, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223607031770616549, guid: e3632535efb83db418f1c78b8c604427, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223607031770616549, guid: e3632535efb83db418f1c78b8c604427, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8223607031770616549, guid: e3632535efb83db418f1c78b8c604427, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e3632535efb83db418f1c78b8c604427, type: 3}
 --- !u!4 &2070150974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0c4610dd47ea4f9448440bc1a10838f4, type: 3}
