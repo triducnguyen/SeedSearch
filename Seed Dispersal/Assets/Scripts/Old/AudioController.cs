@@ -65,15 +65,18 @@ public class AudioController : PlacementController
                 v4.SetActive(true);
                 v5.SetActive(true);
             }
+            tapToMoveBee.SetActive(true);
         }
         if(!audioSound.isPlaying && secondSoundPlayed == true)
         {
             audioSound.Pause();
             //flowerIndicator.SetActive(true);
-            tapToMoveBee.SetActive(true);
+            tapToMoveBee.SetActive(false);
+            secondtaptomovebee.SetActive(true);
         }
         if(seedAppear.activeInHierarchy && fourthClipPlayed == false)
         {
+            secondtaptomovebee.SetActive(false);
             audioSound.clip = fourthClip;
             audioSound.Play();
             fourthClipPlayed = true;
