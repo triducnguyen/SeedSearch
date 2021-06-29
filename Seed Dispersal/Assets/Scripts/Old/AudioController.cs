@@ -159,7 +159,6 @@ public class AudioController : PlacementController
             fifthClipPlayed = true;
             seedSoundRun = true;
             seedDisperse.SetActive(false);
-            seed.SetActive(true);
             wind.SetActive(true);
             StartCoroutine(Audio5());
         }
