@@ -72,8 +72,8 @@ namespace SeedSearch
                 case LoginType.Student:
                     if(firstName.text != "" && lastName.text != "")
                     {
-                        currentStudent.FirstName = firstName.text;
-                        currentStudent.LastName = lastName.text;
+                        currentStudent.FirstName = firstName.text.ToLower();
+                        currentStudent.LastName = lastName.text.ToLower();
                         if (SaveManager.Instance.ExistData(currentStudent))
                         {
                             SaveManager.Instance.studentProfile = SaveManager.Instance.LoadStudentData(currentStudent);
@@ -93,7 +93,7 @@ namespace SeedSearch
                 case LoginType.Teacher:
                     if(userName.text != "" && password.text != "")
                     {
-                        currentTeacher.UserName = userName.text;
+                        currentTeacher.UserName = userName.text.ToLower();
                         currentTeacher.PassWord = password.text;
                         if (SaveManager.Instance.ExistData(currentTeacher))
                         {
