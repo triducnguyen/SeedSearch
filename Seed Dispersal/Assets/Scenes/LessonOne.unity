@@ -8146,7 +8146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heightscalar: 0.6
   Island: {fileID: 250965886}
-  beginbutton: {fileID: 0}
+  beginbutton: {fileID: 1006077371}
 --- !u!1 &101375648
 GameObject:
   m_ObjectHideFlags: 0
@@ -23348,9 +23348,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1558089780}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: BeginButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 98421893}
+        m_TargetAssemblyTypeName: PlaceOnPlane, Assembly-CSharp
+        m_MethodName: begingame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31106,7 +31118,6 @@ MonoBehaviour:
   secondtaptomovebee: {fileID: 776079976}
   seedDisperse: {fileID: 34165009}
   badger: {fileID: 101542199}
-  cm5: {fileID: 1453006788}
   seed: {fileID: 730038693}
   rose: {fileID: 910735748}
 --- !u!114 &1383295908
@@ -31526,7 +31537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1399765059
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41168,6 +41179,7 @@ MonoBehaviour:
     secondPrompt: 
     thirdPrompt: 
     answers: []
+    levelprogress: 010000000000000000000000
   times:
   - 1
   alltimes:
