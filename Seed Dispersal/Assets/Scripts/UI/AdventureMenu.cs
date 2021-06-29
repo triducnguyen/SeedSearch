@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 namespace SeedSearch{
 public class AdventureMenu : MonoBehaviour
 {
-    private StudentData currentStudent;
+    [SerializeField] public StudentData currentStudent;
     [SerializeField] public int[] levelstatus; // 0 if locked, 1 if incomplete, 2 if complete;
 
 
@@ -18,8 +18,10 @@ public class AdventureMenu : MonoBehaviour
     void Start()
     {
         SaveManager.Instance.LoadStudentData(currentStudent);
-        if(currentStudent.Levelprogress != null){
+        if(currentStudent.Levelprogress != null && 
+        currentStudent.Levelprogress != new int[] {0,0,0}){
             levelstatus = currentStudent.Levelprogress;
+            Debug.Log("Loaded save");
         }
         foreach(int i in levelstatus){
             if(levelstatus[i] == 0){ //locked
