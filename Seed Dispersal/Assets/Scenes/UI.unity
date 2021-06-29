@@ -13923,6 +13923,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlacedObject
       objectReference: {fileID: 0}
+    - target: {fileID: 5769244662658974085, guid: 858b54a83c09b934d9c8d04373f56b70, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8073544138681089275, guid: 858b54a83c09b934d9c8d04373f56b70, type: 3}
       propertyPath: m_RootOrder
       value: 3
