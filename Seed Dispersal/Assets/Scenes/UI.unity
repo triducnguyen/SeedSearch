@@ -4565,7 +4565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &724044147
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5227,6 +5227,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f519376a70af0f947b6277c5597a36b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentStudent:
+    times: []
+    overalltimes: []
+    firstName: 
+    lastName: 
+    firstPrompt: 
+    secondPrompt: 
+    thirdPrompt: 
+    answers: []
+    levelprogress: 010000000000000000000000
   levelstatus: 010000000000000000000000
   Check:
   - {fileID: 459970820}
