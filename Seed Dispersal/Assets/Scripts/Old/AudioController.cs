@@ -156,12 +156,12 @@ public class AudioController : PlacementController
             //audioSound.clip = fifthClip;
             //map4.gameObject.SetActive(true);
             //audioSound.Play();
-            fifthClipPlayed = true;
+            //fifthClipPlayed = true;
             seedSoundRun = true;
             seedDisperse.SetActive(false);
             seed.SetActive(true);
             wind.SetActive(true);
-            StartCoroutine(Audio5());
+            //StartCoroutine(Audio5());
         }
         
     }
