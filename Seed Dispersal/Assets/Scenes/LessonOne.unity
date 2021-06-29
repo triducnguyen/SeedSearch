@@ -1061,7 +1061,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1558089780}
         m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: DisperseSeeds
         m_Mode: 1
@@ -8259,7 +8259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8686ff01a47f4e4da9c168f36b602d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.15
+  speed: 0.015
   target: {fileID: 1325079556}
 --- !u!4 &101542201 stripped
 Transform:
@@ -29499,7 +29499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f2353cfef30ef2c4a91b0b23d4fd6822, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2353cfef30ef2c4a91b0b23d4fd6822, type: 3}
@@ -29527,7 +29527,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325079555}
   m_LocalRotation: {x: -0.40821788, y: 0.23456968, z: -0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: -0.7763411, y: -2.275904, z: -2.9079483}
+  m_LocalPosition: {x: -1.951, y: -2.419, z: -3.196}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1456872329}
@@ -34532,7 +34532,7 @@ MonoBehaviour:
   audioSound: {fileID: 1558089772}
   startButton: {fileID: 866108475}
   seedAppear: {fileID: 1328992123}
-  seedDisperse: {fileID: 1552177723}
+  seedDisperse: {fileID: 34165009}
   wind: {fileID: 453047734}
   v1: {fileID: 260690966}
   v2: {fileID: 1078356553}
@@ -34561,7 +34561,7 @@ MonoBehaviour:
   cm4: {fileID: 235816843}
   cm5: {fileID: 1573597679}
   cm6: {fileID: 667610332}
-  restartButton: {fileID: 1737855707}
+  restartButton: {fileID: 1377508220}
   badger: {fileID: 101542199}
 --- !u!1001 &1559769889
 PrefabInstance:

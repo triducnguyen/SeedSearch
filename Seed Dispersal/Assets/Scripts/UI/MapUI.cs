@@ -113,11 +113,11 @@ namespace SeedSearch
                 secondtaptomovebee.SetActive(true);
             }else if(currentStep == 2){
                 secondtaptomovebee.SetActive(false);
-                //seedDisperse.SetActive(true);
+                seedDisperse.SetActive(true);
             }else if (currentStep == 3){
                 badger.SetActive(true);
             }else if (currentStep == 4){
-                seedDisperse.SetActive(true);
+                //seedDisperse.SetActive(true);
             }else if (currentStep == 5){
                 //cm5.SetActive(true);
                 seed.SetActive(false);
