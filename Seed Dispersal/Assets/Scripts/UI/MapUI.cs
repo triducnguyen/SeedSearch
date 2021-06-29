@@ -123,7 +123,6 @@ namespace SeedSearch
                 //cm5.SetActive(true);
                 seed.SetActive(false);
                 rose.SetActive(true);
-            } else{
                 lobbybutton.SetActive(true);
             }
         }
