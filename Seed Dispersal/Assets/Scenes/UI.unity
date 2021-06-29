@@ -1252,16 +1252,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1153470636}
-        m_TargetAssemblyTypeName: NewMenu, Assembly-CSharp
-        m_MethodName: QuitApp
-        m_Mode: 1
+      - m_Target: {fileID: 861218661}
+        m_TargetAssemblyTypeName: SeedSearch.AdventureMenu, Assembly-CSharp
+        m_MethodName: switchscene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: UI
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &138014501
@@ -4451,6 +4451,7 @@ MonoBehaviour:
     secondPrompt: 
     thirdPrompt: 
     answers: []
+    levelprogress: 000000000000000000000000
   firstPrompt: {fileID: 1412865607}
   secondPrompt: {fileID: 838690355}
   thirdPrompt: {fileID: 397779764}
@@ -4564,7 +4565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &724044147
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5226,6 +5227,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f519376a70af0f947b6277c5597a36b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentStudent:
+    times: []
+    overalltimes: []
+    firstName: 
+    lastName: 
+    firstPrompt: 
+    secondPrompt: 
+    thirdPrompt: 
+    answers: []
+    levelprogress: 010000000000000000000000
   levelstatus: 010000000000000000000000
   Check:
   - {fileID: 459970820}
@@ -5239,6 +5250,10 @@ MonoBehaviour:
   - {fileID: 765305223}
   - {fileID: 1290534293}
   - {fileID: 734651780}
+  levelscene:
+  - UI
+  - UI
+  - UI
 --- !u!1 &957156607
 GameObject:
   m_ObjectHideFlags: 0
@@ -6698,16 +6713,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1153470636}
-        m_TargetAssemblyTypeName: NewMenu, Assembly-CSharp
-        m_MethodName: QuitApp
-        m_Mode: 1
+      - m_Target: {fileID: 861218661}
+        m_TargetAssemblyTypeName: SeedSearch.AdventureMenu, Assembly-CSharp
+        m_MethodName: switchscene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: UI
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1193741451
@@ -7358,16 +7373,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1153470636}
-        m_TargetAssemblyTypeName: NewMenu, Assembly-CSharp
-        m_MethodName: QuitApp
-        m_Mode: 1
+      - m_Target: {fileID: 861218661}
+        m_TargetAssemblyTypeName: SeedSearch.AdventureMenu, Assembly-CSharp
+        m_MethodName: switchscene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: UI
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1286830980
@@ -9066,6 +9081,7 @@ MonoBehaviour:
     secondPrompt: 
     thirdPrompt: 
     answers: []
+    levelprogress: 000000000000000000000000
   currentTeacher:
     userName: 
     password: 
@@ -10317,7 +10333,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: LessonOne
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1650512137
