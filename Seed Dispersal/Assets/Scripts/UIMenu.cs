@@ -23,5 +23,10 @@ namespace SeedSearch
         {
             SceneManager.LoadScene(scene);
         }
+        public GameObject menuobj, adventureMenu;
+        public void openadventuretab(){
+            menuobj.SetActive(false);
+            adventureMenu.SetActive(true);
+        }
     }
 }

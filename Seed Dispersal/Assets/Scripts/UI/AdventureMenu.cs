@@ -34,4 +34,5 @@ public class AdventureMenu : MonoBehaviour
     public void switchscene(string scene){
         SceneManager.LoadScene(scene);
     }
+
 }
