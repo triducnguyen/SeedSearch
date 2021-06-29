@@ -19,7 +19,7 @@ public class AdventureMenu : MonoBehaviour
     {
         SaveManager.Instance.LoadStudentData(currentStudent);
         if(currentStudent.Levelprogress != null && 
-        currentStudent.Levelprogress != new int[] {0,0,0}){
+        currentStudent.Levelprogress[0] != 0){
             levelstatus = currentStudent.Levelprogress;
             Debug.Log("Loaded save");
         }

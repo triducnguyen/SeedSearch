@@ -13,7 +13,7 @@ public class StudentData
     [SerializeField] private string secondPrompt;
     [SerializeField] private string thirdPrompt;
     [SerializeField] private List<string> answers = new List<string>();
-    [SerializeField] private int[] levelprogress = new int[3];
+    [SerializeField] private int[] levelprogress = new int[] {1, 0, 0};
 
     public List<float> OverallTimes { get => overalltimes; set => overalltimes = value; }
     public List<float> Times { get => times; set => times = value; }
