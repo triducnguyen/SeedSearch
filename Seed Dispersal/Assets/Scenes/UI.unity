@@ -1254,9 +1254,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 861218661}
-        m_TargetAssemblyTypeName: AdventureMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: SeedSearch.AdventureMenu, Assembly-CSharp
         m_MethodName: switchscene
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4586,6 +4586,7 @@ MonoBehaviour:
     secondPrompt: 
     thirdPrompt: 
     answers: []
+    levelprogress: 000000000000000000000000
   firstPrompt: {fileID: 1412865607}
   secondPrompt: {fileID: 838690355}
   thirdPrompt: {fileID: 397779764}
@@ -5325,7 +5326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &861218660
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5374,6 +5375,10 @@ MonoBehaviour:
   - {fileID: 765305223}
   - {fileID: 1290534293}
   - {fileID: 734651780}
+  levelscene:
+  - UI
+  - UI
+  - UI
 --- !u!1 &957156607
 GameObject:
   m_ObjectHideFlags: 0
@@ -6834,13 +6839,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 861218661}
-        m_TargetAssemblyTypeName: AdventureMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: SeedSearch.AdventureMenu, Assembly-CSharp
         m_MethodName: switchscene
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: UI
           m_BoolArgument: 0
@@ -7494,13 +7499,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 861218661}
-        m_TargetAssemblyTypeName: AdventureMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: SeedSearch.AdventureMenu, Assembly-CSharp
         m_MethodName: switchscene
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: UI
           m_BoolArgument: 0
@@ -9201,6 +9206,7 @@ MonoBehaviour:
     secondPrompt: 
     thirdPrompt: 
     answers: []
+    levelprogress: 000000000000000000000000
   currentTeacher:
     userName: 
     password: 

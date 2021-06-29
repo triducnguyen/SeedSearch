@@ -12,6 +12,8 @@ public class AdventureMenu : MonoBehaviour
     [SerializeField] private List<GameObject> Check = new List<GameObject>();
     [SerializeField] private List<GameObject> unCheck = new List<GameObject>();
     [SerializeField] private List<GameObject> lockmode = new List<GameObject>();
+
+    [SerializeField] private List<string> levelscene = new List<string>();
     
     void Start()
     {
@@ -36,8 +38,12 @@ public class AdventureMenu : MonoBehaviour
         }
     }
 
-    public void switchscene(string scene){
-        SceneManager.LoadScene(scene);
+    public void switchscene(int level){
+        if(levelstatus[level] != 0){
+            SceneManager.LoadScene(levelscene[level]);
+        }else{
+            Debug.Log("level is locked");
+        }
     }
 
 }
