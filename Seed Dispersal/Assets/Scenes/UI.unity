@@ -1253,16 +1253,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1153470636}
-        m_TargetAssemblyTypeName: NewMenu, Assembly-CSharp
-        m_MethodName: QuitApp
-        m_Mode: 1
+      - m_Target: {fileID: 861218661}
+        m_TargetAssemblyTypeName: AdventureMenu, Assembly-CSharp
+        m_MethodName: switchscene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: UI
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &138014501
@@ -5325,7 +5325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &861218660
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6833,16 +6833,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1153470636}
-        m_TargetAssemblyTypeName: NewMenu, Assembly-CSharp
-        m_MethodName: QuitApp
-        m_Mode: 1
+      - m_Target: {fileID: 861218661}
+        m_TargetAssemblyTypeName: AdventureMenu, Assembly-CSharp
+        m_MethodName: switchscene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: UI
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1193741451
@@ -7493,16 +7493,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1153470636}
-        m_TargetAssemblyTypeName: NewMenu, Assembly-CSharp
-        m_MethodName: QuitApp
-        m_Mode: 1
+      - m_Target: {fileID: 861218661}
+        m_TargetAssemblyTypeName: AdventureMenu, Assembly-CSharp
+        m_MethodName: switchscene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: UI
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1286830980
@@ -9152,7 +9152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1501069690
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12254,7 +12254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1807102966
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13619,7 +13619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2026332781
 RectTransform:
   m_ObjectHideFlags: 0

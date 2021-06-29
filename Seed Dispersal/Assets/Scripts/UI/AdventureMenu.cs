@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+namespace SeedSearch{
 public class AdventureMenu : MonoBehaviour
 {
+    private StudentData currentStudent;
     [SerializeField] public int[] levelstatus; // 0 if locked, 1 if incomplete, 2 if complete;
 
 
@@ -14,6 +15,10 @@ public class AdventureMenu : MonoBehaviour
     
     void Start()
     {
+        SaveManager.Instance.LoadStudentData(currentStudent);
+        if(currentStudent.Levelprogress != null){
+            levelstatus = currentStudent.Levelprogress;
+        }
         foreach(int i in levelstatus){
             if(levelstatus[i] == 0){ //locked
                 Check[i].SetActive(false);
@@ -35,4 +40,5 @@ public class AdventureMenu : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
+}
 }
