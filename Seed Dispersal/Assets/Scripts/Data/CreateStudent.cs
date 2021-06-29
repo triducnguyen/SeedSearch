@@ -14,8 +14,8 @@ namespace SeedSearch
         public void OnCreate(GameObject obj)
         {
             StudentData newStudent = new StudentData();
-            newStudent.FirstName = firstName.text;
-            newStudent.LastName = lastName.text;
+            newStudent.FirstName = firstName.text.ToLower();
+            newStudent.LastName = lastName.text.ToLower();
             if (!SaveManager.Instance.ExistData(newStudent) && newStudent.FirstName.Length > 1 && newStudent.LastName.Length > 1)
             {
                 SaveManager.Instance.SaveStudentFile(newStudent);

@@ -19,7 +19,7 @@ namespace SeedSearch
             if (password.text == confirmPassWord.text && password.text != "" && userName.text != "")
             {
                 TeacherData teacher = new TeacherData();
-                teacher.UserName = userName.text;
+                teacher.UserName = userName.text.ToLower();
                 teacher.PassWord = password.text;
                 if (!SaveManager.Instance.ExistData(teacher))
                 {
