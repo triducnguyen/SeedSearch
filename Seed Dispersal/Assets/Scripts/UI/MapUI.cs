@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 namespace SeedSearch
 {
@@ -100,7 +101,7 @@ namespace SeedSearch
             }
         }
 
-        public GameObject tapToMoveBee, secondtaptomovebee, seedDisperse, badger, seed, rose;
+        public GameObject lobbybutton, tapToMoveBee, secondtaptomovebee, seedDisperse, badger, seed, rose;
         void Start(){
             gameprogress();
         }
@@ -122,7 +123,13 @@ namespace SeedSearch
                 //cm5.SetActive(true);
                 seed.SetActive(false);
                 rose.SetActive(true);
+            } else{
+                lobbybutton.SetActive(true);
             }
+        }
+
+        public void changescene(string desiredscene){
+            SceneManager.LoadScene(desiredscene);
         }
     }
 }
