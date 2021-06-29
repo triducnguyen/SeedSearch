@@ -136,12 +136,12 @@ namespace SeedSearch{
         
             currentStudent.Times =  times;
             currentStudent.OverallTimes = alltimes;
-            //SaveManager.Instance.SaveStudentFile(currentStudent); 
+            SaveManager.Instance.SaveStudentFile(currentStudent); 
         }
         
         public void LoadTimes(){
             Debug.Log("Loading");
-            //SaveManager.Instance.LoadStudentData(currentStudent);
+            SaveManager.Instance.LoadStudentData(currentStudent);
             if(currentStudent.Times != null){
                 times = currentStudent.Times;
                 alltimes = currentStudent.OverallTimes;
