@@ -7985,7 +7985,7 @@ MonoBehaviour:
   step4: {fileID: 0}
   step5: {fileID: 0}
   step6: {fileID: 0}
-  speed: 1
+  speed: 0.1
   testAudio: {fileID: 0}
   step1Bool: 0
   testBool: 1
