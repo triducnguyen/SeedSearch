@@ -63,6 +63,7 @@ namespace SeedSearch
         public void CurrentStep(int step)
         {
             currentAnimation = step;
+            currentStep = step;
         }
 
         public void Step(float wait)
@@ -78,26 +79,50 @@ namespace SeedSearch
 
         public IEnumerator narrator(float wait)
         {
-            Debug.Log(currentAnimation);
+            Gamemanager.Instance.WaitToUnlockStep(wait, currentStep);
+            Debug.Log(currentStep);
 
             animations[currentAnimation].SetActive(true);
             Animator anim = animations[currentAnimation].GetComponent<Animator>();
             anim.SetBool("ZoomOut", true);
-
-            yield return new WaitForSeconds(wait);
+            yield return new WaitForSeconds(2f);
 
             anim.SetBool("ZoomIn", true);
             yield return new WaitForSeconds(2f);
             animations[currentAnimation].SetActive(false);
 
-            if (currentAnimation == currentStep && currentStep != 5)
+            float remainTime = wait - 4f;
+            yield return new WaitForSeconds(remainTime);
+            description.text = "";
+
+            //if (currentAnimation == currentStep && currentStep != 5)
+            //{
+            //    currentStep++;
+            //    gameprogress();
+            //    steps[currentStep].IsUnlocked = true;
+            //    GameObject inSceneObj = gameObject.transform.Find(steps[currentStep].name).gameObject;
+            //    inSceneObj.SetActive(true);
+            //    description.text = "";
+            //}
+        }
+
+        private void FixedUpdate()
+        {
+            foreach (Step obj in steps)
             {
-                currentStep++;
-                gameprogress();
-                steps[currentStep].IsUnlocked = true;
-                GameObject inSceneObj = gameObject.transform.Find(steps[currentStep].name).gameObject;
-                inSceneObj.SetActive(true);
-                description.text = "";
+
+                GameObject inSceneObj = gameObject.transform.Find(obj.name).gameObject;
+                if (inSceneObj != null)
+                {
+                    if (obj.IsUnlocked)
+                    {
+                        inSceneObj.SetActive(true);
+                    }
+                    else
+                    {
+                        inSceneObj.SetActive(false);
+                    }
+                }
             }
         }
 
