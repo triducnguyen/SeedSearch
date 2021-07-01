@@ -50,11 +50,13 @@ namespace SeedSearch{
 
         [Header("Maps/Steps")]
         public List<Step> steps;
+        public int currentStep;
         private void Start()
         {
             currentScene = SceneManager.GetActiveScene().name;
             stillther.SetActive(false);
             fillscreencolor.SetActive(false);
+            currentStep = 0;
         }
 
 
@@ -185,5 +187,20 @@ namespace SeedSearch{
                 Debug.Log("error with relog");
             }
         }
+
+        public void WaitToUnlockStep(float time,int step)
+        {
+            StartCoroutine(WaitToUnlock(time,step));
+        }
+
+        public IEnumerator WaitToUnlock(float time, int step)
+        {
+            yield return new WaitForSeconds(time);
+            currentStep = step;
+            currentStep++;
+            steps[currentStep].IsUnlocked = true;
+
+        }
+
     }
 }
