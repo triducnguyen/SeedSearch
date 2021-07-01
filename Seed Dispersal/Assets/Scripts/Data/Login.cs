@@ -28,6 +28,9 @@ namespace SeedSearch
         public TMP_InputField firstName;
         public TMP_InputField lastName;
 
+        [Header("Notification")]
+        public GameObject notification;
+
         [Header("Profile")]
         public GameObject teacherProfile;
         public GameObject playMode;
@@ -86,7 +89,9 @@ namespace SeedSearch
                         }
                         else
                         {
+                            notification.transform.GetChild(0).GetComponent<TMP_Text>().text = "Non-student exist";
                             Debug.Log("Non-student exist");
+                            StartCoroutine(Notification());
                         }
                     }
                     break;
@@ -105,7 +110,9 @@ namespace SeedSearch
                         }
                         else
                         {
+                            notification.transform.GetChild(0).GetComponent<TMP_Text>().text = "Account non-exist";
                             Debug.Log("Account non-exist");
+                            StartCoroutine(Notification());
                         }
                     }
                     
@@ -115,6 +122,13 @@ namespace SeedSearch
             }
         }
         #endregion
-    }
 
+
+        public IEnumerator Notification()
+        {
+            notification.SetActive(true);
+            yield return new WaitForSeconds(2f);
+            notification.SetActive(false);
+        }
+    }
 }
