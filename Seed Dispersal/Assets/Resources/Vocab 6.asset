@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4132a0ff85a3dcb49a76b9c24f7cbdf7, type: 3}
   m_Name: Vocab 6
   m_EditorClassIdentifier: 
-  vocab: Seed dispersal
+  vocab: SeedDispersal
   definition: The process of moving seeds from one place to another.

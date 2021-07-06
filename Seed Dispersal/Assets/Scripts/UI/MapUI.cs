@@ -16,13 +16,12 @@ namespace SeedSearch
         private void OnEnable()
         {
             steps = Gamemanager.Instance.steps;
-            foreach (Step obj in steps)
+            for (int i = 1; i < steps.Count; i++)
             {
-
-                GameObject inSceneObj = gameObject.transform.Find(obj.name).gameObject;
+                GameObject inSceneObj = gameObject.transform.Find(steps[i].name).gameObject;
                 if (inSceneObj != null)
                 {
-                    if (obj.IsUnlocked)
+                    if (steps[i].IsUnlocked && CheckSeen(steps[i - 1]))
                     {
                         inSceneObj.SetActive(true);
                     }
@@ -44,21 +43,27 @@ namespace SeedSearch
         }
         public void UnlockVocab(string vocab)
         {
-            foreach(Vocabulary vob in Gamemanager.Instance.firstMapVocabulariesData)
+            Vocabulary vocabulary = new Vocabulary();
+            foreach(Vocabulary vob in Gamemanager.Instance.vocabulariesDataOne)
             {
                 if(vob.name == vocab)
                 {
                     vob.IsUnlocked = true;
+                    vocabulary = vob;
                 }
             }
-            foreach (Vocabulary vob in Gamemanager.Instance.secondMapVocabulariesData)
+            foreach (Vocabulary vob in Gamemanager.Instance.vocabulariesDataTwo)
             {
                 if (vob.name == vocab)
                 {
                     vob.IsUnlocked = true;
+                    vocabulary = vob;
                 }
             }
+            Gamemanager.Instance.steps[currentStep].Vocabularies.Add(vocabulary);
+
         }
+
 
         public void CurrentStep(int step)
         {
@@ -108,13 +113,12 @@ namespace SeedSearch
 
         private void FixedUpdate()
         {
-            foreach (Step obj in steps)
+            for(int i = 1;i < steps.Count; i++)
             {
-
-                GameObject inSceneObj = gameObject.transform.Find(obj.name).gameObject;
+                GameObject inSceneObj = gameObject.transform.Find(steps[i].name).gameObject;
                 if (inSceneObj != null)
                 {
-                    if (obj.IsUnlocked)
+                    if (steps[i].IsUnlocked && CheckSeen(steps[i-1]))
                     {
                         inSceneObj.SetActive(true);
                     }
@@ -122,8 +126,20 @@ namespace SeedSearch
                     {
                         inSceneObj.SetActive(false);
                     }
+                }               
+            }
+        }
+
+        private bool CheckSeen(Step step)
+        {
+            foreach(Vocabulary vocab in step.Vocabularies)
+            {
+                if(vocab.Seen == false)
+                {
+                    return false;
                 }
             }
+            return true;
         }
 
         public GameObject lobbybutton, tapToMoveBee, secondtaptomovebee, seedDisperse, badger, seed, rose;

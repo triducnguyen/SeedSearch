@@ -11,7 +11,7 @@ namespace SeedSearch
 
         private void OnEnable()
         {
-            vocabularies = Gamemanager.Instance.firstMapVocabulariesData;
+            vocabularies = Gamemanager.Instance.vocabulariesDataTwo;
             foreach (Vocabulary obj in vocabularies)
             {
                 GameObject inSceneObj = gameObject.transform.Find(obj.name).gameObject;

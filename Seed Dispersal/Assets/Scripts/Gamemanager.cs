@@ -43,8 +43,8 @@ namespace SeedSearch{
         public string currentScene;
 
         [Header("Vocabularies")]
-        public List<Vocabulary> firstMapVocabulariesData;
-        public List<Vocabulary> secondMapVocabulariesData;
+        public List<Vocabulary> vocabulariesDataOne;
+        public List<Vocabulary> vocabulariesDataTwo;
         public List<Vocabulary> VocabulariesData;
         public bool isDefinitionOn;
 
