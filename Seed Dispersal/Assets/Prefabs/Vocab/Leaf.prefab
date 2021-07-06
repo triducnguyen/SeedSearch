@@ -13,13 +13,14 @@ GameObject:
   - component: {fileID: 1853549593258857720}
   - component: {fileID: 1853549593258857727}
   - component: {fileID: 1853549593258857722}
+  - component: {fileID: 8039677633174233561}
   m_Layer: 5
   m_Name: Leaf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1853549593258857726
 RectTransform:
   m_ObjectHideFlags: 0
@@ -133,6 +134,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8039677633174233561}
+        m_TargetAssemblyTypeName: SeedSearch.AudioButton, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Leaf
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1853549593258857722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,3 +159,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vocab: {fileID: 11400000, guid: f87098d157d370745b526089b2f1e6c9, type: 2}
+--- !u!114 &8039677633174233561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853549593258857725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef66f97cdc56ceb42883521b6921ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

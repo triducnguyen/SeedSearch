@@ -241,65 +241,67 @@ MonoBehaviour:
   hintObject: {fileID: 1056769985639236765, guid: ff5db972084a87241ba7648640ed4b1f, type: 3}
   hintSuggest: {fileID: 633861468192525826, guid: c498de8274a0f734abdb09a91870310b, type: 3}
   currentScene: 
-  firstMapVocabulariesData:
-  - name: Pollinator
-    button: {fileID: 4666128701046373181, guid: cc896a277aafa9642ac80e984507d611, type: 3}
-    isUnlocked: 0
-  - name: Pollen
-    button: {fileID: 384245515019365270, guid: b35290603be868e43a1951d516d2df78, type: 3}
-    isUnlocked: 0
-  - name: Pollination
-    button: {fileID: 1042670485956213638, guid: 94f7a232783b6cb47b1ea3d67e7ca5ba, type: 3}
-    isUnlocked: 0
-  - name: Germinate
-    button: {fileID: 658795340917755659, guid: 1f891f7746729084aa427234b34fd2b6, type: 3}
-    isUnlocked: 0
-  - name: LifeCycle
-    button: {fileID: 2641409953354857025, guid: ae64cee40a7d0744489bb5e7129d93fa, type: 3}
-    isUnlocked: 0
-  - name: SeedDispersal
-    button: {fileID: 6352108133457071875, guid: 04350f283697ab64c88d8f870ae16d3e, type: 3}
-    isUnlocked: 0
-  - name: Disperse
-    button: {fileID: 7354415933909132317, guid: 3d7c6f85e8b9a7b44aabe5462b901b9b, type: 3}
-    isUnlocked: 0
-  secondMapVocabulariesData:
-  - name: Seed
-    button: {fileID: 3493913717492363661, guid: 97f76c12e3d954b4eb35cc3c7b135cb2, type: 3}
-    isUnlocked: 0
-  - name: Leaf
-    button: {fileID: 1853549593258857725, guid: f29e7ea66a9f33b458a3dcc4d46314b7, type: 3}
-    isUnlocked: 0
-  - name: Stem
-    button: {fileID: 3922998525687062340, guid: 9bbba92976db30b44a4da0b5f06cbc49, type: 3}
-    isUnlocked: 0
-  - name: Roots
-    button: {fileID: 2181068445961186945, guid: 2cdc6ce87160c614cb04f89058d0faa9, type: 3}
-    isUnlocked: 0
+  vocabulariesDataOne:
   - name: Sunlight
     button: {fileID: 1719806105904211705, guid: 92224a1f0dd2a974296cf421fe911f26, type: 3}
     isUnlocked: 0
+    seen: 0
+  - name: Stem
+    button: {fileID: 3922998525687062340, guid: 9bbba92976db30b44a4da0b5f06cbc49, type: 3}
+    isUnlocked: 0
+    seen: 0
+  - name: Roots
+    button: {fileID: 2181068445961186945, guid: 2cdc6ce87160c614cb04f89058d0faa9, type: 3}
+    isUnlocked: 0
+    seen: 0
+  - name: Leaf
+    button: {fileID: 1853549593258857725, guid: f29e7ea66a9f33b458a3dcc4d46314b7, type: 3}
+    isUnlocked: 0
+    seen: 0
+  vocabulariesDataTwo:
+  - name: Seed
+    button: {fileID: 3493913717492363661, guid: 97f76c12e3d954b4eb35cc3c7b135cb2, type: 3}
+    isUnlocked: 1
+    seen: 1
+  - name: Pollination
+    button: {fileID: 1042670485956213638, guid: 94f7a232783b6cb47b1ea3d67e7ca5ba, type: 3}
+    isUnlocked: 0
+    seen: 0
+  - name: Germinate
+    button: {fileID: 658795340917755659, guid: 1f891f7746729084aa427234b34fd2b6, type: 3}
+    isUnlocked: 0
+    seen: 0
+  - name: SeedDispersal
+    button: {fileID: 6352108133457071875, guid: 04350f283697ab64c88d8f870ae16d3e, type: 3}
+    isUnlocked: 0
+    seen: 0
   VocabulariesData: []
   isDefinitionOn: 0
   steps:
   - name: Step 1
     description: Pollinators move pollen from one flower to another
     isUnlocked: 1
+    vocabularies: []
   - name: Step 2
     description: When a plant receives pollen, it produces seeds.
     isUnlocked: 0
+    vocabularies: []
   - name: Step 3
     description: Seeds drop from the plant
     isUnlocked: 0
+    vocabularies: []
   - name: Step 4
     description: Wind, Insects, Animals
     isUnlocked: 0
+    vocabularies: []
   - name: Step 5
     description: Seed settles and plants a new flower
     isUnlocked: 0
+    vocabularies: []
   - name: Step 6
     description: A new plant is produced and blooms
     isUnlocked: 0
+    vocabularies: []
   currentStep: 0
 --- !u!1001 &405391549
 PrefabInstance:
