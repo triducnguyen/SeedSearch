@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1719806105904211706}
   - component: {fileID: 1719806105904211707}
   - component: {fileID: 1719806105904211700}
+  - component: {fileID: 680314939269281053}
   m_Layer: 5
   m_Name: Sunlight
   m_TagString: Untagged
@@ -133,6 +134,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 680314939269281053}
+        m_TargetAssemblyTypeName: SeedSearch.AudioButton, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Sunlight
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1719806105904211700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,3 +159,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vocab: {fileID: 11400000, guid: b0b04979b0e018b4c9f92d42e160c2cf, type: 2}
+--- !u!114 &680314939269281053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719806105904211705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef66f97cdc56ceb42883521b6921ce1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
