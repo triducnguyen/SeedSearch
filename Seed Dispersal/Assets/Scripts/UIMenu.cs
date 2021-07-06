@@ -28,5 +28,17 @@ namespace SeedSearch
             menuobj.SetActive(false);
             adventureMenu.SetActive(true);
         }
+
+        public void ReturnToMenu()
+        {
+            menuobj.SetActive(false);
+            adventureMenu.SetActive(true);
+            SoundManager.Instance.GetComponent<AudioSource>().clip = null;
+        }
+
+        public void QuitApp()
+        {
+            Application.Quit();
+        }
     }
 }

@@ -16,6 +16,12 @@ namespace SeedSearch
         public GameObject suggestion;
         public GameObject suggestion2;
 
+
+        private void Awake()
+        {
+            SoundManager.Instance.PlayAudio("01_TutorialIntro");
+        }
+
         void Start()
         {
             mapUp.SetActive(false);
