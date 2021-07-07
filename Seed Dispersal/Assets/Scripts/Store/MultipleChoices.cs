@@ -8,13 +8,13 @@ namespace SeedSearch
 {
     public class MultipleChoices : MonoBehaviour
     {
-        [SerializeField] private AnswerType answerType;
-
+        private AnswerType answerType;
         public TMP_Text notification;
-        public string hint;
+        public GameObject hint;
         private void Awake()
         {
             Gamemanager.Instance.currentScene = SceneManager.GetActiveScene().name;
+            Gamemanager.Instance.hintObject = hint;
             
         }
         private void OnEnable()
@@ -22,21 +22,17 @@ namespace SeedSearch
             Gamemanager.Instance.currentStudent = SaveManager.Instance.studentProfile;
             Gamemanager.Instance.LoadTimes();
             Gamemanager.Instance.StartHintTimer("you hinted");
-            StartCoroutine(Hint());
+            //StartCoroutine(Hint());
 
         }
-        public void SelectCorrect(GameObject answer) {
+        public void SelectCorrect(TMP_Text answer) {
             answerType = AnswerType.Correct;
-            TMP_Text answerBox = answer.GetComponent<TMP_Text>();
-            Debug.Log(answerBox.text);
-            SaveAnswer(answerBox.text);
+            SaveAnswer(answer.text);
         }
-        public void SelectIncorrect(GameObject answer)
+        public void SelectIncorrect()
         {
             answerType = AnswerType.Incorrect;
-            TMP_Text answerBox = answer.GetComponent<TMP_Text>();
-            Debug.Log(answerBox.text);
-            SaveAnswer(answerBox.text);
+            SaveAnswer();
         }
 
 
@@ -51,21 +47,29 @@ namespace SeedSearch
                         SaveManager.Instance.studentProfile.Answers.Add(answer);
                     } else
                         SaveManager.Instance.studentProfile.Answers.Add(answer);
-                    Gamemanager.Instance.SaveTimes();
+                    Gamemanager.Instance.EndTimer();
                     StartCoroutine(Notification());
                     break;
                 case AnswerType.Incorrect:
-                    if (SaveManager.Instance.studentProfile.Answers == null)
-                    {
-                        SaveManager.Instance.studentProfile.Answers = new List<string>();
-                        SaveManager.Instance.studentProfile.Answers.Add(answer);
-                    } else
-                    SaveManager.Instance.studentProfile.Answers.Add(answer);
                     StartCoroutine(Notification());
                     break;
             }
         }
-        
+
+        public void SaveAnswer()
+        {
+            switch (answerType)
+            {
+                case AnswerType.Correct:
+                    Gamemanager.Instance.EndTimer();
+                    StartCoroutine(Notification());
+                    break;
+                case AnswerType.Incorrect:
+                    StartCoroutine(Notification());
+                    break;
+            }
+        }
+
         public IEnumerator Notification()
         {
             notification.gameObject.SetActive(true);
@@ -90,18 +94,5 @@ namespace SeedSearch
             Instantiate(Gamemanager.Instance.hintSuggest, this.gameObject.transform);
         }
 
-        public void HintButton()
-        {
-            GameObject hintPopup = GameObject.Find("HintPopup(Clone)");
-            if(hintPopup != null)
-            {
-                Destroy(hintPopup);
-            } else
-            {
-                Gamemanager.Instance.hintObject.transform.GetChild(0).GetComponent<TMP_Text>().text = hint;
-                Instantiate(Gamemanager.Instance.hintObject, this.gameObject.transform);
-            }
-            Debug.Log("hinted");
-        }
     }
 }
