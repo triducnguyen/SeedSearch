@@ -5608,22 +5608,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6131061866a55214e849e17b6e9e5f29, type: 3}
   m_PrefabInstance: {fileID: 985347607}
   m_PrefabAsset: {fileID: 0}
---- !u!111 &839365545
-Animation:
+--- !u!95 &839365545
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839365544}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 09fa3db18dea41f4d86252e2e5290956, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 09fa3db18dea41f4d86252e2e5290956, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 00691d095ecb071458fd8d4fd47a4597, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &843146029
 GameObject:
   m_ObjectHideFlags: 0
