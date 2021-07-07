@@ -72,5 +72,6 @@ public class PlaceOnPlane : MonoBehaviour
     public void begingame(){
         begin = true;
         beginbutton.SetActive(false);
+        Debug.Log("begin");
     }
 }
