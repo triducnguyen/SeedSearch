@@ -18,7 +18,10 @@ public class john_gamemanager : MonoBehaviour
     [SerializeField] private float dandelionseedflyheight;
     private string seedstate;
     private Vector3 target;
+    public GameObject wind;
 
+    [Header("Castle")]
+    public Animator castleanim;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,8 @@ public class john_gamemanager : MonoBehaviour
         canstate = "return";
         seedstate = " ";
         dandelionseed.SetActive(false);
+        castleanim.SetBool("CastleAnim", false);
+        wind.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,6 +61,7 @@ public class john_gamemanager : MonoBehaviour
                 else if(selection.CompareTag("dandelionflower") && seedstate == " "){
                     dandelionseed.SetActive(true);
                     seedstate = "idle";
+                    wind.SetActive(true);
                 }else if(selection.CompareTag("island") && dandelionseed.activeInHierarchy){
                     seedstate = "fly";
                     target = hit.point;
@@ -79,6 +85,7 @@ public class john_gamemanager : MonoBehaviour
             dandelionseed.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, target, 0.5f * dandelionspeed * Time.deltaTime);
             if(dandelionseed.transform.position == target){
                 seedstate = "plant";
+                wind.SetActive(false);
             }
         }
         
@@ -93,4 +100,9 @@ public class john_gamemanager : MonoBehaviour
             wateringcan.transform.rotation = wateringcanhome.transform.rotation;
         } else{ Debug.Log("Cannot perform action of watering can");}
     }
+
+    public void castleactivate(){
+        castleanim.SetBool("CastleAnim", true);
+    }
+    
 }

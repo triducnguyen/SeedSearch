@@ -4151,6 +4151,8 @@ MonoBehaviour:
   dandelionseed: {fileID: 839365544}
   dandelionspeed: 0.1
   dandelionseedflyheight: 0.4
+  wind: {fileID: 481287738}
+  castleanim: {fileID: 831069165}
 --- !u!4 &573819298
 Transform:
   m_ObjectHideFlags: 0
