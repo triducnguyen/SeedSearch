@@ -81,6 +81,8 @@ public class john_gamemanager : MonoBehaviour
             }
         }
         if(seedstate == "fly"){
+            dandelionflower.SetActive(false);
+            hole.SetActive(false);
             dandelionseed.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, target + new Vector3(0, dandelionseedflyheight, 0), dandelionspeed * Time.deltaTime);
             if(dandelionseed.transform.position == target + new Vector3(0, dandelionseedflyheight, 0)){
                 seedstate = "drop";
