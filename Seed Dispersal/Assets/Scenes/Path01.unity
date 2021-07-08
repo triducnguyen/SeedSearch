@@ -4150,7 +4150,7 @@ MonoBehaviour:
   smooth: 1
   dandelionseed: {fileID: 839365544}
   dandelionspeed: 0.1
-  dandelionseedflyheight: 0.1
+  dandelionseedflyheight: 0.4
 --- !u!4 &573819298
 Transform:
   m_ObjectHideFlags: 0
@@ -7429,7 +7429,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 6131061866a55214e849e17b6e9e5f29, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6131061866a55214e849e17b6e9e5f29, type: 3}
       propertyPath: m_LocalScale.x
@@ -23429,8 +23429,8 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068846999}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   m_Radius: 1.33
   m_Height: 4.15
   m_Direction: 1

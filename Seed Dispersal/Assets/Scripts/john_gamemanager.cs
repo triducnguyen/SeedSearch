@@ -76,7 +76,7 @@ public class john_gamemanager : MonoBehaviour
                 seedstate = "drop";
             }
         }else if(seedstate == "drop"){
-            dandelionseed.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, target, 2* dandelionspeed * Time.deltaTime);
+            dandelionseed.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, target, 0.5f * dandelionspeed * Time.deltaTime);
             if(dandelionseed.transform.position == target){
                 seedstate = "plant";
             }
