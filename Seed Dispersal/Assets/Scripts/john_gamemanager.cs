@@ -33,6 +33,8 @@ public class john_gamemanager : MonoBehaviour
     [SerializeField] private float fairyspeed;
 
     [Header("Fairy Speaking")]
+    public GameObject fairysubtitles;
+    public GameObject player;
     private string o1seedfairy = "Hello there Adventurer! Looks like you’ve studied up! Are you ready to begin our search? We need to make sure the seeds are properly dispersed, germinated, and ready for pollination! Our Flower Kingdom will be covered in beautiful flowers once more! Come on, let’s go! ";
     private string o2seedfairy = "Well look what we have here, it’s a seed! Do you know what a seed is?";
     private string o4seedfairy = "That’s right, it’s the part of a plant that can grow into a new plant. There are flowers around here ready to drop seeds so that this can happen. But it looks like our seeds aren’t growing into new plants, which means we’ve got some forgetful seeds on our hands! Let’s try to help them out, shall we?";
@@ -133,6 +135,8 @@ public class john_gamemanager : MonoBehaviour
         if(fairy.transform.position != fairytarget.transform.position){
             fairy.transform.position = Vector3.MoveTowards(fairy.transform.position, fairytarget.transform.position, fairyspeed * Time.deltaTime); 
         }
+
+        fairysubtitles.transform.LookAt(player.transform.position);
     }
 
     public void movewateringcan(){
