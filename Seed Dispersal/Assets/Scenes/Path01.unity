@@ -1305,10 +1305,10 @@ RectTransform:
   m_Father: {fileID: 1911835828}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 357.46085, y: -322.83102}
+  m_SizeDelta: {x: 714.9217, y: 215.22069}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &103434638
 MonoBehaviour:
@@ -3129,10 +3129,10 @@ RectTransform:
   m_Father: {fileID: 1911835828}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 357.46085, y: -107.610344}
+  m_SizeDelta: {x: 714.9217, y: 215.22069}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &445543809
 MonoBehaviour:
@@ -4124,7 +4124,7 @@ MonoBehaviour:
   wateringcanhome: {fileID: 1247828380}
   wateringcancheckpoint: {fileID: 365590198}
   waterincan: {fileID: 1555034512}
-  smooth: 0.1
+  smooth: 1
 --- !u!4 &573819298
 Transform:
   m_ObjectHideFlags: 0
@@ -5563,10 +5563,10 @@ RectTransform:
   m_Father: {fileID: 1911835828}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 357.46085, y: -538.0517}
+  m_SizeDelta: {x: 714.9217, y: 215.22069}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754219043
 MonoBehaviour:
@@ -18352,7 +18352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2005948490
 RectTransform:
   m_ObjectHideFlags: 0

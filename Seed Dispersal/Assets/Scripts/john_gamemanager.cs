@@ -36,6 +36,7 @@ public class john_gamemanager : MonoBehaviour
             }
         }
         if(canstate == "tipping"){
+            waterincan.SetActive(true);
             wateringcan.transform.rotation = Quaternion.Slerp(wateringcan.transform.rotation, wateringcancheckpoint.transform.rotation, Time.deltaTime * smooth);
             if(wateringcan.transform.rotation == wateringcancheckpoint.transform.rotation){
                 canstate = "tipped";
