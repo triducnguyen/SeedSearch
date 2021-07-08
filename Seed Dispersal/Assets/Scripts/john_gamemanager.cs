@@ -24,6 +24,12 @@ public class john_gamemanager : MonoBehaviour
 
     [Header("Castle")]
     public Animator castleanim;
+
+    [Header("Fairy")]
+    public GameObject fairy;
+    [SerializeField] private GameObject F0, F1, F2, F3;
+    private GameObject fairytarget;
+    [SerializeField] private float fairyspeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +41,7 @@ public class john_gamemanager : MonoBehaviour
         castleanim.SetBool("CastleAnim", false);
         wind.SetActive(false);
         hole.SetActive(false);
+        fairytarget = F0;
     }
 
     // Update is called once per frame
@@ -59,6 +66,7 @@ public class john_gamemanager : MonoBehaviour
                         canstate = "water";
                         waterincan.SetActive(false);
                         movewateringcan();
+                        fairytarget = F1;
                     }
                 }
                 else if(selection.CompareTag("dandelionflower") && seedstate == " "){
@@ -78,6 +86,7 @@ public class john_gamemanager : MonoBehaviour
                 canstate = "tipped";
                 waterincan.SetActive(true);
                 dandelionflower.SetActive(true);
+                fairytarget = F3;
             }
         }
         if(seedstate == "fly"){
@@ -95,10 +104,12 @@ public class john_gamemanager : MonoBehaviour
                 hole.SetActive(true);
                 dandelionflower.SetActive(false);
                 hole.transform.position = dandelionseed.transform.position + new Vector3(0, 0.01f , 0);
+                fairytarget = F2;
             }
         }
-        
-        
+        if(fairy.transform.position != fairytarget.transform.position){
+            fairy.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, fairytarget.transform.position, fairyspeed * Time.deltaTime); 
+        }
     }
 
     public void movewateringcan(){
