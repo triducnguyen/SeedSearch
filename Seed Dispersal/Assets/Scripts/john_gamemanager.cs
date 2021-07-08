@@ -31,6 +31,24 @@ public class john_gamemanager : MonoBehaviour
     [SerializeField] private GameObject F0, F1, F2, F3;
     private GameObject fairytarget;
     [SerializeField] private float fairyspeed;
+
+    [Header("Fairy Speaking")]
+    private string o1seedfairy = "Hello there Adventurer! Looks like you’ve studied up! Are you ready to begin our search? We need to make sure the seeds are properly dispersed, germinated, and ready for pollination! Our Flower Kingdom will be covered in beautiful flowers once more! Come on, let’s go! ";
+    private string o2seedfairy = "Well look what we have here, it’s a seed! Do you know what a seed is?";
+    private string o4seedfairy = "That’s right, it’s the part of a plant that can grow into a new plant. There are flowers around here ready to drop seeds so that this can happen. But it looks like our seeds aren’t growing into new plants, which means we’ve got some forgetful seeds on our hands! Let’s try to help them out, shall we?";
+    private string o5seedfairy = "Looks like this flower is covered in seeds! They are ready to be dispersed! That means they need to be moved from one place to another. There are three main ways seeds move around, and those are wind, insects, and animals.";
+    private string o6seedfairy = "Wait, listen! I think some wind is blowing! Maybe it will pick up these seeds! Quick, follow them!";
+    private string o7seedfairy = "Come here, get closer. Our seed here needs to remember how to become a flower. The process of a seed growing into a plant is known as germination. For our plant to germinate, first it needs good conditions. We need to make sure it has them! Do you know the best place for a seed to grow?";
+    private string o9seedfairy = "That’s right! Our seed needs to grow on rich soil, where it can grow roots in the ground and have plenty of nutrients from the dirt. It also needs sunlight, and water to grow! Go ahead, water our little seed!";
+    private string o10seedfairy = "Look! Now that our seed has the proper conditions, it is going to germinate! Do you remember what germination is?";
+    private string o12seedfairy = "That’s right! Germination is the process by which a seed begins to grow into a plant! Let’s plant this seed and help it germinate!";
+    private string o13seedfairy = "Great! Now the plant has rich soil for its new home.";
+    private string o14seedfairy = "First, it grows roots to absorb nutrients and water in the soil.";
+    private string o15seedfairy = "Then, it sprouts a little plant whose leaves will take in sunlight for food.";
+    private string o16seedfairy = "Then, it gets older and even grows into a new big flower!";
+    private string o17seedfairy = "Look at that! I think you’ve shown these confused seeds how to grow into a flower! And look!";
+    private string o18seedfairy = "Our kingdom is already getting more beautiful! Thank you for your help, Adventurer! But still, there is more to be done! I’ll see you later!";
+
     // Start is called before the first frame update
     void Start()
     {
