@@ -4366,7 +4366,7 @@ MonoBehaviour:
   F1: {fileID: 478747251}
   F2: {fileID: 2119246448}
   F3: {fileID: 521076017}
-  fairyspeed: 0.15
+  fairyspeed: 0.3
 --- !u!4 &573819298
 Transform:
   m_ObjectHideFlags: 0

@@ -66,13 +66,13 @@ public class john_gamemanager : MonoBehaviour
                         canstate = "water";
                         waterincan.SetActive(false);
                         movewateringcan();
-                        fairytarget = F1;
                     }
                 }
                 else if(selection.CompareTag("dandelionflower") && seedstate == " "){
                     dandelionseed.SetActive(true);
                     seedstate = "idle";
                     wind.SetActive(true);
+                    fairytarget = F1;
                 }else if(selection.CompareTag("island") && dandelionseed.activeInHierarchy){
                     seedstate = "fly";
                     target = hit.point;
@@ -87,6 +87,7 @@ public class john_gamemanager : MonoBehaviour
                 waterincan.SetActive(true);
                 dandelionflower.SetActive(true);
                 fairytarget = F3;
+                castleactivate();
             }
         }
         if(seedstate == "fly"){
@@ -108,7 +109,7 @@ public class john_gamemanager : MonoBehaviour
             }
         }
         if(fairy.transform.position != fairytarget.transform.position){
-            fairy.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, fairytarget.transform.position, fairyspeed * Time.deltaTime); 
+            fairy.transform.position = Vector3.MoveTowards(fairy.transform.position, fairytarget.transform.position, fairyspeed * Time.deltaTime); 
         }
     }
 
