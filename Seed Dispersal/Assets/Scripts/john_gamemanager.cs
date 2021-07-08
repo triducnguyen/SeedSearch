@@ -19,6 +19,8 @@ public class john_gamemanager : MonoBehaviour
     private string seedstate;
     private Vector3 target;
     public GameObject wind;
+    public GameObject hole;
+    public GameObject dandelionflower;
 
     [Header("Castle")]
     public Animator castleanim;
@@ -32,6 +34,7 @@ public class john_gamemanager : MonoBehaviour
         dandelionseed.SetActive(false);
         castleanim.SetBool("CastleAnim", false);
         wind.SetActive(false);
+        hole.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,7 +47,7 @@ public class john_gamemanager : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 var selection = hit.transform;
-                if (selection.CompareTag("wateringcan"))
+                if (selection.CompareTag("wateringcan") && seedstate == "plant")
                 {
                     if(canstate == "water"){
                         canstate = "tipping";
@@ -74,6 +77,7 @@ public class john_gamemanager : MonoBehaviour
             if(wateringcan.transform.rotation == wateringcancheckpoint.transform.rotation){
                 canstate = "tipped";
                 waterincan.SetActive(true);
+                dandelionflower.SetActive(true);
             }
         }
         if(seedstate == "fly"){
@@ -86,6 +90,9 @@ public class john_gamemanager : MonoBehaviour
             if(dandelionseed.transform.position == target){
                 seedstate = "plant";
                 wind.SetActive(false);
+                hole.SetActive(true);
+                dandelionflower.SetActive(false);
+                hole.transform.position = dandelionseed.transform.position + new Vector3(0, 0.01f , 0);
             }
         }
         
