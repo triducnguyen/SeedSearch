@@ -21,6 +21,7 @@ public class john_gamemanager : MonoBehaviour
     public GameObject wind;
     public GameObject hole;
     public GameObject dandelionflower;
+    public GameObject dandelionsprout;
 
     [Header("Castle")]
     public Animator castleanim;
@@ -86,11 +87,13 @@ public class john_gamemanager : MonoBehaviour
                 canstate = "tipped";
                 waterincan.SetActive(true);
                 dandelionflower.SetActive(true);
+                dandelionsprout.SetActive(false);
                 fairytarget = F3;
                 castleactivate();
             }
         }
         if(seedstate == "fly"){
+            dandelionsprout.SetActive(false);
             dandelionflower.SetActive(false);
             hole.SetActive(false);
             dandelionseed.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, target + new Vector3(0, dandelionseedflyheight, 0), dandelionspeed * Time.deltaTime);
@@ -106,6 +109,7 @@ public class john_gamemanager : MonoBehaviour
                 dandelionflower.SetActive(false);
                 hole.transform.position = dandelionseed.transform.position + new Vector3(0, 0.01f , 0);
                 fairytarget = F2;
+                dandelionsprout.SetActive(true);
             }
         }
         if(fairy.transform.position != fairytarget.transform.position){
