@@ -9,6 +9,8 @@ namespace SeedSearch
     public class MultipleChoices : MonoBehaviour
     {
         private AnswerType answerType;
+        private bool didAnswer = false;
+        public bool DidAnswer { get => didAnswer; set => didAnswer = value; }
         public TMP_Text notification;
         public GameObject hint;
         private void Awake()
@@ -47,6 +49,7 @@ namespace SeedSearch
                         SaveManager.Instance.studentProfile.Answers.Add(answer);
                     } else
                         SaveManager.Instance.studentProfile.Answers.Add(answer);
+                    didAnswer = true;
                     Gamemanager.Instance.EndTimer();
                     StartCoroutine(Notification());
                     break;
@@ -61,6 +64,7 @@ namespace SeedSearch
             switch (answerType)
             {
                 case AnswerType.Correct:
+                    didAnswer = true;
                     Gamemanager.Instance.EndTimer();
                     StartCoroutine(Notification());
                     break;
@@ -92,6 +96,12 @@ namespace SeedSearch
         {
             yield return new WaitForSeconds(Gamemanager.Instance.wait);
             Instantiate(Gamemanager.Instance.hintSuggest, this.gameObject.transform);
+        }
+
+        public void MoveToNextQuestion(GameObject obj)
+        {
+            this.gameObject.SetActive(false);
+            obj.SetActive(true);
         }
 
     }
