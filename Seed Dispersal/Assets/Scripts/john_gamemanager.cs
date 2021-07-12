@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace SeedSearch{
 public class john_gamemanager : MonoBehaviour
 {
+    private int gamestate = 0;
     [Header("Watering can")]
     public GameObject wateringcan;
     public GameObject wateringcanhome;
@@ -35,6 +37,9 @@ public class john_gamemanager : MonoBehaviour
     [Header("Fairy Speaking")]
     public GameObject fairysubtitles;
     public GameObject player;
+
+    private SoundManager soundManager;
+    
     private string o1seedfairy = "Hello there Adventurer! Looks like you’ve studied up! Are you ready to begin our search? We need to make sure the seeds are properly dispersed, germinated, and ready for pollination! Our Flower Kingdom will be covered in beautiful flowers once more! Come on, let’s go! ";
     private string o2seedfairy = "Well look what we have here, it’s a seed! Do you know what a seed is?";
     private string o4seedfairy = "That’s right, it’s the part of a plant that can grow into a new plant. There are flowers around here ready to drop seeds so that this can happen. But it looks like our seeds aren’t growing into new plants, which means we’ve got some forgetful seeds on our hands! Let’s try to help them out, shall we?";
@@ -54,6 +59,7 @@ public class john_gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        soundManager = GameObject.FindObjectOfType<SoundManager>();
         wateringcanhome.transform.position = wateringcan.transform.position;
         waterincan.SetActive(false);
         canstate = "return";
@@ -68,6 +74,7 @@ public class john_gamemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        fairynaration();
         if (Input.GetMouseButtonDown(0))
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -151,5 +158,14 @@ public class john_gamemanager : MonoBehaviour
     public void castleactivate(){
         castleanim.SetBool("CastleAnim", true);
     }
+
+    public void fairynaration(){
+        if(gamestate == 0){
+            soundManager.PlayAudio("01");
+        }else if(gamestate == 1){
+
+        }
+    }
     
+}
 }
