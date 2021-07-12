@@ -6167,7 +6167,7 @@ MonoBehaviour:
     thirdPrompt: 
     answers: []
     levelprogress: 010000000000000000000000
-  levelstatus: 010000000100000000000000
+  levelstatus: 010000000000000000000000
   Check:
   - {fileID: 459970820}
   - {fileID: 1472886221}
