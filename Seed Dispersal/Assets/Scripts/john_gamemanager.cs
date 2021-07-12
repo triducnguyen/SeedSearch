@@ -16,6 +16,7 @@ public class john_gamemanager : MonoBehaviour
     [SerializeField] private float smooth;
 
     [Header("Dandelion")]
+    public Animator dandanim;
     public GameObject dandelionseed;
     [SerializeField] private float dandelionspeed;
     [SerializeField] private float dandelionseedflyheight;
@@ -71,6 +72,7 @@ public class john_gamemanager : MonoBehaviour
         seedstate = " ";
         dandelionseed.SetActive(false);
         castleanim.SetBool("CastleAnim", false);
+        dandanim.SetBool("stopspinning", true);
         wind.SetActive(false);
         hole.SetActive(false);
         fairytarget = F0;
@@ -121,8 +123,6 @@ public class john_gamemanager : MonoBehaviour
             if(wateringcan.transform.rotation == wateringcancheckpoint.transform.rotation){
                 canstate = "tipped";
                 waterincan.SetActive(true);
-                
-                fairytarget = F3;
                 castleactivate();
                 StartCoroutine(PlantGrow());
             }
@@ -130,6 +130,8 @@ public class john_gamemanager : MonoBehaviour
         if(seedstate == "fly"){
             dandelionsprout.SetActive(false);
             dandelionflower.SetActive(false);
+            dandelionsprout2.SetActive(false);
+            dandelionplantmini.SetActive(false);
             hole.SetActive(false);
             dandelionseed.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, target + new Vector3(0, dandelionseedflyheight, 0), dandelionspeed * Time.deltaTime);
             if(dandelionseed.transform.position == target + new Vector3(0, dandelionseedflyheight, 0)){
@@ -145,6 +147,7 @@ public class john_gamemanager : MonoBehaviour
                 hole.transform.position = dandelionseed.transform.position + new Vector3(0, 0.01f , 0);
                 fairytarget = F2;
                 dandelionsprout.SetActive(true);
+                dandanim.SetBool("stopspinning", false);
             }
         }
         if(fairy.transform.position != fairytarget.transform.position){
@@ -156,12 +159,13 @@ public class john_gamemanager : MonoBehaviour
     IEnumerator PlantGrow(){
             dandelionsprout2.SetActive(true);
             dandelionsprout.SetActive(false);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(3);
             dandelionplantmini.SetActive(true);
             dandelionsprout2.SetActive(false);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(3);
             dandelionplantmini.SetActive(false);
-            dandelionflower.SetActive(true);            
+            dandelionflower.SetActive(true);  
+            fairytarget = F3;          
         }
 
     public void movewateringcan(){
