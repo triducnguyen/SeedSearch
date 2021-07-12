@@ -128,6 +128,7 @@ public class john_gamemanager : MonoBehaviour
             }
         }
         if(seedstate == "fly"){
+            dandanim.SetBool("stopspinning", false);
             dandelionsprout.SetActive(false);
             dandelionflower.SetActive(false);
             dandelionsprout2.SetActive(false);
@@ -147,7 +148,7 @@ public class john_gamemanager : MonoBehaviour
                 hole.transform.position = dandelionseed.transform.position + new Vector3(0, 0.01f , 0);
                 fairytarget = F2;
                 dandelionsprout.SetActive(true);
-                dandanim.SetBool("stopspinning", false);
+                dandanim.SetBool("stopspinning", true);
             }
         }
         if(fairy.transform.position != fairytarget.transform.position){
@@ -157,6 +158,7 @@ public class john_gamemanager : MonoBehaviour
         fairysubtitles.transform.LookAt(player.transform.position);
     }
     IEnumerator PlantGrow(){
+            dandanim.SetBool("stopspinning", true);
             dandelionsprout2.SetActive(true);
             dandelionsprout.SetActive(false);
             yield return new WaitForSeconds(3);
