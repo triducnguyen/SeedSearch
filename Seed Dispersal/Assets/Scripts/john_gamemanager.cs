@@ -25,6 +25,8 @@ public class john_gamemanager : MonoBehaviour
     public GameObject hole;
     public GameObject dandelionflower;
     public GameObject dandelionsprout;
+    public GameObject dandelionsprout2;
+    public GameObject dandelionplantmini;
 
     [Header("Castle")]
     public Animator castleanim;
@@ -37,6 +39,7 @@ public class john_gamemanager : MonoBehaviour
 
     [Header("Fairy Speaking")]
     public GameObject fairysubtitles;
+    public GameObject island;
     public Text fairytext;
     public GameObject player;
 
@@ -71,12 +74,15 @@ public class john_gamemanager : MonoBehaviour
         wind.SetActive(false);
         hole.SetActive(false);
         fairytarget = F0;
+        fairynarration(1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        fairynarration();
+        if(island.activeInHierarchy && gamestate < 2){
+            fairynarration(2);
+        }
         if (Input.GetMouseButtonDown(0))
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -115,10 +121,10 @@ public class john_gamemanager : MonoBehaviour
             if(wateringcan.transform.rotation == wateringcancheckpoint.transform.rotation){
                 canstate = "tipped";
                 waterincan.SetActive(true);
-                dandelionflower.SetActive(true);
-                dandelionsprout.SetActive(false);
+                
                 fairytarget = F3;
                 castleactivate();
+                StartCoroutine(PlantGrow());
             }
         }
         if(seedstate == "fly"){
@@ -147,6 +153,16 @@ public class john_gamemanager : MonoBehaviour
 
         fairysubtitles.transform.LookAt(player.transform.position);
     }
+    IEnumerator PlantGrow(){
+            dandelionsprout2.SetActive(true);
+            dandelionsprout.SetActive(false);
+            yield return new WaitForSeconds(2);
+            dandelionplantmini.SetActive(true);
+            dandelionsprout2.SetActive(false);
+            yield return new WaitForSeconds(2);
+            dandelionplantmini.SetActive(false);
+            dandelionflower.SetActive(true);            
+        }
 
     public void movewateringcan(){
         if(canstate == "water"){
@@ -161,7 +177,8 @@ public class john_gamemanager : MonoBehaviour
         castleanim.SetBool("CastleAnim", true);
     }
 
-    public void fairynarration(){
+    public void fairynarration(int instate){
+        gamestate = instate;
         if(gamestate == 1){
             soundManager.PlayAudio("01");
             fairytext.text = o1seedfairy;
