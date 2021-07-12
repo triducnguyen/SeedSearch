@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SeedSearch{
 public class john_gamemanager : MonoBehaviour
 {
-    private int gamestate = 0;
+    private int gamestate = 1;
     [Header("Watering can")]
     public GameObject wateringcan;
     public GameObject wateringcanhome;
@@ -36,6 +37,7 @@ public class john_gamemanager : MonoBehaviour
 
     [Header("Fairy Speaking")]
     public GameObject fairysubtitles;
+    public Text fairytext;
     public GameObject player;
 
     private SoundManager soundManager;
@@ -74,7 +76,7 @@ public class john_gamemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fairynaration();
+        fairynarration();
         if (Input.GetMouseButtonDown(0))
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -159,12 +161,54 @@ public class john_gamemanager : MonoBehaviour
         castleanim.SetBool("CastleAnim", true);
     }
 
-    public void fairynaration(){
-        if(gamestate == 0){
+    public void fairynarration(){
+        if(gamestate == 1){
             soundManager.PlayAudio("01");
-        }else if(gamestate == 1){
-
+            fairytext.text = o1seedfairy;
+        }else if(gamestate == 2){
+            soundManager.PlayAudio("02");
+            fairytext.text = o2seedfairy;
+        }else if(gamestate == 4){
+            soundManager.PlayAudio("04");
+            fairytext.text = o4seedfairy;
+        }else if(gamestate == 5){
+            soundManager.PlayAudio("05");
+            fairytext.text = o5seedfairy;
+        }else if(gamestate == 6){
+            soundManager.PlayAudio("06");
+            fairytext.text = o6seedfairy;
+        }else if(gamestate == 7){
+            soundManager.PlayAudio("07");
+            fairytext.text = o7seedfairy;
+        }else if(gamestate == 9){
+            soundManager.PlayAudio("09");
+            fairytext.text = o9seedfairy;
+        }else if(gamestate == 10){
+            soundManager.PlayAudio("10");
+            fairytext.text = o10seedfairy;
+        }else if(gamestate == 12){
+            soundManager.PlayAudio("12");
+            fairytext.text = o12seedfairy;
+        }else if(gamestate == 13){
+            soundManager.PlayAudio("13");
+            fairytext.text = o13seedfairy;
+        }else if(gamestate == 14){
+            soundManager.PlayAudio("14");
+            fairytext.text = o14seedfairy;
+        }else if(gamestate == 15){
+            soundManager.PlayAudio("15");
+            fairytext.text = o15seedfairy;
+        }else if(gamestate == 16){
+            soundManager.PlayAudio("16");
+            fairytext.text = o16seedfairy;
+        }else if(gamestate == 17){
+            soundManager.PlayAudio("17");
+            fairytext.text = o17seedfairy;
+        }else if(gamestate == 18){
+            soundManager.PlayAudio("18");
+            fairytext.text = o18seedfairy;
         }
+        
     }
     
 }
