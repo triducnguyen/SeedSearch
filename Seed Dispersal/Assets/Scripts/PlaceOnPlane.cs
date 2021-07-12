@@ -20,14 +20,14 @@ public class PlaceOnPlane : MonoBehaviour
     static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
 
     public GameObject beginbutton;
-    public GameObject fairy;
+    //public GameObject fairy;
 
     private bool begin = false;
 
     private void Awake(){
         raycastManager = GetComponent<ARRaycastManager>();
         Island.SetActive(false);
-        fairy.SetActive(false);
+        //fairy.SetActive(false);
     }
     void Start(){
         
@@ -57,7 +57,7 @@ public class PlaceOnPlane : MonoBehaviour
                 Islandspawn = true;
                 beginbutton.SetActive(false);
                 toggleplanedetection();
-                fairy.SetActive(true);
+                //fairy.SetActive(true);
             }
         }
         
