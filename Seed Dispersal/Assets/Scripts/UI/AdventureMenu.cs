@@ -17,7 +17,7 @@ public class AdventureMenu : MonoBehaviour
     
     void Start()
     {
-        SaveManager.Instance.LoadStudentData(currentStudent);
+            currentStudent = SaveManager.Instance.studentProfile;
         if(currentStudent.Levelprogress != null && 
         currentStudent.Levelprogress[0] != 0){
             levelstatus = currentStudent.Levelprogress;

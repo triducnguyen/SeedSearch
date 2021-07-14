@@ -102,7 +102,6 @@ namespace SeedSearch{
             Debug.Log("Hint now appearing" + wait);
             hintObject.SetActive(true);
             //hint.text = section;
-            
         }
 
         public void SaveTimes(){

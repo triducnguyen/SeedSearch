@@ -43,6 +43,16 @@ namespace SeedSearch
                 obj.gameObject.SetActive(false);
             }
             MainField.SetActive(true);
+            if(currentNote == 0)
+            {
+                SaveManager.Instance.studentProfile.FirstPrompt = noteField[currentNote].GetComponentInChildren<TMP_Text>().text;
+            } else if(currentNote == 1)
+            {
+                SaveManager.Instance.studentProfile.SecondPrompt = noteField[currentNote].GetComponentInChildren<TMP_Text>().text;
+            } else if(currentNote == 2)
+            {
+                SaveManager.Instance.studentProfile.ThirdPrompt = noteField[currentNote].GetComponentInChildren<TMP_Text>().text;
+            }
         }
 
         public void CurrentNote(int currentNote)
