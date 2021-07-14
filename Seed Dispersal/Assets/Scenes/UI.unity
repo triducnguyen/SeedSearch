@@ -6121,7 +6121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &861218660
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6182,8 +6182,8 @@ MonoBehaviour:
   - {fileID: 734651780}
   levelscene:
   - Path01
-  - UI
-  - UI
+  - Path02
+  - Path03
 --- !u!1 &957156607
 GameObject:
   m_ObjectHideFlags: 0
