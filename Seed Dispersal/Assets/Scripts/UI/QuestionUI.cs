@@ -22,7 +22,14 @@ namespace SeedSearch
             {
                 obj.SetActive(false);
             }
-            questions[SaveManager.Instance.studentProfile.Answers.Count - 1].SetActive(true);
+            if(SaveManager.Instance.studentProfile.Answers.Count > 0)
+            {
+                questions[SaveManager.Instance.studentProfile.Answers.Count - 1].SetActive(true);
+            }
+            else
+            {
+                questions[0].SetActive(true);
+            }
         }
     }
 }
