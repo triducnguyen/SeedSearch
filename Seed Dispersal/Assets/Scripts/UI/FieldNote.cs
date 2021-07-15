@@ -62,8 +62,6 @@ namespace SeedSearch
 
         private void FixedUpdate()
         {
-            if (initialized)
-            {
                 for (int i = 0; i < SaveManager.Instance.studentProfile.Answers.Count; i++)
                 {
                     definitions[i].SetActive(true);
@@ -73,8 +71,6 @@ namespace SeedSearch
                     if(SaveManager.Instance.studentProfile.Levelprogress[j] == 1) 
                         noteField[j].SetActive(true);
                 }
-                initialized = false;
-            }
             
             
         }

@@ -15,26 +15,33 @@ namespace SeedSearch
         public TMP_Text thirdPrompt;
         public GameObject answer;
         private bool initalized = false;
-        // Start is called before the first frame update
-        private void Start()
-        {
-
-        }
+        [SerializeField]private List<GameObject> durationObjects;
         private void InitializeDuration()
         {
             if (student.Times.Count > 0)
             {
                 int count = 1;
-                foreach (float i in student.Times)
+                for(int i = 2;i < student.Times.Count;i++)
                 {
                     GameObject newAnswer = Instantiate(answer);
                     newAnswer.transform.SetParent(content.transform);
-                    newAnswer.GetComponent<TMP_Text>().text = "Duration for question " + count + " : " + i;
+                    newAnswer.GetComponent<TMP_Text>().text = "Duration for question " + count + " : " + student.Times[i];
+                    durationObjects.Add(newAnswer);
                     count++;
                 }
             }
             initalized = true;
             
+        }
+
+        public void NewProfile()
+        {
+            foreach(GameObject obj in durationObjects)
+            {
+                Destroy(obj);
+            }
+            durationObjects.Clear();
+            initalized = false;
         }
 
         // Update is called once per frame
