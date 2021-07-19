@@ -18,18 +18,22 @@ namespace SeedSearch
         [SerializeField]private List<GameObject> durationObjects;
         private void InitializeDuration()
         {
-            if (student.Times.Count > 0)
+            if (student.Times != null)
             {
-                int count = 1;
-                for(int i = 2;i < student.Times.Count;i++)
+                if (student.Times.Count > 0)
                 {
-                    GameObject newAnswer = Instantiate(answer);
-                    newAnswer.transform.SetParent(content.transform);
-                    newAnswer.GetComponent<TMP_Text>().text = "Duration for question " + count + " : " + student.Times[i];
-                    durationObjects.Add(newAnswer);
-                    count++;
+                    int count = 1;
+                    for (int i = 2; i < student.Times.Count; i++)
+                    {
+                        GameObject newAnswer = Instantiate(answer);
+                        newAnswer.transform.SetParent(content.transform);
+                        newAnswer.GetComponent<TMP_Text>().text = "Duration for question " + count + " : " + student.Times[i];
+                        durationObjects.Add(newAnswer);
+                        count++;
+                    }
                 }
             }
+
             initalized = true;
             
         }
