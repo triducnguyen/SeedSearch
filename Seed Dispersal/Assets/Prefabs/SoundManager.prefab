@@ -63,6 +63,21 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2554ef3fbf8cc8245b96aa2a69d929f4, type: 3}
   - {fileID: 8300000, guid: c2e378ff4a97f224d872ab80e09af3ef, type: 3}
   - {fileID: 8300000, guid: 41c25dc4595d133438c0a5c4f36d570e, type: 3}
+  - {fileID: 8300000, guid: 14990dcef8ac09340b3b918a35ede55c, type: 3}
+  - {fileID: 8300000, guid: 87edcc26cc46e464085c1039dacfcc5b, type: 3}
+  - {fileID: 8300000, guid: 82a17575d7728994db2507f6efc0b5e5, type: 3}
+  - {fileID: 8300000, guid: e7ee1a3751bc22d4ea6ffcdb46ad45d5, type: 3}
+  - {fileID: 8300000, guid: 312f1675ad8d4ee4c88d72d52e0d31f3, type: 3}
+  - {fileID: 8300000, guid: eea5de9c1eca90140838762491a13318, type: 3}
+  - {fileID: 8300000, guid: 7348ede64c1162041a3dd62d50cd9f01, type: 3}
+  - {fileID: 8300000, guid: 061fd4b172095c34ca9c39c489a55ea9, type: 3}
+  - {fileID: 8300000, guid: a434045f0bca5be49a56a89bf3201fc3, type: 3}
+  - {fileID: 8300000, guid: 850507809bb171d42b584e1628bb27d1, type: 3}
+  - {fileID: 8300000, guid: 23eb14933f176ed40ac12211a5221be4, type: 3}
+  - {fileID: 8300000, guid: 94717eacb14abd044ae6ca0ee1f2130b, type: 3}
+  - {fileID: 8300000, guid: 966ead8b907e64744809ac8eab82934c, type: 3}
+  - {fileID: 8300000, guid: 091539ff376c90d48baa1bc5b3b788d0, type: 3}
+  - {fileID: 8300000, guid: 8a4a4860cc762274a947b4488e21b8de, type: 3}
 --- !u!82 &8407262990157267524
 AudioSource:
   m_ObjectHideFlags: 0
