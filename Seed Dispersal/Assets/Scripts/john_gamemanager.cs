@@ -43,6 +43,7 @@ public class john_gamemanager : MonoBehaviour
     public GameObject island;
     public Text fairytext;
     public GameObject player;
+    public Text subtitle;
 
     private SoundManager soundManager;
     
@@ -65,7 +66,7 @@ public class john_gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        soundManager = GameObject.FindObjectOfType<SoundManager>();
+        soundManager = SoundManager.Instance;
         wateringcanhome.transform.position = wateringcan.transform.position;
         waterincan.SetActive(false);
         canstate = "return";
@@ -183,54 +184,103 @@ public class john_gamemanager : MonoBehaviour
         castleanim.SetBool("CastleAnim", true);
     }
 
+    IEnumerator Subtitle()
+        {
+            yield return new WaitForSeconds(20f);
+            subtitle.text = "";
+        }
+
     public void fairynarration(int instate){
         gamestate = instate;
         if(gamestate == 1){
             soundManager.PlayAudio("01");
             fairytext.text = o1seedfairy;
+            subtitle.text = o1seedfairy;
+            StartCoroutine(Subtitle());
         }else if(gamestate == 2){
             soundManager.PlayAudio("02");
             fairytext.text = o2seedfairy;
-        }else if(gamestate == 4){
+                subtitle.text = o2seedfairy;
+                StartCoroutine(Subtitle());
+            }
+            else if(gamestate == 4){
             soundManager.PlayAudio("04");
             fairytext.text = o4seedfairy;
-        }else if(gamestate == 5){
+                subtitle.text = o4seedfairy;
+                StartCoroutine(Subtitle());
+            }
+            else if(gamestate == 5){
             soundManager.PlayAudio("05");
             fairytext.text = o5seedfairy;
-        }else if(gamestate == 6){
+                subtitle.text = o5seedfairy;
+                StartCoroutine(Subtitle());
+            }
+            else if(gamestate == 6){
             soundManager.PlayAudio("06");
             fairytext.text = o6seedfairy;
-        }else if(gamestate == 7){
+                subtitle.text = o6seedfairy;
+                StartCoroutine(Subtitle());
+            }
+            else if(gamestate == 7){
             soundManager.PlayAudio("07");
             fairytext.text = o7seedfairy;
-        }else if(gamestate == 9){
+                subtitle.text = o7seedfairy;
+                StartCoroutine(Subtitle());
+            }
+            else if(gamestate == 9){
             soundManager.PlayAudio("09");
             fairytext.text = o9seedfairy;
-        }else if(gamestate == 10){
+                subtitle.text = o9seedfairy;
+                StartCoroutine(Subtitle());
+            }
+            else if(gamestate == 10){
             soundManager.PlayAudio("10");
             fairytext.text = o10seedfairy;
-        }else if(gamestate == 12){
+                subtitle.text = o10seedfairy;
+                StartCoroutine(Subtitle());
+            }
+            else if(gamestate == 12){
             soundManager.PlayAudio("12");
             fairytext.text = o12seedfairy;
-        }else if(gamestate == 13){
+                subtitle.text = o12seedfairy;
+                StartCoroutine(Subtitle());
+            }
+            else if(gamestate == 13){
             soundManager.PlayAudio("13");
             fairytext.text = o13seedfairy;
-        }else if(gamestate == 14){
+                subtitle.text = o13seedfairy;
+                StartCoroutine(Subtitle());
+            }
+            else if(gamestate == 14){
             soundManager.PlayAudio("14");
             fairytext.text = o14seedfairy;
-        }else if(gamestate == 15){
+                subtitle.text = o14seedfairy;
+                StartCoroutine(Subtitle());
+            }
+            else if(gamestate == 15){
             soundManager.PlayAudio("15");
             fairytext.text = o15seedfairy;
-        }else if(gamestate == 16){
+                subtitle.text = o15seedfairy;
+                StartCoroutine(Subtitle());
+            }
+            else if(gamestate == 16){
             soundManager.PlayAudio("16");
             fairytext.text = o16seedfairy;
-        }else if(gamestate == 17){
+                subtitle.text = o16seedfairy;
+                StartCoroutine(Subtitle());
+            }
+            else if(gamestate == 17){
             soundManager.PlayAudio("17");
             fairytext.text = o17seedfairy;
-        }else if(gamestate == 18){
+                subtitle.text = o17seedfairy;
+                StartCoroutine(Subtitle());
+            }
+            else if(gamestate == 18){
             soundManager.PlayAudio("18");
             fairytext.text = o18seedfairy;
-        }
+                subtitle.text = o18seedfairy;
+                StartCoroutine(Subtitle());
+            }
         
     }
     

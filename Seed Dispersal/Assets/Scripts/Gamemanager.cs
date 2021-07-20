@@ -21,6 +21,7 @@ namespace SeedSearch{
         private float endtime;
         private float overalltime;
         private float clock = 0;
+        
 
         public float Clock { get => clock; }
 
@@ -33,6 +34,7 @@ namespace SeedSearch{
         private string usercontinue;
         public float wait;
         public float avg;
+        public bool finished = false;
 
         [Header("Hint")]
         public GameObject hintObject;
@@ -197,8 +199,14 @@ namespace SeedSearch{
             yield return new WaitForSeconds(time);
             currentStep = step;
             currentStep++;
-            steps[currentStep].IsUnlocked = true;
-
+            if(currentStep < 6)
+                steps[currentStep].IsUnlocked = true;
+            if(currentStep == 6)
+            {
+                yield return new WaitForSeconds(20f);
+                finished = true;
+                SoundManager.Instance.PlayAudio("Bubble7");
+            }
         }
 
     }
