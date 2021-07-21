@@ -6776,6 +6776,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1413674006}
     m_Modifications:
+    - target: {fileID: -8739102068314837896, guid: 6d97de7a2fad4ad449b15b826b7e03ac, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f03e2320a9b5452468a7574616c5e7f3, type: 2}
     - target: {fileID: -8679921383154817045, guid: 6d97de7a2fad4ad449b15b826b7e03ac, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -6832,10 +6836,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5451719447914691282, guid: 6d97de7a2fad4ad449b15b826b7e03ac, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f03e2320a9b5452468a7574616c5e7f3, type: 2}
+    - target: {fileID: -3411345563816754226, guid: 6d97de7a2fad4ad449b15b826b7e03ac, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f03e2320a9b5452468a7574616c5e7f3, type: 2}
+    - target: {fileID: -804731622281664130, guid: 6d97de7a2fad4ad449b15b826b7e03ac, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f351d13c02a60dc438aec86656c05852, type: 2}
     - target: {fileID: 919132149155446097, guid: 6d97de7a2fad4ad449b15b826b7e03ac, type: 3}
       propertyPath: m_Name
       value: tree3branch
       objectReference: {fileID: 0}
+    - target: {fileID: 6251245926311656813, guid: 6d97de7a2fad4ad449b15b826b7e03ac, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f03e2320a9b5452468a7574616c5e7f3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d97de7a2fad4ad449b15b826b7e03ac, type: 3}
 --- !u!4 &472294540 stripped
@@ -8218,7 +8238,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 573819298}
-  - component: {fileID: 573819297}
   - component: {fileID: 573819299}
   m_Layer: 0
   m_Name: John gamemanager
@@ -8227,45 +8246,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &573819297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573819296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa0bf4e4404c58a4a89b43b527a515a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wateringcan: {fileID: 0}
-  wateringcanhome: {fileID: 0}
-  wateringcancheckpoint: {fileID: 0}
-  waterincan: {fileID: 0}
-  smooth: 1
-  dandanim: {fileID: 0}
-  dandelionseed: {fileID: 0}
-  dandelionspeed: 0.1
-  dandelionseedflyheight: 0.4
-  wind: {fileID: 481287738}
-  hole: {fileID: 0}
-  dandelionflower: {fileID: 0}
-  dandelionsprout: {fileID: 0}
-  dandelionsprout2: {fileID: 0}
-  dandelionplantmini: {fileID: 0}
-  castleanim: {fileID: 831069165}
-  fairy: {fileID: 1330079634}
-  F0: {fileID: 73163842}
-  F1: {fileID: 478747251}
-  F2: {fileID: 0}
-  F3: {fileID: 521076017}
-  fairyspeed: 0.3
-  fairysubtitles: {fileID: 68117490}
-  island: {fileID: 312817578}
-  fairytext: {fileID: 391706312}
-  player: {fileID: 1096865406}
-  subtitle: {fileID: 0}
 --- !u!4 &573819298
 Transform:
   m_ObjectHideFlags: 0
@@ -8292,21 +8272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b14cd35bb5d8774eb9556ee9a4917ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wateringcan: {fileID: 0}
-  wateringcanhome: {fileID: 0}
-  wateringcancheckpoint: {fileID: 0}
-  waterincan: {fileID: 0}
-  smooth: 1
-  dandanim: {fileID: 0}
-  dandelionseed: {fileID: 0}
-  dandelionspeed: 0.1
-  dandelionseedflyheight: 0.4
-  wind: {fileID: 481287738}
-  hole: {fileID: 0}
-  dandelionflower: {fileID: 0}
-  dandelionsprout: {fileID: 0}
-  dandelionsprout2: {fileID: 0}
-  dandelionplantmini: {fileID: 0}
   castleanim: {fileID: 831069165}
   fairy: {fileID: 1330079634}
   F0: {fileID: 73163842}
@@ -11489,7 +11454,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 05d63957a77420f44b33bee7153d2880, type: 2}
     - target: {fileID: -8679921383154817045, guid: f82a7071744175b45997866f499da6c9, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f82a7071744175b45997866f499da6c9, type: 3}
       propertyPath: m_LocalScale.x
@@ -13963,7 +13928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4380288620438938295, guid: 9a1417c116268fe4d8fdf8c8446b8ed3, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4380288620438938295, guid: 9a1417c116268fe4d8fdf8c8446b8ed3, type: 3}
       propertyPath: m_LocalScale.x
@@ -16740,10 +16705,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 776046731749314290, guid: 5f662d28496cc184b813d443c69fdaa3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f03e2320a9b5452468a7574616c5e7f3, type: 2}
     - target: {fileID: 919132149155446097, guid: 5f662d28496cc184b813d443c69fdaa3, type: 3}
       propertyPath: m_Name
       value: Tree(2branch)
       objectReference: {fileID: 0}
+    - target: {fileID: 7071182760956848314, guid: 5f662d28496cc184b813d443c69fdaa3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1f024bd56076a194f8df9a8296a342a7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f662d28496cc184b813d443c69fdaa3, type: 3}
 --- !u!4 &1130283713 stripped
@@ -22648,10 +22621,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 776046731749314290, guid: 5f662d28496cc184b813d443c69fdaa3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f03e2320a9b5452468a7574616c5e7f3, type: 2}
     - target: {fileID: 919132149155446097, guid: 5f662d28496cc184b813d443c69fdaa3, type: 3}
       propertyPath: m_Name
       value: Tree(2branch) (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7071182760956848314, guid: 5f662d28496cc184b813d443c69fdaa3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f351d13c02a60dc438aec86656c05852, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f662d28496cc184b813d443c69fdaa3, type: 3}
 --- !u!4 &1632420049 stripped
@@ -26705,7 +26686,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cfe77e30b6c329f489de7c7e1fff349d, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cfe77e30b6c329f489de7c7e1fff349d, type: 3}
       propertyPath: m_LocalScale.x
@@ -32653,7 +32634,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 26118ab5c07fa7f4ca33e391c25a05a7, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26118ab5c07fa7f4ca33e391c25a05a7, type: 3}
       propertyPath: m_LocalScale.x

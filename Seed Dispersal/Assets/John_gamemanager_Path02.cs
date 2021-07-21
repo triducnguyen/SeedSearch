@@ -7,7 +7,7 @@ namespace SeedSearch{
 public class John_gamemanager_Path02 : MonoBehaviour
 {
     private int gamestate = 1;
-    [Header("Watering can")]
+    /*[Header("Watering can")]
     public GameObject wateringcan;
     public GameObject wateringcanhome;
     public GameObject wateringcancheckpoint;
@@ -27,7 +27,7 @@ public class John_gamemanager_Path02 : MonoBehaviour
     public GameObject dandelionflower;
     public GameObject dandelionsprout;
     public GameObject dandelionsprout2;
-    public GameObject dandelionplantmini;
+    public GameObject dandelionplantmini;*/
 
     [Header("Castle")]
     public Animator castleanim;
@@ -67,15 +67,15 @@ public class John_gamemanager_Path02 : MonoBehaviour
     void Start()
     {
         soundManager = SoundManager.Instance;
-        wateringcanhome.transform.position = wateringcan.transform.position;
+        /*wateringcanhome.transform.position = wateringcan.transform.position;
         waterincan.SetActive(false);
         canstate = "return";
         seedstate = " ";
-        dandelionseed.SetActive(false);
+        dandelionseed.SetActive(false);*/
         castleanim.SetBool("CastleAnim", false);
-        dandanim.SetBool("stopspinning", true);
+        /*dandanim.SetBool("stopspinning", true);
         wind.SetActive(false);
-        hole.SetActive(false);
+        hole.SetActive(false);*/
         fairytarget = F0;
         fairynarration(1);
     }
@@ -93,7 +93,7 @@ public class John_gamemanager_Path02 : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 var selection = hit.transform;
-                if (selection.CompareTag("wateringcan") && seedstate == "plant")
+                /*if (selection.CompareTag("wateringcan") && seedstate == "plant")
                 {
                     if(canstate == "water"){
                         canstate = "tipping";
@@ -115,10 +115,10 @@ public class John_gamemanager_Path02 : MonoBehaviour
                 }else if(selection.CompareTag("island") && dandelionseed.activeInHierarchy){
                     seedstate = "fly";
                     target = hit.point;
-                }
+                }*/
             }
         }
-        if(canstate == "tipping"){
+        /*if(canstate == "tipping"){
             waterincan.SetActive(true);
             wateringcan.transform.rotation = Quaternion.Slerp(wateringcan.transform.rotation, wateringcancheckpoint.transform.rotation, Time.deltaTime * smooth);
             if(wateringcan.transform.rotation == wateringcancheckpoint.transform.rotation){
@@ -151,14 +151,14 @@ public class John_gamemanager_Path02 : MonoBehaviour
                 dandelionsprout.SetActive(true);
                 dandanim.SetBool("stopspinning", true);
             }
-        }
+        }*/
         if(fairy.transform.position != fairytarget.transform.position){
             fairy.transform.position = Vector3.MoveTowards(fairy.transform.position, fairytarget.transform.position, fairyspeed * Time.deltaTime); 
         }
 
         fairysubtitles.transform.LookAt(player.transform.position);
     }
-    IEnumerator PlantGrow(){
+    /*IEnumerator PlantGrow(){
             dandanim.SetBool("stopspinning", true);
             dandelionsprout2.SetActive(true);
             dandelionsprout.SetActive(false);
@@ -169,16 +169,16 @@ public class John_gamemanager_Path02 : MonoBehaviour
             dandelionplantmini.SetActive(false);
             dandelionflower.SetActive(true);  
             fairytarget = F3;          
-        }
+        }*/
 
-    public void movewateringcan(){
+    /*public void movewateringcan(){
         if(canstate == "water"){
             wateringcan.transform.position = wateringcancheckpoint.transform.position;
         } else if(canstate == "return"){
             wateringcan.transform.position = wateringcanhome.transform.position;
             wateringcan.transform.rotation = wateringcanhome.transform.rotation;
         } else{ Debug.Log("Cannot perform action of watering can");}
-    }
+    }*/
 
     public void castleactivate(){
         castleanim.SetBool("CastleAnim", true);
