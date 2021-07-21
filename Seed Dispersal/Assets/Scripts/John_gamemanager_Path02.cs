@@ -7,7 +7,9 @@ namespace SeedSearch{
 public class John_gamemanager_Path02 : MonoBehaviour
 {
     private int gamestate = 1;
-
+    [Header("Bee")]
+    public GameObject Bee;
+    [SerializeField] private float beesmooth;
 
     [Header("Castle")]
     public Animator castleanim;
