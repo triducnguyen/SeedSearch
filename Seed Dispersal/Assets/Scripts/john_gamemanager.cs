@@ -188,6 +188,7 @@ public class john_gamemanager : MonoBehaviour
         {
             yield return new WaitForSeconds(20f);
             subtitle.text = "";
+            fairytext.text = "";
         }
 
     public void fairynarration(int instate){
