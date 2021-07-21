@@ -9,6 +9,7 @@ namespace SeedSearch
         private int currentQuestion = 0;
         public List<GameObject> questions;
         public GameObject fieldNote;
+        public john_gamemanager manager;
         public void ToNextQuestion()
         {
             currentQuestion++;
@@ -16,22 +17,22 @@ namespace SeedSearch
             questions[currentQuestion].SetActive(true);
         }
 
-        public void OnEnable()
-        {
-            fieldNote.SetActive(false);
-            foreach(GameObject obj in questions)
-            {
-                obj.SetActive(false);
-            }
-            if(SaveManager.Instance.studentProfile.Answers.Count > 0)
-            {
-                questions[SaveManager.Instance.studentProfile.Answers.Count - 1].SetActive(true);
-            }
-            else
-            {
-                questions[0].SetActive(true);
-            }
-        }
+        //public void OnEnable()
+        //{
+        //    fieldNote.SetActive(false);
+        //    foreach(GameObject obj in questions)
+        //    {
+        //        obj.SetActive(false);
+        //    }
+        //    if(SaveManager.Instance.studentProfile.Answers.Count > 0)
+        //    {
+        //        questions[SaveManager.Instance.studentProfile.Answers.Count - 1].SetActive(true);
+        //    }
+        //    else
+        //    {
+        //        questions[0].SetActive(true);
+        //    }
+        //}
 
         public void OpenQuestion(int index)
         {
@@ -42,6 +43,11 @@ namespace SeedSearch
                 obj.SetActive(false);
             }
             questions[index].SetActive(true);
+        }
+
+        public void TriggerNarration(int index)
+        {
+            manager.fairynarration(index);
         }
     }
 }
