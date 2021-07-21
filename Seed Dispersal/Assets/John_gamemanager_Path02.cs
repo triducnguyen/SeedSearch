@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace SeedSearch{
-public class john_gamemanager : MonoBehaviour
+public class John_gamemanager_Path02 : MonoBehaviour
 {
     private int gamestate = 1;
     [Header("Watering can")]
@@ -284,6 +284,5 @@ public class john_gamemanager : MonoBehaviour
             }
         
     }
-    
 }
 }
