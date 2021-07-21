@@ -8,7 +8,7 @@ namespace SeedSearch
     {
         private int currentQuestion = 0;
         public List<GameObject> questions;
-
+        public GameObject fieldNote;
         public void ToNextQuestion()
         {
             currentQuestion++;
@@ -18,6 +18,7 @@ namespace SeedSearch
 
         public void OnEnable()
         {
+            fieldNote.SetActive(false);
             foreach(GameObject obj in questions)
             {
                 obj.SetActive(false);
@@ -30,6 +31,17 @@ namespace SeedSearch
             {
                 questions[0].SetActive(true);
             }
+        }
+
+        public void OpenQuestion(int index)
+        {
+            fieldNote.SetActive(false);
+            this.gameObject.SetActive(true);
+            foreach (GameObject obj in questions)
+            {
+                obj.SetActive(false);
+            }
+            questions[index].SetActive(true);
         }
     }
 }
