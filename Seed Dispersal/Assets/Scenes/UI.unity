@@ -5516,6 +5516,7 @@ MonoBehaviour:
   secondPrompt: {fileID: 838690355}
   thirdPrompt: {fileID: 397779764}
   answer: {fileID: 1502937524}
+  durationObjects: []
 --- !u!1 &697958517
 GameObject:
   m_ObjectHideFlags: 0
@@ -6548,7 +6549,7 @@ MonoBehaviour:
     thirdPrompt: 
     answers: []
     levelprogress: 010000000000000000000000
-  levelstatus: 010000000000000000000000
+  levelstatus: 010000000100000001000000
   Check:
   - {fileID: 459970820}
   - {fileID: 1472886221}
