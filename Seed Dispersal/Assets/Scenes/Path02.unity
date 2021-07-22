@@ -1350,7 +1350,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68117490}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.033315025}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_Children:
@@ -11944,7 +11944,7 @@ MonoBehaviour:
   F2: {fileID: 1547636104}
   F3: {fileID: 2092287311}
   fairyspeed: 0.3
-  fairysubtitles: {fileID: 1047361851}
+  fairysubtitles: {fileID: 1056963633}
   island: {fileID: 312817578}
   fairytext: {fileID: 391706312}
   player: {fileID: 1096865406}
@@ -21118,23 +21118,23 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1330079635}
+    m_TransformParent: {fileID: 1056963634}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: fe307a38620a2834093632caeca7c5b4, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe307a38620a2834093632caeca7c5b4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe307a38620a2834093632caeca7c5b4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe307a38620a2834093632caeca7c5b4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe307a38620a2834093632caeca7c5b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21142,7 +21142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe307a38620a2834093632caeca7c5b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fe307a38620a2834093632caeca7c5b4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21223,6 +21223,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1056963633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1056963634}
+  m_Layer: 0
+  m_Name: fairyflip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1056963634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056963633}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.4, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_Children:
+  - {fileID: 1047361850}
+  m_Father: {fileID: 1330079635}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1060165422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27946,7 +27977,7 @@ Transform:
   m_Children:
   - {fileID: 950501191}
   - {fileID: 2060439400}
-  - {fileID: 1047361850}
+  - {fileID: 1056963634}
   m_Father: {fileID: 312817579}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
