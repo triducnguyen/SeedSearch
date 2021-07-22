@@ -19,6 +19,7 @@ public class John_gamemanager_Path02 : MonoBehaviour
     [SerializeField] private GameObject F0, F1, F2, F3;
     private GameObject fairytarget;
     [SerializeField] private float fairyspeed;
+    public Animator faryanim;
 
     [Header("Fairy Speaking")]
     public GameObject fairysubtitles;
@@ -49,6 +50,7 @@ public class John_gamemanager_Path02 : MonoBehaviour
     {
         soundManager = SoundManager.Instance;
         castleanim.SetBool("CastleAnim", false);
+        faryanim.SetBool("wave", false);
         fairytarget = F0;
         fairynarration(1);
     }
@@ -84,7 +86,10 @@ public class John_gamemanager_Path02 : MonoBehaviour
         }
         
         if(fairy.transform.position != fairytarget.transform.position){
+            faryanim.SetBool("wave", false);
             fairy.transform.position = Vector3.MoveTowards(fairy.transform.position, fairytarget.transform.position, fairyspeed * Time.deltaTime); 
+        } else{
+            faryanim.SetBool("wave", true);
         }
 
         fairysubtitles.transform.LookAt(player.transform.position);

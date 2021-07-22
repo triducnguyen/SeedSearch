@@ -11944,6 +11944,7 @@ MonoBehaviour:
   F2: {fileID: 1547636104}
   F3: {fileID: 2092287311}
   fairyspeed: 0.3
+  faryanim: {fileID: 1047361852}
   fairysubtitles: {fileID: 1056963633}
   island: {fileID: 312817578}
   fairytext: {fileID: 391706312}
