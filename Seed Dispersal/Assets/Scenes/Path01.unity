@@ -727,6 +727,8 @@ RectTransform:
   - {fileID: 1284119593}
   - {fileID: 1599045644}
   - {fileID: 1593026894}
+  - {fileID: 1992560847}
+  - {fileID: 1104760186}
   - {fileID: 711465440}
   m_Father: {fileID: 309697796}
   m_RootOrder: 2
