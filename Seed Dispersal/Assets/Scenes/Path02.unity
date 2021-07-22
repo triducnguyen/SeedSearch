@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44447577, g: 0.49395937, b: 0.57326883, a: 1}
+  m_IndirectSpecularColor: {r: 0.17869264, g: 0.22374621, b: 0.30567273, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2606,7 +2606,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101887549}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 173.5, y: 26.8, z: -96.5}
+  m_LocalPosition: {x: 158.9, y: 54.7, z: -96.5}
   m_LocalScale: {x: 4.338, y: 4.338, z: 4.338}
   m_Children:
   - {fileID: 1396536819}
@@ -12001,8 +12001,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b14cd35bb5d8774eb9556ee9a4917ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bee: {fileID: 0}
-  beesmooth: 0
+  Bee: {fileID: 101887549}
+  beesmooth: 0.3
   castleanim: {fileID: 831069165}
   fairy: {fileID: 1330079634}
   F0: {fileID: 73163842}

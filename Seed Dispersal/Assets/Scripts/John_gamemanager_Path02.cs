@@ -9,6 +9,8 @@ public class John_gamemanager_Path02 : MonoBehaviour
     private int gamestate = 1;
     [Header("Bee")]
     public GameObject Bee;
+    private Vector3 beetarget;
+    private string beestate = "idle";
     [SerializeField] private float beesmooth;
 
     [Header("Castle")]
@@ -68,6 +70,11 @@ public class John_gamemanager_Path02 : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 var selection = hit.transform;
+                if(selection.CompareTag("dandelionflower")){
+                    beetarget = hit.point;
+                    beestate = "fly";
+                    Bee.transform.LookAt(beetarget);
+                }
                 /*if (selection.CompareTag("wateringcan") && seedstate == "plant")
                 {
                     if(canstate == "water"){
@@ -83,6 +90,9 @@ public class John_gamemanager_Path02 : MonoBehaviour
                     }
                 }*/
             }
+        }
+        if(beestate == "fly"){
+            Bee.transform.position = Vector3.MoveTowards(Bee.transform.position, beetarget, beesmooth * Time.deltaTime); 
         }
         
         if(fairy.transform.position != fairytarget.transform.position){
