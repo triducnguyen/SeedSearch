@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44447577, g: 0.49395937, b: 0.57326883, a: 1}
+  m_IndirectSpecularColor: {r: 0.17869264, g: 0.22374621, b: 0.30567273, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -751,7 +751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notification: {fileID: 1964000162}
-  hint: {fileID: 0}
+  hint: {fileID: 1104760185}
 --- !u!1 &43913044
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,7 +2102,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &90147617
 Canvas:
   m_ObjectHideFlags: 0
@@ -2607,7 +2607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notification: {fileID: 1317509463}
-  hint: {fileID: 0}
+  hint: {fileID: 1360094971}
 --- !u!114 &137960716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24717,7 +24717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notification: {fileID: 1302176392}
-  hint: {fileID: 0}
+  hint: {fileID: 941690118}
 --- !u!1 &1520617974
 GameObject:
   m_ObjectHideFlags: 0
@@ -30456,8 +30456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A seed germinates after being dispersed. The seed has to germinated before
-    it can be pollinated!
+  m_text: What is germination?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 879be40e896edce4bbdfa544a46a0932, type: 2}
   m_sharedMaterial: {fileID: -2264608464019109758, guid: 879be40e896edce4bbdfa544a46a0932, type: 2}
@@ -33696,7 +33695,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1891757865
 PrefabInstance:
