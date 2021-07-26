@@ -14,9 +14,15 @@ public class John_gamemanager_Path02 : MonoBehaviour
     [System.NonSerialized] public bool beeF = false;
     [SerializeField] private float beesmooth;
     public GameObject beepollen;
-    private int pollencount;
+    [SerializeField] private int pollencount = 0;
     public int numflowers;
     public GameObject firstseeds;
+    public GameObject tapflowericon;
+
+    [Header("Ant")]
+    public GameObject ant;
+    public Animator antanim;
+    public GameObject[] antwaypoints;
 
     [Header("Castle")]
     public Animator castleanim;
@@ -81,20 +87,7 @@ public class John_gamemanager_Path02 : MonoBehaviour
                     beeF = true;
                     Bee.transform.LookAt(beetarget);
                 }
-                /*if (selection.CompareTag("wateringcan") && seedstate == "plant")
-                {
-                    if(canstate == "water"){
-                        canstate = "tipping";
-                    } else if(canstate == "tipped"){
-                        canstate = "return";
-                        waterincan.SetActive(false);
-                        movewateringcan();
-                    } else if(canstate == "return"){
-                        canstate = "water";
-                        waterincan.SetActive(false);
-                        movewateringcan();
-                    }
-                }*/
+                
             }
         }
         if(beeF == true){
@@ -123,6 +116,8 @@ public class John_gamemanager_Path02 : MonoBehaviour
         pollencount++;
         if(numflowers <= pollencount){
             firstseeds.SetActive(true);
+        }else if(2f <= pollencount){
+            tapflowericon.SetActive(false);
         }
     }
     public void castleactivate(){
