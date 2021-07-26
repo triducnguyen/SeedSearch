@@ -9,7 +9,14 @@ public class John_gamemanager_Path02 : MonoBehaviour
     private int gamestate = 1;
     [Header("Bee")]
     public GameObject Bee;
+    private Vector3 beetarget;
+    [System.NonSerialized] public bool beeP = false;
+    [System.NonSerialized] public bool beeF = false;
     [SerializeField] private float beesmooth;
+    public GameObject beepollen;
+    private int pollencount;
+    public int numflowers;
+    public GameObject firstseeds;
 
     [Header("Castle")]
     public Animator castleanim;
@@ -53,6 +60,7 @@ public class John_gamemanager_Path02 : MonoBehaviour
         faryanim.SetBool("wave", false);
         fairytarget = F0;
         fairynarration(1);
+        firstseeds.SetActive(false);
     }
 
     // Update is called once per frame
@@ -68,6 +76,11 @@ public class John_gamemanager_Path02 : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 var selection = hit.transform;
+                if(selection.CompareTag("dandelionflower")){
+                    beetarget = hit.point;
+                    beeF = true;
+                    Bee.transform.LookAt(beetarget);
+                }
                 /*if (selection.CompareTag("wateringcan") && seedstate == "plant")
                 {
                     if(canstate == "water"){
@@ -84,6 +97,12 @@ public class John_gamemanager_Path02 : MonoBehaviour
                 }*/
             }
         }
+        if(beeF == true){
+            Bee.transform.position = Vector3.MoveTowards(Bee.transform.position, beetarget, beesmooth * Time.deltaTime); 
+            if(Bee.transform.position == beetarget){
+                beeF = false;
+            }
+        }
         
         if(fairy.transform.position != fairytarget.transform.position){
             faryanim.SetBool("wave", false);
@@ -95,7 +114,17 @@ public class John_gamemanager_Path02 : MonoBehaviour
         fairysubtitles.transform.LookAt(player.transform.position);
     }
     
-
+    public void beepollentoggle(){
+        if(beeP == true){
+            beepollen.SetActive(true);
+        }else{
+            beepollen.SetActive(false);
+        }
+        pollencount++;
+        if(numflowers <= pollencount){
+            firstseeds.SetActive(true);
+        }
+    }
     public void castleactivate(){
         castleanim.SetBool("CastleAnim", true);
     }
