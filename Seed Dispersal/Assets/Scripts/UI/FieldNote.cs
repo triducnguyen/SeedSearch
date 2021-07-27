@@ -70,9 +70,7 @@ namespace SeedSearch
                 {
                     if(SaveManager.Instance.studentProfile.Levelprogress[j] == 1) 
                         noteField[j].SetActive(true);
-                }
-            
-            
+                }          
         }
     }
 }
