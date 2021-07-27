@@ -8,6 +8,7 @@ TagManager:
   - wateringcan
   - dandelionflower
   - island
+  - Ant
   layers:
   - Default
   - TransparentFX

@@ -27,6 +27,9 @@ public class John_gamemanager_Path02 : MonoBehaviour
     [System.NonSerialized] public bool antsstart;
 
     [System.NonSerialized] public int numberfallenseeds = 0;
+    [System.NonSerialized] public Transform antselect;
+    private Vector3 anttarget;
+    
 
     [Header("Castle")]
     public Animator castleanim;
@@ -73,11 +76,13 @@ public class John_gamemanager_Path02 : MonoBehaviour
         fairynarration(1);
         firstseeds.SetActive(false);
         //anttarget = ant.transform.position;
+        
     }
 
-    // Update is called once per frame
+    private RaycastHit hit;
     void Update()
     {
+        
         if(island.activeInHierarchy && gamestate < 2){
             fairynarration(2);
         }
@@ -93,9 +98,28 @@ public class John_gamemanager_Path02 : MonoBehaviour
                     beeF = true;
                     Bee.transform.LookAt(beetarget);
                 }
+                if(gamestate >= 6){
+                    if(selection.CompareTag("Ant") && antsstart != true){
+                        antselect = hit.transform;
+                        anttarget = antselect.transform.position;
+                    }else if(selection.CompareTag("island") && antsstart != true && antselect != null){
+                        anttarget = hit.point;
+                        antselect.LookAt(anttarget);
+                        
+                    }
+                }
                 
             }
         }
+
+        if(antselect != null && antselect.transform.position != anttarget){
+            antselect.transform.position = Vector3.MoveTowards(antselect.transform.position, anttarget, antspeed * Time.deltaTime);
+        }
+        if(antselect != null && Vector3.Distance(firstseeds.transform.position, antselect.position) < 0.25f){
+            antsstart = true;
+        }
+
+
         if(beeF == true){
             Bee.transform.position = Vector3.MoveTowards(Bee.transform.position, beetarget, beesmooth * Time.deltaTime); 
             if(Bee.transform.position == beetarget){
@@ -121,11 +145,12 @@ public class John_gamemanager_Path02 : MonoBehaviour
             beepollen.SetActive(false);
         }
         pollencount++;
-        if(numflowers <= pollencount){
+        if(numflowers <= pollencount && gamestate < 6){
             firstseeds.SetActive(true);
             fairynarration(6);
-            antsstart = true;
-        }else if(2f <= pollencount){
+            //antsstart = true;
+            //antanim.SetBool("Walking", true);
+        }else if(2f <= pollencount && gamestate < 5){
             tapflowericon.SetActive(false);
             fairynarration(5);
         }
