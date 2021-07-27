@@ -26,6 +26,8 @@ public class John_gamemanager_Path02 : MonoBehaviour
     public GameObject[] antwaypoints;
     [System.NonSerialized] public bool antsstart;
 
+    [System.NonSerialized] public int numberfallenseeds = 0;
+
     [Header("Castle")]
     public Animator castleanim;
 

@@ -14,7 +14,8 @@ public class Ant : MonoBehaviour
 
     [SerializeField] private GameObject antseed;
     private bool holdseed = true;
-    private int droprate = 15;
+    private float droprate = 5f;
+    private float droprateincrease = 1.1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +34,7 @@ public class Ant : MonoBehaviour
             this.transform.position = Vector3.MoveTowards(this.transform.position, anttarget, gamemanager.antspeed * Time.deltaTime); 
         } else{
             if(anttarget != new Vector3(0, 0, 0)){
-                dropseed();
+                //dropseed();
                 antI++;
                 anttarget = gamemanager.antwaypoints[antI].transform.position;
                 this.transform.LookAt(anttarget);
@@ -44,6 +45,12 @@ public class Ant : MonoBehaviour
         if(this.transform.position == gamemanager.antwaypoints[3].transform.position){
             this.gameObject.SetActive(false);
         }
+
+        /*if(holdseed == false && Vector3.Distance(gamemanager.player.transform.position, antseed.transform.position) < 0.1f){
+            antseed.SetActive(false);
+            gamemanager.numberfallenseeds--;
+        }*/
+        dropseed();
     }
     
     
@@ -52,8 +59,9 @@ public class Ant : MonoBehaviour
             if(Random.Range(0, 100) <= droprate){
                 antseed.transform.parent = null;
                 holdseed = false;
+                gamemanager.numberfallenseeds++;
             } else{
-                droprate = droprate * 2;
+                droprate = droprate * droprateincrease;
             }
         }
     }
