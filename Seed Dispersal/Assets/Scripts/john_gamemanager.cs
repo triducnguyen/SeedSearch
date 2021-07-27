@@ -7,6 +7,7 @@ namespace SeedSearch{
     public class john_gamemanager : MonoBehaviour
     {
         private int gamestate = 1;
+        private bool inputLock = false;
         [Header("Watering can")]
         public GameObject wateringcan;
         public GameObject wateringcanhome;
@@ -89,7 +90,7 @@ namespace SeedSearch{
             if(island.activeInHierarchy && gamestate < 2){
                 fairynarration(2);
             }
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !inputLock)
             {
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
@@ -180,6 +181,7 @@ namespace SeedSearch{
 
         private IEnumerator PlantGrow()
         {
+            inputLock = true;
             dandanim.SetBool("stopspinning", true);
             if (gamestate < 14)
             {
@@ -212,6 +214,7 @@ namespace SeedSearch{
             {
                 fairynarration(18);
             }
+            inputLock = false;
         }
 
         public void movewateringcan(){
@@ -233,9 +236,11 @@ namespace SeedSearch{
 
         IEnumerator Subtitle()
             {
-                yield return new WaitForSeconds(12f);
+                inputLock = true;
+                yield return new WaitForSeconds(16f);
                 subtitle.text = "";
                 fairytext.text = "";
+                inputLock = false;
             }
 
         public void fairynarration(int instate)

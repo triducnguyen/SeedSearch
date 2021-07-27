@@ -5965,6 +5965,8 @@ MonoBehaviour:
   - {fileID: 1209850815}
   - {fileID: 1507761835}
   fieldNote: {fileID: 228760780}
+  noteUp: {fileID: 2005948489}
+  noteDown: {fileID: 1229567941}
   manager: {fileID: 573819297}
 --- !u!1 &311357644
 GameObject:
@@ -19414,7 +19416,7 @@ MonoBehaviour:
         m_MethodName: Toggle
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2005948489}
+          m_ObjectArgument: {fileID: 228760780}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
