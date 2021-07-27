@@ -243,13 +243,27 @@ namespace SeedSearch{
         }
 
         IEnumerator Subtitle()
+        {
+            inputLock = true;
+            yield return new WaitForSeconds(16f);
+            if(gamestate == 2)
             {
-                inputLock = true;
-                yield return new WaitForSeconds(16f);
-                subtitle.text = "";
-                fairytext.text = "";
-                inputLock = false;
+                questionUI.OpenQuestion(0);
+            } else if(gamestate == 7)
+            {
+                questionUI.OpenQuestion(1);
+
+            } else if(gamestate == 10)
+            {
+                questionUI.OpenQuestion(2);
+            } else if(gamestate == 18)
+            {
+                questionUI.OpenQuestion(3);
             }
+            subtitle.text = "";
+            fairytext.text = "";
+            inputLock = false;
+        }
 
         public void fairynarration(int instate)
         {
@@ -266,7 +280,6 @@ namespace SeedSearch{
                 soundManager.PlayAudio("02");
                 fairytext.text = o2seedfairy;
                 subtitle.text = o2seedfairy;
-                questionUI.OpenQuestion(0);
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle());
             }
@@ -298,7 +311,6 @@ namespace SeedSearch{
                 soundManager.PlayAudio("07");
                 fairytext.text = o7seedfairy;
                 subtitle.text = o7seedfairy;
-                questionUI.OpenQuestion(1);
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle());
             }
@@ -315,7 +327,6 @@ namespace SeedSearch{
                 soundManager.PlayAudio("10");
                 fairytext.text = o10seedfairy;
                 subtitle.text = o10seedfairy;
-                questionUI.OpenQuestion(2);
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle());
             }
@@ -372,7 +383,6 @@ namespace SeedSearch{
                 soundManager.PlayAudio("18");
                 fairytext.text = o18seedfairy;
                 subtitle.text = o18seedfairy;
-                questionUI.OpenQuestion(3);
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle());
             }
