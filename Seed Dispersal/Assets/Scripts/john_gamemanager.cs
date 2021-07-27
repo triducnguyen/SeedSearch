@@ -224,8 +224,8 @@ namespace SeedSearch{
                 if (gamestate < 10)
                 {
                     fairynarration(10);
-                }
-                StartCoroutine(stopWatering());
+                    StartCoroutine(stopWatering());
+                }               
             } else if(canstate == "return"){
                 wateringcan.transform.position = wateringcanhome.transform.position;
                 wateringcan.transform.rotation = wateringcanhome.transform.rotation;
