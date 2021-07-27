@@ -12,7 +12,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Dont interact with self
   - Water
   - UI
   - 
