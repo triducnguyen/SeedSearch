@@ -8,6 +8,7 @@ namespace SeedSearch{
     {
         private int gamestate = 1;
         private bool inputLock = false;
+        private Coroutine previousCoroutine;
         [Header("Watering can")]
         public GameObject wateringcan;
         public GameObject wateringcanhome;
@@ -189,14 +190,14 @@ namespace SeedSearch{
             }
             dandelionsprout2.SetActive(true);
             dandelionsprout.SetActive(false);
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(6f);
             if (gamestate < 15)
             {
                 fairynarration(15);
             }
             dandelionplantmini.SetActive(true);
             dandelionsprout2.SetActive(false);
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(6f);
             if (gamestate < 16)
             {
                 fairynarration(16);
@@ -204,7 +205,7 @@ namespace SeedSearch{
             dandelionplantmini.SetActive(false);
             dandelionflower.SetActive(true);            
             fairytarget = F3;
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(6f);
             if (gamestate < 17)
             {
                 fairynarration(17);
@@ -223,11 +224,18 @@ namespace SeedSearch{
                 if (gamestate < 10)
                 {
                     fairynarration(10);
-                }   
+                }
+                StartCoroutine(stopWatering());
             } else if(canstate == "return"){
                 wateringcan.transform.position = wateringcanhome.transform.position;
                 wateringcan.transform.rotation = wateringcanhome.transform.rotation;
             } else{ Debug.Log("Cannot perform action of watering can");}
+        }
+
+        private IEnumerator stopWatering()
+        {
+            yield return new WaitForSeconds(20f);
+            canstate = "return";
         }
 
         public void castleactivate(){
@@ -251,7 +259,7 @@ namespace SeedSearch{
                 soundManager.PlayAudio("01");
                 fairytext.text = o1seedfairy;
                 subtitle.text = o1seedfairy;
-                StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle());
             }
             else if (gamestate == 2)
             {
@@ -259,28 +267,31 @@ namespace SeedSearch{
                 fairytext.text = o2seedfairy;
                 subtitle.text = o2seedfairy;
                 questionUI.OpenQuestion(0);
-                StartCoroutine(Subtitle());
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle());
             }
             else if (gamestate == 4)
             {
                 soundManager.PlayAudio("04");
                 fairytext.text = o4seedfairy;
-                subtitle.text = o4seedfairy;
-                StartCoroutine(Subtitle());
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle());
             }
             else if (gamestate == 5)
             {
                 soundManager.PlayAudio("05");
                 fairytext.text = o5seedfairy;
                 subtitle.text = o5seedfairy;
-                StartCoroutine(Subtitle());
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle());
             }
             else if (gamestate == 6)
             {
                 soundManager.PlayAudio("06");
                 fairytext.text = o6seedfairy;
                 subtitle.text = o6seedfairy;
-                StartCoroutine(Subtitle());
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle());
             }
             else if (gamestate == 7)
             {
@@ -288,14 +299,16 @@ namespace SeedSearch{
                 fairytext.text = o7seedfairy;
                 subtitle.text = o7seedfairy;
                 questionUI.OpenQuestion(1);
-                StartCoroutine(Subtitle());
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle());
             }
             else if (gamestate == 9)
             {
                 soundManager.PlayAudio("09");
                 fairytext.text = o9seedfairy;
                 subtitle.text = o9seedfairy;
-                StartCoroutine(Subtitle());
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle());
             }
             else if (gamestate == 10)
             {
@@ -303,49 +316,56 @@ namespace SeedSearch{
                 fairytext.text = o10seedfairy;
                 subtitle.text = o10seedfairy;
                 questionUI.OpenQuestion(2);
-                StartCoroutine(Subtitle());
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle());
             }
             else if (gamestate == 12)
             {
                 soundManager.PlayAudio("12");
                 fairytext.text = o12seedfairy;
                 subtitle.text = o12seedfairy;
-                StartCoroutine(Subtitle());
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle());
             }
             else if (gamestate == 13)
             {
                 soundManager.PlayAudio("13");
                 fairytext.text = o13seedfairy;
                 subtitle.text = o13seedfairy;
-                StartCoroutine(Subtitle());
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle());
             }
             else if (gamestate == 14)
             {
                 soundManager.PlayAudio("14");
                 fairytext.text = o14seedfairy;
                 subtitle.text = o14seedfairy;
-                StartCoroutine(Subtitle());
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle());
             }
             else if (gamestate == 15)
             {
                 soundManager.PlayAudio("15");
                 fairytext.text = o15seedfairy;
                 subtitle.text = o15seedfairy;
-                StartCoroutine(Subtitle());
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle());
             }
             else if (gamestate == 16)
             {
                 soundManager.PlayAudio("16");
                 fairytext.text = o16seedfairy;
                 subtitle.text = o16seedfairy;
-                StartCoroutine(Subtitle());
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle());
             }
             else if (gamestate == 17)
             {
                 soundManager.PlayAudio("17");
                 fairytext.text = o17seedfairy;
                 subtitle.text = o17seedfairy;
-                StartCoroutine(Subtitle());
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle());
             }
             else if (gamestate == 18)
             {
@@ -353,7 +373,8 @@ namespace SeedSearch{
                 fairytext.text = o18seedfairy;
                 subtitle.text = o18seedfairy;
                 questionUI.OpenQuestion(3);
-                StartCoroutine(Subtitle());
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle());
             }
 
         }
