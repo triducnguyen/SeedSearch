@@ -114,6 +114,10 @@ namespace SeedSearch{
                         dandelionseed.SetActive(true);
                         seedstate = "idle";
                         wind.SetActive(true);
+                        if (gamestate < 5)
+                        {
+                            fairynarration(5);
+                        }
                         fairytarget = F1;
                     }else if(selection.CompareTag("island") && dandelionseed.activeInHierarchy){
                         seedstate = "fly";
@@ -128,6 +132,10 @@ namespace SeedSearch{
                     canstate = "tipped";
                     waterincan.SetActive(true);
                     castleactivate();
+                    if (gamestate < 13)
+                    {
+                        fairynarration(13);
+                    }
                     StartCoroutine(PlantGrow());
                 }
             }
@@ -138,6 +146,10 @@ namespace SeedSearch{
                 dandelionsprout2.SetActive(false);
                 dandelionplantmini.SetActive(false);
                 hole.SetActive(false);
+                if (gamestate < 6)
+                {
+                    fairynarration(6);
+                }
                 dandelionseed.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, target + new Vector3(0, dandelionseedflyheight, 0), dandelionspeed * Time.deltaTime);
                 if(dandelionseed.transform.position == target + new Vector3(0, dandelionseedflyheight, 0)){
                     seedstate = "drop";
@@ -148,6 +160,10 @@ namespace SeedSearch{
                     seedstate = "plant";
                     wind.SetActive(false);
                     hole.SetActive(true);
+                    if (gamestate < 7)
+                    {
+                        fairynarration(7);
+                    }
                     dandelionflower.SetActive(false);
                     hole.transform.position = dandelionseed.transform.position + new Vector3(0, 0.01f , 0);
                     fairytarget = F2;
@@ -161,22 +177,50 @@ namespace SeedSearch{
 
             fairysubtitles.transform.LookAt(player.transform.position);
         }
-        IEnumerator PlantGrow(){
-                dandanim.SetBool("stopspinning", true);
-                dandelionsprout2.SetActive(true);
-                dandelionsprout.SetActive(false);
-                yield return new WaitForSeconds(3);
-                dandelionplantmini.SetActive(true);
-                dandelionsprout2.SetActive(false);
-                yield return new WaitForSeconds(3);
-                dandelionplantmini.SetActive(false);
-                dandelionflower.SetActive(true);  
-                fairytarget = F3;          
+
+        private IEnumerator PlantGrow()
+        {
+            dandanim.SetBool("stopspinning", true);
+            if (gamestate < 14)
+            {
+                fairynarration(14);
             }
+            dandelionsprout2.SetActive(true);
+            dandelionsprout.SetActive(false);
+            yield return new WaitForSeconds(5f);
+            if (gamestate < 15)
+            {
+                fairynarration(15);
+            }
+            dandelionplantmini.SetActive(true);
+            dandelionsprout2.SetActive(false);
+            yield return new WaitForSeconds(5f);
+            if (gamestate < 16)
+            {
+                fairynarration(16);
+            }
+            dandelionplantmini.SetActive(false);
+            dandelionflower.SetActive(true);            
+            fairytarget = F3;
+            yield return new WaitForSeconds(5f);
+            if (gamestate < 17)
+            {
+                fairynarration(17);
+            }
+            yield return new WaitForSeconds(7f);
+            if (gamestate < 18)
+            {
+                fairynarration(18);
+            }
+        }
 
         public void movewateringcan(){
             if(canstate == "water"){
                 wateringcan.transform.position = wateringcancheckpoint.transform.position;
+                if (gamestate < 10)
+                {
+                    fairynarration(10);
+                }   
             } else if(canstate == "return"){
                 wateringcan.transform.position = wateringcanhome.transform.position;
                 wateringcan.transform.rotation = wateringcanhome.transform.rotation;
