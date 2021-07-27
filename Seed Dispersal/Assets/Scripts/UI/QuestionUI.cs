@@ -9,6 +9,8 @@ namespace SeedSearch
         private int currentQuestion = 0;
         public List<GameObject> questions;
         public GameObject fieldNote;
+        public GameObject noteUp;
+        public GameObject noteDown;
         public john_gamemanager manager;
         public void ToNextQuestion()
         {
@@ -36,6 +38,8 @@ namespace SeedSearch
 
         public void OpenQuestion(int index)
         {
+            noteUp.SetActive(true);
+            noteDown.SetActive(false);
             fieldNote.SetActive(false);
             this.gameObject.SetActive(true);
             foreach (GameObject obj in questions)
