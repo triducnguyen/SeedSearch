@@ -149,8 +149,8 @@ namespace SeedSearch{
                 times = currentStudent.Times;
                 alltimes = currentStudent.OverallTimes;
             } else{
-                times.Add(1f);
-                alltimes.Add(1f);
+                times.Add(20f);
+                alltimes.Add(20f);
             }       
             avg = times.Average();
             wait = avg * 2;   
