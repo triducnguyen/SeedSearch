@@ -22,10 +22,9 @@ public class John_gamemanager_Path02 : MonoBehaviour
     [Header("Ant")]
     public GameObject ant;
     public Animator antanim;
-    private Vector3 anttarget;
-    [SerializeField] private float antspeed;
+    public float antspeed;
     public GameObject[] antwaypoints;
-    private int antI = 0;
+    [System.NonSerialized] public bool antsstart;
 
     [Header("Castle")]
     public Animator castleanim;
@@ -101,16 +100,7 @@ public class John_gamemanager_Path02 : MonoBehaviour
                 beeF = false;
             }
         }
-
-        if(ant.transform.position != anttarget){
-            antanim.SetBool("Walking", true);
-            ant.transform.position = Vector3.MoveTowards(ant.transform.position, anttarget, antspeed * Time.deltaTime); 
-        } else{
-            antanim.SetBool("Walking", false);
-            if(anttarget != new Vector3(0, 0, 0)){
-                anttarget = antwaypoints[antI].transform.position;
-            }
-        }
+        
         
         if(fairy.transform.position != fairytarget.transform.position){
             faryanim.SetBool("wave", false);
@@ -132,6 +122,7 @@ public class John_gamemanager_Path02 : MonoBehaviour
         if(numflowers <= pollencount){
             firstseeds.SetActive(true);
             fairynarration(6);
+            antsstart = true;
         }else if(2f <= pollencount){
             tapflowericon.SetActive(false);
             fairynarration(5);
