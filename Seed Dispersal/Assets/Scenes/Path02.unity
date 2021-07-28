@@ -12605,6 +12605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   antseed: {fileID: 1405896075}
+  droprate: 0
   antanim: {fileID: 533254371}
 --- !u!95 &533254371 stripped
 Animator:
@@ -16930,6 +16931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   antseed: {fileID: 143058348}
+  droprate: 0
   antanim: {fileID: 734828027}
 --- !u!95 &734828027 stripped
 Animator:
@@ -27737,6 +27739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   antseed: {fileID: 806086523}
+  droprate: 0
   antanim: {fileID: 1185266429}
 --- !u!95 &1185266429 stripped
 Animator:
@@ -45290,6 +45293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   antseed: {fileID: 355900214}
+  droprate: 0
   antanim: {fileID: 2005324838}
 --- !u!95 &2005324838 stripped
 Animator:
@@ -46876,7 +46880,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 1.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -46930,7 +46934,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.7995194, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.93380237, b: 0.6745283, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -46992,7 +46996,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.39
+      scalar: 0.97
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -47371,7 +47375,7 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0.97
+    radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -47454,7 +47458,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 5.38
+      value: 2.64
       mode: 0
       spread: 0
       speed:
@@ -52998,6 +53002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   antseed: {fileID: 1061005900}
+  droprate: 0
   antanim: {fileID: 2100521742}
 --- !u!135 &2100521744
 SphereCollider:
