@@ -56,6 +56,9 @@ namespace SeedSearch{
         [Header("Questions")]
         public QuestionUI questionUI;
 
+        public Text debugText;
+        public Text debugText2;
+
         private SoundManager soundManager;
     
         private string o1seedfairy = "Hello there Adventurer! Looks like you’ve studied up! Are you ready to begin our search? We need to make sure the seeds are properly dispersed, germinated, and ready for pollination! Our Flower Kingdom will be covered in beautiful flowers once more! Come on, let’s go! ";
@@ -95,7 +98,9 @@ namespace SeedSearch{
         // Update is called once per frame
         void Update()
         {
-            if(island.activeInHierarchy && gamestate < 2){
+            debugText.text = "Current canstate " + canstate;
+            debugText2.text = "Current seedstate " + seedstate;
+            if (island.activeInHierarchy && gamestate < 2){
                 fairynarration(2);
             }
             if (!AnsweringQuestion)
@@ -186,8 +191,8 @@ namespace SeedSearch{
                 }
                 else if (seedstate == "drop")
                 {
-                    dandelionseed.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, target, 0.5f * dandelionspeed * Time.deltaTime);
-                    if (dandelionseed.transform.position == target)
+                    dandelionseed.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, target + new Vector3(0f, 0.1f,0f), 0.5f * dandelionspeed * Time.deltaTime);
+                    if (dandelionseed.transform.position == target + new Vector3(0f, 0.1f, 0f))
                     {
                         seedstate = "plant";
                         wind.SetActive(false);
