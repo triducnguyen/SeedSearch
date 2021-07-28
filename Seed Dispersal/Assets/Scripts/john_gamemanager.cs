@@ -56,9 +56,6 @@ namespace SeedSearch{
         [Header("Questions")]
         public QuestionUI questionUI;
 
-        public Text debugText;
-        public Text debugText2;
-
         private SoundManager soundManager;
     
         private string o1seedfairy = "Hello there Adventurer! Looks like you’ve studied up! Are you ready to begin our search? We need to make sure the seeds are properly dispersed, germinated, and ready for pollination! Our Flower Kingdom will be covered in beautiful flowers once more! Come on, let’s go! ";
@@ -98,8 +95,6 @@ namespace SeedSearch{
         // Update is called once per frame
         void Update()
         {
-            debugText.text = "Current canstate " + canstate;
-            debugText2.text = "Current seedstate " + seedstate;
             if (island.activeInHierarchy && gamestate < 2){
                 fairynarration(2);
             }
