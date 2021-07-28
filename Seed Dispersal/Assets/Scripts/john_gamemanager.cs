@@ -116,10 +116,12 @@ namespace SeedSearch{
                         {
                             if (canstate == "water")
                             {
+                                waterCanIndicator.SetActive(false);
                                 canstate = "tipping";
                             }
                             else if (canstate == "tipped")
                             {
+                                waterCanIndicator.SetActive(false);
                                 canstate = "return";
                                 waterincan.SetActive(false);
                                 movewateringcan();
@@ -127,6 +129,8 @@ namespace SeedSearch{
                             else if (canstate == "return")
                             {
                                 canstate = "water";
+                                waterCanIndicator.SetActive(true);
+                                waterCanIndicator.transform.LookAt(player.transform.position);
                                 waterincan.SetActive(false);
                                 movewateringcan();
                             }
@@ -191,8 +195,8 @@ namespace SeedSearch{
                 }
                 else if (seedstate == "drop")
                 {
-                    dandelionseed.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, target + new Vector3(0f, 0.1f,0f), 0.5f * dandelionspeed * Time.deltaTime);
-                    if (dandelionseed.transform.position == target + new Vector3(0f, 0.1f, 0f))
+                    dandelionseed.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, target + new Vector3(0f, 0.02f,0f), 0.5f * dandelionspeed * Time.deltaTime);
+                    if (dandelionseed.transform.position == target + new Vector3(0f, 0.02f, 0f))
                     {
                         seedstate = "plant";
                         wind.SetActive(false);
