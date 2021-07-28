@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace SeedSearch{
-public class John_gamemanager_Path02 : MonoBehaviour
+public class John_gamemanager_Path03 : MonoBehaviour
 {
     [SerializeField] private int gamestate = 1;
-    [Header("Bee")]
+    /*[Header("Bee")]
     public GameObject Bee;
     private Vector3 beetarget;
     [System.NonSerialized] public bool beeP = false;
@@ -18,9 +18,9 @@ public class John_gamemanager_Path02 : MonoBehaviour
     public int numflowers;
     public GameObject firstseeds;
     public GameObject lastseeds;
-    public GameObject tapflowericon;
+    public GameObject tapflowericon;*/
 
-    [Header("Ant")]
+    /*[Header("Ant")]
     public GameObject ant;
     public Animator antanim;
     public float antspeed;
@@ -34,7 +34,7 @@ public class John_gamemanager_Path02 : MonoBehaviour
     public bool antsareup = true;
      private bool seedsareup = true;
     public GameObject[] ants;
-    public GameObject[] seeds;
+    public GameObject[] seeds;*/
 
     [Header("Castle")]
     public Animator castleanim;
@@ -55,20 +55,27 @@ public class John_gamemanager_Path02 : MonoBehaviour
 
     private SoundManager soundManager;
     
-    private string o1seedfairy = "Welcome back, Adventurer! Thanks for your help, but we’re still in trouble!";
-    private string o2seedfairy = "We’ve got a problem! As you can see, this path doesn’t have many flowers. The insects of this path seem to have gotten all confused! They don’t remember how to pollinate and disperse our seeds! But look, luckily we’ve got a few pretty little flowers right here! This one is fully bloomed and ready to be pollinated. Do you know what pollination is?";
-    private string o3seedfairy = "Yes, pollination is the process of moving pollen from one flower to another! And look, there is a pollinator, on its way to do so! Bees are great pollinators, but he looks a little confused. Let’s help him fly through the process of pollination, so he remembers how it’s done!";
-    private string o4seedfairy = "Oh wonderful, see? Now the flower has been pollinated! It’s important that we teach these bees what to do.";
-    private string o5seedfairy = "Looks like our bee is getting back on track with the pollinating, thanks to you! But it might still be a little confused! Let’s make sure it knows what it’s doing. Guide the bee to the flowers with pollen, so that he may collect some. Then, show him the way to a flower that needs pollinating, so that all of these flowers may receive their pollen!";
-    private string o6seedfairy = "Wonderful! All these flowers can now produce their seeds because they have been pollinated! Now that you’ve flown our bees through this process, do you know what happens when insects visit a plant every day?";
-    private string o7seedfairy = "That’s right! The bee will pollinate your flower, and once it does, it produces seeds! And now that it’s producing seeds, you know what that means! It’s time for dispersal! Insects aren’t just good at pollination, but also very good at dispersing seeds. Like these ants down here. Where are they going? Let’s follow them!";
-    private string o8seedfairy = "Hmm, see what I mean? We need to teach these ants the proper way of dispersing seeds! Do you remember what seed dispersal is?";
-    private string o9seedfairy = "That’s right! Seed Dispersal is the process of moving seeds from one place to another! Ants are one type of insect that disperse seeds. They collect them for food, and along their journey, drop some seeds on the way! These ants seem like they’re a little confused, tap on this ant to get his attention, then direct him to the pile of seeds.";
-    private string o10seedfairy = "There, he seems to be catching on! Show the rest how it’s done!";
-    private string o11seedfairy = "Now they’ve all got their seeds! Looks like we need to direct them back to their anthill. It’s over there, past that tree trunk!";
-    private string o12seedfairy = "The ants are dropping some seeds! Can you find all the seeds the ants dropped? Get up nice and close to them, so that we can see!";
-    private string o13seedfairy = "Great! These seeds are properly dispersed! And since they also have good conditions, they can grow big and beautiful! It looks like it’s already working! Look at the Flower Kingdom!";
-    private string o14seedfairy = "Excellent work Adventurer! You are making our kingdom thrive again! But there’s still more work to be done! I will see you next time!";
+    private string o1seedfairy = "Welcome back, Adventurer! You’ve been a big help so far! Now we just need to make sure that everyone is in the right place and that conditions are good here in the Flower Kingdom once more!";
+    private string o2seedfairy = "This tree here is the home of a badger. Badgers and other animals are very good at dispersing seeds. Seeds get stuck in their fur as they move around, and at the same time, they are dropping off other seeds that may have already been stuck to them! We’ve got a little problem, though. The badger that lives here is missing! No one knows where it went, so It hasn’t been dispersing seeds. Let’s get a little closer and see if we can find some clues.";
+    private string o3seedfairy = "Yes, look there are some tracks. Maybe if we follow them, they will lead us to the badger. Let’s see where it ran off to!";
+    private string o4seedfairy = "Oh, there it is! It’s just taking a nice long nap! I think it’s slept long enough. Tap it awake.";
+    private string o5seedfairy = "Look at all the seeds stuck to it! Those are acorns, which are seeds that grow entire trees! Our badger lives under a tree, no wonder it picked up so many of these! Now that it’s awake from its nap, it should be able to get back to its hole and disperse some seeds along the way. See, there it goes.";
+    private string o6seedfairy = "Now that you’ve made it this far, you should know all three methods of seed dispersal! Can you tell me what they are?";
+    private string o7seedfairy = "That’s right! Seeds are dispersed primarily by wind, insects, and animals!";
+    private string o8seedfairy = "Great job! You’re making great progress, keep it up!";
+    private string o9seedfairy = "Uh oh, looks like these seeds need some help. They’re trying their best to grow, but they might not have the best conditions! Can you help the three seeds to find good conditions so that they may grow?";
+    private string o10seedfairy = "This plant isn’t growing, do you know what would help?";
+    private string o11seedfairy = "That’s right, it’s stuck in the shade! Let’s move that out of the way!";
+    private string o12seedfairy = "Perfect! Now it will get enough sunlight to grow big and beautiful!";
+    private string o13seedfairy = "That’s right, this poor seed can’t spread its roots anywhere. Let’s move it to the soil! ";
+    private string o14seedfairy = "Perfect! Now it will be able to spread its roots to grow big and beautiful!";
+    private string o15seedfairy = "That’s a good call, this seed is so thirsty! Let’s give it a little water.";
+    private string o16seedfairy = "Perfect! Now the seed has water so that it may grow up to be big and beautiful! ";
+    private string o17seedfairy = "These seeds are all germinating nicely now! Just to make sure, do you know what a seed needs to germinate?";
+    private string o18seedfairy = "Yes that’s right! Seeds need water and sunlight to germinate! You’re doing a great job. Here, follow me!";
+    private string o19seedfairy = "You are doing an incredible job, Adventurer! Our kingdom is so beautiful, and the flowers are blooming so nicely! We are almost there! Let’s make sure you’ve taught all these seeds the proper way to make flowers bloom! Are you ready? Let’s go!";
+    private string o20seedfairy = "You have done an incredible job, Adventurer! Look at our beautiful kingdom, so covered in pretty flowers! Thanks to you, we are thriving once again! You are an expert in seed dispersal and pollination. Great job Adventurer! I will see you later!";
+
 
     // Start is called before the first frame update
     void Start()
@@ -76,12 +83,10 @@ public class John_gamemanager_Path02 : MonoBehaviour
         soundManager = SoundManager.Instance;
         castleanim.SetBool("CastleAnim", false);
         faryanim.SetBool("wave", false);
-        antanim.SetBool("Walking", false);
+        
         fairytarget = F0;
         fairynarration(1);
-        firstseeds.SetActive(false);
-        //anttarget = ant.transform.position;
-        lastseeds.SetActive(false);
+        
     }
 
     private RaycastHit hit;
@@ -98,7 +103,7 @@ public class John_gamemanager_Path02 : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 var selection = hit.transform;
-                if(selection.CompareTag("dandelionflower")){
+                /*if(selection.CompareTag("dandelionflower")){
                     beetarget = hit.point;
                     beeF = true;
                     Bee.transform.LookAt(beetarget);
@@ -114,43 +119,12 @@ public class John_gamemanager_Path02 : MonoBehaviour
                         antselect.LookAt(anttarget);
                         
                     }
-                }
+                }*/
                 
             }
         }
 
-        if(antselect != null && antselect.transform.position != anttarget){
-            antselect.transform.position = Vector3.MoveTowards(antselect.transform.position, anttarget, antspeed * Time.deltaTime);
-        }
-        if(antselect != null && Vector3.Distance(firstseeds.transform.position, antselect.position) < 0.25f){
-            antsstart = true;
-        }
-        if(ants[0].activeInHierarchy || ants[1].activeInHierarchy || ants[2].activeInHierarchy || ants[3].activeInHierarchy || ants[4].activeInHierarchy){
-            antsareup = true;
-        }else {antsareup= false;}
-        if((seedbeendropped && antsareup == false) && (seeds[0].activeInHierarchy || seeds[1].activeInHierarchy || seeds[2].activeInHierarchy || seeds[3].activeInHierarchy || seeds[4].activeInHierarchy)){
-            seedsareup = true;
-        }else if (seedbeendropped && antsareup == false && gamestate == 12){
-            seedsareup = false;
-        }
-
-        if(seedbeendropped == false && numberfallenseeds > 0 && antsareup == false){
-            seedbeendropped = true;
-            fairynarration(12);
-        }else if(seedsareup == false && gamestate == 12){
-            lastseeds.SetActive(true);
-            castleactivate();
-            fairynarration(13);
-            fairytarget = F3;
-        }
-
-
-        if(beeF == true){
-            Bee.transform.position = Vector3.MoveTowards(Bee.transform.position, beetarget, beesmooth * Time.deltaTime); 
-            if(Bee.transform.position == beetarget){
-                beeF = false;
-            }
-        }
+        
         
         
         if(fairy.transform.position != fairytarget.transform.position){
@@ -168,23 +142,7 @@ public class John_gamemanager_Path02 : MonoBehaviour
         fairysubtitles.transform.LookAt(player.transform.position);
     }
     
-    public void beepollentoggle(){
-        if(beeP == true){
-            beepollen.SetActive(true);
-        }else{
-            beepollen.SetActive(false);
-        }
-        pollencount++;
-        if(numflowers <= pollencount && gamestate < 6){
-            firstseeds.SetActive(true);
-            fairynarration(6);
-            //antsstart = true;
-            //antanim.SetBool("Walking", true);
-        }else if(2f <= pollencount && gamestate < 5){
-            tapflowericon.SetActive(false);
-            fairynarration(5);
-        }
-    }
+    
     public void castleactivate(){
         castleanim.SetBool("CastleAnim", true);
     }
@@ -279,6 +237,36 @@ public class John_gamemanager_Path02 : MonoBehaviour
             soundManager.PlayAudio("14");
             fairytext.text = o14seedfairy;
                 subtitle.text = o14seedfairy;
+                StartCoroutine(Subtitle());
+            }else if(gamestate == 15){
+            soundManager.PlayAudio("15");
+            fairytext.text = o15seedfairy;
+                subtitle.text = o15seedfairy;
+                StartCoroutine(Subtitle());
+            }else if(gamestate == 16){
+            soundManager.PlayAudio("16");
+            fairytext.text = o16seedfairy;
+                subtitle.text = o16seedfairy;
+                StartCoroutine(Subtitle());
+            }else if(gamestate == 17){
+            soundManager.PlayAudio("17");
+            fairytext.text = o17seedfairy;
+                subtitle.text = o17seedfairy;
+                StartCoroutine(Subtitle());
+            }else if(gamestate == 18){
+            soundManager.PlayAudio("18");
+            fairytext.text = o18seedfairy;
+                subtitle.text = o18seedfairy;
+                StartCoroutine(Subtitle());
+            }else if(gamestate == 19){
+            soundManager.PlayAudio("19");
+            fairytext.text = o19seedfairy;
+                subtitle.text = o19seedfairy;
+                StartCoroutine(Subtitle());
+            }else if(gamestate == 20){
+            soundManager.PlayAudio("20");
+            fairytext.text = o20seedfairy;
+                subtitle.text = o20seedfairy;
                 StartCoroutine(Subtitle());
             }
         

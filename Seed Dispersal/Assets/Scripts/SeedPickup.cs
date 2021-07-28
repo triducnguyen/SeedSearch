@@ -16,7 +16,7 @@ public class SeedPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(this.transform.parent != antparent){
+        if(this.transform.parent != antparent && gamemanager.antsareup == false){
             if(Vector3.Distance(gamemanager.player.transform.position, this.transform.position) < 0.1f){
                 this.gameObject.SetActive(false);
                 gamemanager.numberfallenseeds--;
