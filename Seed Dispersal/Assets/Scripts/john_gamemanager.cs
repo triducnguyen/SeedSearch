@@ -173,6 +173,7 @@ namespace SeedSearch{
                         {
                             fairynarration(10);
                         }
+                        StartCoroutine(stopWatering());
                     }
                 }
 
@@ -307,7 +308,7 @@ namespace SeedSearch{
 
         private IEnumerator stopWatering()
         {
-            yield return new WaitForSeconds(20f);
+            yield return new WaitForSeconds(7f);
             canstate = "tipped";
         }
 
