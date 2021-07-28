@@ -8,12 +8,13 @@ TagManager:
   - wateringcan
   - dandelionflower
   - island
-  - Ant
+  - hole
+  - dandelionSeed
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Dont interact with self
+  - 
   - Water
   - UI
   - 

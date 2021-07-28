@@ -8,6 +8,8 @@ namespace SeedSearch{
     {
         private int gamestate = 1;
         private bool inputLock = false;
+        private bool planting = false;
+        public bool AnsweringQuestion = false;
         private Coroutine previousCoroutine;
         [Header("Watering can")]
         public GameObject wateringcan;
@@ -30,6 +32,10 @@ namespace SeedSearch{
         public GameObject dandelionsprout;
         public GameObject dandelionsprout2;
         public GameObject dandelionplantmini;
+
+        [Header("Indication")]
+        public GameObject indicator;
+        public GameObject waterCanIndicator;
 
         [Header("Castle")]
         public Animator castleanim;
@@ -83,103 +89,161 @@ namespace SeedSearch{
             hole.SetActive(false);
             fairytarget = F0;
             fairynarration(1);
+            indicator.SetActive(false);
         }
 
         // Update is called once per frame
         void Update()
         {
-            if(island.activeInHierarchy && gamestate < 2){
+            if (island.activeInHierarchy && gamestate < 2){
                 fairynarration(2);
             }
-            if (Input.GetMouseButtonDown(0) && !inputLock)
+            if (!AnsweringQuestion)
             {
-                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit))
+                if (Input.GetMouseButtonDown(0) && !inputLock)
                 {
-                    var selection = hit.transform;
-                    if (selection.CompareTag("wateringcan") && seedstate == "plant")
+                    var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit hit;
+                    if (Physics.Raycast(ray, out hit))
                     {
-                        if(canstate == "water"){
-                            canstate = "tipping";
-                        } else if(canstate == "tipped"){
-                            canstate = "return";
-                            waterincan.SetActive(false);
-                            movewateringcan();
-                        } else if(canstate == "return"){
-                            canstate = "water";
-                            waterincan.SetActive(false);
-                            movewateringcan();
-                        }
-                    }
-                    else if(selection.CompareTag("dandelionflower") && seedstate == " "){
-                        dandelionseed.SetActive(true);
-                        seedstate = "idle";
-                        wind.SetActive(true);
-                        if (gamestate < 5)
+                        var selection = hit.transform;
+                        if (selection.CompareTag("wateringcan") && seedstate == "plant")
                         {
-                            fairynarration(5);
+                            if (canstate == "water")
+                            {
+                                waterCanIndicator.SetActive(false);
+                                canstate = "tipping";
+                            }
+                            else if (canstate == "tipped")
+                            {
+                                waterCanIndicator.SetActive(false);
+                                canstate = "return";
+                                waterincan.SetActive(false);
+                                movewateringcan();
+                            }
+                            else if (canstate == "return")
+                            {
+                                canstate = "water";
+                                waterCanIndicator.SetActive(true);
+                                waterCanIndicator.transform.position = wateringcancheckpoint.transform.position + new Vector3(0f, 0.1f, 0f);
+                                waterCanIndicator.transform.LookAt(player.transform.position);
+                                waterincan.SetActive(false);
+                                movewateringcan();
+                            }
                         }
-                        fairytarget = F1;
-                    }else if(selection.CompareTag("island") && dandelionseed.activeInHierarchy){
-                        seedstate = "fly";
-                        target = hit.point;
+                        else if (selection.CompareTag("dandelionflower") && seedstate == " ")
+                        {
+                            dandelionseed.SetActive(true);
+                            seedstate = "idle";
+                            wind.SetActive(true);
+                            if (gamestate < 5)
+                            {
+                                fairynarration(5);
+                            }
+                            fairytarget = F1;
+                        }
+                        else if (selection.CompareTag("island") && dandelionseed.activeInHierarchy && !planting)
+                        {
+                            seedstate = "fly";
+                            target = hit.point;
+                        }
                     }
                 }
-            }
-            if (canstate == "tipped")
-            {
-                canstate = "return";
-                waterincan.SetActive(false);
-                movewateringcan();
-            }
-                if (canstate == "tipping")
-            {
-                waterincan.SetActive(true);
-                wateringcan.transform.rotation = Quaternion.Slerp(wateringcan.transform.rotation, wateringcancheckpoint.transform.rotation, Time.deltaTime * smooth);
-                if(wateringcan.transform.rotation == wateringcancheckpoint.transform.rotation){
-                    canstate = "tipped";
-                    waterincan.SetActive(true);
-                    castleactivate();
-                    if (gamestate < 13)
-                    {
-                        fairynarration(13);
-                    }
-                    StartCoroutine(PlantGrow());
-                }
-            }
-            if(seedstate == "fly"){
-                dandanim.SetBool("stopspinning", false);
-                dandelionsprout.SetActive(false);
-                dandelionflower.SetActive(false);
-                dandelionsprout2.SetActive(false);
-                dandelionplantmini.SetActive(false);
-                hole.SetActive(false);
-                if (gamestate < 6)
+                if (canstate == "tipped")
                 {
-                    fairynarration(6);
+                    canstate = "return";
+                    waterincan.SetActive(false);
+                    movewateringcan();
                 }
-                dandelionseed.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, target + new Vector3(0, dandelionseedflyheight, 0), dandelionspeed * Time.deltaTime);
-                if(dandelionseed.transform.position == target + new Vector3(0, dandelionseedflyheight, 0)){
-                    seedstate = "drop";
-                }
-            }else if(seedstate == "drop"){
-                dandelionseed.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, target, 0.5f * dandelionspeed * Time.deltaTime);
-                if(dandelionseed.transform.position == target){
-                    seedstate = "plant";
-                    wind.SetActive(false);
-                    hole.SetActive(true);
-                    if (gamestate < 7)
+                if (canstate == "tipping")
+                {
+                    waterincan.SetActive(true);
+                    wateringcan.transform.rotation = Quaternion.Slerp(wateringcan.transform.rotation, wateringcancheckpoint.transform.rotation, Time.deltaTime * smooth);
+                    if (wateringcan.transform.rotation == wateringcancheckpoint.transform.rotation)
                     {
-                        fairynarration(7);
+                        canstate = "tipped";
+                        waterincan.SetActive(true);
+                        castleactivate();
+                        if (gamestate < 10)
+                        {
+                            fairynarration(10);
+                        }
+                        StartCoroutine(stopWatering());
                     }
+                }
+
+                if (seedstate == "fly")
+                {
+                    dandanim.SetBool("stopspinning", false);
+                    dandelionsprout.SetActive(false);
                     dandelionflower.SetActive(false);
-                    hole.transform.position = dandelionseed.transform.position + new Vector3(0, 0.01f , 0);
-                    fairytarget = F2;
-                    dandelionsprout.SetActive(true);
-                    dandanim.SetBool("stopspinning", true);
+                    dandelionsprout2.SetActive(false);
+                    dandelionplantmini.SetActive(false);
+                    hole.SetActive(false);
+                    if (gamestate < 6)
+                    {
+                        fairynarration(6);
+                    }
+                    dandelionseed.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, target + new Vector3(0, dandelionseedflyheight, 0), dandelionspeed * Time.deltaTime);
+                    if (dandelionseed.transform.position == target + new Vector3(0, dandelionseedflyheight, 0))
+                    {
+                        seedstate = "drop";
+                    }
+                }
+                else if (seedstate == "drop")
+                {
+                    dandelionseed.transform.position = Vector3.MoveTowards(dandelionseed.transform.position, target + new Vector3(0f, 0.02f,0f), 0.5f * dandelionspeed * Time.deltaTime);
+                    if (dandelionseed.transform.position == target + new Vector3(0f, 0.02f, 0f))
+                    {
+                        seedstate = "plant";
+                        wind.SetActive(false);
+                        if (gamestate < 7)
+                        {
+                            fairynarration(7);
+                        }
+                        //dandelionflower.SetActive(false);
+                        //hole.transform.position = dandelionseed.transform.position + new Vector3(0, 0.01f , 0);
+                        indicator.SetActive(true);
+                        indicator.transform.position = dandelionseed.transform.position + new Vector3(0, 0.2f, 0);
+                        indicator.transform.LookAt(player.transform.position);
+                        fairytarget = F2;
+                        dandanim.SetBool("stopspinning", true);
+                    }
+                }
+                else if (seedstate == "plant")
+                {
+                    planting = true;
+                    if (Input.GetMouseButtonDown(0) && !inputLock)
+                    {
+                        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                        RaycastHit hit;
+                        if (Physics.Raycast(ray, out hit))
+                        {
+                            var selection = hit.transform;
+                            if (selection.CompareTag("dandelionSeed"))
+                            {
+                                hole.SetActive(true);
+                                dandelionflower.SetActive(false);
+                                hole.transform.position = dandelionseed.transform.position + new Vector3(0, 0.01f, 0);
+                                indicator.SetActive(true);
+                                indicator.transform.position = dandelionseed.transform.position + new Vector3(0, 0.2f, 0);
+                                indicator.transform.LookAt(player.transform.position);
+                            }
+                            else if (selection.CompareTag("hole"))
+                            {
+                                dandelionflower.SetActive(false);
+                                indicator.SetActive(false);
+                                if(gamestate < 13)
+                                {
+                                    fairynarration(13);
+                                }
+                                StartCoroutine(PlantGrow());
+                            }
+                        }
+                    }
                 }
             }
+
             if(fairy.transform.position != fairytarget.transform.position){
                 fairy.transform.position = Vector3.MoveTowards(fairy.transform.position, fairytarget.transform.position, fairyspeed * Time.deltaTime); 
             }
@@ -191,6 +255,7 @@ namespace SeedSearch{
         {
             inputLock = true;
             dandanim.SetBool("stopspinning", true);
+            yield return new WaitForSeconds(5f);
             if (gamestate < 14)
             {
                 fairynarration(14);
@@ -223,17 +288,13 @@ namespace SeedSearch{
                 fairynarration(18);
             }
             yield return new WaitForSeconds(8f);
+            planting = false;
             inputLock = false;
         }
 
         public void movewateringcan(){
             if(canstate == "water"){
-                wateringcan.transform.position = wateringcancheckpoint.transform.position;
-                if (gamestate < 10)
-                {
-                    fairynarration(10);
-                    StartCoroutine(stopWatering());
-                }               
+                wateringcan.transform.position = wateringcancheckpoint.transform.position;         
             } else if(canstate == "return"){
                 wateringcan.transform.position = wateringcanhome.transform.position;
                 wateringcan.transform.rotation = wateringcanhome.transform.rotation;
@@ -242,7 +303,7 @@ namespace SeedSearch{
 
         private IEnumerator stopWatering()
         {
-            yield return new WaitForSeconds(20f);
+            yield return new WaitForSeconds(7f);
             canstate = "tipped";
         }
 
@@ -281,7 +342,7 @@ namespace SeedSearch{
                 soundManager.PlayAudio("01");
                 fairytext.text = o1seedfairy;
                 subtitle.text = o1seedfairy;
-                previousCoroutine = StartCoroutine(Subtitle(16f));
+                previousCoroutine = StartCoroutine(Subtitle(15f));
             }
             else if (gamestate == 2)
             {
@@ -297,14 +358,19 @@ namespace SeedSearch{
                 fairytext.text = o4seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(16f));
+                indicator.SetActive(true);
+                indicator.transform.position = dandelionflower.transform.position + new Vector3(0, 0.2f, 0);
+                indicator.transform.LookAt(player.transform.position);
             }
             else if (gamestate == 5)
             {
                 soundManager.PlayAudio("05");
+                indicator.SetActive(false);
                 fairytext.text = o5seedfairy;
                 subtitle.text = o5seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(14f));
+                
             }
             else if (gamestate == 6)
             {
