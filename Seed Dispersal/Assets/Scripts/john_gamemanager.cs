@@ -130,6 +130,7 @@ namespace SeedSearch{
                             {
                                 canstate = "water";
                                 waterCanIndicator.SetActive(true);
+                                waterCanIndicator.transform.position = wateringcancheckpoint.transform.position + new Vector3(0f, 0.1f, 0f);
                                 waterCanIndicator.transform.LookAt(player.transform.position);
                                 waterincan.SetActive(false);
                                 movewateringcan();
@@ -225,7 +226,6 @@ namespace SeedSearch{
                             var selection = hit.transform;
                             if (selection.CompareTag("dandelionSeed"))
                             {
-                                dandelionseed.SetActive(false);
                                 hole.SetActive(true);
                                 dandelionflower.SetActive(false);
                                 hole.transform.position = dandelionseed.transform.position + new Vector3(0, 0.01f, 0);
