@@ -358,14 +358,19 @@ namespace SeedSearch{
                 fairytext.text = o4seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(16f));
+                indicator.SetActive(true);
+                indicator.transform.position = dandelionflower.transform.position + new Vector3(0, 0.2f, 0);
+                indicator.transform.LookAt(player.transform.position);
             }
             else if (gamestate == 5)
             {
                 soundManager.PlayAudio("05");
+                indicator.SetActive(false);
                 fairytext.text = o5seedfairy;
                 subtitle.text = o5seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(14f));
+                
             }
             else if (gamestate == 6)
             {
