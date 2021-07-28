@@ -19,22 +19,10 @@ namespace SeedSearch
             questions[currentQuestion].SetActive(true);
         }
 
-        //public void OnEnable()
-        //{
-        //    fieldNote.SetActive(false);
-        //    foreach(GameObject obj in questions)
-        //    {
-        //        obj.SetActive(false);
-        //    }
-        //    if(SaveManager.Instance.studentProfile.Answers.Count > 0)
-        //    {
-        //        questions[SaveManager.Instance.studentProfile.Answers.Count - 1].SetActive(true);
-        //    }
-        //    else
-        //    {
-        //        questions[0].SetActive(true);
-        //    }
-        //}
+        public void OnEnable()
+        {
+            manager.AnsweringQuestion = true;
+        }
 
         public void OpenQuestion(int index)
         {
@@ -51,6 +39,7 @@ namespace SeedSearch
 
         public void TriggerNarration(int index)
         {
+            manager.AnsweringQuestion = false;
             manager.fairynarration(index);
         }
     }

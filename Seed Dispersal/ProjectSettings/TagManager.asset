@@ -8,6 +8,8 @@ TagManager:
   - wateringcan
   - dandelionflower
   - island
+  - hole
+  - dandelionSeed
   layers:
   - Default
   - TransparentFX
