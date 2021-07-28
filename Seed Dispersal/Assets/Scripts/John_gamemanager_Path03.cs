@@ -41,7 +41,7 @@ public class John_gamemanager_Path03 : MonoBehaviour
 
     [Header("Fairy")]
     public GameObject fairy;
-    [SerializeField] private GameObject F0, F1, F2, F3;
+    [SerializeField] private GameObject[] F;
     private GameObject fairytarget;
     [SerializeField] private float fairyspeed;
     public Animator faryanim;
@@ -84,7 +84,7 @@ public class John_gamemanager_Path03 : MonoBehaviour
         castleanim.SetBool("CastleAnim", false);
         faryanim.SetBool("wave", false);
         
-        fairytarget = F0;
+        //fairytarget = F0;
         fairynarration(1);
         
     }
@@ -133,11 +133,7 @@ public class John_gamemanager_Path03 : MonoBehaviour
         } else{
             faryanim.SetBool("wave", true);
         }
-        if(gamestate == 4){
-            fairytarget = F1;
-        }else if(gamestate == 6){
-            fairytarget = F2;
-        }
+        
 
         fairysubtitles.transform.LookAt(player.transform.position);
     }
