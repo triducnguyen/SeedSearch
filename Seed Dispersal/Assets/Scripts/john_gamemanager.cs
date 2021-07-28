@@ -127,7 +127,14 @@ namespace SeedSearch{
                     }
                 }
             }
-            if(canstate == "tipping"){
+            if (canstate == "tipped")
+            {
+                canstate = "return";
+                waterincan.SetActive(false);
+                movewateringcan();
+            }
+                if (canstate == "tipping")
+            {
                 waterincan.SetActive(true);
                 wateringcan.transform.rotation = Quaternion.Slerp(wateringcan.transform.rotation, wateringcancheckpoint.transform.rotation, Time.deltaTime * smooth);
                 if(wateringcan.transform.rotation == wateringcancheckpoint.transform.rotation){
@@ -190,14 +197,14 @@ namespace SeedSearch{
             }
             dandelionsprout2.SetActive(true);
             dandelionsprout.SetActive(false);
-            yield return new WaitForSeconds(6f);
+            yield return new WaitForSeconds(5f);
             if (gamestate < 15)
             {
                 fairynarration(15);
             }
             dandelionplantmini.SetActive(true);
             dandelionsprout2.SetActive(false);
-            yield return new WaitForSeconds(6f);
+            yield return new WaitForSeconds(5f);
             if (gamestate < 16)
             {
                 fairynarration(16);
@@ -205,16 +212,17 @@ namespace SeedSearch{
             dandelionplantmini.SetActive(false);
             dandelionflower.SetActive(true);            
             fairytarget = F3;
-            yield return new WaitForSeconds(6f);
+            yield return new WaitForSeconds(4f);
             if (gamestate < 17)
             {
                 fairynarration(17);
             }
-            yield return new WaitForSeconds(7f);
+            yield return new WaitForSeconds(6f);
             if (gamestate < 18)
             {
                 fairynarration(18);
             }
+            yield return new WaitForSeconds(8f);
             inputLock = false;
         }
 
@@ -235,17 +243,17 @@ namespace SeedSearch{
         private IEnumerator stopWatering()
         {
             yield return new WaitForSeconds(20f);
-            canstate = "return";
+            canstate = "tipped";
         }
 
         public void castleactivate(){
             castleanim.SetBool("CastleAnim", true);
         }
 
-        IEnumerator Subtitle()
+        IEnumerator Subtitle(float time)
         {
             inputLock = true;
-            yield return new WaitForSeconds(16f);
+            yield return new WaitForSeconds(time);
             if(gamestate == 2)
             {
                 questionUI.OpenQuestion(0);
@@ -273,7 +281,7 @@ namespace SeedSearch{
                 soundManager.PlayAudio("01");
                 fairytext.text = o1seedfairy;
                 subtitle.text = o1seedfairy;
-                previousCoroutine = StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle(16f));
             }
             else if (gamestate == 2)
             {
@@ -281,14 +289,14 @@ namespace SeedSearch{
                 fairytext.text = o2seedfairy;
                 subtitle.text = o2seedfairy;
                 StopCoroutine(previousCoroutine);
-                previousCoroutine = StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle(5f));
             }
             else if (gamestate == 4)
             {
                 soundManager.PlayAudio("04");
                 fairytext.text = o4seedfairy;
                 StopCoroutine(previousCoroutine);
-                previousCoroutine = StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle(16f));
             }
             else if (gamestate == 5)
             {
@@ -296,7 +304,7 @@ namespace SeedSearch{
                 fairytext.text = o5seedfairy;
                 subtitle.text = o5seedfairy;
                 StopCoroutine(previousCoroutine);
-                previousCoroutine = StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle(14f));
             }
             else if (gamestate == 6)
             {
@@ -304,7 +312,7 @@ namespace SeedSearch{
                 fairytext.text = o6seedfairy;
                 subtitle.text = o6seedfairy;
                 StopCoroutine(previousCoroutine);
-                previousCoroutine = StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle(7f));
             }
             else if (gamestate == 7)
             {
@@ -312,7 +320,7 @@ namespace SeedSearch{
                 fairytext.text = o7seedfairy;
                 subtitle.text = o7seedfairy;
                 StopCoroutine(previousCoroutine);
-                previousCoroutine = StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle(17f));
             }
             else if (gamestate == 9)
             {
@@ -320,7 +328,7 @@ namespace SeedSearch{
                 fairytext.text = o9seedfairy;
                 subtitle.text = o9seedfairy;
                 StopCoroutine(previousCoroutine);
-                previousCoroutine = StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle(12f));
             }
             else if (gamestate == 10)
             {
@@ -328,7 +336,7 @@ namespace SeedSearch{
                 fairytext.text = o10seedfairy;
                 subtitle.text = o10seedfairy;
                 StopCoroutine(previousCoroutine);
-                previousCoroutine = StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle(7f));
             }
             else if (gamestate == 12)
             {
@@ -336,7 +344,7 @@ namespace SeedSearch{
                 fairytext.text = o12seedfairy;
                 subtitle.text = o12seedfairy;
                 StopCoroutine(previousCoroutine);
-                previousCoroutine = StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle(8f));
             }
             else if (gamestate == 13)
             {
@@ -344,7 +352,7 @@ namespace SeedSearch{
                 fairytext.text = o13seedfairy;
                 subtitle.text = o13seedfairy;
                 StopCoroutine(previousCoroutine);
-                previousCoroutine = StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle(4f));
             }
             else if (gamestate == 14)
             {
@@ -352,7 +360,7 @@ namespace SeedSearch{
                 fairytext.text = o14seedfairy;
                 subtitle.text = o14seedfairy;
                 StopCoroutine(previousCoroutine);
-                previousCoroutine = StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle(5f));
             }
             else if (gamestate == 15)
             {
@@ -360,7 +368,7 @@ namespace SeedSearch{
                 fairytext.text = o15seedfairy;
                 subtitle.text = o15seedfairy;
                 StopCoroutine(previousCoroutine);
-                previousCoroutine = StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle(5f));
             }
             else if (gamestate == 16)
             {
@@ -368,7 +376,7 @@ namespace SeedSearch{
                 fairytext.text = o16seedfairy;
                 subtitle.text = o16seedfairy;
                 StopCoroutine(previousCoroutine);
-                previousCoroutine = StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle(4f));
             }
             else if (gamestate == 17)
             {
@@ -376,7 +384,7 @@ namespace SeedSearch{
                 fairytext.text = o17seedfairy;
                 subtitle.text = o17seedfairy;
                 StopCoroutine(previousCoroutine);
-                previousCoroutine = StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle(6f));
             }
             else if (gamestate == 18)
             {
@@ -384,7 +392,7 @@ namespace SeedSearch{
                 fairytext.text = o18seedfairy;
                 subtitle.text = o18seedfairy;
                 StopCoroutine(previousCoroutine);
-                previousCoroutine = StartCoroutine(Subtitle());
+                previousCoroutine = StartCoroutine(Subtitle(8f));
             }
 
         }
