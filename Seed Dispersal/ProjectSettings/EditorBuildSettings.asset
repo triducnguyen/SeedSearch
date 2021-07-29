@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StoreInput.unity
     guid: 2fac9fc49550a1b49b1c8e4de2324adb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lesson.unity
     guid: c99de5da998d02d40ac1f4f3a9e0226a
   - enabled: 1
