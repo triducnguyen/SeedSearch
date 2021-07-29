@@ -357,7 +357,7 @@ namespace SeedSearch{
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(16f));
                 indicator.SetActive(true);
-                indicator.transform.position = dandelionSeedLP.transform.position + new Vector3(0f, 0.2f, 0f);
+                indicator.transform.position = dandelionSeedLP.transform.position + new Vector3(-0.5f, 2f, -1f);
                 indicator.transform.LookAt(player.transform.position);
             }
             else if (gamestate == 5)
