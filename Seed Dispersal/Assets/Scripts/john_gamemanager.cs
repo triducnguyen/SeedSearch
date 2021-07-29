@@ -204,9 +204,6 @@ namespace SeedSearch{
                         }
                         //dandelionflower.SetActive(false);
                         //hole.transform.position = dandelionseed.transform.position + new Vector3(0, 0.01f , 0);
-                        indicator.SetActive(true);
-                        indicator.transform.position = dandelionseed.transform.position + new Vector3(0, 0.2f, 0);
-                        indicator.transform.LookAt(player.transform.position);
                         fairytarget = F2;
                         dandanim.SetBool("stopspinning", true);
                     }
@@ -360,7 +357,7 @@ namespace SeedSearch{
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(16f));
                 indicator.SetActive(true);
-                indicator.transform.position = dandelionSeedLP.transform.position + new Vector3(0, 0.2f, 0);
+                indicator.transform.position = dandelionSeedLP.transform.position + new Vector3(0f, 0.2f, 0f);
                 indicator.transform.LookAt(player.transform.position);
             }
             else if (gamestate == 5)
@@ -384,6 +381,7 @@ namespace SeedSearch{
             else if (gamestate == 7)
             {
                 soundManager.PlayAudio("07");
+                indicator.SetActive(false);
                 fairytext.text = o7seedfairy;
                 subtitle.text = o7seedfairy;
                 StopCoroutine(previousCoroutine);
@@ -399,6 +397,9 @@ namespace SeedSearch{
             }
             else if (gamestate == 10)
             {
+                indicator.SetActive(true);
+                indicator.transform.position = dandelionseed.transform.position + new Vector3(0, 0.2f, 0);
+                indicator.transform.LookAt(player.transform.position);
                 soundManager.PlayAudio("10");
                 fairytext.text = o10seedfairy;
                 subtitle.text = o10seedfairy;
