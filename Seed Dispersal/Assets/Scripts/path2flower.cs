@@ -9,7 +9,7 @@ public class path2flower : MonoBehaviour
     private string flowerstate = "unpollinated";
     private John_gamemanager_Path02 gamemanager;
     public GameObject bee;
-    private float Distance = 0.1f;
+    private float Distance = 0.04f;
     void Start(){
         gamemanager = GameObject.FindObjectOfType<John_gamemanager_Path02>();
         

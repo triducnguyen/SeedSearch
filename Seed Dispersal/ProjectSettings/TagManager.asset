@@ -10,6 +10,8 @@ TagManager:
   - island
   - hole
   - dandelionSeed
+  - Ant
+  - badger
   layers:
   - Default
   - TransparentFX
