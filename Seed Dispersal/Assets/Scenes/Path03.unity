@@ -453,7 +453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 26639255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.509, y: -0.594, z: 1.808}
+  m_LocalPosition: {x: -2.509, y: -0.366, z: 1.808}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1968777953}
@@ -479,7 +479,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 26639255}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1208,7 +1208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61204491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.746, y: -0.849, z: -2.47}
+  m_LocalPosition: {x: -1.746, y: -0.677, z: -2.47}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1968777953}
@@ -1234,7 +1234,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61204491}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3640,7 +3640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176290260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.509, y: -0.717, z: -1.089}
+  m_LocalPosition: {x: -2.509, y: -0.508, z: -1.089}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1968777953}
@@ -3666,7 +3666,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176290260}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -16225,6 +16225,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamestate: 1
+  badger: {fileID: 1598655917}
+  badgerpoints:
+  - {fileID: 61204491}
+  - {fileID: 176290260}
+  - {fileID: 1972789664}
+  - {fileID: 26639255}
+  acornpoints:
+  - {fileID: 1969272368}
+  - {fileID: 400519174}
+  - {fileID: 1115560479}
+  acorns:
+  - {fileID: 934151166}
+  - {fileID: 1511638025}
+  - {fileID: 1880017065}
+  badgeranim: {fileID: 1111841702}
+  badgerspeed: 0.15
   wateringcan: {fileID: 861639326}
   wateringcanhome: {fileID: 874170765}
   wateringcancheckpoint: {fileID: 1108199247}
@@ -23807,6 +23823,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Acorn
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4546586f017d3754aa105572805b9679, type: 3}
+      propertyPath: m_TagString
+      value: dandelionSeed
+      objectReference: {fileID: 0}
     - target: {fileID: 6317578925029434746, guid: 4546586f017d3754aa105572805b9679, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -23820,6 +23840,11 @@ PrefabInstance:
 --- !u!4 &934151165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4546586f017d3754aa105572805b9679, type: 3}
+  m_PrefabInstance: {fileID: 934151164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &934151166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4546586f017d3754aa105572805b9679, type: 3}
   m_PrefabInstance: {fileID: 934151164}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &934242989
@@ -27937,6 +27962,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BadgerIdle2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0514a4672cf95484cb0c7bf3265ff858, type: 3}
+      propertyPath: m_TagString
+      value: badger
+      objectReference: {fileID: 0}
     - target: {fileID: 7205140776170859923, guid: 0514a4672cf95484cb0c7bf3265ff858, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -27972,6 +28001,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0514a4672cf95484cb0c7bf3265ff858, type: 3}
   m_PrefabInstance: {fileID: 1111841700}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1111841704
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111841701}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.31, z: 3}
+  m_Center: {x: 0, y: 0.16, z: 0}
 --- !u!1 &1113937429
 GameObject:
   m_ObjectHideFlags: 0
@@ -40688,6 +40730,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Acorn (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4546586f017d3754aa105572805b9679, type: 3}
+      propertyPath: m_TagString
+      value: dandelionSeed
+      objectReference: {fileID: 0}
     - target: {fileID: 6317578925029434746, guid: 4546586f017d3754aa105572805b9679, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -40701,6 +40747,11 @@ PrefabInstance:
 --- !u!4 &1511638024 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4546586f017d3754aa105572805b9679, type: 3}
+  m_PrefabInstance: {fileID: 1511638023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1511638025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4546586f017d3754aa105572805b9679, type: 3}
   m_PrefabInstance: {fileID: 1511638023}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1520617974
@@ -42131,7 +42182,7 @@ GameObject:
   - component: {fileID: 1598655918}
   m_Layer: 0
   m_Name: Badger
-  m_TagString: Untagged
+  m_TagString: badger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46271,6 +46322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Acorn (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4546586f017d3754aa105572805b9679, type: 3}
+      propertyPath: m_TagString
+      value: dandelionSeed
+      objectReference: {fileID: 0}
     - target: {fileID: 6317578925029434746, guid: 4546586f017d3754aa105572805b9679, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -46284,6 +46339,11 @@ PrefabInstance:
 --- !u!4 &1880017064 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4546586f017d3754aa105572805b9679, type: 3}
+  m_PrefabInstance: {fileID: 1880017063}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1880017065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4546586f017d3754aa105572805b9679, type: 3}
   m_PrefabInstance: {fileID: 1880017063}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1883326432
@@ -48671,7 +48731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972789664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.509, y: -0.581, z: 0.672}
+  m_LocalPosition: {x: -2.509, y: -0.321, z: 0.672}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1968777953}
@@ -48697,7 +48757,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972789664}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

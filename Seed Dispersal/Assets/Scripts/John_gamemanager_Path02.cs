@@ -122,7 +122,7 @@ public class John_gamemanager_Path02 : MonoBehaviour
         if(antselect != null && antselect.transform.position != anttarget){
             antselect.transform.position = Vector3.MoveTowards(antselect.transform.position, anttarget, antspeed * Time.deltaTime);
         }
-        if(antselect != null && Vector3.Distance(firstseeds.transform.position, antselect.position) < 0.25f){
+        if(antselect != null && Vector3.Distance(firstseeds.transform.position, antselect.position) < 0.1f){
             antsstart = true;
         }
         if(ants[0].activeInHierarchy || ants[1].activeInHierarchy || ants[2].activeInHierarchy || ants[3].activeInHierarchy || ants[4].activeInHierarchy){

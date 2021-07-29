@@ -7,6 +7,16 @@ namespace SeedSearch{
 public class John_gamemanager_Path03 : MonoBehaviour
 {
     [SerializeField] private int gamestate = 1;
+    [Header("Badger")]
+    public GameObject badger;
+    [SerializeField] private GameObject[] badgerpoints;
+    [SerializeField] private GameObject[] acornpoints;
+    [SerializeField] private GameObject[] acorns;
+    private Vector3 badgertarget;
+    private int badgerstate = 2;
+    public Animator badgeranim;
+    private int B = 0;
+    [SerializeField] float badgerspeed;
 
     [Header("Watering can")]
     public GameObject wateringcan;
@@ -86,35 +96,55 @@ public class John_gamemanager_Path03 : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 var selection = hit.transform;
-                if (selection.CompareTag("wateringcan"))
-                        {
-                            if (canstate == "water")
-                            {
-                                waterCanIndicator.SetActive(false);
-                                canstate = "tipping";
-                            }
-                            else if (canstate == "tipped")
-                            {
-                                waterCanIndicator.SetActive(false);
-                                canstate = "return";
-                                waterincan.SetActive(false);
-                                movewateringcan();
-                            }
-                            else if (canstate == "return")
-                            {
-                                canstate = "water";
-                                waterCanIndicator.SetActive(true);
-                                waterCanIndicator.transform.position = wateringcancheckpoint.transform.position + new Vector3(0f, 0.1f, 0f);
-                                waterCanIndicator.transform.LookAt(player.transform.position);
-                                waterincan.SetActive(false);
-                                movewateringcan();
-                            }
-                        }
+                if (selection.CompareTag("wateringcan")){
+                    if (canstate == "water")
+                    {
+                        waterCanIndicator.SetActive(false);
+                        canstate = "tipping";
+                    }
+                    else if (canstate == "tipped")
+                    {
+                        waterCanIndicator.SetActive(false);
+                        canstate = "return";
+                        waterincan.SetActive(false);
+                        movewateringcan();
+                    }
+                    else if (canstate == "return")
+                    {
+                        canstate = "water";
+                        waterCanIndicator.SetActive(true);
+                        waterCanIndicator.transform.position = wateringcancheckpoint.transform.position + new Vector3(0f, 0.1f, 0f);
+                        waterCanIndicator.transform.LookAt(player.transform.position);
+                        waterincan.SetActive(false);
+                        movewateringcan();
+                    }
+                }
+                if(selection.CompareTag("badger")){
+                    if(badgerstate == 2){
+                        badgerstate = 1;
+                        badgertarget = badgerpoints[0].transform.position;
+                        badger.transform.LookAt(badgertarget);
+                        StopCoroutine(badgersleeps());
+                        StartCoroutine(badgersleeps());
+                    }
+                }
                 
             }
         }
-
+        badgeranim.SetInteger("Badger state", badgerstate);
         
+        if(badgerstate == 1){
+            if(badger.transform.position != badgertarget){
+                badger.transform.position = Vector3.MoveTowards(badger.transform.position, badgertarget, badgerspeed * Time.deltaTime);
+            }else if(B<4){
+                B++;
+                badgertarget = badgerpoints[B].transform.position;
+                badger.transform.LookAt(badgertarget);
+            }else if(B == 3){
+                badgerstate = 0;
+            }
+        }
+
         if (canstate == "tipped")
                 {
                     canstate = "return";
@@ -173,6 +203,14 @@ public class John_gamemanager_Path03 : MonoBehaviour
     {
         yield return new WaitForSeconds(7f);
         canstate = "tipped";
+    }
+    private IEnumerator badgersleeps(){
+        yield return new WaitForSeconds(60f);
+        badgerstate = 2;
+    }
+    private IEnumerator badgerwakingup(){
+        yield return new WaitForSeconds(10f);
+        badgerstate = 0;
     }
     public void fairynarration(int instate){
         gamestate = instate;
