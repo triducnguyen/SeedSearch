@@ -32,6 +32,7 @@ namespace SeedSearch{
         public GameObject dandelionsprout;
         public GameObject dandelionsprout2;
         public GameObject dandelionplantmini;
+        public GameObject dandelionSeedLP;
 
         [Header("Indication")]
         public GameObject indicator;
@@ -359,7 +360,7 @@ namespace SeedSearch{
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(16f));
                 indicator.SetActive(true);
-                indicator.transform.position = dandelionflower.transform.position + new Vector3(0, 0.2f, 0);
+                indicator.transform.position = dandelionSeedLP.transform.position + new Vector3(0, 0.2f, 0);
                 indicator.transform.LookAt(player.transform.position);
             }
             else if (gamestate == 5)

@@ -8454,7 +8454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &418999201
 Transform:
   m_ObjectHideFlags: 0
@@ -11454,6 +11454,7 @@ MonoBehaviour:
   dandelionsprout: {fileID: 1892351009}
   dandelionsprout2: {fileID: 1331858464}
   dandelionplantmini: {fileID: 1891757866}
+  dandelionSeedLP: {fileID: 2068846999}
   indicator: {fileID: 1998996282}
   waterCanIndicator: {fileID: 418999198}
   castleanim: {fileID: 831069165}
@@ -39687,15 +39688,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7baf9d5e4eb84ea4f83591e49a248092, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 53.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7baf9d5e4eb84ea4f83591e49a248092, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: -47.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7baf9d5e4eb84ea4f83591e49a248092, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -7.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7baf9d5e4eb84ea4f83591e49a248092, type: 3}
       propertyPath: m_LocalRotation.w
