@@ -11,7 +11,7 @@ public class John_gamemanager_Path03 : MonoBehaviour
     public GameObject badger;
     [SerializeField] private GameObject[] badgerpoints;
     public GameObject[] acornpoints;
-    [SerializeField] private GameObject[] acorns;
+    public GameObject[] acorns;
     private Vector3 badgertarget;
     private int badgerstate = 2;
     public Animator badgeranim;
