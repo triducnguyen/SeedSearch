@@ -10,13 +10,14 @@ public class John_gamemanager_Path03 : MonoBehaviour
     [Header("Badger")]
     public GameObject badger;
     [SerializeField] private GameObject[] badgerpoints;
-    [SerializeField] private GameObject[] acornpoints;
+    public GameObject[] acornpoints;
     [SerializeField] private GameObject[] acorns;
     private Vector3 badgertarget;
     private int badgerstate = 2;
     public Animator badgeranim;
     private int B = 0;
     [SerializeField] float badgerspeed;
+    private Vector3 badgerplayerpos;
 
     [Header("Watering can")]
     public GameObject wateringcan;
@@ -77,7 +78,7 @@ public class John_gamemanager_Path03 : MonoBehaviour
         castleanim.SetBool("CastleAnim", false);
         faryanim.SetBool("wave", false);
         
-        //fairytarget = F0;
+        fairytarget = F[0];
         fairynarration(1);
         
     }
@@ -120,13 +121,14 @@ public class John_gamemanager_Path03 : MonoBehaviour
                     }
                 }
                 if(selection.CompareTag("badger")){
-                    if(badgerstate == 2){
-                        badgerstate = 1;
-                        badgertarget = badgerpoints[0].transform.position;
-                        badger.transform.LookAt(badgertarget);
+                    if(badgerstate == 2 && B == 0){
+                        StartCoroutine(badgerwakingup());
+                    }else if(badgerstate == 2){
+                        StartCoroutine(badgerwakingup());
                         StopCoroutine(badgersleeps());
                         StartCoroutine(badgersleeps());
                     }
+                    
                 }
                 
             }
@@ -134,14 +136,15 @@ public class John_gamemanager_Path03 : MonoBehaviour
         badgeranim.SetInteger("Badger state", badgerstate);
         
         if(badgerstate == 1){
+            StopCoroutine(badgersleeps());
             if(badger.transform.position != badgertarget){
                 badger.transform.position = Vector3.MoveTowards(badger.transform.position, badgertarget, badgerspeed * Time.deltaTime);
             }else if(B<4){
-                B++;
                 badgertarget = badgerpoints[B].transform.position;
                 badger.transform.LookAt(badgertarget);
-            }else if(B == 3){
-                badgerstate = 0;
+                B++;
+            }else if(B >= 4){
+                badgerstate = 2;
             }
         }
 
@@ -201,16 +204,25 @@ public class John_gamemanager_Path03 : MonoBehaviour
 
     private IEnumerator stopWatering()
     {
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(5f);
         canstate = "tipped";
     }
     private IEnumerator badgersleeps(){
-        yield return new WaitForSeconds(60f);
+        yield return new WaitForSeconds(30f);
         badgerstate = 2;
     }
     private IEnumerator badgerwakingup(){
-        yield return new WaitForSeconds(10f);
         badgerstate = 0;
+        yield return new WaitForSeconds(2f);
+        badgerplayerpos = player.transform.position;
+        badgerplayerpos.y = badger.transform.position.y;
+        badger.transform.LookAt(badgerplayerpos);
+        yield return new WaitForSeconds(8f);
+        if(B < 3){
+            badgerstate = 1;
+            badgertarget = badgerpoints[B].transform.position;
+            badger.transform.LookAt(badgertarget);
+        }
     }
     public void fairynarration(int instate){
         gamestate = instate;
