@@ -7,34 +7,17 @@ namespace SeedSearch{
 public class John_gamemanager_Path03 : MonoBehaviour
 {
     [SerializeField] private int gamestate = 1;
-    /*[Header("Bee")]
-    public GameObject Bee;
-    private Vector3 beetarget;
-    [System.NonSerialized] public bool beeP = false;
-    [System.NonSerialized] public bool beeF = false;
-    [SerializeField] private float beesmooth;
-    public GameObject beepollen;
-    [SerializeField] private int pollencount = 0;
-    public int numflowers;
-    public GameObject firstseeds;
-    public GameObject lastseeds;
-    public GameObject tapflowericon;*/
 
-    /*[Header("Ant")]
-    public GameObject ant;
-    public Animator antanim;
-    public float antspeed;
-    public GameObject[] antwaypoints;
-    [System.NonSerialized] public bool antsstart;
-
-    [System.NonSerialized] public int numberfallenseeds = 0;
-    [System.NonSerialized] public Transform antselect;
-    private Vector3 anttarget;
-    private bool seedbeendropped = false;
-    public bool antsareup = true;
-     private bool seedsareup = true;
-    public GameObject[] ants;
-    public GameObject[] seeds;*/
+    [Header("Watering can")]
+    public GameObject wateringcan;
+    public GameObject wateringcanhome;
+    public GameObject wateringcancheckpoint;
+    private string canstate;
+    public GameObject waterincan;
+    [SerializeField] private float smooth;
+    [Header("Indication")]
+    public GameObject indicator;
+    public GameObject waterCanIndicator;
 
     [Header("Castle")]
     public Animator castleanim;
@@ -103,29 +86,57 @@ public class John_gamemanager_Path03 : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 var selection = hit.transform;
-                /*if(selection.CompareTag("dandelionflower")){
-                    beetarget = hit.point;
-                    beeF = true;
-                    Bee.transform.LookAt(beetarget);
-                }
-                if(gamestate == 6 || gamestate == 9 || gamestate == 10 || gamestate == 12){
-                    fairynarration(9);
-                    if(selection.CompareTag("Ant") && antsstart != true){
-                        antselect = hit.transform;
-                        anttarget = antselect.transform.position;
-                        fairynarration(10);
-                    }else if(selection.CompareTag("island") && antsstart != true && antselect != null){
-                        anttarget = hit.point;
-                        antselect.LookAt(anttarget);
-                        
-                    }
-                }*/
+                if (selection.CompareTag("wateringcan"))
+                        {
+                            if (canstate == "water")
+                            {
+                                waterCanIndicator.SetActive(false);
+                                canstate = "tipping";
+                            }
+                            else if (canstate == "tipped")
+                            {
+                                waterCanIndicator.SetActive(false);
+                                canstate = "return";
+                                waterincan.SetActive(false);
+                                movewateringcan();
+                            }
+                            else if (canstate == "return")
+                            {
+                                canstate = "water";
+                                waterCanIndicator.SetActive(true);
+                                waterCanIndicator.transform.position = wateringcancheckpoint.transform.position + new Vector3(0f, 0.1f, 0f);
+                                waterCanIndicator.transform.LookAt(player.transform.position);
+                                waterincan.SetActive(false);
+                                movewateringcan();
+                            }
+                        }
                 
             }
         }
 
         
-        
+        if (canstate == "tipped")
+                {
+                    canstate = "return";
+                    waterincan.SetActive(false);
+                    movewateringcan();
+                }
+        if (canstate == "tipping")
+        {
+            waterincan.SetActive(true);
+            wateringcan.transform.rotation = Quaternion.Slerp(wateringcan.transform.rotation, wateringcancheckpoint.transform.rotation, Time.deltaTime * smooth);
+            if (wateringcan.transform.rotation == wateringcancheckpoint.transform.rotation)
+            {
+                canstate = "tipped";
+                waterincan.SetActive(true);
+                castleactivate();
+                if (gamestate < 10)
+                {
+                    fairynarration(10);
+                }
+                StartCoroutine(stopWatering());
+            }
+        }
         
         if(fairy.transform.position != fairytarget.transform.position){
             faryanim.SetBool("wave", false);
@@ -149,7 +160,20 @@ public class John_gamemanager_Path03 : MonoBehaviour
             subtitle.text = "";
             fairytext.text = "";
         }
+    public void movewateringcan(){
+            if(canstate == "water"){
+                wateringcan.transform.position = wateringcancheckpoint.transform.position;         
+            } else if(canstate == "return"){
+                wateringcan.transform.position = wateringcanhome.transform.position;
+                wateringcan.transform.rotation = wateringcanhome.transform.rotation;
+            } else{ Debug.Log("Cannot perform action of watering can");}
+        }
 
+    private IEnumerator stopWatering()
+    {
+        yield return new WaitForSeconds(7f);
+        canstate = "tipped";
+    }
     public void fairynarration(int instate){
         gamestate = instate;
         if(gamestate == 1){
