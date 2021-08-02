@@ -18,6 +18,8 @@ public class John_gamemanager_Path03 : MonoBehaviour
     private int B = 0;
     [SerializeField] float badgerspeed;
     private Vector3 badgerplayerpos;
+    [SerializeField] private GameObject badmesh;
+    private MeshRenderer meshofbad;
 
     [Header("Watering can")]
     public GameObject wateringcan;
@@ -80,7 +82,7 @@ public class John_gamemanager_Path03 : MonoBehaviour
         
         fairytarget = F[0];
         fairynarration(1);
-        
+        meshofbad = badmesh.GetComponent<MeshRenderer>();
     }
 
     private RaycastHit hit;
