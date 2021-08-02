@@ -6090,6 +6090,7 @@ MonoBehaviour:
   noteUp: {fileID: 2005948489}
   noteDown: {fileID: 1229567941}
   manager: {fileID: 573819297}
+  manager2: {fileID: 0}
 --- !u!1 &311357644
 GameObject:
   m_ObjectHideFlags: 0
@@ -43649,7 +43650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060439399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.8, z: 0}
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_Children: []
   m_Father: {fileID: 1330079635}
@@ -43857,7 +43858,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 1.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -43911,7 +43912,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.7995194, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.93380237, b: 0.6745283, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -43973,7 +43974,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.39
+      scalar: 0.97
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -44352,7 +44353,7 @@ ParticleSystem:
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 0.97
+    radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
@@ -44435,7 +44436,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 5.38
+      value: 2.64
       mode: 0
       spread: 0
       speed:
