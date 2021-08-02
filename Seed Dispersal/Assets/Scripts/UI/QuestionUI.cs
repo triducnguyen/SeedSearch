@@ -12,6 +12,7 @@ namespace SeedSearch
         public GameObject noteUp;
         public GameObject noteDown;
         public john_gamemanager manager;
+        public John_gamemanager_Path02 manager2;
         public void ToNextQuestion()
         {
             currentQuestion++;
@@ -41,6 +42,12 @@ namespace SeedSearch
         {
             manager.AnsweringQuestion = false;
             manager.fairynarration(index);
+        }
+
+        public void TriggerNarration2(int index)
+        {
+            manager2.AnsweringQuestion = false;
+            manager2.fairynarration(index);
         }
     }
 }
