@@ -8,6 +8,9 @@ public class John_gamemanager_Path03 : MonoBehaviour
 {
     [SerializeField] private int gamestate = 1;
     public float proximitydistance;
+    [Header("Sub Activities")]
+    private string activity;
+
     [Header("Badger")]
     public GameObject badger;
     [SerializeField] private GameObject[] badgerpoints;
@@ -30,6 +33,7 @@ public class John_gamemanager_Path03 : MonoBehaviour
     public GameObject wateringcancheckpoint;
     private string canstate;
     public GameObject waterincan;
+    public GameObject watercantext;
     [SerializeField] private float smooth;
     [Header("Indication")]
     public GameObject indicator;
@@ -101,6 +105,7 @@ public class John_gamemanager_Path03 : MonoBehaviour
             fairytarget = F[1];
             meshofbad = badmesh.GetComponent<SkinnedMeshRenderer>();
             meshofbad.enabled = false;
+            watercantext.SetActive(false);
         }
 
         if(gamestate == 2 && Vector3.Distance(F[1].transform.position, player.transform.position) <= proximitydistance){
@@ -146,6 +151,20 @@ public class John_gamemanager_Path03 : MonoBehaviour
                         StartCoroutine(badgersleeps());
                     }
                     
+                }
+                if(gamestate > 9){
+                    if(selection.CompareTag("AcornS")){
+                        activity = "Shade";
+                        fairynarration(10);
+                    }
+                    if(selection.CompareTag("AcornC")){
+                        activity = "Cement";
+                        fairynarration(10);
+                    }
+                    if(selection.CompareTag("AcornD")){
+                        activity = "Dry";
+                        fairynarration(10);
+                    }
                 }
                 
             }
@@ -199,6 +218,7 @@ public class John_gamemanager_Path03 : MonoBehaviour
                 {
                     canstate = "return";
                     waterincan.SetActive(false);
+                    watercantext.SetActive(false);
                     movewateringcan();
                 }
         if (canstate == "tipping")

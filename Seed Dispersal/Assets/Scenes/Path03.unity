@@ -2868,7 +2868,7 @@ GameObject:
   - component: {fileID: 137324116}
   m_Layer: 6
   m_Name: Acorn(1)
-  m_TagString: Untagged
+  m_TagString: AcornC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5901,7 +5901,6 @@ Transform:
   - {fileID: 1598655918}
   - {fileID: 157615596}
   - {fileID: 414424638}
-  - {fileID: 1023688789}
   - {fileID: 861639325}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -16698,6 +16697,7 @@ MonoBehaviour:
   wateringcanhome: {fileID: 874170765}
   wateringcancheckpoint: {fileID: 1108199247}
   waterincan: {fileID: 1353442129}
+  watercantext: {fileID: 0}
   smooth: 1
   indicator: {fileID: 414424637}
   waterCanIndicator: {fileID: 1023688788}
@@ -20206,7 +20206,7 @@ GameObject:
   - component: {fileID: 747056462}
   m_Layer: 6
   m_Name: Acorn
-  m_TagString: Untagged
+  m_TagString: AcornS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22108,7 +22108,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d589df1d73237de498f88312f26c84dc, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d589df1d73237de498f88312f26c84dc, type: 3}
       propertyPath: m_LocalScale.x
@@ -25928,7 +25928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1023688789
 Transform:
   m_ObjectHideFlags: 0
@@ -25936,14 +25936,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023688788}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.14285713, y: 0.14285713, z: 0.14285713}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.0026, y: 0, z: 0.036}
+  m_LocalScale: {x: 0.010204081, y: 0.0102040805, z: 0.0102040805}
   m_Children:
   - {fileID: 1407468036}
-  m_Father: {fileID: 312817579}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 861639325}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1023825405
 GameObject:
   m_ObjectHideFlags: 0
@@ -51653,7 +51653,7 @@ GameObject:
   - component: {fileID: 2049054962}
   m_Layer: 6
   m_Name: Acorn(2)
-  m_TagString: Untagged
+  m_TagString: AcornD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

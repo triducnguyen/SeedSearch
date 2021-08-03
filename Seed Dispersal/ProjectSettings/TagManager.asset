@@ -12,6 +12,9 @@ TagManager:
   - dandelionSeed
   - Ant
   - badger
+  - AcornS
+  - AcornC
+  - AcornD
   layers:
   - Default
   - TransparentFX
