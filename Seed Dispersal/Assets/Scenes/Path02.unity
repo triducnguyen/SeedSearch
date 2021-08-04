@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17869264, g: 0.22374621, b: 0.30567273, a: 1}
+  m_IndirectSpecularColor: {r: 0.17869201, g: 0.22374535, b: 0.30567086, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 98a2636e9fef1fc4eb674f44bc376433, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -34947,7 +34947,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 16907196}
         m_TargetAssemblyTypeName: PlaceOnPlane, Assembly-CSharp
         m_MethodName: begingame
         m_Mode: 1
@@ -61981,7 +61981,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 0.388
