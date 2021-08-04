@@ -98,7 +98,7 @@ public class John_gamemanager_Path03 : MonoBehaviour
         for(int i = 0; i< acorns.Length; i++){
             acorns[i].SetActive(false);
         }
-        shadehitboxradius = shadehitbox.transform.localScale.x;
+        shadehitboxradius = (shadehitbox.transform.localScale.x / 2) * island.transform.localScale.x;
         //soundManager = GameObject.FindObjectOfType<SoundManager>();
     }
 
@@ -158,18 +158,25 @@ public class John_gamemanager_Path03 : MonoBehaviour
                     
                 }
                 //acorn split section to start (10)
-                if(gamestate != 10){
+                if(gamestate >= 9 && gamestate != 10 && gamestate != 11 && gamestate != 13 && gamestate != 15){
                     if(selection.CompareTag("AcornS")){
                         activity = "Shade";
+                        toggleacornnotifs(activity);
                         fairynarration(10);
                     }
                     if(selection.CompareTag("AcornC")){
                         activity = "Cement";
+                        toggleacornnotifs(activity);
                         fairynarration(10);
                     }
                     if(selection.CompareTag("AcornD")){
                         activity = "Dry";
+                        toggleacornnotifs(activity);
                         fairynarration(10);
+                    }
+                }else if(gamestate == 11){
+                    if(selection.CompareTag("island")){
+                        acorns[0].transform.position = hit.point;
                     }
                 }
                 
@@ -196,6 +203,7 @@ public class John_gamemanager_Path03 : MonoBehaviour
                 B++;
             }else if(B >= 4){
                 badgerstate = 2;
+                toggleacornnotifs("off");
                 //fairynarration(6);
                 //delete below and uncomment out above
                 fairynarration(9);
@@ -220,11 +228,14 @@ public class John_gamemanager_Path03 : MonoBehaviour
             }
         }
 
-        if(activity == "Shade" && 11 == gamestate){
-            
-        }else if(activity == "Dry" && 13 == gamestate){
+        if(activity == "Shade" && 11 == gamestate){ //acorn 0
+            if(Vector3.Distance(shadehitbox.transform.position, acorns[0].transform.position) > shadehitboxradius){
+                fairynarration(12);
+                toggleacornnotifs("off");
+            }
+        }else if(activity == "Dry" && 13 == gamestate){ // acorn 1
 
-        }else if(activity == "Cement" && 15 == gamestate){
+        }else if(activity == "Cement" && 15 == gamestate){ // acorn 2
             
         }
 
@@ -276,13 +287,36 @@ public class John_gamemanager_Path03 : MonoBehaviour
             fairytext.text = "";
         }
     public void movewateringcan(){
-            if(canstate == "water"){
-                wateringcan.transform.position = wateringcancheckpoint.transform.position;         
-            } else if(canstate == "return"){
-                wateringcan.transform.position = wateringcanhome.transform.position;
-                wateringcan.transform.rotation = wateringcanhome.transform.rotation;
-            } else{ Debug.Log("Cannot perform action of watering can");}
-        }
+        if(canstate == "water"){
+            wateringcan.transform.position = wateringcancheckpoint.transform.position;         
+        } else if(canstate == "return"){
+            wateringcan.transform.position = wateringcanhome.transform.position;
+            wateringcan.transform.rotation = wateringcanhome.transform.rotation;
+        } else{ Debug.Log("Cannot perform action of watering can");}
+    }
+    private void toggleacornnotifs(string toggle){ //inputs: "on" "off" and each activity
+        if(toggle == "on"){
+            for(int i = 0; i< acornnotifs.Length; i++){
+                acornnotifs[i].SetActive(true);
+            }
+        }else if(toggle == "off"){
+            for(int i = 0; i< acornnotifs.Length; i++){
+                acornnotifs[i].SetActive(false);
+            }
+        }else if(toggle == "Shade"){
+            acornnotifs[0].SetActive(true);
+            acornnotifs[1].SetActive(false);
+            acornnotifs[2].SetActive(false);
+        }else if(toggle == "Cement"){
+            acornnotifs[0].SetActive(false);
+            acornnotifs[1].SetActive(true);
+            acornnotifs[2].SetActive(false);
+        }else if(toggle == "Dry"){
+            acornnotifs[0].SetActive(false);
+            acornnotifs[1].SetActive(false);
+            acornnotifs[2].SetActive(true);
+        }else{Debug.Log("Incorrect toggle notifs command: " + toggle);}
+    }
 
     private IEnumerator stopWatering()
     {
