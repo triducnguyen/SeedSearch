@@ -234,16 +234,24 @@ namespace SeedSearch
         {
             inputLock = true;
             yield return new WaitForSeconds(time);
-            if(gamestate == 2)
+            if (gamestate == 2)
             {
                 questionUI.OpenQuestion(4);
-            } else if(gamestate == 6)
+            }
+            else if (gamestate == 6)
             {
                 questionUI.OpenQuestion(5);
-            } else if(gamestate == 8)
+            }
+            else if (gamestate == 7)
+            {
+                yield return new WaitForSeconds(10f);
+                fairynarration(8);
+            }
+            else if (gamestate == 8)
             {
                 questionUI.OpenQuestion(6);
-            } else if(gamestate == 14)
+            }
+            else if (gamestate == 14)
             {
                 questionUI.OpenQuestion(7);
             }
