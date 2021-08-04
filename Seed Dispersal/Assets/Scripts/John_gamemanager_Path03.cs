@@ -8,8 +8,11 @@ public class John_gamemanager_Path03 : MonoBehaviour
 {
     [SerializeField] private int gamestate = 1;
     public float proximitydistance;
+    
     [Header("Sub Activities")]
     private string activity;
+    [SerializeField] private GameObject shadehitbox;
+    [SerializeField] private float shadehitboxradius;
 
     [Header("Badger")]
     public GameObject badger;
@@ -95,6 +98,8 @@ public class John_gamemanager_Path03 : MonoBehaviour
         for(int i = 0; i< acorns.Length; i++){
             acorns[i].SetActive(false);
         }
+        shadehitboxradius = shadehitbox.transform.localScale.x;
+        //soundManager = GameObject.FindObjectOfType<SoundManager>();
     }
 
     private RaycastHit hit;
@@ -152,7 +157,8 @@ public class John_gamemanager_Path03 : MonoBehaviour
                     }
                     
                 }
-                if(gamestate > 9){
+                //acorn split section to start (10)
+                if(gamestate != 10){
                     if(selection.CompareTag("AcornS")){
                         activity = "Shade";
                         fairynarration(10);
@@ -213,6 +219,15 @@ public class John_gamemanager_Path03 : MonoBehaviour
                 }
             }
         }
+
+        if(activity == "Shade" && 11 == gamestate){
+            
+        }else if(activity == "Dry" && 13 == gamestate){
+
+        }else if(activity == "Cement" && 15 == gamestate){
+            
+        }
+
 
         if (canstate == "tipped")
                 {
@@ -291,6 +306,19 @@ public class John_gamemanager_Path03 : MonoBehaviour
             badger.transform.LookAt(badgertarget);
         }
     }
+    private IEnumerator Waitforaudiotofinish()
+        {
+            yield return new WaitWhile (()=> soundManager.audioSource.isPlaying);
+            if(gamestate == 10){
+                if(activity == "Shade"){
+                    fairynarration(11);
+                }else if(activity == "Dry"){
+                    fairynarration(13);
+                }else if(activity == "Cement"){
+                    fairynarration(15);
+                }
+            }
+        }
     public void fairynarration(int instate){
         gamestate = instate;
         if(gamestate == 1){
@@ -351,6 +379,7 @@ public class John_gamemanager_Path03 : MonoBehaviour
         fairytext.text = o10seedfairy;
             subtitle.text = o10seedfairy;
             StartCoroutine(Subtitle());
+            StartCoroutine(Waitforaudiotofinish());
         }
         else if(gamestate == 11){
         soundManager.PlayAudio("11");
