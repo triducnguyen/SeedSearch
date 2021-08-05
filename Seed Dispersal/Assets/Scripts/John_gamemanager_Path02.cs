@@ -9,6 +9,7 @@ namespace SeedSearch
     {
         private bool inputLock = false;
         private bool answeringQuestion = false;
+        private bool antTriggered = false;
         [SerializeField] private int gamestate = 1;
         [Header("Bee")]
         public GameObject Bee;
@@ -22,6 +23,9 @@ namespace SeedSearch
         public GameObject firstseeds;
         public GameObject lastseeds;
         public GameObject tapflowericon;
+
+        [Header("Indicator")]
+        public GameObject indicator;
 
         [Header("Ant")]
         public GameObject ant;
@@ -113,48 +117,73 @@ namespace SeedSearch
                             beeF = true;
                             Bee.transform.LookAt(beetarget);
                         }
-                        if (gamestate == 6 || gamestate == 9 || gamestate == 10 || gamestate == 12)
+                        if (antTriggered)
                         {
-                            fairynarration(9);
                             if (selection.CompareTag("Ant") && antsstart != true)
                             {
                                 antselect = hit.transform;
                                 anttarget = antselect.transform.position;
-                                fairynarration(10);
                             }
                             else if (selection.CompareTag("island") && antsstart != true && antselect != null)
                             {
+                                indicator.SetActive(false);
                                 anttarget = hit.point;
                                 antselect.LookAt(anttarget);
-
                             }
                         }
 
                     }
                 }
             }
+            if (gamestate > 8 && gamestate < 12)
+            {
+                indicator.SetActive(true);
+                indicator.transform.LookAt(player.transform);
+            }
+
+            if (numberfallenseeds == 1 && gamestate < 10)
+            {
+                indicator.SetActive(true);
+                fairynarration(10);
+            }
+            else if (numberfallenseeds > 4 && gamestate < 11)
+            {
+                indicator.SetActive(false);
+                fairynarration(11);
+            }
+
 
             if (antselect != null && antselect.transform.position != anttarget)
             {
                 antselect.transform.position = Vector3.MoveTowards(antselect.transform.position, anttarget, antspeed * Time.deltaTime);
             }
+
+
             if (antselect != null && Vector3.Distance(firstseeds.transform.position, antselect.position) < 0.1f)
             {
                 antsstart = true;
             }
+
+
             if (ants[0].activeInHierarchy || ants[1].activeInHierarchy || ants[2].activeInHierarchy || ants[3].activeInHierarchy || ants[4].activeInHierarchy)
             {
                 antsareup = true;
             }
-            else { antsareup = false; }
+            else
+            {
+                antsareup = false;
+            }
+
+
             if ((seedbeendropped && antsareup == false) && (seeds[0].activeInHierarchy || seeds[1].activeInHierarchy || seeds[2].activeInHierarchy || seeds[3].activeInHierarchy || seeds[4].activeInHierarchy))
             {
                 seedsareup = true;
             }
-            else if (seedbeendropped && antsareup == false && gamestate == 12)
+            else if (seedbeendropped && antsareup == false && !antTriggered)
             {
                 seedsareup = false;
             }
+
 
             if (seedbeendropped == false && numberfallenseeds > 0 && antsareup == false)
             {
@@ -189,6 +218,8 @@ namespace SeedSearch
             {
                 faryanim.SetBool("wave", true);
             }
+
+
             if (gamestate == 4)
             {
                 fairytarget = F1;
@@ -244,12 +275,15 @@ namespace SeedSearch
             }
             else if (gamestate == 7)
             {
-                yield return new WaitForSeconds(10f);
                 fairynarration(8);
             }
             else if (gamestate == 8)
             {
                 questionUI.OpenQuestion(6);
+            }
+            else if(gamestate == 13)
+            {
+                fairynarration(14);
             }
             else if (gamestate == 14)
             {
@@ -323,6 +357,8 @@ namespace SeedSearch
             }
             else if (gamestate == 9)
             {
+                antTriggered = true;
+                indicator.SetActive(true);
                 soundManager.PlayAudio("09_2");
                 fairytext.text = o9seedfairy;
                 subtitle.text = o9seedfairy;
@@ -344,6 +380,7 @@ namespace SeedSearch
             }
             else if (gamestate == 12)
             {
+                antTriggered = false;
                 soundManager.PlayAudio("12_2");
                 fairytext.text = o12seedfairy;
                 subtitle.text = o12seedfairy;
