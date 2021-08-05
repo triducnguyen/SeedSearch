@@ -13,6 +13,9 @@ public class John_gamemanager_Path03 : MonoBehaviour
     private string activity;
     [SerializeField] private GameObject shadehitbox;
     [SerializeField] private float shadehitboxradius;
+    private int onbadisland = 0;
+    [SerializeField] private GameObject DDrydirt, Dwetdirt, Cwetdirt, Swetdirt;
+    private int activitiesincomplete = 3;
 
     [Header("Badger")]
     public GameObject badger;
@@ -92,14 +95,12 @@ public class John_gamemanager_Path03 : MonoBehaviour
         canstate = "return";
         fairytarget = F[0];
         fairynarration(1);
-        /*meshofbad = badmesh.GetComponent<MeshRenderer>();
-        meshofbad.enabled = false;*/
         acornstate = new string[acorns.Length];
         for(int i = 0; i< acorns.Length; i++){
             acorns[i].SetActive(false);
         }
         shadehitboxradius = (shadehitbox.transform.localScale.x / 2) * island.transform.localScale.x;
-        //soundManager = GameObject.FindObjectOfType<SoundManager>();
+
     }
 
     private RaycastHit hit;
@@ -137,11 +138,11 @@ public class John_gamemanager_Path03 : MonoBehaviour
                         waterincan.SetActive(false);
                         movewateringcan();
                     }
-                    else if (canstate == "return")
+                    else if (canstate == "return" && activity == "Dry")
                     {
                         canstate = "water";
                         waterCanIndicator.SetActive(true);
-                        waterCanIndicator.transform.position = wateringcancheckpoint.transform.position + new Vector3(0f, 0.1f, 0f);
+                        //waterCanIndicator.transform.position = wateringcancheckpoint.transform.position + new Vector3(0f, 0.1f, 0f);
                         waterCanIndicator.transform.LookAt(player.transform.position);
                         waterincan.SetActive(false);
                         movewateringcan();
@@ -160,28 +161,47 @@ public class John_gamemanager_Path03 : MonoBehaviour
                 //acorn split section to start (10)
                 if(gamestate >= 9 && gamestate != 10 && gamestate != 11 && gamestate != 13 && gamestate != 15){
                     if(selection.CompareTag("AcornS")){
-                        activity = "Shade";
-                        toggleacornnotifs(activity);
-                        fairynarration(10);
+                        if(!Swetdirt.activeInHierarchy){
+                            activity = "Shade";
+                            toggleacornnotifs(activity);
+                            fairynarration(10);
+                        }
                     }
                     if(selection.CompareTag("AcornC")){
-                        activity = "Cement";
-                        toggleacornnotifs(activity);
-                        fairynarration(10);
+                        if(!Cwetdirt.activeInHierarchy){
+                            activity = "Cement";
+                            toggleacornnotifs(activity);
+                            fairynarration(10);
+                        }
                     }
                     if(selection.CompareTag("AcornD")){
-                        activity = "Dry";
-                        toggleacornnotifs(activity);
-                        fairynarration(10);
+                        if(!Dwetdirt.activeInHierarchy){
+                            activity = "Dry";
+                            toggleacornnotifs(activity);
+                            fairynarration(10);
+                        }
                     }
                 }else if(gamestate == 11){
                     if(selection.CompareTag("island")){
                         acorns[0].transform.position = hit.point;
+                        onbadisland = 1; //island plantable
+                    }else if(selection.CompareTag("badisland")){
+                        acorns[0].transform.position = hit.point;
+                        onbadisland = 2; //island notplantable
+                    }
+                }else if(gamestate == 13){
+                    if(selection.CompareTag("island")){
+                        acorns[1].transform.position = hit.point;
+                        onbadisland = 1; //island plantable
+                    }else if(selection.CompareTag("badisland")){
+                        acorns[1].transform.position = hit.point;
+                        onbadisland = 2; //island notplantable
                     }
                 }
                 
             }
         }
+        //reveal badger
         if(gamestate == 3 && meshofbad.enabled == false && Vector3.Distance(player.transform.position, badger.transform.position) <= proximitydistance){
             meshofbad.enabled = true;
             for(int i = 0; i< acorns.Length; i++){
@@ -190,7 +210,7 @@ public class John_gamemanager_Path03 : MonoBehaviour
             fairytarget = F[2];
             fairynarration(4);
         }
-
+        //badger
         badgeranim.SetInteger("Badger state", badgerstate);
         
         if(badgerstate == 1){
@@ -214,6 +234,7 @@ public class John_gamemanager_Path03 : MonoBehaviour
                 acorns[0].transform.parent = null;
             }
         }
+        //drop acorns
         if(acorns[0].transform.parent == null || acorns[1].transform.parent == null || acorns[2].transform.parent == null 
         && (acornstate[0] != "set" || acornstate[1] != "set" || acornstate[2] != "set")){
             for(int i = 0; i< acorns.Length; i++){
@@ -227,19 +248,46 @@ public class John_gamemanager_Path03 : MonoBehaviour
                 }
             }
         }
-
+        //subactivities
         if(activity == "Shade" && 11 == gamestate){ //acorn 0
             if(Vector3.Distance(shadehitbox.transform.position, acorns[0].transform.position) > shadehitboxradius){
-                fairynarration(12);
-                toggleacornnotifs("off");
+                if(onbadisland == 1){ //island plantable
+                    fairynarration(12);
+                    toggleacornnotifs("off");
+                    Swetdirt.SetActive(true);
+                    onbadisland = 0;
+                    activitiesincomplete--;
+                }
             }
-        }else if(activity == "Dry" && 13 == gamestate){ // acorn 1
-
-        }else if(activity == "Cement" && 15 == gamestate){ // acorn 2
-            
+        }else if(activity == "Cement" && 13 == gamestate){ // acorn 1
+            if(Vector3.Distance(shadehitbox.transform.position, acorns[1].transform.position) > shadehitboxradius){
+                if(onbadisland == 1){ //island plantable
+                    fairynarration(14);
+                    toggleacornnotifs("off");
+                    Cwetdirt.SetActive(true);
+                    onbadisland = 0;
+                    activitiesincomplete--;
+                }
+            }   
+        }else if(activity == "Dry" && 15 == gamestate){ // acorn 2
+            if(canstate == "tipped"){
+                toggleacornnotifs("off");
+                DDrydirt.SetActive(false);
+                Dwetdirt.SetActive(true);
+                fairynarration(16);
+                onbadisland = 0;
+                activitiesincomplete--;
+            }
+        }
+        if(activitiesincomplete == 0 && gamestate <= 16){
+            StartCoroutine(Waitforaudiotofinish());
+            activitiesincomplete--;
+        }
+        if(gamestate == 10){
+            fairytarget = F[3];
         }
 
-
+        //watercan controller
         if (canstate == "tipped")
                 {
                     canstate = "return";
@@ -256,14 +304,10 @@ public class John_gamemanager_Path03 : MonoBehaviour
                 canstate = "tipped";
                 waterincan.SetActive(true);
                 castleactivate();
-                /*if (gamestate < 10)
-                {
-                    fairynarration(10);
-                }*/
                 StartCoroutine(stopWatering());
             }
         }
-        
+        //fairy controller
         if(fairy.transform.position != fairytarget.transform.position){
             faryanim.SetBool("wave", false);
             fairy.transform.position = Vector3.MoveTowards(fairy.transform.position, fairytarget.transform.position, fairyspeed * Time.deltaTime); 
@@ -273,19 +317,21 @@ public class John_gamemanager_Path03 : MonoBehaviour
         
 
         fairysubtitles.transform.LookAt(player.transform.position);
+
     }
     
-    
+    //castle animation 
     public void castleactivate(){
         castleanim.SetBool("CastleAnim", true);
     }
-
+    //fairy subtitles clear
     IEnumerator Subtitle()
         {
             yield return new WaitForSeconds(20f);
             subtitle.text = "";
             fairytext.text = "";
         }
+    //watercan movement
     public void movewateringcan(){
         if(canstate == "water"){
             wateringcan.transform.position = wateringcancheckpoint.transform.position;         
@@ -294,6 +340,7 @@ public class John_gamemanager_Path03 : MonoBehaviour
             wateringcan.transform.rotation = wateringcanhome.transform.rotation;
         } else{ Debug.Log("Cannot perform action of watering can");}
     }
+    //toggles based on "toggle" value the arrows above each acorn
     private void toggleacornnotifs(string toggle){ //inputs: "on" "off" and each activity
         if(toggle == "on"){
             for(int i = 0; i< acornnotifs.Length; i++){
@@ -343,14 +390,17 @@ public class John_gamemanager_Path03 : MonoBehaviour
     private IEnumerator Waitforaudiotofinish()
         {
             yield return new WaitWhile (()=> soundManager.audioSource.isPlaying);
-            if(gamestate == 10){
+            if(gamestate == 10 /*&& trisawesomeUI*/){ //insert UI with suggested example
                 if(activity == "Shade"){
                     fairynarration(11);
-                }else if(activity == "Dry"){
-                    fairynarration(13);
                 }else if(activity == "Cement"){
+                    fairynarration(13);
+                }else if(activity == "Dry"){
                     fairynarration(15);
                 }
+            }if(activitiesincomplete <= 0){
+                fairynarration(17);
+                fairytarget = F[4];
             }
         }
     public void fairynarration(int instate){
@@ -464,10 +514,11 @@ public class John_gamemanager_Path03 : MonoBehaviour
             subtitle.text = o19seedfairy;
             StartCoroutine(Subtitle());
         }else if(gamestate == 20){
-        soundManager.PlayAudio("20");
-        fairytext.text = o20seedfairy;
+            soundManager.PlayAudio("20");
+            fairytext.text = o20seedfairy;
             subtitle.text = o20seedfairy;
             StartCoroutine(Subtitle());
+            castleactivate();
         }
         
     }

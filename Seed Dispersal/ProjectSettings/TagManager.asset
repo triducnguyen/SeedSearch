@@ -15,6 +15,7 @@ TagManager:
   - AcornS
   - AcornC
   - AcornD
+  - badisland
   layers:
   - Default
   - TransparentFX
