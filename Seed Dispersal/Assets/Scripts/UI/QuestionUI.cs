@@ -27,6 +27,12 @@ namespace SeedSearch
 
         public void OpenQuestion(int index)
         {
+            if (manager != null)
+            manager.AnsweringQuestion = true;
+
+            if(manager2 != null)
+            manager2.AnsweringQuestion = true;
+
             noteUp.SetActive(true);
             noteDown.SetActive(false);
             fieldNote.SetActive(false);
