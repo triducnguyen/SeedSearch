@@ -119,11 +119,7 @@ namespace SeedSearch
                         }
                         if (antTriggered)
                         {
-                            if(antselect == null)
-                            {
-                                indicator.SetActive(true);                                
-                            }
-                            else if (selection.CompareTag("Ant") && antsstart != true)
+                            if (selection.CompareTag("Ant") && antsstart != true)
                             {
                                 antselect = hit.transform;
                                 anttarget = antselect.transform.position;
@@ -356,6 +352,7 @@ namespace SeedSearch
             else if (gamestate == 9)
             {
                 antTriggered = true;
+                indicator.SetActive(true);
                 soundManager.PlayAudio("09_2");
                 fairytext.text = o9seedfairy;
                 subtitle.text = o9seedfairy;
