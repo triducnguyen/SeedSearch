@@ -135,8 +135,11 @@ namespace SeedSearch
                     }
                 }
             }
-            if(gamestate > 8 && gamestate < 12)
+            if (gamestate > 8 && gamestate < 12)
+            {
+                indicator.SetActive(true);
                 indicator.transform.LookAt(player.transform);
+            }
 
             if (numberfallenseeds == 1 && gamestate < 10)
             {
@@ -272,12 +275,15 @@ namespace SeedSearch
             }
             else if (gamestate == 7)
             {
-                yield return new WaitForSeconds(10f);
                 fairynarration(8);
             }
             else if (gamestate == 8)
             {
                 questionUI.OpenQuestion(6);
+            }
+            else if(gamestate == 13)
+            {
+                fairynarration(14);
             }
             else if (gamestate == 14)
             {
