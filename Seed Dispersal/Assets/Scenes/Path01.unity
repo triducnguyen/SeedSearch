@@ -49120,7 +49120,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
-  m_ShadowAngle: 0
+  m_ShadowAngle: 42
 --- !u!4 &2099176884
 Transform:
   m_ObjectHideFlags: 0
