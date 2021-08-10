@@ -13,6 +13,7 @@ namespace SeedSearch
         public GameObject noteDown;
         public john_gamemanager manager;
         public John_gamemanager_Path02 manager2;
+        public John_gamemanager_Path03 manager3;
         public void ToNextQuestion()
         {
             currentQuestion++;

@@ -8,6 +8,10 @@ public class John_gamemanager_Path03 : MonoBehaviour
 {
     [SerializeField] private int gamestate = 1;
     public float proximitydistance;
+
+        private bool inputLock = false;
+        public bool AnsweringQuestion = false;
+        private Coroutine previousCoroutine;
     
     [Header("Sub Activities")]
     private string activity;
@@ -61,6 +65,8 @@ public class John_gamemanager_Path03 : MonoBehaviour
     public Text fairytext;
     public GameObject player;
     public Text subtitle;
+    [Header("Questions")]
+    public QuestionUI questionUI;
 
     private SoundManager soundManager;
     
@@ -117,194 +123,195 @@ public class John_gamemanager_Path03 : MonoBehaviour
         if(gamestate == 2 && Vector3.Distance(F[1].transform.position, player.transform.position) <= proximitydistance){
             fairynarration(3);
         }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+        if (!AnsweringQuestion){
+            if (Input.GetMouseButtonDown(0))
             {
-                var selection = hit.transform;
-                if (selection.CompareTag("wateringcan")){
-                    if (canstate == "water")
-                    {
-                        waterCanIndicator.SetActive(false);
-                        canstate = "tipping";
+                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    var selection = hit.transform;
+                    if (selection.CompareTag("wateringcan")){
+                        if (canstate == "water")
+                        {
+                            waterCanIndicator.SetActive(false);
+                            canstate = "tipping";
+                        }
+                        else if (canstate == "tipped")
+                        {
+                            waterCanIndicator.SetActive(false);
+                            canstate = "return";
+                            waterincan.SetActive(false);
+                            movewateringcan();
+                        }
+                        else if (canstate == "return" && activity == "Dry")
+                        {
+                            canstate = "water";
+                            waterCanIndicator.SetActive(true);
+                            //waterCanIndicator.transform.position = wateringcancheckpoint.transform.position + new Vector3(0f, 0.1f, 0f);
+                            waterCanIndicator.transform.LookAt(player.transform.position);
+                            waterincan.SetActive(false);
+                            movewateringcan();
+                        }
                     }
-                    else if (canstate == "tipped")
-                    {
-                        waterCanIndicator.SetActive(false);
-                        canstate = "return";
-                        waterincan.SetActive(false);
-                        movewateringcan();
+                    if(selection.CompareTag("badger") && meshofbad.enabled == true){
+                        if(badgerstate == 2 && B == 0){
+                            StartCoroutine(badgerwakingup());
+                        }else if(badgerstate == 2){
+                            StartCoroutine(badgerwakingup());
+                            StopCoroutine(badgersleeps());
+                            StartCoroutine(badgersleeps());
+                        }
+                        
                     }
-                    else if (canstate == "return" && activity == "Dry")
-                    {
-                        canstate = "water";
-                        waterCanIndicator.SetActive(true);
-                        //waterCanIndicator.transform.position = wateringcancheckpoint.transform.position + new Vector3(0f, 0.1f, 0f);
-                        waterCanIndicator.transform.LookAt(player.transform.position);
-                        waterincan.SetActive(false);
-                        movewateringcan();
-                    }
-                }
-                if(selection.CompareTag("badger") && meshofbad.enabled == true){
-                    if(badgerstate == 2 && B == 0){
-                        StartCoroutine(badgerwakingup());
-                    }else if(badgerstate == 2){
-                        StartCoroutine(badgerwakingup());
-                        StopCoroutine(badgersleeps());
-                        StartCoroutine(badgersleeps());
+                    //acorn split section to start (10)
+                    if(gamestate >= 9 && gamestate != 10 && gamestate != 11 && gamestate != 13 && gamestate != 15){
+                        if(selection.CompareTag("AcornS")){
+                            if(!Swetdirt.activeInHierarchy){
+                                activity = "Shade";
+                                toggleacornnotifs(activity);
+                                fairynarration(10);
+                            }
+                        }
+                        if(selection.CompareTag("AcornC")){
+                            if(!Cwetdirt.activeInHierarchy){
+                                activity = "Cement";
+                                toggleacornnotifs(activity);
+                                fairynarration(10);
+                            }
+                        }
+                        if(selection.CompareTag("AcornD")){
+                            if(!Dwetdirt.activeInHierarchy){
+                                activity = "Dry";
+                                toggleacornnotifs(activity);
+                                fairynarration(10);
+                            }
+                        }
+                    }else if(gamestate == 11){
+                        if(selection.CompareTag("island")){
+                            acorns[0].transform.position = hit.point;
+                            onbadisland = 1; //island plantable
+                        }else if(selection.CompareTag("badisland")){
+                            acorns[0].transform.position = hit.point;
+                            onbadisland = 2; //island notplantable
+                        }
+                    }else if(gamestate == 13){
+                        if(selection.CompareTag("island")){
+                            acorns[1].transform.position = hit.point;
+                            onbadisland = 1; //island plantable
+                        }else if(selection.CompareTag("badisland")){
+                            acorns[1].transform.position = hit.point;
+                            onbadisland = 2; //island notplantable
+                        }
                     }
                     
                 }
-                //acorn split section to start (10)
-                if(gamestate >= 9 && gamestate != 10 && gamestate != 11 && gamestate != 13 && gamestate != 15){
-                    if(selection.CompareTag("AcornS")){
-                        if(!Swetdirt.activeInHierarchy){
-                            activity = "Shade";
-                            toggleacornnotifs(activity);
-                            fairynarration(10);
-                        }
-                    }
-                    if(selection.CompareTag("AcornC")){
-                        if(!Cwetdirt.activeInHierarchy){
-                            activity = "Cement";
-                            toggleacornnotifs(activity);
-                            fairynarration(10);
-                        }
-                    }
-                    if(selection.CompareTag("AcornD")){
-                        if(!Dwetdirt.activeInHierarchy){
-                            activity = "Dry";
-                            toggleacornnotifs(activity);
-                            fairynarration(10);
-                        }
-                    }
-                }else if(gamestate == 11){
-                    if(selection.CompareTag("island")){
-                        acorns[0].transform.position = hit.point;
-                        onbadisland = 1; //island plantable
-                    }else if(selection.CompareTag("badisland")){
-                        acorns[0].transform.position = hit.point;
-                        onbadisland = 2; //island notplantable
-                    }
-                }else if(gamestate == 13){
-                    if(selection.CompareTag("island")){
-                        acorns[1].transform.position = hit.point;
-                        onbadisland = 1; //island plantable
-                    }else if(selection.CompareTag("badisland")){
-                        acorns[1].transform.position = hit.point;
-                        onbadisland = 2; //island notplantable
-                    }
+            }
+            //reveal badger
+            if(gamestate == 3 && meshofbad.enabled == false && Vector3.Distance(player.transform.position, badger.transform.position) <= proximitydistance){
+                meshofbad.enabled = true;
+                for(int i = 0; i< acorns.Length; i++){
+                    acorns[i].SetActive(true);
                 }
-                
+                fairytarget = F[2];
+                fairynarration(4);
             }
-        }
-        //reveal badger
-        if(gamestate == 3 && meshofbad.enabled == false && Vector3.Distance(player.transform.position, badger.transform.position) <= proximitydistance){
-            meshofbad.enabled = true;
-            for(int i = 0; i< acorns.Length; i++){
-                acorns[i].SetActive(true);
-            }
-            fairytarget = F[2];
-            fairynarration(4);
-        }
-        //badger
-        badgeranim.SetInteger("Badger state", badgerstate);
-        
-        if(badgerstate == 1){
-            StopCoroutine(badgersleeps());
-            if(badger.transform.position != badgertarget){
-                badger.transform.position = Vector3.MoveTowards(badger.transform.position, badgertarget, badgerspeed * Time.deltaTime);
-            }else if(B<4){
-                badgertarget = badgerpoints[B].transform.position;
-                badger.transform.LookAt(badgertarget);
-                B++;
-            }else if(B >= 4){
-                badgerstate = 2;
-                toggleacornnotifs("off");
-                //fairynarration(6);
-                //delete below and uncomment out above
-                fairynarration(9);
-            }
-            if(B == 3){
-                acorns[2].transform.parent = null;
-                acorns[1].transform.parent = null;
-                acorns[0].transform.parent = null;
-            }
-        }
-        //drop acorns
-        if(acorns[0].transform.parent == null || acorns[1].transform.parent == null || acorns[2].transform.parent == null 
-        && (acornstate[0] != "set" || acornstate[1] != "set" || acornstate[2] != "set")){
-            for(int i = 0; i< acorns.Length; i++){
-                if(acornstate[i] != "set"){
-                    if(acorns[i].transform.position != acornpoints[i].transform.position){
-                        acorns[i].transform.position = Vector3.MoveTowards(acorns[i].transform.position, acornpoints[i].transform.position, fairyspeed * Time.deltaTime);
-                    }else{
-                        acornstate[i] = "set";
-                        acornnotifs[i].SetActive(true);
-                    }
-                }
-            }
-        }
-        //subactivities
-        if(activity == "Shade" && 11 == gamestate){ //acorn 0
-            if(Vector3.Distance(shadehitbox.transform.position, acorns[0].transform.position) > shadehitboxradius){
-                if(onbadisland == 1){ //island plantable
-                    fairynarration(12);
+            //badger
+            badgeranim.SetInteger("Badger state", badgerstate);
+            
+            if(badgerstate == 1){
+                StopCoroutine(badgersleeps());
+                if(badger.transform.position != badgertarget){
+                    badger.transform.position = Vector3.MoveTowards(badger.transform.position, badgertarget, badgerspeed * Time.deltaTime);
+                }else if(B<4){
+                    badgertarget = badgerpoints[B].transform.position;
+                    badger.transform.LookAt(badgertarget);
+                    B++;
+                }else if(B >= 4){
+                    badgerstate = 2;
                     toggleacornnotifs("off");
-                    Swetdirt.SetActive(true);
+                    //fairynarration(6);
+                    //delete below and uncomment out above
+                    fairynarration(9);
+                }
+                if(B == 3){
+                    acorns[2].transform.parent = null;
+                    acorns[1].transform.parent = null;
+                    acorns[0].transform.parent = null;
+                }
+            }
+            //drop acorns
+            if(acorns[0].transform.parent == null || acorns[1].transform.parent == null || acorns[2].transform.parent == null 
+            && (acornstate[0] != "set" || acornstate[1] != "set" || acornstate[2] != "set")){
+                for(int i = 0; i< acorns.Length; i++){
+                    if(acornstate[i] != "set"){
+                        if(acorns[i].transform.position != acornpoints[i].transform.position){
+                            acorns[i].transform.position = Vector3.MoveTowards(acorns[i].transform.position, acornpoints[i].transform.position, fairyspeed * Time.deltaTime);
+                        }else{
+                            acornstate[i] = "set";
+                            acornnotifs[i].SetActive(true);
+                        }
+                    }
+                }
+            }
+            //subactivities
+            if(activity == "Shade" && 11 == gamestate){ //acorn 0
+                if(Vector3.Distance(shadehitbox.transform.position, acorns[0].transform.position) > shadehitboxradius){
+                    if(onbadisland == 1){ //island plantable
+                        fairynarration(12);
+                        toggleacornnotifs("off");
+                        Swetdirt.SetActive(true);
+                        onbadisland = 0;
+                        activitiesincomplete--;
+                    }
+                }
+            }else if(activity == "Cement" && 13 == gamestate){ // acorn 1
+                if(Vector3.Distance(shadehitbox.transform.position, acorns[1].transform.position) > shadehitboxradius){
+                    if(onbadisland == 1){ //island plantable
+                        fairynarration(14);
+                        toggleacornnotifs("off");
+                        Cwetdirt.SetActive(true);
+                        onbadisland = 0;
+                        activitiesincomplete--;
+                    }
+                }   
+            }else if(activity == "Dry" && 15 == gamestate){ // acorn 2
+                if(canstate == "tipped"){
+                    toggleacornnotifs("off");
+                    DDrydirt.SetActive(false);
+                    Dwetdirt.SetActive(true);
+                    fairynarration(16);
                     onbadisland = 0;
                     activitiesincomplete--;
                 }
             }
-        }else if(activity == "Cement" && 13 == gamestate){ // acorn 1
-            if(Vector3.Distance(shadehitbox.transform.position, acorns[1].transform.position) > shadehitboxradius){
-                if(onbadisland == 1){ //island plantable
-                    fairynarration(14);
-                    toggleacornnotifs("off");
-                    Cwetdirt.SetActive(true);
-                    onbadisland = 0;
-                    activitiesincomplete--;
-                }
-            }   
-        }else if(activity == "Dry" && 15 == gamestate){ // acorn 2
-            if(canstate == "tipped"){
-                toggleacornnotifs("off");
-                DDrydirt.SetActive(false);
-                Dwetdirt.SetActive(true);
-                fairynarration(16);
-                onbadisland = 0;
+            if(activitiesincomplete == 0 && gamestate <= 16){
+                StartCoroutine(Waitforaudiotofinish());
                 activitiesincomplete--;
             }
-        }
-        if(activitiesincomplete == 0 && gamestate <= 16){
-            StartCoroutine(Waitforaudiotofinish());
-            activitiesincomplete--;
-        }
-        if(gamestate == 10){
-            fairytarget = F[3];
-        }
+            if(gamestate == 10){
+                fairytarget = F[3];
+            }
 
-        //watercan controller
-        if (canstate == "tipped")
-                {
-                    canstate = "return";
-                    waterincan.SetActive(false);
-                    watercantext.SetActive(false);
-                    movewateringcan();
-                }
-        if (canstate == "tipping")
-        {
-            waterincan.SetActive(true);
-            wateringcan.transform.rotation = Quaternion.Slerp(wateringcan.transform.rotation, wateringcancheckpoint.transform.rotation, Time.deltaTime * smooth);
-            if (wateringcan.transform.rotation == wateringcancheckpoint.transform.rotation)
+            //watercan controller
+            if (canstate == "tipped")
+                    {
+                        canstate = "return";
+                        waterincan.SetActive(false);
+                        watercantext.SetActive(false);
+                        movewateringcan();
+                    }
+            if (canstate == "tipping")
             {
-                canstate = "tipped";
                 waterincan.SetActive(true);
-                castleactivate();
-                StartCoroutine(stopWatering());
+                wateringcan.transform.rotation = Quaternion.Slerp(wateringcan.transform.rotation, wateringcancheckpoint.transform.rotation, Time.deltaTime * smooth);
+                if (wateringcan.transform.rotation == wateringcancheckpoint.transform.rotation)
+                {
+                    canstate = "tipped";
+                    waterincan.SetActive(true);
+                    castleactivate();
+                    StartCoroutine(stopWatering());
+                }
             }
         }
         //fairy controller
@@ -325,9 +332,27 @@ public class John_gamemanager_Path03 : MonoBehaviour
         castleanim.SetBool("CastleAnim", true);
     }
     //fairy subtitles clear
-    IEnumerator Subtitle()
+    IEnumerator Subtitle(float time)
         {
-            yield return new WaitForSeconds(20f);
+            inputLock = true;
+            yield return new WaitForSeconds(time);
+            if(gamestate == 2)
+            {
+                questionUI.OpenQuestion(0);
+            } else if(gamestate == 7)
+            {
+                questionUI.OpenQuestion(1);
+
+            } else if(gamestate == 10)
+            {
+                questionUI.OpenQuestion(2);
+            } else if(gamestate == 18)
+            {
+                questionUI.OpenQuestion(3);
+            }
+            subtitle.text = "";
+            fairytext.text = "";
+            inputLock = false;
             subtitle.text = "";
             fairytext.text = "";
         }
@@ -409,115 +434,134 @@ public class John_gamemanager_Path03 : MonoBehaviour
             soundManager.PlayAudio("01");
             fairytext.text = o1seedfairy;
             subtitle.text = o1seedfairy;
-            StartCoroutine(Subtitle());
+            previousCoroutine = StartCoroutine(Subtitle(15f));
         }else if(gamestate == 2){
             soundManager.PlayAudio("02");
             fairytext.text = o2seedfairy;
-                subtitle.text = o2seedfairy;
-                StartCoroutine(Subtitle());
-            }
+            subtitle.text = o2seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }
         else if(gamestate == 3){
-        soundManager.PlayAudio("03");
-        fairytext.text = o3seedfairy;
+            soundManager.PlayAudio("03");
+            fairytext.text = o3seedfairy;
             subtitle.text = o3seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }
         else if(gamestate == 4){
-        soundManager.PlayAudio("04");
-        fairytext.text = o4seedfairy;
-        subtitle.text = o4seedfairy;
-        StartCoroutine(Subtitle());
+            soundManager.PlayAudio("04");
+            fairytext.text = o4seedfairy;
+            subtitle.text = o4seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }
         else if(gamestate == 5){
-        soundManager.PlayAudio("05");
-        fairytext.text = o5seedfairy;
+            soundManager.PlayAudio("05");
+            fairytext.text = o5seedfairy;
             subtitle.text = o5seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }
         else if(gamestate == 6){
-        soundManager.PlayAudio("06");
-        fairytext.text = o6seedfairy;
+            soundManager.PlayAudio("06");
+            fairytext.text = o6seedfairy;
             subtitle.text = o6seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }
         else if(gamestate == 7){
-        soundManager.PlayAudio("07");
-        fairytext.text = o7seedfairy;
+            soundManager.PlayAudio("07");
+            fairytext.text = o7seedfairy;
             subtitle.text = o7seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }
         else if(gamestate == 8){
-        soundManager.PlayAudio("08");
-        fairytext.text = o8seedfairy;
+            soundManager.PlayAudio("08");
+            fairytext.text = o8seedfairy;
             subtitle.text = o8seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }
         else if(gamestate == 9){
-        soundManager.PlayAudio("09");
-        fairytext.text = o9seedfairy;
+            soundManager.PlayAudio("09");
+            fairytext.text = o9seedfairy;
             subtitle.text = o9seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }
         else if(gamestate == 10){
-        soundManager.PlayAudio("10");
-        fairytext.text = o10seedfairy;
+            soundManager.PlayAudio("10");
+            fairytext.text = o10seedfairy;
             subtitle.text = o10seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
             StartCoroutine(Waitforaudiotofinish());
         }
         else if(gamestate == 11){
-        soundManager.PlayAudio("11");
-        fairytext.text = o11seedfairy;
+            soundManager.PlayAudio("11");
+            fairytext.text = o11seedfairy;
             subtitle.text = o11seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }
         else if(gamestate == 12){
-        soundManager.PlayAudio("12");
-        fairytext.text = o12seedfairy;
+            soundManager.PlayAudio("12");
+            fairytext.text = o12seedfairy;
             subtitle.text = o12seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }
         else if(gamestate == 13){
-        soundManager.PlayAudio("13");
-        fairytext.text = o13seedfairy;
+            soundManager.PlayAudio("13");
+            fairytext.text = o13seedfairy;
             subtitle.text = o13seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }
         else if(gamestate == 14){
-        soundManager.PlayAudio("14");
-        fairytext.text = o14seedfairy;
+            soundManager.PlayAudio("14");
+            fairytext.text = o14seedfairy;
             subtitle.text = o14seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }else if(gamestate == 15){
-        soundManager.PlayAudio("15");
-        fairytext.text = o15seedfairy;
+            soundManager.PlayAudio("15");
+            fairytext.text = o15seedfairy;
             subtitle.text = o15seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }else if(gamestate == 16){
-        soundManager.PlayAudio("16");
-        fairytext.text = o16seedfairy;
+            soundManager.PlayAudio("16");
+            fairytext.text = o16seedfairy;
             subtitle.text = o16seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }else if(gamestate == 17){
-        soundManager.PlayAudio("17");
-        fairytext.text = o17seedfairy;
+            soundManager.PlayAudio("17");
+            fairytext.text = o17seedfairy;
             subtitle.text = o17seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }else if(gamestate == 18){
-        soundManager.PlayAudio("18");
-        fairytext.text = o18seedfairy;
+            soundManager.PlayAudio("18");
+            fairytext.text = o18seedfairy;
             subtitle.text = o18seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }else if(gamestate == 19){
-        soundManager.PlayAudio("19");
-        fairytext.text = o19seedfairy;
+            soundManager.PlayAudio("19");
+            fairytext.text = o19seedfairy;
             subtitle.text = o19seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
         }else if(gamestate == 20){
             soundManager.PlayAudio("20");
             fairytext.text = o20seedfairy;
             subtitle.text = o20seedfairy;
-            StartCoroutine(Subtitle());
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
             castleactivate();
         }
         
