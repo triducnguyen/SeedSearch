@@ -4085,7 +4085,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 417254840}
         m_TargetAssemblyTypeName: SeedSearch.QuestionUI, Assembly-CSharp
-        m_MethodName: TriggerNarration
+        m_MethodName: TriggerNarration3
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4708,6 +4708,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 581302036}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 417254840}
+        m_TargetAssemblyTypeName: SeedSearch.QuestionUI, Assembly-CSharp
+        m_MethodName: TriggerNarration3
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11759,7 +11771,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 417254840}
         m_TargetAssemblyTypeName: SeedSearch.QuestionUI, Assembly-CSharp
-        m_MethodName: TriggerNarration
+        m_MethodName: TriggerNarration3
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28873,7 +28885,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: What is likely my dispersal method?
+  m_text: 'Look at the picture. What is likely my dispersal method? '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 879be40e896edce4bbdfa544a46a0932, type: 2}
   m_sharedMaterial: {fileID: -2264608464019109758, guid: 879be40e896edce4bbdfa544a46a0932, type: 2}
@@ -29619,7 +29631,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 417254840}
         m_TargetAssemblyTypeName: SeedSearch.QuestionUI, Assembly-CSharp
-        m_MethodName: TriggerNarration
+        m_MethodName: TriggerNarration3
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33514,7 +33526,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 417254840}
         m_TargetAssemblyTypeName: SeedSearch.QuestionUI, Assembly-CSharp
-        m_MethodName: TriggerNarration
+        m_MethodName: TriggerNarration3
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50596,7 +50608,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 417254840}
         m_TargetAssemblyTypeName: SeedSearch.QuestionUI, Assembly-CSharp
-        m_MethodName: TriggerNarration
+        m_MethodName: TriggerNarration3
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -64708,7 +64720,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 417254840}
         m_TargetAssemblyTypeName: SeedSearch.QuestionUI, Assembly-CSharp
-        m_MethodName: TriggerNarration
+        m_MethodName: TriggerNarration3
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
