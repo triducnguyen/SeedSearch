@@ -10,6 +10,7 @@ namespace SeedSearch
         private bool inputLock = false;
         private bool answeringQuestion = false;
         private bool antTriggered = false;
+        private Coroutine previousCoroutine;
         [SerializeField] private int gamestate = 1;
         [Header("Bee")]
         public GameObject Bee;
@@ -311,49 +312,55 @@ namespace SeedSearch
                 soundManager.PlayAudio("02_2");
                 fairytext.text = o2seedfairy;
                 subtitle.text = o2seedfairy;
-                StartCoroutine(Subtitle(20f));
+                previousCoroutine = StartCoroutine(Subtitle(20f));
             }
             else if (gamestate == 3)
             {
                 soundManager.PlayAudio("03_2");
                 fairytext.text = o3seedfairy;
                 subtitle.text = o3seedfairy;
-                StartCoroutine(Subtitle(15f));
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(15f));
             }
             else if (gamestate == 4)
             {
                 soundManager.PlayAudio("04_2");
                 fairytext.text = o4seedfairy;
                 subtitle.text = o4seedfairy;
-                StartCoroutine(Subtitle(5f));
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(5f));
             }
             else if (gamestate == 5)
             {
                 soundManager.PlayAudio("05_2");
                 fairytext.text = o5seedfairy;
                 subtitle.text = o5seedfairy;
-                StartCoroutine(Subtitle(17f));
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(17f));
             }
             else if (gamestate == 6)
             {
                 soundManager.PlayAudio("06_2");
                 fairytext.text = o6seedfairy;
                 subtitle.text = o6seedfairy;
-                StartCoroutine(Subtitle(10f));
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(10f));
             }
             else if (gamestate == 7)
             {
                 soundManager.PlayAudio("07_2");
                 fairytext.text = o7seedfairy;
                 subtitle.text = o7seedfairy;
-                StartCoroutine(Subtitle(18f));
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(18f));
             }
             else if (gamestate == 8)
             {
                 soundManager.PlayAudio("08_2");
                 fairytext.text = o8seedfairy;
                 subtitle.text = o8seedfairy;
-                StartCoroutine(Subtitle(7f));
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(7f));
             }
             else if (gamestate == 9)
             {
@@ -362,21 +369,24 @@ namespace SeedSearch
                 soundManager.PlayAudio("09_2");
                 fairytext.text = o9seedfairy;
                 subtitle.text = o9seedfairy;
-                StartCoroutine(Subtitle(20f));
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(20f));
             }
             else if (gamestate == 10)
             {
                 soundManager.PlayAudio("10_2");
                 fairytext.text = o10seedfairy;
                 subtitle.text = o10seedfairy;
-                StartCoroutine(Subtitle(3f));
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(3f));
             }
             else if (gamestate == 11)
             {
                 soundManager.PlayAudio("11_2");
                 fairytext.text = o11seedfairy;
                 subtitle.text = o11seedfairy;
-                StartCoroutine(Subtitle(6f));
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(6f));
             }
             else if (gamestate == 12)
             {
@@ -384,21 +394,24 @@ namespace SeedSearch
                 soundManager.PlayAudio("12_2");
                 fairytext.text = o12seedfairy;
                 subtitle.text = o12seedfairy;
-                StartCoroutine(Subtitle(7f));
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(7f));
             }
             else if (gamestate == 13)
             {
                 soundManager.PlayAudio("13_2");
                 fairytext.text = o13seedfairy;
                 subtitle.text = o13seedfairy;
-                StartCoroutine(Subtitle(10f));
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(10f));
             }
             else if (gamestate == 14)
             {
                 soundManager.PlayAudio("14_2");
                 fairytext.text = o14seedfairy;
                 subtitle.text = o14seedfairy;
-                StartCoroutine(Subtitle(7f));
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(7f));
             }
 
         }
