@@ -24,8 +24,7 @@ public class Ant : MonoBehaviour
     void Start()
     {
         gamemanager = GameObject.FindObjectOfType<John_gamemanager_Path02>();
-        antanim.SetBool("Walking", false);
-        
+        gamemanager.antanim.SetBool("Walking", false);
     }
 
     // Update is called once per frame
@@ -37,11 +36,7 @@ public class Ant : MonoBehaviour
             antseed.SetActive(true);
             gamemanager.antselect = null;
             gamemanager.antsstart = false;
-            StartCoroutine(seeddroptimer());
-            gamemanager.antscomplete.Add(this.transform);
         } if(gamemanager.antselect == this.transform && antsstart == true){
-            antanim.SetBool("Walking", true);
-        }else if(gamemanager.antwalking && gamemanager.antselect == this.transform){
             antanim.SetBool("Walking", true);
         }else{
             antanim.SetBool("Walking", false);
@@ -61,7 +56,7 @@ public class Ant : MonoBehaviour
                 anttarget = gamemanager.antwaypoints[antI].transform.position;
                 this.transform.LookAt(anttarget);
             }else{
-            //antanim.SetBool("Walking", false);
+            antanim.SetBool("Walking", false);
             }
         }
         if(this.transform.position == gamemanager.antwaypoints[3].transform.position){
@@ -74,7 +69,7 @@ public class Ant : MonoBehaviour
         }*/
         
     }
-    /*private int i;
+    private int i;
     void FixedUpdate(){
         if(antsstart == true && holdseed == true){
             if(i == 0){
@@ -87,13 +82,8 @@ public class Ant : MonoBehaviour
                 }
             }
         }
-    }*/
-    IEnumerator seeddroptimer(){
-        while(holdseed){
-            yield return new WaitForSeconds(3f);
-            dropseed();
-        }
     }
+    
     
     void dropseed(){
         if(holdseed == true){

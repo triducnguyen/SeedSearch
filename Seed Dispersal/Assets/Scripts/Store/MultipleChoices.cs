@@ -13,14 +13,10 @@ namespace SeedSearch
         public bool DidAnswer { get => didAnswer; set => didAnswer = value; }
         public TMP_Text notification;
         public GameObject hint;
-        public bool HintDisable;
         private void Awake()
         {
             Gamemanager.Instance.currentScene = SceneManager.GetActiveScene().name;
-            if (!HintDisable)
-                Gamemanager.Instance.hintObject = hint;
-            else
-                Gamemanager.Instance.hintObject = null;
+            Gamemanager.Instance.hintObject = hint;
             
         }
         private void OnEnable()

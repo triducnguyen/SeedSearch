@@ -102,8 +102,7 @@ namespace SeedSearch{
         IEnumerator Hinttimer(){
             yield return new WaitForSeconds(wait);
             Debug.Log("Hint now appearing" + wait);
-            if(hintObject != null)
-                hintObject.SetActive(true);
+            hintObject.SetActive(true);
             //hint.text = section;
         }
 

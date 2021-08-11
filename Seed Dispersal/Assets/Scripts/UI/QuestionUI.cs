@@ -14,38 +14,16 @@ namespace SeedSearch
         public john_gamemanager manager;
         public John_gamemanager_Path02 manager2;
         public John_gamemanager_Path03 manager3;
-
-        void Start(){
-            manager = GameObject.FindObjectOfType<john_gamemanager>();
-            manager2 = GameObject.FindObjectOfType<John_gamemanager_Path02>();
-            manager3= GameObject.FindObjectOfType<John_gamemanager_Path03>();
-        }
         public void ToNextQuestion()
         {
             currentQuestion++;
             questions[currentQuestion - 1].SetActive(false);
             questions[currentQuestion].SetActive(true);
-            noteUp.SetActive(true);
-            noteDown.SetActive(false);
-            fieldNote.SetActive(false);
-            this.gameObject.SetActive(true);
-        }
-
-        public void OpenReviewQuestions()
-        {
-            this.gameObject.SetActive(true);
         }
 
         public void OnEnable()
         {
-            if (manager != null)
-                manager.AnsweringQuestion = true;
-
-            if (manager2 != null)
-                manager2.AnsweringQuestion = true;
-
-            if (manager3 != null)
-                manager3.AnsweringQuestion = true;
+            manager.AnsweringQuestion = true;
         }
 
         public void OpenQuestion(int index)
