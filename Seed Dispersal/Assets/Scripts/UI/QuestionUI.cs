@@ -13,16 +13,33 @@ namespace SeedSearch
         public GameObject noteDown;
         public john_gamemanager manager;
         public John_gamemanager_Path02 manager2;
+        public John_gamemanager_Path03 manager3;
         public void ToNextQuestion()
         {
             currentQuestion++;
             questions[currentQuestion - 1].SetActive(false);
             questions[currentQuestion].SetActive(true);
+            noteUp.SetActive(true);
+            noteDown.SetActive(false);
+            fieldNote.SetActive(false);
+            this.gameObject.SetActive(true);
+        }
+
+        public void OpenReviewQuestions()
+        {
+            this.gameObject.SetActive(true);
         }
 
         public void OnEnable()
         {
-            manager.AnsweringQuestion = true;
+            if (manager != null)
+                manager.AnsweringQuestion = true;
+
+            if (manager2 != null)
+                manager2.AnsweringQuestion = true;
+
+            if (manager3 != null)
+                manager3.AnsweringQuestion = true;
         }
 
         public void OpenQuestion(int index)
@@ -54,6 +71,12 @@ namespace SeedSearch
         {
             manager2.AnsweringQuestion = false;
             manager2.fairynarration(index);
+        }
+
+        public void TriggerNarration3(int index)
+        {
+            manager3.AnsweringQuestion = false;
+            manager3.fairynarration(index);
         }
     }
 }
