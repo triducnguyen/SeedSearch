@@ -25,11 +25,27 @@ namespace SeedSearch
             currentQuestion++;
             questions[currentQuestion - 1].SetActive(false);
             questions[currentQuestion].SetActive(true);
+            noteUp.SetActive(true);
+            noteDown.SetActive(false);
+            fieldNote.SetActive(false);
+            this.gameObject.SetActive(true);
+        }
+
+        public void OpenReviewQuestions()
+        {
+            this.gameObject.SetActive(true);
         }
 
         public void OnEnable()
         {
-            manager.AnsweringQuestion = true;
+            if (manager != null)
+                manager.AnsweringQuestion = true;
+
+            if (manager2 != null)
+                manager2.AnsweringQuestion = true;
+
+            if (manager3 != null)
+                manager3.AnsweringQuestion = true;
         }
 
         public void OpenQuestion(int index)
