@@ -48,6 +48,8 @@ namespace SeedSearch
         public GameObject[] ants;
         public GameObject[] seeds;
 
+        [System.NonSerialized] public List<Transform> antscomplete;
+
         [Header("Castle")]
         public Animator castleanim;
 

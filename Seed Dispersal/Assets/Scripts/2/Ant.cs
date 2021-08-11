@@ -38,9 +38,10 @@ public class Ant : MonoBehaviour
             gamemanager.antselect = null;
             gamemanager.antsstart = false;
             StartCoroutine(seeddroptimer());
+            gamemanager.antscomplete.Add(this.transform);
         } if(gamemanager.antselect == this.transform && antsstart == true){
             antanim.SetBool("Walking", true);
-        }else if(gamemanager.antwalking){
+        }else if(gamemanager.antwalking && gamemanager.antselect == this.transform){
             antanim.SetBool("Walking", true);
         }else{
             antanim.SetBool("Walking", false);
