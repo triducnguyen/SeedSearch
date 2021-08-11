@@ -495,5 +495,152 @@ namespace SeedSearch
                 badger.transform.LookAt(badgertarget);
             }
         }
+
+        public void fairynarration(int instate)
+        {
+            gamestate = instate;
+            if (gamestate == 1)
+            {
+                soundManager.PlayAudio("01_3");
+                fairytext.text = o1seedfairy;
+                previousCoroutine = StartCoroutine(Subtitle(9f));
+            }
+            else if (gamestate == 2)
+            {
+                soundManager.PlayAudio("02_3");
+                fairytext.text = o2seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(24f));
+            }
+            else if (gamestate == 3)
+            {
+                soundManager.PlayAudio("03_3");
+                fairytext.text = o3seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(6f));
+            }
+            else if (gamestate == 4)
+            {
+                soundManager.PlayAudio("04_3");
+                fairytext.text = o4seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(7f));
+            }
+            else if (gamestate == 5)
+            {
+                soundManager.PlayAudio("05_3");
+                fairytext.text = o5seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(18f));
+            }
+            else if (gamestate == 6)
+            {
+                soundManager.PlayAudio("06_3");
+                fairytext.text = o6seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(6f));
+            }
+            else if (gamestate == 7)
+            {
+                soundManager.PlayAudio("07_3");
+                fairytext.text = o7seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(5f));
+            }
+            else if (gamestate == 8)
+            {
+                soundManager.PlayAudio("08_3");
+                fairytext.text = o8seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(3f));
+            }
+            else if (gamestate == 9)
+            {
+                soundManager.PlayAudio("09_3");
+                fairytext.text = o9seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(10f));
+            }
+            else if (gamestate == 10)
+            {
+                soundManager.PlayAudio("10_3");
+                fairytext.text = o10seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(9f));
+            }
+            else if (gamestate == 11)
+            {
+                soundManager.PlayAudio("11_3");
+                fairytext.text = o11seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(4f));
+            }
+            else if (gamestate == 12)
+            {
+                soundManager.PlayAudio("12_3");
+                fairytext.text = o12seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(4f));
+            }
+            else if (gamestate == 13)
+            {
+                soundManager.PlayAudio("13_3");
+                fairytext.text = o13seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(5f));
+            }
+            else if (gamestate == 14)
+            {
+                soundManager.PlayAudio("14_3");
+                fairytext.text = o14seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(4f));
+            }
+            else if (gamestate == 15)
+            {
+                soundManager.PlayAudio("15_3");
+                fairytext.text = o15seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(4f));
+            }
+            else if (gamestate == 16)
+            {
+                soundManager.PlayAudio("16_3");
+                fairytext.text = o16seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(4f));
+            }
+            else if (gamestate == 17)
+            {
+                soundManager.PlayAudio("17_3");
+                fairytext.text = o17seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(6f));
+            }
+            else if (gamestate == 18)
+            {
+                soundManager.PlayAudio("18_3");
+                fairytext.text = o18seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(7f));
+            }
+            else if (gamestate == 19)
+            {
+                soundManager.PlayAudio("19_3");
+                fairytext.text = o19seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(13f));
+            }
+            else if (gamestate == 20)
+            {
+                soundManager.PlayAudio("20_3");
+                fairytext.text = o20seedfairy;
+                StopCoroutine(previousCoroutine);
+                previousCoroutine = StartCoroutine(Subtitle(15f));
+            }
+
+        }
+
+
     }
 }
