@@ -508,7 +508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heightscalar: 0.6
   Island: {fileID: 312817578}
-  beginbutton: {fileID: 0}
+  beginbutton: {fileID: 982139453}
 --- !u!114 &16907197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24246,6 +24246,7 @@ MonoBehaviour:
   player: {fileID: 1096865406}
   subtitle: {fileID: 0}
   questionUI: {fileID: 1810931200}
+  reviewQuestionUI: {fileID: 0}
 --- !u!4 &573819298
 Transform:
   m_ObjectHideFlags: 0
@@ -38812,7 +38813,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 16907196}
         m_TargetAssemblyTypeName: PlaceOnPlane, Assembly-CSharp
         m_MethodName: begingame
         m_Mode: 1
@@ -80818,6 +80819,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9c36faf107bf8c44bb2dfa0543a64c7a, type: 3}
   - {fileID: 8300000, guid: 1b6737d7545938c4aaeff20f56bcd715, type: 3}
   - {fileID: 8300000, guid: e5a294edb6e119d4081f0cf8da5b8807, type: 3}
+  audioSource: {fileID: 0}
 --- !u!4 &2060167358
 Transform:
   m_ObjectHideFlags: 0
