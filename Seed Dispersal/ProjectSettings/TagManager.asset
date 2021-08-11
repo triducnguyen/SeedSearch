@@ -12,6 +12,10 @@ TagManager:
   - dandelionSeed
   - Ant
   - badger
+  - AcornS
+  - AcornC
+  - AcornD
+  - badisland
   layers:
   - Default
   - TransparentFX
@@ -19,7 +23,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - notcollidetogether
   - 
   - 
   - 

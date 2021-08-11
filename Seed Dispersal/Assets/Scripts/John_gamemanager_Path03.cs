@@ -435,4 +435,159 @@ namespace SeedSearch
 
         }
     }
+    private IEnumerator Waitforaudiotofinish()
+        {
+            yield return new WaitWhile (()=> soundManager.audioSource.isPlaying);
+            if(gamestate == 10 /*&& trisawesomeUI*/){ //insert UI with suggested example
+                if(activity == "Shade"){
+                    fairynarration(11);
+                }else if(activity == "Cement"){
+                    fairynarration(13);
+                }else if(activity == "Dry"){
+                    fairynarration(15);
+                }
+            }if(activitiesincomplete <= 0){
+                fairynarration(17);
+                fairytarget = F[4];
+            }
+        }
+    public void fairynarration(int instate){
+        gamestate = instate;
+        if(gamestate == 1){
+            soundManager.PlayAudio("01_3");
+            fairytext.text = o1seedfairy;
+            subtitle.text = o1seedfairy;
+            previousCoroutine = StartCoroutine(Subtitle(15f));
+        }else if(gamestate == 2){
+            soundManager.PlayAudio("02_3");
+            fairytext.text = o2seedfairy;
+            subtitle.text = o2seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }
+        else if(gamestate == 3){
+            soundManager.PlayAudio("03_3");
+            fairytext.text = o3seedfairy;
+            subtitle.text = o3seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }
+        else if(gamestate == 4){
+            soundManager.PlayAudio("04_3");
+            fairytext.text = o4seedfairy;
+            subtitle.text = o4seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }
+        else if(gamestate == 5){
+            soundManager.PlayAudio("05_3");
+            fairytext.text = o5seedfairy;
+            subtitle.text = o5seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }
+        else if(gamestate == 6){
+            soundManager.PlayAudio("06_3");
+            fairytext.text = o6seedfairy;
+            subtitle.text = o6seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }
+        else if(gamestate == 7){
+            soundManager.PlayAudio("07_3");
+            fairytext.text = o7seedfairy;
+            subtitle.text = o7seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }
+        else if(gamestate == 8){
+            soundManager.PlayAudio("08_3");
+            fairytext.text = o8seedfairy;
+            subtitle.text = o8seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }
+        else if(gamestate == 9){
+            soundManager.PlayAudio("09_3");
+            fairytext.text = o9seedfairy;
+            subtitle.text = o9seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }
+        else if(gamestate == 10){
+            soundManager.PlayAudio("10_3");
+            fairytext.text = o10seedfairy;
+            subtitle.text = o10seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+            //StartCoroutine(Waitforaudiotofinish());
+        }
+        else if(gamestate == 11){
+            soundManager.PlayAudio("11_3");
+            fairytext.text = o11seedfairy;
+            subtitle.text = o11seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }
+        else if(gamestate == 12){
+            soundManager.PlayAudio("12_3");
+            fairytext.text = o12seedfairy;
+            subtitle.text = o12seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }
+        else if(gamestate == 13){
+            soundManager.PlayAudio("13_3");
+            fairytext.text = o13seedfairy;
+            subtitle.text = o13seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }
+        else if(gamestate == 14){
+            soundManager.PlayAudio("14_3");
+            fairytext.text = o14seedfairy;
+            subtitle.text = o14seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }else if(gamestate == 15){
+            soundManager.PlayAudio("15_3");
+            fairytext.text = o15seedfairy;
+            subtitle.text = o15seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }else if(gamestate == 16){
+            soundManager.PlayAudio("16_3");
+            fairytext.text = o16seedfairy;
+            subtitle.text = o16seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }else if(gamestate == 17){
+            soundManager.PlayAudio("17_3");
+            fairytext.text = o17seedfairy;
+            subtitle.text = o17seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }else if(gamestate == 18){
+            soundManager.PlayAudio("18_3");
+            fairytext.text = o18seedfairy;
+            subtitle.text = o18seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }else if(gamestate == 19){
+            soundManager.PlayAudio("19_3");
+            fairytext.text = o19seedfairy;
+            subtitle.text = o19seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+        }else if(gamestate == 20){
+            soundManager.PlayAudio("20_3");
+            fairytext.text = o20seedfairy;
+            subtitle.text = o20seedfairy;
+            StopCoroutine(previousCoroutine);
+            previousCoroutine = StartCoroutine(Subtitle(10f));
+            castleactivate();
+        }
+        
+    }
+}
 }
