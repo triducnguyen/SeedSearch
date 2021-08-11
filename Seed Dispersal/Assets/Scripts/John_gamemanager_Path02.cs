@@ -7,6 +7,7 @@ namespace SeedSearch
 {
     public class John_gamemanager_Path02 : MonoBehaviour
     {
+        public float intdistance;
         private bool inputLock = false;
         private bool answeringQuestion = false;
         private bool antTriggered = false;
@@ -29,9 +30,11 @@ namespace SeedSearch
         public GameObject indicator;
 
         [Header("Ant")]
+        [System.NonSerialized] public bool antwalking = false;
         public GameObject ant;
         public Animator antanim;
         public float antspeed;
+        public float antintdistance;
         public GameObject[] antwaypoints;
         [System.NonSerialized] public bool antsstart;
 
@@ -156,11 +159,14 @@ namespace SeedSearch
 
             if (antselect != null && antselect.transform.position != anttarget)
             {
+                antwalking = true;
                 antselect.transform.position = Vector3.MoveTowards(antselect.transform.position, anttarget, antspeed * Time.deltaTime);
+            }else{
+                antwalking = false;
             }
 
 
-            if (antselect != null && Vector3.Distance(firstseeds.transform.position, antselect.position) < 0.1f)
+            if (antselect != null && Vector3.Distance(firstseeds.transform.position, antselect.position) <= antintdistance)
             {
                 antsstart = true;
             }

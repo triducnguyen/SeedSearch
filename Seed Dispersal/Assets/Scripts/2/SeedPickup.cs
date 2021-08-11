@@ -17,7 +17,7 @@ public class SeedPickup : MonoBehaviour
     void Update()
     {
         if(this.transform.parent != antparent && gamemanager.antsareup == false){
-            if(Vector3.Distance(gamemanager.player.transform.position, this.transform.position) < 0.1f){
+            if(Vector3.Distance(gamemanager.player.transform.position, this.transform.position) <= gamemanager.intdistance){
                 this.gameObject.SetActive(false);
                 gamemanager.numberfallenseeds--;
             }
