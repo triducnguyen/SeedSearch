@@ -14,12 +14,6 @@ namespace SeedSearch
         public john_gamemanager manager;
         public John_gamemanager_Path02 manager2;
         public John_gamemanager_Path03 manager3;
-
-        void Start(){
-            manager = GameObject.FindObjectOfType<john_gamemanager>();
-            manager2 = GameObject.FindObjectOfType<John_gamemanager_Path02>();
-            manager3= GameObject.FindObjectOfType<John_gamemanager_Path03>();
-        }
         public void ToNextQuestion()
         {
             currentQuestion++;
