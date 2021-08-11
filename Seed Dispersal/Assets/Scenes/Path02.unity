@@ -40512,6 +40512,7 @@ MonoBehaviour:
   noteDown: {fileID: 1360131132}
   manager: {fileID: 0}
   manager2: {fileID: 573819299}
+  manager3: {fileID: 0}
 --- !u!114 &1397465307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56720,6 +56721,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0caf4e391a2a35a4da74768d04bb0b27, type: 3}
   - {fileID: 8300000, guid: 40b171402185c6f43afaead201edb07f, type: 3}
   - {fileID: 8300000, guid: 5d4ffc18a27aac74a9e47662437a6013, type: 3}
+  audioSource: {fileID: 0}
 --- !u!4 &2060167358
 Transform:
   m_ObjectHideFlags: 0
