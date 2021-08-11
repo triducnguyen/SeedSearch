@@ -7,7 +7,6 @@ namespace SeedSearch
 {
     public class John_gamemanager_Path02 : MonoBehaviour
     {
-        public float intdistance;
         private bool inputLock = false;
         private bool answeringQuestion = false;
         private bool antTriggered = false;
@@ -28,14 +27,11 @@ namespace SeedSearch
 
         [Header("Indicator")]
         public GameObject indicator;
-        public GameObject endcard;
 
         [Header("Ant")]
-        [System.NonSerialized] public bool antwalking = false;
         public GameObject ant;
-        //public Animator antanim;
+        public Animator antanim;
         public float antspeed;
-        public float antintdistance;
         public GameObject[] antwaypoints;
         [System.NonSerialized] public bool antsstart;
 
@@ -47,8 +43,6 @@ namespace SeedSearch
         private bool seedsareup = true;
         public GameObject[] ants;
         public GameObject[] seeds;
-
-        [System.NonSerialized] public List<Transform> antscomplete;
 
         [Header("Castle")]
         public Animator castleanim;
@@ -93,13 +87,12 @@ namespace SeedSearch
             soundManager = SoundManager.Instance;
             castleanim.SetBool("CastleAnim", false);
             faryanim.SetBool("wave", false);
-            //antanim.SetBool("Walking", false);
+            antanim.SetBool("Walking", false);
             fairytarget = F0;
             fairynarration(1);
             firstseeds.SetActive(false);
             //anttarget = ant.transform.position;
             lastseeds.SetActive(false);
-            endcard.SetActive(false);
         }
 
         private RaycastHit hit;
@@ -145,32 +138,29 @@ namespace SeedSearch
             }
             if (gamestate > 8 && gamestate < 12)
             {
-                //indicator.SetActive(true);
+                indicator.SetActive(true);
                 indicator.transform.LookAt(player.transform);
             }
 
             if (numberfallenseeds == 1 && gamestate < 10)
             {
-                //indicator.SetActive(true);
+                indicator.SetActive(true);
                 fairynarration(10);
             }
             else if (numberfallenseeds > 4 && gamestate < 11)
             {
-                //indicator.SetActive(false);
-                //fairynarration(11);
+                indicator.SetActive(false);
+                fairynarration(11);
             }
 
 
             if (antselect != null && antselect.transform.position != anttarget)
             {
-                antwalking = true;
                 antselect.transform.position = Vector3.MoveTowards(antselect.transform.position, anttarget, antspeed * Time.deltaTime);
-            }else{
-                antwalking = false;
             }
 
 
-            if (antselect != null && Vector3.Distance(firstseeds.transform.position, antselect.position) <= antintdistance)
+            if (antselect != null && Vector3.Distance(firstseeds.transform.position, antselect.position) < 0.1f)
             {
                 antsstart = true;
             }
@@ -422,13 +412,8 @@ namespace SeedSearch
                 subtitle.text = o14seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(7f));
-                StartCoroutine(Endpath());
             }
 
-        }
-        IEnumerator Endpath(){
-            yield return new WaitForSeconds(5f);
-            endcard.SetActive(true);
         }
     }
 }
