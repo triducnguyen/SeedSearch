@@ -503,6 +503,10 @@ namespace SeedSearch
             }
         }
 
+        IEnumerator narrationwaittoend(int newintstate){
+            yield return new WaitWhile (()=> soundManager.audioSource.isPlaying);
+            fairynarration(newintstate);
+        }
         public void fairynarration(int instate)
         {
             gamestate = instate;
@@ -560,6 +564,9 @@ namespace SeedSearch
                 fairytext.text = o8seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(3f));
+
+                toggleacornnotifs("on");
+                StartCoroutine(narrationwaittoend(9));
             }
             else if (gamestate == 9)
             {
