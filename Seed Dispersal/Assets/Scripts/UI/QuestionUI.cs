@@ -13,6 +13,7 @@ namespace SeedSearch
         public GameObject noteDown;
         public john_gamemanager manager;
         public John_gamemanager_Path02 manager2;
+        public John_gamemanager_Path03 manager3;
         public void ToNextQuestion()
         {
             currentQuestion++;
@@ -32,6 +33,8 @@ namespace SeedSearch
 
             if(manager2 != null)
             manager2.AnsweringQuestion = true;
+            if(manager3 != null)
+            manager3.AnsweringQuestion = true;
 
             noteUp.SetActive(true);
             noteDown.SetActive(false);
@@ -54,6 +57,11 @@ namespace SeedSearch
         {
             manager2.AnsweringQuestion = false;
             manager2.fairynarration(index);
+        }
+        public void TriggerNarration3(int index)
+        {
+            manager3.AnsweringQuestion = false;
+            manager3.fairynarration(index);
         }
     }
 }
