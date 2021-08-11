@@ -7,7 +7,7 @@ namespace SeedSearch
     public class SoundManager : Singleton<SoundManager>
     {
         public List<AudioClip> sounds;
-        private AudioSource audioSource;
+        public AudioSource audioSource;
         //private void Awake()
         //{
         //    audioSource = GetComponent<AudioSource>();
