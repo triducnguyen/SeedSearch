@@ -58,7 +58,7 @@ namespace SeedSearch
         public Text subtitle;
         [Header("Questions")]
         public QuestionUI questionUI;
-
+        public QuestionUI reviewQuestionUI;
         private SoundManager soundManager;
 
 
@@ -454,25 +454,32 @@ namespace SeedSearch
             yield return new WaitForSeconds(time);
             if (gamestate == 6)
             {
-                questionUI.OpenQuestion(0);
+                questionUI.OpenQuestion(8);
             }
             else if (gamestate == 7)
             {
-                questionUI.OpenQuestion(1);
-
+                questionUI.OpenQuestion(9);
             }
             else if (gamestate == 10)
             {
-                if (activity == "Shade") { questionUI.OpenQuestion(2); }
-                else if (activity == "Cement") { questionUI.OpenQuestion(3); }
-                else if (activity == "Dry") { questionUI.OpenQuestion(4); }
-                else { Debug.Log("Activity ID error"); }
+                questionUI.OpenQuestion(10);
+            }
+            else if (gamestate == 12)
+            {
+                questionUI.OpenQuestion(11);
+            }
+            else if (gamestate == 14)
+            {
+                questionUI.OpenQuestion(12);
             }
             else if (gamestate == 17)
             {
-                questionUI.OpenQuestion(5);
+                questionUI.OpenQuestion(13);
             }
-            subtitle.text = "";
+            else if (gamestate == 19)
+            {
+                reviewQuestionUI.OpenReviewQuestions();
+            }
             fairytext.text = "";
             inputLock = false;
         }
