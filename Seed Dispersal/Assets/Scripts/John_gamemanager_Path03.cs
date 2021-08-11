@@ -123,7 +123,6 @@ namespace SeedSearch
                 meshofbad.enabled = false;
                 watercantext.SetActive(false);
             }
-
             if (gamestate == 2 && Vector3.Distance(F[1].transform.position, player.transform.position) <= proximitydistance)
             {
                 fairynarration(3);
@@ -175,6 +174,7 @@ namespace SeedSearch
                             }
 
                         }
+                        
                         //acorn split section to start (10)
                         if (gamestate >= 9 && gamestate != 10 && gamestate != 11 && gamestate != 13 && gamestate != 15)
                         {
@@ -196,64 +196,6 @@ namespace SeedSearch
                                     fairynarration(10);
                                 }
                             }
-                            //acorn split section to start (10)
-                            if (gamestate >= 9 && gamestate != 10 && gamestate != 11 && gamestate != 13 && gamestate != 15)
-                            {
-                                if (selection.CompareTag("AcornS"))
-                                {
-                                    if (!Swetdirt.activeInHierarchy)
-                                    {
-                                        activity = "Shade";
-                                        toggleacornnotifs(activity);
-                                        fairynarration(10);
-                                    }
-                                }
-                                if (selection.CompareTag("AcornC"))
-                                {
-                                    if (!Cwetdirt.activeInHierarchy)
-                                    {
-                                        activity = "Cement";
-                                        toggleacornnotifs(activity);
-                                        fairynarration(10);
-                                    }
-                                }
-                                if (selection.CompareTag("AcornD"))
-                                {
-                                    if (!Dwetdirt.activeInHierarchy)
-                                    {
-                                        activity = "Dry";
-                                        toggleacornnotifs(activity);
-                                        fairynarration(10);
-                                    }
-                                }
-                            }
-                            else if (gamestate == 11)
-                            {
-                                if (selection.CompareTag("island"))
-                                {
-                                    acorns[0].transform.position = hit.point;
-                                    onbadisland = 1; //island plantable
-                                }
-                                else if (selection.CompareTag("badisland"))
-                                {
-                                    acorns[0].transform.position = hit.point;
-                                    onbadisland = 2; //island notplantable
-                                }
-                            }
-                            else if (gamestate == 13)
-                            {
-                                if (selection.CompareTag("island"))
-                                {
-                                    acorns[1].transform.position = hit.point;
-                                    onbadisland = 1; //island plantable
-                                }
-                                else if (selection.CompareTag("badisland"))
-                                {
-                                    acorns[1].transform.position = hit.point;
-                                    onbadisland = 2; //island notplantable
-                                }
-                            }
-
                             if (selection.CompareTag("AcornD"))
                             {
                                 if (!Dwetdirt.activeInHierarchy)
@@ -324,9 +266,9 @@ namespace SeedSearch
                     {
                         badgerstate = 2;
                         toggleacornnotifs("off");
-                        //fairynarration(6);
-                        //delete below and uncomment out above
-                        fairynarration(9);
+                        fairynarration(6);
+                        //uncomment below and comment out above for demo
+                        //fairynarration(9);
                     }
                     if (B == 3)
                     {
