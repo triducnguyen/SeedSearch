@@ -33,6 +33,8 @@ namespace SeedSearch
 
             if(manager2 != null)
             manager2.AnsweringQuestion = true;
+            if(manager3 != null)
+            manager3.AnsweringQuestion = true;
 
             noteUp.SetActive(true);
             noteDown.SetActive(false);
@@ -56,7 +58,6 @@ namespace SeedSearch
             manager2.AnsweringQuestion = false;
             manager2.fairynarration(index);
         }
-
         public void TriggerNarration3(int index)
         {
             manager3.AnsweringQuestion = false;
