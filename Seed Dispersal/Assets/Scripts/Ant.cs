@@ -36,6 +36,7 @@ public class Ant : MonoBehaviour
             antseed.SetActive(true);
             gamemanager.antselect = null;
             gamemanager.antsstart = false;
+            this.GetComponent<BoxCollider>().enabled = false;
         } if(gamemanager.antselect == this.transform && antsstart == true){
             antanim.SetBool("Walking", true);
         }else{

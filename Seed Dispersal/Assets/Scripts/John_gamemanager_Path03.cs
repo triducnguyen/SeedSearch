@@ -402,15 +402,15 @@ namespace SeedSearch
             {
                 questionUI.OpenQuestion(9);
             }
-            else if (gamestate == 10)
+            else if (gamestate == 10 && activity == "Shade") // shade
             {
                 questionUI.OpenQuestion(10);
             }
-            else if (gamestate == 12)
+            else if (gamestate == 10 && activity == "Cement") // cement
             {
                 questionUI.OpenQuestion(11);
             }
-            else if (gamestate == 14)
+            else if (gamestate == 10 && activity == "Dry") // dry
             {
                 questionUI.OpenQuestion(12);
             }
@@ -575,12 +575,15 @@ namespace SeedSearch
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(10f));
             }
-            else if (gamestate == 10)
+            else if (gamestate == 10 && activitiesincomplete > 0)
             {
                 soundManager.PlayAudio("10_3");
                 fairytext.text = o10seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(9f));
+            }
+            else if (gamestate == 10 && activitiesincomplete <= 0){
+                gamestate = 17;
             }
             else if (gamestate == 11)
             {
@@ -624,7 +627,7 @@ namespace SeedSearch
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(4f));
             }
-            else if (gamestate == 17)
+            if (gamestate == 17)
             {
                 soundManager.PlayAudio("17_3");
                 fairytext.text = o17seedfairy;
