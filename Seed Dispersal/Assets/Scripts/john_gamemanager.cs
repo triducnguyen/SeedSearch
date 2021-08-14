@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace SeedSearch{
     public class john_gamemanager : MonoBehaviour
@@ -330,6 +331,16 @@ namespace SeedSearch{
             //subtitle.text = "";
             fairytext.text = "";
             inputLock = false;
+        }
+        [System.NonSerialized] public StudentData currentStudent;
+        IEnumerator endpath(){
+            yield return new WaitForSeconds(5f);
+            SceneManager.LoadScene("Path02");
+            currentStudent = SaveManager.Instance.studentProfile;
+            if(currentStudent.Levelprogress != null && 
+            currentStudent.Levelprogress[0] != 0){
+                
+            }
         }
 
         public void fairynarration(int instate)
