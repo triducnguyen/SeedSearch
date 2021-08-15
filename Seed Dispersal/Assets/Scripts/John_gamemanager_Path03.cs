@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace SeedSearch
 {
@@ -507,6 +508,15 @@ namespace SeedSearch
             yield return new WaitWhile (()=> soundManager.audioSource.isPlaying);
             fairynarration(newintstate);
         }
+        [System.NonSerialized] public StudentData currentStudent;
+        IEnumerator endpath(){
+            currentStudent.Levelprogress =  new int[] {2, 2, 2};
+            
+            SaveManager.Instance.SaveStudentFile(currentStudent); 
+
+            yield return new WaitForSeconds(5f);
+            SceneManager.LoadScene("Path02");
+        }
         public void fairynarration(int instate)
         {
             gamestate = instate;
@@ -654,6 +664,7 @@ namespace SeedSearch
                 fairytext.text = o20seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(15f));
+                StartCoroutine(endpath());
             }
         }
 

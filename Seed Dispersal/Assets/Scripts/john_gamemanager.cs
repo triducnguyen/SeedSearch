@@ -334,13 +334,12 @@ namespace SeedSearch{
         }
         [System.NonSerialized] public StudentData currentStudent;
         IEnumerator endpath(){
+            currentStudent.Levelprogress =  new int[] {2, 1, 0};
+            
+            SaveManager.Instance.SaveStudentFile(currentStudent); 
+
             yield return new WaitForSeconds(5f);
             SceneManager.LoadScene("Path02");
-            currentStudent = SaveManager.Instance.studentProfile;
-            if(currentStudent.Levelprogress != null && 
-            currentStudent.Levelprogress[0] != 0){
-                
-            }
         }
 
         public void fairynarration(int instate)

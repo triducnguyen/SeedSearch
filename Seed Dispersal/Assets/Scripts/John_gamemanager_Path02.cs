@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace SeedSearch
 {
@@ -296,6 +297,15 @@ namespace SeedSearch
             inputLock = false;
 
         }
+        [System.NonSerialized] public StudentData currentStudent;
+        IEnumerator endpath(){
+            currentStudent.Levelprogress =  new int[] {2, 2, 1};
+            
+            SaveManager.Instance.SaveStudentFile(currentStudent); 
+
+            yield return new WaitForSeconds(5f);
+            SceneManager.LoadScene("Path02");
+        }
 
         public void fairynarration(int instate)
         {
@@ -412,6 +422,7 @@ namespace SeedSearch
                 subtitle.text = o14seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(7f));
+                StartCoroutine(endpath());
             }
 
         }
