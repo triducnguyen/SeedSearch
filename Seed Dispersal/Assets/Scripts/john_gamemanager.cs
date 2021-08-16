@@ -339,7 +339,7 @@ namespace SeedSearch{
             
             SaveManager.Instance.SaveStudentFile(currentStudent); 
             Debug.Log("Save successfull");
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(0f);
             Debug.Log("done waiting");
             SceneManager.LoadScene("Path02");
         }
