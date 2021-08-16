@@ -60,17 +60,30 @@ namespace SeedSearch
             this.currentNote = currentNote;
         }
 
+        public void ShowDefinition(int index)
+        {
+            SaveManager.Instance.studentProfile.Definitions[index] = 1;
+        }
+
+        public void CompleteLevel(int index)
+        {
+            SaveManager.Instance.studentProfile.Levelprogress[index] = 2;
+            SaveManager.Instance.SaveStudentFile(SaveManager.Instance.studentProfile);
+        }
+
         private void FixedUpdate()
         {
-                for (int i = 0; i < SaveManager.Instance.studentProfile.Answers.Count; i++)
+                for (int i = 0; i < SaveManager.Instance.studentProfile.Definitions.Length; i++)
                 {
-                    definitions[i].SetActive(true);
+                    if(SaveManager.Instance.studentProfile.Definitions[i]==1)
+                        definitions[i].SetActive(true);
                 }
                 for (int j = 0; j < SaveManager.Instance.studentProfile.Levelprogress.Length; j++)
                 {
                     if(SaveManager.Instance.studentProfile.Levelprogress[j] == 1) 
                         noteField[j].SetActive(true);
-                }          
+                }     
+                
         }
     }
 }
