@@ -11,7 +11,8 @@ public class startmenu : MonoBehaviour
     private bool sceneboth = false;
     void Start()
     {
-        StartCoroutine(warnings(6f));
+        ok.SetActive(false);
+        StartCoroutine(warnings(3f));
     }
     IEnumerator warnings(float time){
         while(1 == 1){

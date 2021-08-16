@@ -471,7 +471,6 @@ namespace SeedSearch{
             }
             else if (gamestate == 18)
             {
-                Debug.Log("Gamestate 18");
                 soundManager.PlayAudio("18");
                 fairytext.text = o18seedfairy;
                 //subtitle.text = o18seedfairy;
