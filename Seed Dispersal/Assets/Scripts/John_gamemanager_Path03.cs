@@ -339,11 +339,11 @@ namespace SeedSearch
                         activitiesincomplete--;
                     }
                 }
-                if (activitiesincomplete == 0 && gamestate <= 16)
+                /*if (activitiesincomplete == 0 && gamestate <= 16)
                 {
                     //StartCoroutine(Waitforaudiotofinish());
                     activitiesincomplete--;
-                }
+                }*/
                 if (gamestate == 10)
                 {
                     fairytarget = F[3];
