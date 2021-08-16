@@ -344,8 +344,8 @@ namespace SeedSearch{
             SceneManager.LoadScene("Path02");
         }
         public void pushend(){
-            StartCoroutine(endpath());
             Debug.Log("pushend");
+            StartCoroutine(endpath());
         }
 
         public void fairynarration(int instate)
