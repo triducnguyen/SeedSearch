@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 namespace SeedSearch{
     public class john_gamemanager : MonoBehaviour
     {
-        private int gamestate = 1;
+        [SerializeField] private int gamestate = 1;
         private bool inputLock = false;
         private bool planting = false;
         public bool AnsweringQuestion = false;
@@ -334,11 +334,13 @@ namespace SeedSearch{
         }
         [System.NonSerialized] public StudentData currentStudent;
         IEnumerator endpath(){
+            Debug.Log("starting end");
             currentStudent.Levelprogress =  new int[] {2, 1, 0};
             
             SaveManager.Instance.SaveStudentFile(currentStudent); 
-
+            Debug.Log("Save successfull");
             yield return new WaitForSeconds(5f);
+            Debug.Log("done waiting");
             SceneManager.LoadScene("Path02");
         }
 
@@ -466,11 +468,13 @@ namespace SeedSearch{
             }
             else if (gamestate == 18)
             {
+                Debug.Log("Gamestate 18");
                 soundManager.PlayAudio("18");
                 fairytext.text = o18seedfairy;
                 //subtitle.text = o18seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(8f));
+                StartCoroutine(endpath());
             }
 
         }
