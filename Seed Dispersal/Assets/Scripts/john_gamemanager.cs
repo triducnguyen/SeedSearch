@@ -339,12 +339,13 @@ namespace SeedSearch{
             
             SaveManager.Instance.SaveStudentFile(currentStudent); 
             Debug.Log("Save successfull");
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2f);
             Debug.Log("done waiting");
             SceneManager.LoadScene("Path02");
         }
         public void pushend(){
             StartCoroutine(endpath());
+            Debug.Log("pushend");
         }
 
         public void fairynarration(int instate)
