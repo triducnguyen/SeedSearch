@@ -508,7 +508,7 @@ namespace SeedSearch
             yield return new WaitWhile (()=> soundManager.audioSource.isPlaying);
             fairynarration(newintstate);
         }
-        [System.NonSerialized] public StudentData currentStudent;
+        /*[System.NonSerialized] public StudentData currentStudent;
         IEnumerator endpath(){
             currentStudent.Levelprogress =  new int[] {2, 2, 2};
             
@@ -516,6 +516,22 @@ namespace SeedSearch
 
             yield return new WaitForSeconds(5f);
             SceneManager.LoadScene("UI");
+        }*/
+
+        public StudentData currentStudent;
+        IEnumerator endpath(){
+            Debug.Log("starting end");
+            currentStudent.Levelprogress =  new int[] {2, 2, 2};
+            
+            SaveManager.Instance.SaveStudentFile(currentStudent); 
+            Debug.Log("Save successfull");
+            yield return new WaitForSeconds(2f);
+            Debug.Log("done waiting");
+            SceneManager.LoadScene("UI");
+        }
+        public void pushend(){
+            Debug.Log("pushend");
+            StartCoroutine(endpath());
         }
         public void fairynarration(int instate)
         {

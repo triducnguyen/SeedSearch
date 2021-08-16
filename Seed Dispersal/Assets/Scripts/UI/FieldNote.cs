@@ -62,7 +62,10 @@ namespace SeedSearch
 
         public void ShowDefinition(int index)
         {
-            SaveManager.Instance.studentProfile.Definitions[index] = 1;
+            if(SaveManager.Instance.studentProfile.Definitions != null){
+                SaveManager.Instance.studentProfile.Definitions[index] = 1;
+            }
+            
         }
 
         public void CompleteLevel(int index)
@@ -76,6 +79,7 @@ namespace SeedSearch
 
         private void FixedUpdate()
         {
+            if(SaveManager.Instance.studentProfile.Definitions != null){
                 for (int i = 0; i < SaveManager.Instance.studentProfile.Definitions.Length; i++)
                 {
                     if(SaveManager.Instance.studentProfile.Definitions[i]==1)
@@ -86,7 +90,7 @@ namespace SeedSearch
                     if(SaveManager.Instance.studentProfile.Levelprogress[j] == 1) 
                         noteField[j].SetActive(true);
                 }     
-                
+            }
         }
     }
 }

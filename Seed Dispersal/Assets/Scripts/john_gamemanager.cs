@@ -332,7 +332,7 @@ namespace SeedSearch{
             fairytext.text = "";
             inputLock = false;
         }
-        [System.NonSerialized] public StudentData currentStudent;
+        public StudentData currentStudent;
         IEnumerator endpath(){
             Debug.Log("starting end");
             currentStudent.Levelprogress =  new int[] {2, 1, 0};
