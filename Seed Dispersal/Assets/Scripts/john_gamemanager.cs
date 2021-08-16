@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace SeedSearch{
     public class john_gamemanager : MonoBehaviour
@@ -52,7 +53,7 @@ namespace SeedSearch{
         public GameObject island;
         public Text fairytext;
         public GameObject player;
-        public Text subtitle;
+        //public Text subtitle;
 
         [Header("Questions")]
         public QuestionUI questionUI;
@@ -327,9 +328,18 @@ namespace SeedSearch{
             {
                 questionUI.OpenQuestion(3);
             }
-            subtitle.text = "";
+            //subtitle.text = "";
             fairytext.text = "";
             inputLock = false;
+        }
+        [System.NonSerialized] public StudentData currentStudent;
+        IEnumerator endpath(){
+            currentStudent.Levelprogress =  new int[] {2, 1, 0};
+            
+            SaveManager.Instance.SaveStudentFile(currentStudent); 
+
+            yield return new WaitForSeconds(5f);
+            SceneManager.LoadScene("Path02");
         }
 
         public void fairynarration(int instate)
@@ -339,14 +349,14 @@ namespace SeedSearch{
             {
                 soundManager.PlayAudio("01");
                 fairytext.text = o1seedfairy;
-                subtitle.text = o1seedfairy;
+                //subtitle.text = o1seedfairy;
                 previousCoroutine = StartCoroutine(Subtitle(15f));
             }
             else if (gamestate == 2)
             {
                 soundManager.PlayAudio("02");
                 fairytext.text = o2seedfairy;
-                subtitle.text = o2seedfairy;
+                //subtitle.text = o2seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(5f));
             }
@@ -365,7 +375,7 @@ namespace SeedSearch{
                 soundManager.PlayAudio("05");
                 indicator.SetActive(false);
                 fairytext.text = o5seedfairy;
-                subtitle.text = o5seedfairy;
+                //subtitle.text = o5seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(14f));
                 
@@ -374,7 +384,7 @@ namespace SeedSearch{
             {
                 soundManager.PlayAudio("06");
                 fairytext.text = o6seedfairy;
-                subtitle.text = o6seedfairy;
+                //subtitle.text = o6seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(7f));
             }
@@ -383,7 +393,7 @@ namespace SeedSearch{
                 soundManager.PlayAudio("07");
                 indicator.SetActive(false);
                 fairytext.text = o7seedfairy;
-                subtitle.text = o7seedfairy;
+                //subtitle.text = o7seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(17f));
             }
@@ -391,7 +401,7 @@ namespace SeedSearch{
             {
                 soundManager.PlayAudio("09");
                 fairytext.text = o9seedfairy;
-                subtitle.text = o9seedfairy;
+                //subtitle.text = o9seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(12f));
             }
@@ -402,7 +412,7 @@ namespace SeedSearch{
                 indicator.transform.LookAt(player.transform.position);
                 soundManager.PlayAudio("10");
                 fairytext.text = o10seedfairy;
-                subtitle.text = o10seedfairy;
+                //subtitle.text = o10seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(7f));
             }
@@ -410,7 +420,7 @@ namespace SeedSearch{
             {
                 soundManager.PlayAudio("12");
                 fairytext.text = o12seedfairy;
-                subtitle.text = o12seedfairy;
+                //subtitle.text = o12seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(8f));
             }
@@ -418,7 +428,7 @@ namespace SeedSearch{
             {
                 soundManager.PlayAudio("13");
                 fairytext.text = o13seedfairy;
-                subtitle.text = o13seedfairy;
+                //subtitle.text = o13seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(4f));
             }
@@ -426,7 +436,7 @@ namespace SeedSearch{
             {
                 soundManager.PlayAudio("14");
                 fairytext.text = o14seedfairy;
-                subtitle.text = o14seedfairy;
+                //subtitle.text = o14seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(5f));
             }
@@ -434,7 +444,7 @@ namespace SeedSearch{
             {
                 soundManager.PlayAudio("15");
                 fairytext.text = o15seedfairy;
-                subtitle.text = o15seedfairy;
+                //subtitle.text = o15seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(5f));
             }
@@ -442,7 +452,7 @@ namespace SeedSearch{
             {
                 soundManager.PlayAudio("16");
                 fairytext.text = o16seedfairy;
-                subtitle.text = o16seedfairy;
+                //subtitle.text = o16seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(4f));
             }
@@ -450,7 +460,7 @@ namespace SeedSearch{
             {
                 soundManager.PlayAudio("17");
                 fairytext.text = o17seedfairy;
-                subtitle.text = o17seedfairy;
+                //subtitle.text = o17seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(6f));
             }
@@ -458,7 +468,7 @@ namespace SeedSearch{
             {
                 soundManager.PlayAudio("18");
                 fairytext.text = o18seedfairy;
-                subtitle.text = o18seedfairy;
+                //subtitle.text = o18seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(8f));
             }

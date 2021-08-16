@@ -14273,6 +14273,7 @@ MonoBehaviour:
   fieldNote: {fileID: 228760780}
   noteUp: {fileID: 2005948489}
   noteDown: {fileID: 1229567941}
+  questionsObj: {fileID: 0}
   manager: {fileID: 573819297}
   manager2: {fileID: 0}
   manager3: {fileID: 0}
@@ -26323,7 +26324,6 @@ MonoBehaviour:
   island: {fileID: 312817578}
   fairytext: {fileID: 391706312}
   player: {fileID: 1096865406}
-  subtitle: {fileID: 1126006183}
   questionUI: {fileID: 309697798}
 --- !u!4 &573819298
 Transform:
@@ -63587,6 +63587,7 @@ MonoBehaviour:
   fieldNote: {fileID: 2004084434}
   noteUp: {fileID: 145003660}
   noteDown: {fileID: 537062592}
+  questionsObj: {fileID: 0}
   manager: {fileID: 0}
   manager2: {fileID: 0}
   manager3: {fileID: 0}
@@ -94306,6 +94307,7 @@ MonoBehaviour:
   fieldNote: {fileID: 2004084434}
   noteUp: {fileID: 145003660}
   noteDown: {fileID: 537062592}
+  questionsObj: {fileID: 0}
   manager: {fileID: 0}
   manager2: {fileID: 0}
   manager3: {fileID: 0}
@@ -105088,7 +105090,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.303
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -105118,7 +105120,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1

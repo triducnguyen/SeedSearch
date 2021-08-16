@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace SeedSearch
 {
@@ -123,7 +124,6 @@ namespace SeedSearch
                 meshofbad.enabled = false;
                 watercantext.SetActive(false);
             }
-
             if (gamestate == 2 && Vector3.Distance(F[1].transform.position, player.transform.position) <= proximitydistance)
             {
                 fairynarration(3);
@@ -175,6 +175,7 @@ namespace SeedSearch
                             }
 
                         }
+                        
                         //acorn split section to start (10)
                         if (gamestate >= 9 && gamestate != 10 && gamestate != 11 && gamestate != 13 && gamestate != 15)
                         {
@@ -196,64 +197,6 @@ namespace SeedSearch
                                     fairynarration(10);
                                 }
                             }
-                            //acorn split section to start (10)
-                            if (gamestate >= 9 && gamestate != 10 && gamestate != 11 && gamestate != 13 && gamestate != 15)
-                            {
-                                if (selection.CompareTag("AcornS"))
-                                {
-                                    if (!Swetdirt.activeInHierarchy)
-                                    {
-                                        activity = "Shade";
-                                        toggleacornnotifs(activity);
-                                        fairynarration(10);
-                                    }
-                                }
-                                if (selection.CompareTag("AcornC"))
-                                {
-                                    if (!Cwetdirt.activeInHierarchy)
-                                    {
-                                        activity = "Cement";
-                                        toggleacornnotifs(activity);
-                                        fairynarration(10);
-                                    }
-                                }
-                                if (selection.CompareTag("AcornD"))
-                                {
-                                    if (!Dwetdirt.activeInHierarchy)
-                                    {
-                                        activity = "Dry";
-                                        toggleacornnotifs(activity);
-                                        fairynarration(10);
-                                    }
-                                }
-                            }
-                            else if (gamestate == 11)
-                            {
-                                if (selection.CompareTag("island"))
-                                {
-                                    acorns[0].transform.position = hit.point;
-                                    onbadisland = 1; //island plantable
-                                }
-                                else if (selection.CompareTag("badisland"))
-                                {
-                                    acorns[0].transform.position = hit.point;
-                                    onbadisland = 2; //island notplantable
-                                }
-                            }
-                            else if (gamestate == 13)
-                            {
-                                if (selection.CompareTag("island"))
-                                {
-                                    acorns[1].transform.position = hit.point;
-                                    onbadisland = 1; //island plantable
-                                }
-                                else if (selection.CompareTag("badisland"))
-                                {
-                                    acorns[1].transform.position = hit.point;
-                                    onbadisland = 2; //island notplantable
-                                }
-                            }
-
                             if (selection.CompareTag("AcornD"))
                             {
                                 if (!Dwetdirt.activeInHierarchy)
@@ -324,9 +267,9 @@ namespace SeedSearch
                     {
                         badgerstate = 2;
                         toggleacornnotifs("off");
-                        //fairynarration(6);
-                        //delete below and uncomment out above
-                        fairynarration(9);
+                        fairynarration(6);
+                        //uncomment below and comment out above for demo
+                        //fairynarration(9);
                     }
                     if (B == 3)
                     {
@@ -460,15 +403,15 @@ namespace SeedSearch
             {
                 questionUI.OpenQuestion(9);
             }
-            else if (gamestate == 10)
+            else if (gamestate == 10 && activity == "Shade") // shade
             {
                 questionUI.OpenQuestion(10);
             }
-            else if (gamestate == 12)
+            else if (gamestate == 10 && activity == "Cement") // cement
             {
                 questionUI.OpenQuestion(11);
             }
-            else if (gamestate == 14)
+            else if (gamestate == 10 && activity == "Dry") // dry
             {
                 questionUI.OpenQuestion(12);
             }
@@ -561,6 +504,19 @@ namespace SeedSearch
             }
         }
 
+        IEnumerator narrationwaittoend(int newintstate){
+            yield return new WaitWhile (()=> soundManager.audioSource.isPlaying);
+            fairynarration(newintstate);
+        }
+        [System.NonSerialized] public StudentData currentStudent;
+        IEnumerator endpath(){
+            currentStudent.Levelprogress =  new int[] {2, 2, 2};
+            
+            SaveManager.Instance.SaveStudentFile(currentStudent); 
+
+            yield return new WaitForSeconds(5f);
+            SceneManager.LoadScene("Path02");
+        }
         public void fairynarration(int instate)
         {
             gamestate = instate;
@@ -618,6 +574,9 @@ namespace SeedSearch
                 fairytext.text = o8seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(3f));
+
+                toggleacornnotifs("on");
+                StartCoroutine(narrationwaittoend(9));
             }
             else if (gamestate == 9)
             {
@@ -626,12 +585,15 @@ namespace SeedSearch
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(10f));
             }
-            else if (gamestate == 10)
+            else if (gamestate == 10 && activitiesincomplete > 0)
             {
                 soundManager.PlayAudio("10_3");
                 fairytext.text = o10seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(9f));
+            }
+            else if (gamestate == 10 && activitiesincomplete <= 0){
+                gamestate = 17;
             }
             else if (gamestate == 11)
             {
@@ -675,7 +637,7 @@ namespace SeedSearch
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(4f));
             }
-            else if (gamestate == 17)
+            if (gamestate == 17)
             {
                 soundManager.PlayAudio("17_3");
                 fairytext.text = o17seedfairy;
@@ -702,6 +664,7 @@ namespace SeedSearch
                 fairytext.text = o20seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(15f));
+                StartCoroutine(endpath());
             }
         }
 
