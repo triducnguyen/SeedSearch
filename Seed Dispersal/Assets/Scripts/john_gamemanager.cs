@@ -332,18 +332,19 @@ namespace SeedSearch{
             fairytext.text = "";
             inputLock = false;
         }
-        [System.NonSerialized] public StudentData currentStudent;
+        public StudentData currentStudent;
         IEnumerator endpath(){
             Debug.Log("starting end");
             currentStudent.Levelprogress =  new int[] {2, 1, 0};
             
             SaveManager.Instance.SaveStudentFile(currentStudent); 
             Debug.Log("Save successfull");
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2f);
             Debug.Log("done waiting");
             SceneManager.LoadScene("Path02");
         }
         public void pushend(){
+            Debug.Log("pushend");
             StartCoroutine(endpath());
         }
 
