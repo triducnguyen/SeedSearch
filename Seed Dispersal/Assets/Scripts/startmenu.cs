@@ -7,6 +7,8 @@ public class startmenu : MonoBehaviour
 {
     [SerializeField] GameObject beware;
     [SerializeField] GameObject parental;
+    [SerializeField] GameObject ok;
+    private bool sceneboth = false;
     void Start()
     {
         StartCoroutine(warnings(6f));
@@ -16,6 +18,7 @@ public class startmenu : MonoBehaviour
             beware.SetActive(true);
             parental.SetActive(false);
             yield return new WaitForSeconds(time);
+            ok.SetActive(true);
             beware.SetActive(false);
             parental.SetActive(true);
             yield return new WaitForSeconds(time);

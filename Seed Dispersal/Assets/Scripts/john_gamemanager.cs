@@ -339,9 +339,12 @@ namespace SeedSearch{
             
             SaveManager.Instance.SaveStudentFile(currentStudent); 
             Debug.Log("Save successfull");
-            yield return new WaitForSeconds(0f);
+            yield return new WaitForSeconds(5f);
             Debug.Log("done waiting");
             SceneManager.LoadScene("Path02");
+        }
+        public void pushend(){
+            StartCoroutine(endpath());
         }
 
         public void fairynarration(int instate)
@@ -474,7 +477,6 @@ namespace SeedSearch{
                 //subtitle.text = o18seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(8f));
-                StartCoroutine(endpath());
             }
 
         }
