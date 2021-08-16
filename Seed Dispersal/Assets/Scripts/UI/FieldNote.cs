@@ -69,6 +69,9 @@ namespace SeedSearch
         {
             SaveManager.Instance.studentProfile.Levelprogress[index] = 2;
             SaveManager.Instance.SaveStudentFile(SaveManager.Instance.studentProfile);
+            if(index < 2)
+                SaveManager.Instance.studentProfile.Levelprogress[index + 1] = 1;
+
         }
 
         private void FixedUpdate()

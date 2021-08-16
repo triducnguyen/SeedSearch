@@ -15,7 +15,7 @@ public class AdventureMenu : MonoBehaviour
 
     [SerializeField] private List<string> levelscene = new List<string>();
     
-    void Start()
+    void OnEnable()
     {
         currentStudent = SaveManager.Instance.studentProfile;
         if(currentStudent.Levelprogress != null && 
