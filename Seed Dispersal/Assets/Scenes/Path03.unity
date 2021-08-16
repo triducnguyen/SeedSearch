@@ -6950,7 +6950,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2144460543}
         m_TargetAssemblyTypeName: SeedSearch.FieldNote, Assembly-CSharp
-        m_MethodName: OnEdit
+        m_MethodName: OnEditRespone
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25899,6 +25899,17 @@ MonoBehaviour:
   - {fileID: 1320741986}
   fairyspeed: 0.35
   faryanim: {fileID: 220761852}
+  currentStudent:
+    times: []
+    overalltimes: []
+    firstName: 
+    lastName: 
+    firstPrompt: 
+    secondPrompt: 
+    thirdPrompt: 
+    answers: []
+    levelprogress: 010000000000000000000000
+    definitions: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &573819298
 Transform:
   m_ObjectHideFlags: 0
@@ -87109,6 +87120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainField: {fileID: 893852885}
   InputNote: {fileID: 1150481789}
+  freeResponse: {fileID: 229686274}
   noteField:
   - {fileID: 1791421164}
   - {fileID: 1506131822}

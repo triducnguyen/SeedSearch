@@ -6180,6 +6180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainField: {fileID: 2004084434}
   InputNote: {fileID: 255684090}
+  freeResponse: {fileID: 0}
   noteField:
   - {fileID: 1798485304}
   - {fileID: 476859303}
@@ -12148,7 +12149,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2005948493}
         m_TargetAssemblyTypeName: SeedSearch.FieldNote, Assembly-CSharp
-        m_MethodName: OnEdit
+        m_MethodName: OnEditRespone
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -98080,6 +98081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainField: {fileID: 228760780}
   InputNote: {fileID: 1240637821}
+  freeResponse: {fileID: 2146150748}
   noteField:
   - {fileID: 505382262}
   - {fileID: 1207166895}
