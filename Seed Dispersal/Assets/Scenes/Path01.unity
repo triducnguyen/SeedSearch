@@ -26717,6 +26717,17 @@ MonoBehaviour:
   fairytext: {fileID: 391706312}
   player: {fileID: 1096865406}
   questionUI: {fileID: 309697798}
+  currentStudent:
+    times: []
+    overalltimes: []
+    firstName: 
+    lastName: 
+    firstPrompt: 
+    secondPrompt: 
+    thirdPrompt: 
+    answers: []
+    levelprogress: 010000000000000000000000
+    definitions: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!4 &573819298
 Transform:
   m_ObjectHideFlags: 0
@@ -42052,6 +42063,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 309697798}
+        m_TargetAssemblyTypeName: SeedSearch.QuestionUI, Assembly-CSharp
+        m_MethodName: OpenQuestion
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
