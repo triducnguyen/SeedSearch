@@ -515,7 +515,7 @@ namespace SeedSearch
             SaveManager.Instance.SaveStudentFile(currentStudent); 
 
             yield return new WaitForSeconds(5f);
-            SceneManager.LoadScene("Path02");
+            SceneManager.LoadScene("UI");
         }
         public void fairynarration(int instate)
         {
