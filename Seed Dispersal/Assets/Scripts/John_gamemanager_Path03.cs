@@ -513,7 +513,7 @@ namespace SeedSearch
 
         public StudentData currentStudent;
         IEnumerator endpath(){            
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(4f);
             Debug.Log("done waiting");
             SceneManager.LoadScene("UI");
         }
@@ -673,7 +673,7 @@ namespace SeedSearch
                 fairytext.text = o20seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(15f));
-                StartCoroutine(endpath());
+                pushend();
             }
         }
 

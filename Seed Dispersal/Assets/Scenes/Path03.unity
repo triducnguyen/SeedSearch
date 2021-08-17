@@ -79532,7 +79532,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1945969452}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 16907196}
+        m_TargetAssemblyTypeName: PlaceOnPlane, Assembly-CSharp
+        m_MethodName: begingame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1945969452
 MonoBehaviour:
   m_ObjectHideFlags: 0

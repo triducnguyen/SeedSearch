@@ -303,7 +303,7 @@ namespace SeedSearch
         }
         public StudentData currentStudent;
         IEnumerator endpath(){            
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(4f);
             Debug.Log("done waiting");
             SceneManager.LoadScene("Path03");
         }
@@ -432,7 +432,7 @@ namespace SeedSearch
                 subtitle.text = o14seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(7f));
-                StartCoroutine(endpath());
+                pushend();
             }
 
         }
