@@ -339,11 +339,10 @@ namespace SeedSearch
                         activitiesincomplete--;
                     }
                 }
-                /*if (activitiesincomplete == 0 && gamestate <= 16)
+                if (activitiesincomplete == 0 && gamestate <= 16)
                 {
-                    //StartCoroutine(Waitforaudiotofinish());
-                    activitiesincomplete--;
-                }*/
+                    fairynarration(17);
+                }
                 if (gamestate == 10)
                 {
                     fairytarget = F[3];
@@ -520,6 +519,7 @@ namespace SeedSearch
 
         public StudentData currentStudent;
         IEnumerator endpath(){
+            SaveManager.Instance.LoadStudentData(currentStudent);
             Debug.Log("starting end");
             currentStudent.Levelprogress =  new int[] {2, 2, 2};
             

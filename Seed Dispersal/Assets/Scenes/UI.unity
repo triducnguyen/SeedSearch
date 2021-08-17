@@ -3169,6 +3169,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2766837759037793926, guid: e3632535efb83db418f1c78b8c604427, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 411216239}
+    - target: {fileID: 2766837759037793926, guid: e3632535efb83db418f1c78b8c604427, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Relog
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791155968761059503, guid: e3632535efb83db418f1c78b8c604427, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 411216239}
+    - target: {fileID: 2791155968761059503, guid: e3632535efb83db418f1c78b8c604427, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Relog
+      objectReference: {fileID: 0}
     - target: {fileID: 4615477316742401871, guid: e3632535efb83db418f1c78b8c604427, type: 3}
       propertyPath: m_Name
       value: Gamemanager
@@ -3223,6 +3239,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3632535efb83db418f1c78b8c604427, type: 3}
+--- !u!114 &411216239 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8570487828168110947, guid: e3632535efb83db418f1c78b8c604427, type: 3}
+  m_PrefabInstance: {fileID: 411216238}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e569f34a6a72bba4dbfcd2530d3a4e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &415489312
 GameObject:
   m_ObjectHideFlags: 0
@@ -5514,6 +5541,7 @@ MonoBehaviour:
     thirdPrompt: 
     answers: []
     levelprogress: 000000000000000000000000
+    definitions: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   content: {fileID: 610570642}
   studentName: {fileID: 697958519}
   firstPrompt: {fileID: 1412865607}
@@ -6553,7 +6581,8 @@ MonoBehaviour:
     thirdPrompt: 
     answers: []
     levelprogress: 010000000000000000000000
-  levelstatus: 010000000100000001000000
+    definitions: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  levelstatus: 010000000000000000000000
   Check:
   - {fileID: 459970820}
   - {fileID: 1472886221}
@@ -11208,6 +11237,7 @@ MonoBehaviour:
     thirdPrompt: 
     answers: []
     levelprogress: 000000000000000000000000
+    definitions: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   currentTeacher:
     userName: 
     password: 

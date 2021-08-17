@@ -334,6 +334,7 @@ namespace SeedSearch{
         }
         public StudentData currentStudent;
         IEnumerator endpath(){
+            SaveManager.Instance.LoadStudentData(currentStudent);
             Debug.Log("starting end");
             currentStudent.Levelprogress =  new int[] {2, 1, 0};
             
