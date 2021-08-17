@@ -6,8 +6,7 @@ namespace SeedSearch{
 public class AdventureMenu : MonoBehaviour
 {
     [SerializeField] public StudentData currentStudent;
-    [SerializeField] public int[] levelstatus; // 0 if locked, 1 if incomplete, 2 if complete;
-
+    public int[] levelstatus; // 0 if locked, 1 if incomplete, 2 if complete;
 
     [SerializeField] private List<GameObject> Check = new List<GameObject>();
     [SerializeField] private List<GameObject> unCheck = new List<GameObject>();
@@ -17,15 +16,18 @@ public class AdventureMenu : MonoBehaviour
     
     void OnEnable()
     {
+        currentStudent = SaveManager.Instance.studentProfile;
+
         SaveManager.Instance.LoadStudentData(currentStudent);
-        //currentStudent = SaveManager.Instance.studentProfile;
+        Debug.Log(currentStudent.Levelprogress[0] + " " + currentStudent.Levelprogress[1] + " " + currentStudent.Levelprogress[2]);
+        
         if(currentStudent.Levelprogress == null || 
         currentStudent.Levelprogress[0] == 0){
             currentStudent.Levelprogress = levelstatus;
             Debug.Log("Ran Default level");
         }
         levelstatus = currentStudent.Levelprogress;
-        Debug.Log(levelstatus[0], " ", levelstatus[1], " ", levelstatus[2]);
+        Debug.Log(levelstatus[0] + " " + levelstatus[1] + " " + levelstatus[2]);
         
         for(int i = 0; i < 3; i++){
             if(levelstatus[i] == 0){ //locked

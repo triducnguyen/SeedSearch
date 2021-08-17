@@ -94,6 +94,10 @@ namespace SeedSearch
             firstseeds.SetActive(false);
             //anttarget = ant.transform.position;
             lastseeds.SetActive(false);
+
+            SaveManager.Instance.LoadStudentData(currentStudent);
+            currentStudent = SaveManager.Instance.studentProfile;
+            Debug.Log(currentStudent.Levelprogress[0] + " " + currentStudent.Levelprogress[1] + " " + currentStudent.Levelprogress[2]);
         }
 
         private RaycastHit hit;
@@ -297,29 +301,19 @@ namespace SeedSearch
             inputLock = false;
 
         }
-        /*[System.NonSerialized] public StudentData currentStudent;
-        IEnumerator endpath(){
-            currentStudent.Levelprogress =  new int[] {2, 2, 1};
-            
-            SaveManager.Instance.SaveStudentFile(currentStudent); 
-
-            yield return new WaitForSeconds(5f);
-            SceneManager.LoadScene("Path03");
-        }*/
         public StudentData currentStudent;
-        IEnumerator endpath(){
-            SaveManager.Instance.LoadStudentData(currentStudent);
-            Debug.Log("starting end");
-            currentStudent.Levelprogress =  new int[] {2, 2, 1};
-            
-            SaveManager.Instance.SaveStudentFile(currentStudent); 
-            Debug.Log("Save successfull");
+        IEnumerator endpath(){            
             yield return new WaitForSeconds(2f);
             Debug.Log("done waiting");
             SceneManager.LoadScene("Path03");
         }
         public void pushend(){
             Debug.Log("pushend");
+            currentStudent.Levelprogress =  new int[] {2, 2, 1};
+            Debug.Log(currentStudent.Levelprogress[0] + " " + currentStudent.Levelprogress[1] + " " + currentStudent.Levelprogress[2]);
+            
+            SaveManager.Instance.SaveStudentFile(currentStudent); 
+            Debug.Log("Save successfull");
             StartCoroutine(endpath());
         }
 

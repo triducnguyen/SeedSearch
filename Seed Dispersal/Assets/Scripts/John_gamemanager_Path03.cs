@@ -111,6 +111,9 @@ namespace SeedSearch
             }
             shadehitboxradius = (shadehitbox.transform.localScale.x / 2) * island.transform.localScale.x;
 
+            SaveManager.Instance.LoadStudentData(currentStudent);
+            currentStudent = SaveManager.Instance.studentProfile;
+            Debug.Log(currentStudent.Levelprogress[0] + " " + currentStudent.Levelprogress[1] + " " + currentStudent.Levelprogress[2]);
         }
 
         private RaycastHit hit;
@@ -507,30 +510,20 @@ namespace SeedSearch
             yield return new WaitWhile (()=> soundManager.audioSource.isPlaying);
             fairynarration(newintstate);
         }
-        /*[System.NonSerialized] public StudentData currentStudent;
-        IEnumerator endpath(){
-            currentStudent.Levelprogress =  new int[] {2, 2, 2};
-            
-            SaveManager.Instance.SaveStudentFile(currentStudent); 
-
-            yield return new WaitForSeconds(5f);
-            SceneManager.LoadScene("UI");
-        }*/
 
         public StudentData currentStudent;
-        IEnumerator endpath(){
-            SaveManager.Instance.LoadStudentData(currentStudent);
-            Debug.Log("starting end");
-            currentStudent.Levelprogress =  new int[] {2, 2, 2};
-            
-            SaveManager.Instance.SaveStudentFile(currentStudent); 
-            Debug.Log("Save successfull");
+        IEnumerator endpath(){            
             yield return new WaitForSeconds(2f);
             Debug.Log("done waiting");
             SceneManager.LoadScene("UI");
         }
         public void pushend(){
             Debug.Log("pushend");
+            currentStudent.Levelprogress =  new int[] {2, 2, 2};
+            Debug.Log(currentStudent.Levelprogress[0] + " " + currentStudent.Levelprogress[1] + " " + currentStudent.Levelprogress[2]);
+            
+            SaveManager.Instance.SaveStudentFile(currentStudent); 
+            Debug.Log("Save successfull");
             StartCoroutine(endpath());
         }
         public void fairynarration(int instate)
