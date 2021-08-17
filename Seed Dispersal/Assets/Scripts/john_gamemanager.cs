@@ -92,6 +92,10 @@ namespace SeedSearch{
             fairytarget = F0;
             fairynarration(1);
             indicator.SetActive(false);
+
+            SaveManager.Instance.LoadStudentData(currentStudent);
+            currentStudent = SaveManager.Instance.studentProfile;
+            Debug.Log(currentStudent.Levelprogress[0] + " " + currentStudent.Levelprogress[1] + " " + currentStudent.Levelprogress[2]);
         }
 
         // Update is called once per frame
@@ -334,17 +338,17 @@ namespace SeedSearch{
         }
         public StudentData currentStudent;
         IEnumerator endpath(){
-            Debug.Log("starting end");
-            currentStudent.Levelprogress =  new int[] {2, 1, 0};
-            
-            SaveManager.Instance.SaveStudentFile(currentStudent); 
-            Debug.Log("Save successfull");
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(4f);
             Debug.Log("done waiting");
             SceneManager.LoadScene("Path02");
         }
         public void pushend(){
             Debug.Log("pushend");
+            currentStudent.Levelprogress =  new int[] {2, 1, 0};
+            Debug.Log(currentStudent.Levelprogress[0] + " " + currentStudent.Levelprogress[1] + " " + currentStudent.Levelprogress[2]);
+            
+            SaveManager.Instance.SaveStudentFile(currentStudent); 
+            Debug.Log("Save successfull");
             StartCoroutine(endpath());
         }
 

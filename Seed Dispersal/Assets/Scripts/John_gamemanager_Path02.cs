@@ -94,6 +94,10 @@ namespace SeedSearch
             firstseeds.SetActive(false);
             //anttarget = ant.transform.position;
             lastseeds.SetActive(false);
+
+            SaveManager.Instance.LoadStudentData(currentStudent);
+            currentStudent = SaveManager.Instance.studentProfile;
+            Debug.Log(currentStudent.Levelprogress[0] + " " + currentStudent.Levelprogress[1] + " " + currentStudent.Levelprogress[2]);
         }
 
         private RaycastHit hit;
@@ -297,28 +301,19 @@ namespace SeedSearch
             inputLock = false;
 
         }
-        /*[System.NonSerialized] public StudentData currentStudent;
-        IEnumerator endpath(){
-            currentStudent.Levelprogress =  new int[] {2, 2, 1};
-            
-            SaveManager.Instance.SaveStudentFile(currentStudent); 
-
-            yield return new WaitForSeconds(5f);
-            SceneManager.LoadScene("Path03");
-        }*/
         public StudentData currentStudent;
-        IEnumerator endpath(){
-            Debug.Log("starting end");
-            currentStudent.Levelprogress =  new int[] {2, 2, 1};
-            
-            SaveManager.Instance.SaveStudentFile(currentStudent); 
-            Debug.Log("Save successfull");
-            yield return new WaitForSeconds(2f);
+        IEnumerator endpath(){            
+            yield return new WaitForSeconds(4f);
             Debug.Log("done waiting");
             SceneManager.LoadScene("Path03");
         }
         public void pushend(){
             Debug.Log("pushend");
+            currentStudent.Levelprogress =  new int[] {2, 2, 1};
+            Debug.Log(currentStudent.Levelprogress[0] + " " + currentStudent.Levelprogress[1] + " " + currentStudent.Levelprogress[2]);
+            
+            SaveManager.Instance.SaveStudentFile(currentStudent); 
+            Debug.Log("Save successfull");
             StartCoroutine(endpath());
         }
 
@@ -437,7 +432,7 @@ namespace SeedSearch
                 subtitle.text = o14seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(7f));
-                StartCoroutine(endpath());
+                pushend();
             }
 
         }
