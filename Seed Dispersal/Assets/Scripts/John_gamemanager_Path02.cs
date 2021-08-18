@@ -38,7 +38,7 @@ namespace SeedSearch
 
         [System.NonSerialized] public int numberfallenseeds = 0;
         [System.NonSerialized] public Transform antselect;
-        private Vector3 anttarget;
+        [System.NonSerialized] public Vector3 anttarget;
         private bool seedbeendropped = false;
         public bool antsareup = true;
         private bool seedsareup = true;
