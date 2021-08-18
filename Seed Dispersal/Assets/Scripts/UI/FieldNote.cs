@@ -111,7 +111,7 @@ namespace SeedSearch
                 }
                 for (int j = 0; j < SaveManager.Instance.studentProfile.Levelprogress.Length; j++)
                 {
-                    if(SaveManager.Instance.studentProfile.Levelprogress[j] == 1) 
+                    if(SaveManager.Instance.studentProfile.Levelprogress[j] >= 1) 
                         noteField[j].SetActive(true);
                 }     
             }
