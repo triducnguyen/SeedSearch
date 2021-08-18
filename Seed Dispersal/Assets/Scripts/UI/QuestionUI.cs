@@ -31,6 +31,9 @@ namespace SeedSearch
         {
             questionsObj.SetActive(false);
             this.gameObject.SetActive(true);
+            fieldNote.SetActive(false);
+            noteUp.SetActive(true);
+            noteDown.SetActive(false);
         }
 
         public void OnEnable()

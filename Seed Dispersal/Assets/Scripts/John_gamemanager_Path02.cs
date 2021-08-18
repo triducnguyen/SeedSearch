@@ -432,7 +432,6 @@ namespace SeedSearch
                 subtitle.text = o14seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(7f));
-                pushend();
             }
 
         }
