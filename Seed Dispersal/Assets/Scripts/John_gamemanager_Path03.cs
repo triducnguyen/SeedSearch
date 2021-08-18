@@ -675,7 +675,7 @@ namespace SeedSearch
                 fairytext.text = o20seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(15f));
-                pushend();
+                
             }
         }
 
