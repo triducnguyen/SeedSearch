@@ -78324,10 +78324,10 @@ MonoBehaviour:
   fieldNote: {fileID: 893852885}
   noteUp: {fileID: 2144460540}
   noteDown: {fileID: 411808675}
-  questionsObj: {fileID: 0}
+  questionsObj: {fileID: 552507952}
   manager: {fileID: 0}
   manager2: {fileID: 0}
-  manager3: {fileID: 0}
+  manager3: {fileID: 573819297}
 --- !u!1 &1918511589
 GameObject:
   m_ObjectHideFlags: 0

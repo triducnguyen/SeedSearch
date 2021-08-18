@@ -659,6 +659,7 @@ namespace SeedSearch
                 fairytext.text = o18seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(7f));
+                StartCoroutine(narrationwaittoend(19));
             }
             else if (gamestate == 19)
             {
@@ -666,6 +667,7 @@ namespace SeedSearch
                 fairytext.text = o19seedfairy;
                 StopCoroutine(previousCoroutine);
                 previousCoroutine = StartCoroutine(Subtitle(13f));
+                fairytarget = F[4];
             }
             else if (gamestate == 20)
             {
